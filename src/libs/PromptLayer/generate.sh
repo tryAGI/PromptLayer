@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# OpenAPI spec: https://raw.githubusercontent.com/MagnivOrg/prompt-layer-docs/master/openapi.json
+
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl -o openapi.json https://raw.githubusercontent.com/MagnivOrg/prompt-layer-docs/master/openapi.json
