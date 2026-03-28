@@ -1,0 +1,21 @@
+#nullable enable
+
+namespace PromptLayer
+{
+    public partial interface IWorkflowClient
+    {
+        /// <summary>
+        /// Get Workflow Version Execution Results
+        /// </summary>
+        /// <param name="workflowVersionExecutionId"></param>
+        /// <param name="returnAllOutputs">
+        /// Default Value: false
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12>, object>> GetWorkflowVersionExecutionResultsAsync(
+            long workflowVersionExecutionId,
+            bool? returnAllOutputs = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}
