@@ -5,7 +5,7 @@ set -euo pipefail
 
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl -o openapi.json https://raw.githubusercontent.com/MagnivOrg/prompt-layer-docs/master/openapi.json
+curl --fail --silent --show-error -L -o openapi.json https://raw.githubusercontent.com/MagnivOrg/prompt-layer-docs/master/openapi.json
 
 # Fix spec issues:
 # 1. Set proper title
