@@ -31,11 +31,11 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="MediaVariable" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: media_variable
-        /// </param>
         /// <param name="name">
         /// Name of the media variable
+        /// </param>
+        /// <param name="type">
+        /// Default Value: media_variable
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace PromptLayer
             string name,
             global::PromptLayer.MediaVariableType? type)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

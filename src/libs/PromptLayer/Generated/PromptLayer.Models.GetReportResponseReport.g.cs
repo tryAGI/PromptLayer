@@ -127,11 +127,12 @@ namespace PromptLayer
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        /// <param name="comment"></param>
-        /// <param name="isBlueprint"></param>
         /// <param name="deleted"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="workspaceId"></param>
+        /// <param name="comment"></param>
+        /// <param name="isBlueprint"></param>
         /// <param name="score">
         /// Report score data
         /// </param>
@@ -147,7 +148,6 @@ namespace PromptLayer
         /// <param name="parentReportId"></param>
         /// <param name="datasetId"></param>
         /// <param name="userId"></param>
-        /// <param name="workspaceId"></param>
         /// <param name="promptRegistryId">
         /// ID of associated prompt registry
         /// </param>
@@ -178,12 +178,11 @@ namespace PromptLayer
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Comment = comment;
+            this.IsBlueprint = isBlueprint;
             this.Deleted = deleted;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.WorkspaceId = workspaceId;
-            this.Comment = comment;
-            this.IsBlueprint = isBlueprint;
             this.Score = score;
             this.ScoreConfiguration = scoreConfiguration;
             this.ScoreMatrix = scoreMatrix;
@@ -191,6 +190,7 @@ namespace PromptLayer
             this.ParentReportId = parentReportId;
             this.DatasetId = datasetId;
             this.UserId = userId;
+            this.WorkspaceId = workspaceId;
             this.PromptRegistryId = promptRegistryId;
             this.PromptVersionNumber = promptVersionNumber;
         }

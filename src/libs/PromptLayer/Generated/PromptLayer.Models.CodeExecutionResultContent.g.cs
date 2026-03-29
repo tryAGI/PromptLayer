@@ -37,10 +37,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeExecutionResultContent" /> class.
         /// </summary>
+        /// <param name="output"></param>
         /// <param name="type">
         /// Default Value: code_execution_result
         /// </param>
-        /// <param name="output"></param>
         /// <param name="outcome">
         /// Default Value: OUTCOME_OK
         /// </param>
@@ -52,8 +52,8 @@ namespace PromptLayer
             global::PromptLayer.CodeExecutionResultContentType? type,
             string? outcome)
         {
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Type = type;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Outcome = outcome;
         }
 

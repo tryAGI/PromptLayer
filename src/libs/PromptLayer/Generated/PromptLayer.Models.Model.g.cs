@@ -69,6 +69,9 @@ namespace PromptLayer
         /// <param name="provider">
         /// The LLM provider (e.g. openai, anthropic, google, openai.azure, vertexai, mistral, cohere, amazon.bedrock, huggingface).
         /// </param>
+        /// <param name="name">
+        /// The model name (e.g. gpt-4o, claude-sonnet-4-20250514).
+        /// </param>
         /// <param name="modelConfigDisplayName">
         /// Optional display name for the model configuration.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -76,9 +79,6 @@ namespace PromptLayer
         /// <param name="baseModel">
         /// The base model name (e.g. for fine-tuned models).<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
-        /// <param name="name">
-        /// The model name (e.g. gpt-4o, claude-sonnet-4-20250514).
         /// </param>
         /// <param name="parameters">
         /// Model parameters (e.g. temperature, max_tokens, top_p).<br/>
@@ -105,9 +105,9 @@ namespace PromptLayer
             string? apiType)
         {
             this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ModelConfigDisplayName = modelConfigDisplayName;
             this.BaseModel = baseModel;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;
             this.DisplayParams = displayParams;
             this.ApiType = apiType;

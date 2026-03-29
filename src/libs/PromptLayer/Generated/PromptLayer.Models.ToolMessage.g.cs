@@ -56,17 +56,17 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolMessage" /> class.
         /// </summary>
+        /// <param name="content"></param>
+        /// <param name="toolCallId"></param>
         /// <param name="inputVariables">
         /// Default Value: []
         /// </param>
         /// <param name="templateFormat">
         /// Default Value: f-string
         /// </param>
-        /// <param name="content"></param>
         /// <param name="role">
         /// Default Value: tool
         /// </param>
-        /// <param name="toolCallId"></param>
         /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -79,11 +79,11 @@ namespace PromptLayer
             string? role,
             string? name)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.InputVariables = inputVariables;
             this.TemplateFormat = templateFormat;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Role = role;
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.Name = name;
         }
 

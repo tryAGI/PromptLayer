@@ -37,10 +37,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageContent" /> class.
         /// </summary>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// Default Value: image_url
         /// </param>
-        /// <param name="imageUrl"></param>
         /// <param name="imageVariable">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -52,8 +52,8 @@ namespace PromptLayer
             global::PromptLayer.ImageContentType? type,
             string? imageVariable)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.ImageVariable = imageVariable;
         }
 

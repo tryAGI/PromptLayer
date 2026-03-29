@@ -68,9 +68,6 @@ namespace PromptLayer
         /// <param name="id">
         /// UUID of the node
         /// </param>
-        /// <param name="workflowVersionId">
-        /// Version ID this node belongs to
-        /// </param>
         /// <param name="name">
         /// Node name (unique within a version)
         /// </param>
@@ -86,6 +83,9 @@ namespace PromptLayer
         /// <param name="dependencies">
         /// Names of nodes this node depends on
         /// </param>
+        /// <param name="workflowVersionId">
+        /// Version ID this node belongs to
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,12 +99,12 @@ namespace PromptLayer
             int? workflowVersionId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.WorkflowVersionId = workflowVersionId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeType = nodeType ?? throw new global::System.ArgumentNullException(nameof(nodeType));
             this.IsOutputNode = isOutputNode;
             this.Configuration = configuration ?? throw new global::System.ArgumentNullException(nameof(configuration));
             this.Dependencies = dependencies ?? throw new global::System.ArgumentNullException(nameof(dependencies));
-            this.WorkflowVersionId = workflowVersionId;
         }
 
         /// <summary>

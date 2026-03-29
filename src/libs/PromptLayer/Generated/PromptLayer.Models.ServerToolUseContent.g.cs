@@ -44,11 +44,11 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerToolUseContent" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         /// <param name="type">
         /// Default Value: server_tool_use
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
         /// <param name="input">
         /// Default Value: {}
         /// </param>
@@ -61,9 +61,9 @@ namespace PromptLayer
             global::PromptLayer.ServerToolUseContentType? type,
             object? input)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type;
             this.Input = input;
         }
 

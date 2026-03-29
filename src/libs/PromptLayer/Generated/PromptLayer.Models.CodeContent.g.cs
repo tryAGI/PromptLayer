@@ -43,10 +43,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeContent" /> class.
         /// </summary>
+        /// <param name="code"></param>
         /// <param name="type">
         /// Default Value: code
         /// </param>
-        /// <param name="code"></param>
         /// <param name="id">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -62,8 +62,8 @@ namespace PromptLayer
             string? id,
             string? containerId)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Type = type;
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Id = id;
             this.ContainerId = containerId;
         }

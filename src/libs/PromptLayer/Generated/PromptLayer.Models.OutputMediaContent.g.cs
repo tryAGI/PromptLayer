@@ -56,13 +56,13 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputMediaContent" /> class.
         /// </summary>
+        /// <param name="url"></param>
         /// <param name="type">
         /// Default Value: output_media
         /// </param>
         /// <param name="id">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="url"></param>
         /// <param name="mimeType">
         /// Default Value: image/png
         /// </param>
@@ -83,9 +83,9 @@ namespace PromptLayer
             global::PromptLayer.OutputMediaContentMediaType? mediaType,
             object? providerMetadata)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
             this.Id = id;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.MimeType = mimeType;
             this.MediaType = mediaType;
             this.ProviderMetadata = providerMetadata;

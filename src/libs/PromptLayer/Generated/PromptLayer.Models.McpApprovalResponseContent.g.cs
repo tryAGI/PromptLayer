@@ -38,11 +38,11 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="McpApprovalResponseContent" /> class.
         /// </summary>
+        /// <param name="approvalRequestId"></param>
+        /// <param name="approve"></param>
         /// <param name="type">
         /// Default Value: mcp_approval_response
         /// </param>
-        /// <param name="approvalRequestId"></param>
-        /// <param name="approve"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -51,9 +51,9 @@ namespace PromptLayer
             bool approve,
             global::PromptLayer.McpApprovalResponseContentType? type)
         {
+            this.Type = type;
             this.ApprovalRequestId = approvalRequestId ?? throw new global::System.ArgumentNullException(nameof(approvalRequestId));
             this.Approve = approve;
-            this.Type = type;
         }
 
         /// <summary>

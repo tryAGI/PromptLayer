@@ -30,10 +30,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="BadRequestError" /> class.
         /// </summary>
+        /// <param name="message"></param>
         /// <param name="success">
         /// Default Value: false
         /// </param>
-        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace PromptLayer
             string message,
             bool? success)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Success = success;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

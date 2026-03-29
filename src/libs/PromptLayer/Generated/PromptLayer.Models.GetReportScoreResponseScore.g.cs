@@ -46,9 +46,6 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="GetReportScoreResponseScore" /> class.
         /// </summary>
-        /// <param name="overallScore">
-        /// The overall score of the report
-        /// </param>
         /// <param name="scoreType">
         /// Type of scoring used for this report
         /// </param>
@@ -56,6 +53,9 @@ namespace PromptLayer
         /// Whether custom scoring logic was used
         /// </param>
         /// <param name="details"></param>
+        /// <param name="overallScore">
+        /// The overall score of the report
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,10 +65,10 @@ namespace PromptLayer
             global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4> details,
             double? overallScore)
         {
+            this.OverallScore = overallScore;
             this.ScoreType = scoreType;
             this.HasCustomScoring = hasCustomScoring;
             this.Details = details;
-            this.OverallScore = overallScore;
         }
 
         /// <summary>

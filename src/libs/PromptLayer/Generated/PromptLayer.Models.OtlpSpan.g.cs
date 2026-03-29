@@ -93,17 +93,17 @@ namespace PromptLayer
         /// <param name="spanId">
         /// Hex-encoded span ID (16 hex characters / 8 bytes).
         /// </param>
-        /// <param name="parentSpanId">
-        /// Hex-encoded parent span ID. Empty or omitted for root spans.
-        /// </param>
         /// <param name="name">
         /// The name of the span.
         /// </param>
-        /// <param name="kind">
-        /// Span kind: 0=UNSPECIFIED, 1=INTERNAL, 2=SERVER, 3=CLIENT, 4=PRODUCER, 5=CONSUMER.
-        /// </param>
         /// <param name="startTimeUnixNano">
         /// Start time in nanoseconds since Unix epoch, encoded as a string.
+        /// </param>
+        /// <param name="parentSpanId">
+        /// Hex-encoded parent span ID. Empty or omitted for root spans.
+        /// </param>
+        /// <param name="kind">
+        /// Span kind: 0=UNSPECIFIED, 1=INTERNAL, 2=SERVER, 3=CLIENT, 4=PRODUCER, 5=CONSUMER.
         /// </param>
         /// <param name="endTimeUnixNano">
         /// End time in nanoseconds since Unix epoch, encoded as a string.
@@ -138,10 +138,10 @@ namespace PromptLayer
         {
             this.TraceId = traceId ?? throw new global::System.ArgumentNullException(nameof(traceId));
             this.SpanId = spanId ?? throw new global::System.ArgumentNullException(nameof(spanId));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.StartTimeUnixNano = startTimeUnixNano ?? throw new global::System.ArgumentNullException(nameof(startTimeUnixNano));
             this.ParentSpanId = parentSpanId;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Kind = kind;
+            this.StartTimeUnixNano = startTimeUnixNano ?? throw new global::System.ArgumentNullException(nameof(startTimeUnixNano));
             this.EndTimeUnixNano = endTimeUnixNano;
             this.Attributes = attributes;
             this.Status = status;
