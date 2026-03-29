@@ -56,6 +56,7 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaceholderMessage" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="inputVariables">
         /// Default Value: []
         /// </param>
@@ -69,7 +70,6 @@ namespace PromptLayer
         /// <param name="role">
         /// Default Value: placeholder
         /// </param>
-        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,12 +81,12 @@ namespace PromptLayer
             string? rawRequestDisplayRole,
             global::PromptLayer.PlaceholderMessageRole? role)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputVariables = inputVariables;
             this.TemplateFormat = templateFormat;
             this.Content = content;
             this.RawRequestDisplayRole = rawRequestDisplayRole;
             this.Role = role;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

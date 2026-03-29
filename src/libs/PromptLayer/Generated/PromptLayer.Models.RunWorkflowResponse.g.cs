@@ -50,11 +50,11 @@ namespace PromptLayer
         /// <param name="message">
         /// A message describing the result.
         /// </param>
-        /// <param name="warning">
-        /// Any warnings about missing input variables.
-        /// </param>
         /// <param name="workflowVersionExecutionId">
         /// The ID of the created workflow execution.
+        /// </param>
+        /// <param name="warning">
+        /// Any warnings about missing input variables.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,8 +67,8 @@ namespace PromptLayer
         {
             this.Success = success;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.WorkflowVersionExecutionId = workflowVersionExecutionId;
             this.Warning = warning;
+            this.WorkflowVersionExecutionId = workflowVersionExecutionId;
         }
 
         /// <summary>

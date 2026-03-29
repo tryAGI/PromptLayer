@@ -70,20 +70,20 @@ namespace PromptLayer
         /// <param name="workspaceId">
         /// ID of the workspace this workflow belongs to
         /// </param>
-        /// <param name="userId">
-        /// ID of the user who created this workflow
-        /// </param>
         /// <param name="name">
         /// Name of the workflow
         /// </param>
         /// <param name="isDeleted">
         /// Whether the workflow is deleted
         /// </param>
-        /// <param name="latestVersionNumber">
-        /// The latest version number of the workflow
-        /// </param>
         /// <param name="releaseLabels">
         /// Array of release label names associated with the workflow
+        /// </param>
+        /// <param name="userId">
+        /// ID of the user who created this workflow
+        /// </param>
+        /// <param name="latestVersionNumber">
+        /// The latest version number of the workflow
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -99,11 +99,11 @@ namespace PromptLayer
         {
             this.Id = id;
             this.WorkspaceId = workspaceId;
+            this.UserId = userId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.IsDeleted = isDeleted;
-            this.ReleaseLabels = releaseLabels ?? throw new global::System.ArgumentNullException(nameof(releaseLabels));
-            this.UserId = userId;
             this.LatestVersionNumber = latestVersionNumber;
+            this.ReleaseLabels = releaseLabels ?? throw new global::System.ArgumentNullException(nameof(releaseLabels));
         }
 
         /// <summary>

@@ -83,14 +83,14 @@ namespace PromptLayer
         /// <param name="columnNames">
         /// Array of column names in the dataset
         /// </param>
-        /// <param name="filterParams">
-        /// Filter parameters used to create the dataset
-        /// </param>
         /// <param name="isDeleted">
         /// Whether the dataset is deleted
         /// </param>
         /// <param name="userId">
         /// ID of the user who created the dataset
+        /// </param>
+        /// <param name="filterParams">
+        /// Filter parameters used to create the dataset
         /// </param>
         /// <param name="datasetGroup">
         /// Associated dataset group information
@@ -112,9 +112,9 @@ namespace PromptLayer
             this.DatasetGroupId = datasetGroupId;
             this.VersionNumber = versionNumber;
             this.ColumnNames = columnNames ?? throw new global::System.ArgumentNullException(nameof(columnNames));
+            this.FilterParams = filterParams;
             this.IsDeleted = isDeleted;
             this.UserId = userId;
-            this.FilterParams = filterParams;
             this.DatasetGroup = datasetGroup;
         }
 

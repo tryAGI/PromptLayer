@@ -43,14 +43,14 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCall" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="function"></param>
         /// <param name="toolId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="id"></param>
         /// <param name="type">
         /// Default Value: function
         /// </param>
-        /// <param name="function"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,10 +60,10 @@ namespace PromptLayer
             string? toolId,
             string? type)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.ToolId = toolId;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

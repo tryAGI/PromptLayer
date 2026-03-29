@@ -37,10 +37,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchToolResultContent" /> class.
         /// </summary>
+        /// <param name="toolUseId"></param>
         /// <param name="type">
         /// Default Value: web_search_tool_result
         /// </param>
-        /// <param name="toolUseId"></param>
         /// <param name="content">
         /// Default Value: []
         /// </param>
@@ -52,8 +52,8 @@ namespace PromptLayer
             global::PromptLayer.WebSearchToolResultContentType? type,
             global::System.Collections.Generic.IList<global::PromptLayer.WebSearchResult>? content)
         {
-            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Type = type;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Content = content;
         }
 

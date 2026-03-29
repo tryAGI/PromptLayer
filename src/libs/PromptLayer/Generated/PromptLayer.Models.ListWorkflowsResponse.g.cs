@@ -84,9 +84,6 @@ namespace PromptLayer
         /// <param name="perPage">
         /// Number of items per page
         /// </param>
-        /// <param name="total">
-        /// Total number of items
-        /// </param>
         /// <param name="pages">
         /// Total number of pages
         /// </param>
@@ -95,6 +92,9 @@ namespace PromptLayer
         /// </param>
         /// <param name="hasPrev">
         /// Whether there is a previous page
+        /// </param>
+        /// <param name="total">
+        /// Total number of items
         /// </param>
         /// <param name="nextNum">
         /// Next page number if available
@@ -119,10 +119,10 @@ namespace PromptLayer
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.Page = page;
             this.PerPage = perPage;
+            this.Total = total;
             this.Pages = pages;
             this.HasNext = hasNext;
             this.HasPrev = hasPrev;
-            this.Total = total;
             this.NextNum = nextNum;
             this.PrevNum = prevNum;
         }

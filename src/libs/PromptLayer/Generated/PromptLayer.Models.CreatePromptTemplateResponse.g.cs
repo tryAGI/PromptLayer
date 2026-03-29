@@ -91,8 +91,8 @@ namespace PromptLayer
         /// The version number of the prompt template.
         /// </param>
         /// <param name="tags"></param>
-        /// <param name="releaseLabels"></param>
         /// <param name="promptTemplate"></param>
+        /// <param name="releaseLabels"></param>
         /// <param name="metadata"></param>
         /// <param name="commitMessage"></param>
 #if NET7_0_OR_GREATER
@@ -114,8 +114,8 @@ namespace PromptLayer
             this.PromptVersionId = promptVersionId;
             this.VersionNumber = versionNumber;
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
-            this.PromptTemplate = promptTemplate;
             this.ReleaseLabels = releaseLabels;
+            this.PromptTemplate = promptTemplate;
             this.Metadata = metadata;
             this.CommitMessage = commitMessage;
         }

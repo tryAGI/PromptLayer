@@ -52,11 +52,11 @@ namespace PromptLayer
         /// <param name="promptName">
         /// The name of the prompt template.
         /// </param>
-        /// <param name="promptInputVariables">
-        /// Input variables for the prompt template.
-        /// </param>
         /// <param name="requestId">
         /// The unique identifier for the request.
+        /// </param>
+        /// <param name="promptInputVariables">
+        /// Input variables for the prompt template.
         /// </param>
         /// <param name="version">
         /// The version of the prompt template. Both version and label cannot be specified. Only one or none.
@@ -75,8 +75,8 @@ namespace PromptLayer
             string? label)
         {
             this.PromptName = promptName ?? throw new global::System.ArgumentNullException(nameof(promptName));
-            this.RequestId = requestId;
             this.PromptInputVariables = promptInputVariables;
+            this.RequestId = requestId;
             this.Version = version;
             this.Label = label;
         }

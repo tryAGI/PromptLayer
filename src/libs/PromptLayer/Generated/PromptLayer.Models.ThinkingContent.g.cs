@@ -43,13 +43,13 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="ThinkingContent" /> class.
         /// </summary>
+        /// <param name="thinking"></param>
         /// <param name="signature">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="type">
         /// Default Value: thinking
         /// </param>
-        /// <param name="thinking"></param>
         /// <param name="id">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -62,9 +62,9 @@ namespace PromptLayer
             global::PromptLayer.ThinkingContentType? type,
             string? id)
         {
-            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Signature = signature;
             this.Type = type;
+            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Id = id;
         }
 

@@ -49,6 +49,7 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionMessage" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="inputVariables">
         /// Default Value: []
         /// </param>
@@ -59,7 +60,6 @@ namespace PromptLayer
         /// <param name="role">
         /// Default Value: function
         /// </param>
-        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,11 +70,11 @@ namespace PromptLayer
             global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item2>? content,
             string? role)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputVariables = inputVariables;
             this.TemplateFormat = templateFormat;
             this.Content = content;
             this.Role = role;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

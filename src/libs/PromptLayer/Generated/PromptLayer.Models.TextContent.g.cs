@@ -50,10 +50,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="TextContent" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="type">
         /// Default Value: text
         /// </param>
-        /// <param name="text"></param>
         /// <param name="id">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -74,8 +74,8 @@ namespace PromptLayer
             global::System.Collections.Generic.IList<global::PromptLayer.OneOf<global::PromptLayer.WebAnnotation, global::PromptLayer.FileAnnotation, global::PromptLayer.MapAnnotation, global::PromptLayer.ContainerFileAnnotation>>? annotations,
             string? thoughtSignature)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Id = id;
             this.Annotations = annotations;
             this.ThoughtSignature = thoughtSignature;

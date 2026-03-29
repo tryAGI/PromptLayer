@@ -49,13 +49,13 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="DeveloperMessage" /> class.
         /// </summary>
+        /// <param name="content"></param>
         /// <param name="inputVariables">
         /// Default Value: []
         /// </param>
         /// <param name="templateFormat">
         /// Default Value: f-string
         /// </param>
-        /// <param name="content"></param>
         /// <param name="role">
         /// Default Value: developer
         /// </param>
@@ -70,9 +70,9 @@ namespace PromptLayer
             string? role,
             string? name)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.InputVariables = inputVariables;
             this.TemplateFormat = templateFormat;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Role = role;
             this.Name = name;
         }

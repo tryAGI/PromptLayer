@@ -32,12 +32,12 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="StructuredFilterGroup" /> class.
         /// </summary>
+        /// <param name="filters">
+        /// List of filters or nested filter groups.
+        /// </param>
         /// <param name="logic">
         /// How to combine the filters in this group.<br/>
         /// Default Value: AND
-        /// </param>
-        /// <param name="filters">
-        /// List of filters or nested filter groups.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,8 +46,8 @@ namespace PromptLayer
             global::System.Collections.Generic.IList<global::PromptLayer.OneOf<global::PromptLayer.StructuredFilter, global::PromptLayer.StructuredFilterGroup>> filters,
             global::PromptLayer.StructuredFilterGroupLogic? logic)
         {
-            this.Filters = filters ?? throw new global::System.ArgumentNullException(nameof(filters));
             this.Logic = logic;
+            this.Filters = filters ?? throw new global::System.ArgumentNullException(nameof(filters));
         }
 
         /// <summary>

@@ -80,6 +80,9 @@ namespace PromptLayer
         /// <param name="type">
         /// The type of entity. SNIPPET is a pseudo-entity type representing completion-type prompts.
         /// </param>
+        /// <param name="path">
+        /// Array of folder names representing the entity's location in the folder hierarchy.
+        /// </param>
         /// <param name="createdAt">
         /// Timestamp when the entity was created
         /// </param>
@@ -88,9 +91,6 @@ namespace PromptLayer
         /// </param>
         /// <param name="folderId">
         /// ID of the folder containing this entity. Null for root-level entities.
-        /// </param>
-        /// <param name="path">
-        /// Array of folder names representing the entity's location in the folder hierarchy.
         /// </param>
         /// <param name="metadata">
         /// Type-specific metadata. Included only when include_metadata=true.
@@ -111,10 +111,10 @@ namespace PromptLayer
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.FolderId = folderId;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Metadata = metadata;
         }
 

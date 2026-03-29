@@ -45,10 +45,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="FileAnnotation" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="index"></param>
         /// <param name="fileId"></param>
         /// <param name="filename"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,10 +58,10 @@ namespace PromptLayer
             string filename,
             string type = "file_citation")
         {
+            this.Type = type;
             this.Index = index;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.Type = type;
         }
 
         /// <summary>

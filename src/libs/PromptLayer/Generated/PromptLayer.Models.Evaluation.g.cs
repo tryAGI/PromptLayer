@@ -116,6 +116,9 @@ namespace PromptLayer
         /// <param name="name">
         /// Name of the evaluation
         /// </param>
+        /// <param name="workspaceId">
+        /// ID of the workspace this evaluation belongs to
+        /// </param>
         /// <param name="comment">
         /// Optional comment or description for the evaluation
         /// </param>
@@ -124,9 +127,6 @@ namespace PromptLayer
         /// </param>
         /// <param name="updatedAt">
         /// Timestamp when the evaluation was last updated
-        /// </param>
-        /// <param name="workspaceId">
-        /// ID of the workspace this evaluation belongs to
         /// </param>
         /// <param name="folderId">
         /// ID of the folder containing this evaluation
@@ -177,10 +177,10 @@ namespace PromptLayer
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.WorkspaceId = workspaceId;
             this.Comment = comment;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.WorkspaceId = workspaceId;
             this.FolderId = folderId;
             this.UserId = userId;
             this.DatasetId = datasetId;

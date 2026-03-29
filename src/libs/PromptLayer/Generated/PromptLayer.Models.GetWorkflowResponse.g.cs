@@ -106,6 +106,12 @@ namespace PromptLayer
         /// <param name="workflowVersionId">
         /// Unique identifier for this version
         /// </param>
+        /// <param name="nodes">
+        /// Full node definitions including configuration and dependencies
+        /// </param>
+        /// <param name="edges">
+        /// Connections between nodes with optional conditionals
+        /// </param>
         /// <param name="commitMessage">
         /// Commit message for this version
         /// </param>
@@ -117,12 +123,6 @@ namespace PromptLayer
         /// </param>
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when this version was created
-        /// </param>
-        /// <param name="nodes">
-        /// Full node definitions including configuration and dependencies
-        /// </param>
-        /// <param name="edges">
-        /// Connections between nodes with optional conditionals
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -145,12 +145,12 @@ namespace PromptLayer
             this.WorkflowName = workflowName ?? throw new global::System.ArgumentNullException(nameof(workflowName));
             this.Version = version;
             this.WorkflowVersionId = workflowVersionId;
-            this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));
-            this.Edges = edges ?? throw new global::System.ArgumentNullException(nameof(edges));
             this.CommitMessage = commitMessage;
             this.RequiredInputVariables = requiredInputVariables;
             this.ReleaseLabels = releaseLabels;
             this.CreatedAt = createdAt;
+            this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));
+            this.Edges = edges ?? throw new global::System.ArgumentNullException(nameof(edges));
         }
 
         /// <summary>

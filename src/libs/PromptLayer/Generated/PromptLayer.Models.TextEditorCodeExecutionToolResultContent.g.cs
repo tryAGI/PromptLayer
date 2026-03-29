@@ -37,10 +37,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="TextEditorCodeExecutionToolResultContent" /> class.
         /// </summary>
+        /// <param name="toolUseId"></param>
         /// <param name="type">
         /// Default Value: text_editor_code_execution_tool_result
         /// </param>
-        /// <param name="toolUseId"></param>
         /// <param name="content">
         /// Default Value: {}
         /// </param>
@@ -52,8 +52,8 @@ namespace PromptLayer
             global::PromptLayer.TextEditorCodeExecutionToolResultContentType? type,
             object? content)
         {
-            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Type = type;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Content = content;
         }
 

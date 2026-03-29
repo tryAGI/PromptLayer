@@ -31,10 +31,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="MediaContent" /> class.
         /// </summary>
+        /// <param name="media"></param>
         /// <param name="type">
         /// Default Value: media
         /// </param>
-        /// <param name="media"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace PromptLayer
             global::PromptLayer.Media media,
             global::PromptLayer.MediaContentType? type)
         {
-            this.Media = media ?? throw new global::System.ArgumentNullException(nameof(media));
             this.Type = type;
+            this.Media = media ?? throw new global::System.ArgumentNullException(nameof(media));
         }
 
         /// <summary>

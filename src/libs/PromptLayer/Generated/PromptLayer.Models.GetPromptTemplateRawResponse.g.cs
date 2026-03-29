@@ -113,6 +113,9 @@ namespace PromptLayer
         /// <param name="promptTemplate">
         /// The prompt template content. When resolve_snippets is true (default), snippets are expanded. When false, raw @@@snippet@@@ references are preserved.
         /// </param>
+        /// <param name="snippets">
+        /// List of snippet references used in this template.
+        /// </param>
         /// <param name="metadata">
         /// Model configuration including provider, model name, and parameters.
         /// </param>
@@ -124,9 +127,6 @@ namespace PromptLayer
         /// </param>
         /// <param name="createdAt">
         /// Timestamp when this version was created.
-        /// </param>
-        /// <param name="snippets">
-        /// List of snippet references used in this template.
         /// </param>
         /// <param name="llmKwargs">
         /// Provider-specific LLM arguments. Only present when include_llm_kwargs=true. Structure is provider-specific and may change without notice.
@@ -154,11 +154,11 @@ namespace PromptLayer
             this.Version = version;
             this.WorkspaceId = workspaceId;
             this.PromptTemplate = promptTemplate;
-            this.Snippets = snippets ?? throw new global::System.ArgumentNullException(nameof(snippets));
             this.Metadata = metadata;
             this.CommitMessage = commitMessage;
             this.Tags = tags;
             this.CreatedAt = createdAt;
+            this.Snippets = snippets ?? throw new global::System.ArgumentNullException(nameof(snippets));
             this.LlmKwargs = llmKwargs;
         }
 

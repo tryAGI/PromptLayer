@@ -101,18 +101,18 @@ namespace PromptLayer
         /// <param name="name"></param>
         /// <param name="context"></param>
         /// <param name="kind"></param>
-        /// <param name="parentId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="status"></param>
         /// <param name="attributes"></param>
+        /// <param name="resource"></param>
+        /// <param name="parentId"></param>
         /// <param name="events">
         /// Default Value: []
         /// </param>
         /// <param name="links">
         /// Default Value: []
         /// </param>
-        /// <param name="resource"></param>
         /// <param name="logRequest"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -134,14 +134,14 @@ namespace PromptLayer
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
             this.Kind = kind;
+            this.ParentId = parentId;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Attributes = attributes ?? throw new global::System.ArgumentNullException(nameof(attributes));
-            this.Resource = resource ?? throw new global::System.ArgumentNullException(nameof(resource));
-            this.ParentId = parentId;
             this.Events = events;
             this.Links = links;
+            this.Resource = resource ?? throw new global::System.ArgumentNullException(nameof(resource));
             this.LogRequest = logRequest;
         }
 

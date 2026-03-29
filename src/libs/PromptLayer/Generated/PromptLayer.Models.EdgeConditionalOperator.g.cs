@@ -11,27 +11,27 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        x__,
+        Neq,
         /// <summary>
         /// 
         /// </summary>
-        x_2,
+        Lt,
         /// <summary>
         /// 
         /// </summary>
-        x__2,
+        Lte,
         /// <summary>
         /// 
         /// </summary>
-        x_,
+        Eq,
         /// <summary>
         /// 
         /// </summary>
-        x_3,
+        Gt,
         /// <summary>
         /// 
         /// </summary>
-        x__3,
+        Gte,
         /// <summary>
         /// 
         /// </summary>
@@ -62,12 +62,12 @@ namespace PromptLayer
         {
             return value switch
             {
-                EdgeConditionalOperator.x__ => "!=",
-                EdgeConditionalOperator.x_2 => "<",
-                EdgeConditionalOperator.x__2 => "<=",
-                EdgeConditionalOperator.x_ => "=",
-                EdgeConditionalOperator.x_3 => ">",
-                EdgeConditionalOperator.x__3 => ">=",
+                EdgeConditionalOperator.Neq => "!=",
+                EdgeConditionalOperator.Lt => "<",
+                EdgeConditionalOperator.Lte => "<=",
+                EdgeConditionalOperator.Eq => "=",
+                EdgeConditionalOperator.Gt => ">",
+                EdgeConditionalOperator.Gte => ">=",
                 EdgeConditionalOperator.In => "in",
                 EdgeConditionalOperator.IsNotNull => "is_not_null",
                 EdgeConditionalOperator.IsNull => "is_null",
@@ -82,12 +82,12 @@ namespace PromptLayer
         {
             return value switch
             {
-                "!=" => EdgeConditionalOperator.x__,
-                "<" => EdgeConditionalOperator.x_2,
-                "<=" => EdgeConditionalOperator.x__2,
-                "=" => EdgeConditionalOperator.x_,
-                ">" => EdgeConditionalOperator.x_3,
-                ">=" => EdgeConditionalOperator.x__3,
+                "!=" => EdgeConditionalOperator.Neq,
+                "<" => EdgeConditionalOperator.Lt,
+                "<=" => EdgeConditionalOperator.Lte,
+                "=" => EdgeConditionalOperator.Eq,
+                ">" => EdgeConditionalOperator.Gt,
+                ">=" => EdgeConditionalOperator.Gte,
                 "in" => EdgeConditionalOperator.In,
                 "is_not_null" => EdgeConditionalOperator.IsNotNull,
                 "is_null" => EdgeConditionalOperator.IsNull,

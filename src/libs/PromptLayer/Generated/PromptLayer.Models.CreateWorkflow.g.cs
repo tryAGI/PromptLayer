@@ -72,6 +72,9 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWorkflow" /> class.
         /// </summary>
+        /// <param name="nodes">
+        /// The nodes in the workflow.
+        /// </param>
         /// <param name="name">
         /// The name for a new workflow. If not provided, a name will be auto-generated.
         /// </param>
@@ -86,9 +89,6 @@ namespace PromptLayer
         /// </param>
         /// <param name="commitMessage">
         /// A message describing the changes in this version.
-        /// </param>
-        /// <param name="nodes">
-        /// The nodes in the workflow.
         /// </param>
         /// <param name="requiredInputVariables">
         /// A mapping of variable names to their types.
@@ -113,12 +113,12 @@ namespace PromptLayer
             global::System.Collections.Generic.IList<global::PromptLayer.Edge>? edges,
             global::System.Collections.Generic.IList<string>? releaseLabels)
         {
-            this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));
             this.Name = name;
             this.WorkflowId = workflowId;
             this.WorkflowName = workflowName;
             this.FolderId = folderId;
             this.CommitMessage = commitMessage;
+            this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));
             this.RequiredInputVariables = requiredInputVariables;
             this.Edges = edges;
             this.ReleaseLabels = releaseLabels;

@@ -31,10 +31,10 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDatasetRowsResponseRowItem" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="value">
         /// The cell value
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace PromptLayer
             object value,
             global::PromptLayer.GetDatasetRowsResponseRowItemType type)
         {
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Type = type;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
 
         /// <summary>

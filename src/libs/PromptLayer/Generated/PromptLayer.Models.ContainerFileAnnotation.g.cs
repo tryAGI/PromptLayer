@@ -55,7 +55,6 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerFileAnnotation" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="containerId"></param>
         /// <param name="startIndex">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -69,6 +68,7 @@ namespace PromptLayer
         /// <param name="fileId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,8 +80,8 @@ namespace PromptLayer
             string? fileId,
             string type = "container_file_citation")
         {
-            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.Type = type;
+            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.StartIndex = startIndex;
             this.EndIndex = endIndex;
             this.Filename = filename;

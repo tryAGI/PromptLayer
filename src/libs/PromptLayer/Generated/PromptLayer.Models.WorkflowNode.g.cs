@@ -60,11 +60,11 @@ namespace PromptLayer
         /// <param name="configuration">
         /// Node-specific configuration.
         /// </param>
-        /// <param name="dependencies">
-        /// Names of nodes or input variables this node depends on.
-        /// </param>
         /// <param name="isOutputNode">
         /// Whether this node is an output node.
+        /// </param>
+        /// <param name="dependencies">
+        /// Names of nodes or input variables this node depends on.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -79,8 +79,8 @@ namespace PromptLayer
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeType = nodeType ?? throw new global::System.ArgumentNullException(nameof(nodeType));
             this.Configuration = configuration ?? throw new global::System.ArgumentNullException(nameof(configuration));
-            this.IsOutputNode = isOutputNode;
             this.Dependencies = dependencies;
+            this.IsOutputNode = isOutputNode;
         }
 
         /// <summary>
