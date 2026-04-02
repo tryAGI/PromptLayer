@@ -167,13 +167,13 @@ namespace PromptLayer
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -217,7 +217,7 @@ namespace PromptLayer
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::PromptLayer.ListDatasetsResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::PromptLayer.ListDatasetsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -248,7 +248,7 @@ namespace PromptLayer
                     ).ConfigureAwait(false);
 
                     return
-                        await global::PromptLayer.ListDatasetsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::PromptLayer.ListDatasetsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

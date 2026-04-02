@@ -72,7 +72,7 @@ namespace PromptLayer
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -110,13 +110,13 @@ namespace PromptLayer
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::PromptLayer.RunReportResponse2.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::PromptLayer.RunReportResponse2.FromJson(__content_400, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::PromptLayer.RunReportResponse2.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::PromptLayer.RunReportResponse2.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -148,13 +148,13 @@ namespace PromptLayer
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::PromptLayer.RunReportResponse3.FromJson(__content_401, JsonSerializerContext);
+                        __value_401 = global::PromptLayer.RunReportResponse3.FromJson(__content_401, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::PromptLayer.RunReportResponse3.FromJson(__content_401, JsonSerializerContext);
+                        __value_401 = global::PromptLayer.RunReportResponse3.FromJson(__content_401, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -186,13 +186,13 @@ namespace PromptLayer
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::PromptLayer.RunReportResponse4.FromJson(__content_403, JsonSerializerContext);
+                        __value_403 = global::PromptLayer.RunReportResponse4.FromJson(__content_403, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::PromptLayer.RunReportResponse4.FromJson(__content_403, JsonSerializerContext);
+                        __value_403 = global::PromptLayer.RunReportResponse4.FromJson(__content_403, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -224,13 +224,13 @@ namespace PromptLayer
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::PromptLayer.RunReportResponse5.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::PromptLayer.RunReportResponse5.FromJson(__content_404, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::PromptLayer.RunReportResponse5.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::PromptLayer.RunReportResponse5.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -274,7 +274,7 @@ namespace PromptLayer
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::PromptLayer.RunReportResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::PromptLayer.RunReportResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -305,7 +305,7 @@ namespace PromptLayer
                     ).ConfigureAwait(false);
 
                     return
-                        await global::PromptLayer.RunReportResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::PromptLayer.RunReportResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
