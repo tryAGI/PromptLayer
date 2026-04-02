@@ -12,28 +12,21 @@ namespace PromptLayer.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminator>(ref readerCopy, options);
 
             global::PromptLayer.CompletionPrompt? completion = default;
             if (discriminator?.Type == global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType.Completion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.CompletionPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.CompletionPrompt> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.CompletionPrompt)}");
-                completion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                completion = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.CompletionPrompt>(ref reader, options);
             }
             global::PromptLayer.ChatPrompt? chat = default;
             if (discriminator?.Type == global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType.Chat)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ChatPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ChatPrompt> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.ChatPrompt)}");
-                chat = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                chat = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.ChatPrompt>(ref reader, options);
             }
 
             var __value = new global::PromptLayer.PromptTemplate2(
@@ -52,20 +45,15 @@ namespace PromptLayer.JsonConverters
             global::PromptLayer.PromptTemplate2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsCompletion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.CompletionPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.CompletionPrompt?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.CompletionPrompt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeof(global::PromptLayer.CompletionPrompt), options);
             }
             else if (value.IsChat)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ChatPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ChatPrompt?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.ChatPrompt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat, typeof(global::PromptLayer.ChatPrompt), options);
             }
         }
     }

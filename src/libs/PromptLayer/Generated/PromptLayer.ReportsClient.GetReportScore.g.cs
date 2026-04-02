@@ -239,7 +239,7 @@ namespace PromptLayer
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::PromptLayer.GetReportScoreResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::PromptLayer.GetReportScoreResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -270,7 +270,7 @@ namespace PromptLayer
                     ).ConfigureAwait(false);
 
                     return
-                        await global::PromptLayer.GetReportScoreResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::PromptLayer.GetReportScoreResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
