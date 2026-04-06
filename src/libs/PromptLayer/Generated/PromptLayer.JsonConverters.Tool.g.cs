@@ -12,21 +12,28 @@ namespace PromptLayer.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.ToolDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ToolDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ToolDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.ToolDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::PromptLayer.FunctionTool? function = default;
             if (discriminator?.Type == global::PromptLayer.ToolDiscriminatorType.Function)
             {
-                function = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.FunctionTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.FunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.FunctionTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.FunctionTool)}");
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.BuiltInTool? webSearch = default;
             if (discriminator?.Type == global::PromptLayer.ToolDiscriminatorType.WebSearch)
             {
-                webSearch = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.BuiltInTool>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.BuiltInTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.BuiltInTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.BuiltInTool)}");
+                webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::PromptLayer.Tool(
@@ -45,15 +52,20 @@ namespace PromptLayer.JsonConverters
             global::PromptLayer.Tool value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsFunction)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeof(global::PromptLayer.FunctionTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.FunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.FunctionTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.FunctionTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function!, typeInfo);
             }
             else if (value.IsWebSearch)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch, typeof(global::PromptLayer.BuiltInTool), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.BuiltInTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.BuiltInTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.BuiltInTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch!, typeInfo);
             }
         }
     }
