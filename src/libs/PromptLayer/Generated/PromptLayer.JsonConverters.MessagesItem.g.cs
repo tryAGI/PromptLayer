@@ -12,46 +12,63 @@ namespace PromptLayer.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.ChatPromptMessageDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ChatPromptMessageDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ChatPromptMessageDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.ChatPromptMessageDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::PromptLayer.SystemMessage? system = default;
             if (discriminator?.Role == global::PromptLayer.ChatPromptMessageDiscriminatorRole.System)
             {
-                system = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.SystemMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.SystemMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.SystemMessage)}");
+                system = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.UserMessage? user = default;
             if (discriminator?.Role == global::PromptLayer.ChatPromptMessageDiscriminatorRole.User)
             {
-                user = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.UserMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.UserMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.UserMessage)}");
+                user = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.AssistantMessage? assistant = default;
             if (discriminator?.Role == global::PromptLayer.ChatPromptMessageDiscriminatorRole.Assistant)
             {
-                assistant = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.AssistantMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.AssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.AssistantMessage)}");
+                assistant = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.FunctionMessage? function = default;
             if (discriminator?.Role == global::PromptLayer.ChatPromptMessageDiscriminatorRole.Function)
             {
-                function = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.FunctionMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.FunctionMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.FunctionMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.FunctionMessage)}");
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.ToolMessage? tool = default;
             if (discriminator?.Role == global::PromptLayer.ChatPromptMessageDiscriminatorRole.Tool)
             {
-                tool = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.ToolMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ToolMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.ToolMessage)}");
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.PlaceholderMessage? placeholder = default;
             if (discriminator?.Role == global::PromptLayer.ChatPromptMessageDiscriminatorRole.Placeholder)
             {
-                placeholder = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.PlaceholderMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.PlaceholderMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.PlaceholderMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.PlaceholderMessage)}");
+                placeholder = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.DeveloperMessage? developer = default;
             if (discriminator?.Role == global::PromptLayer.ChatPromptMessageDiscriminatorRole.Developer)
             {
-                developer = global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.DeveloperMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.DeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.DeveloperMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.DeveloperMessage)}");
+                developer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::PromptLayer.MessagesItem(
@@ -80,35 +97,50 @@ namespace PromptLayer.JsonConverters
             global::PromptLayer.MessagesItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsSystem)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System, typeof(global::PromptLayer.SystemMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.SystemMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.SystemMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System!, typeInfo);
             }
             else if (value.IsUser)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.User, typeof(global::PromptLayer.UserMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.UserMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.UserMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.User!, typeInfo);
             }
             else if (value.IsAssistant)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Assistant, typeof(global::PromptLayer.AssistantMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.AssistantMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.AssistantMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Assistant!, typeInfo);
             }
             else if (value.IsFunction)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeof(global::PromptLayer.FunctionMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.FunctionMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.FunctionMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.FunctionMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function!, typeInfo);
             }
             else if (value.IsTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeof(global::PromptLayer.ToolMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ToolMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.ToolMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
             }
             else if (value.IsPlaceholder)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Placeholder, typeof(global::PromptLayer.PlaceholderMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.PlaceholderMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.PlaceholderMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.PlaceholderMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Placeholder!, typeInfo);
             }
             else if (value.IsDeveloper)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Developer, typeof(global::PromptLayer.DeveloperMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.DeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.DeveloperMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.DeveloperMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Developer!, typeInfo);
             }
         }
     }

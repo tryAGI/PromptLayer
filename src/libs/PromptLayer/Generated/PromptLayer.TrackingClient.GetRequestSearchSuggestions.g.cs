@@ -126,13 +126,13 @@ namespace PromptLayer
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -164,13 +164,13 @@ namespace PromptLayer
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::PromptLayer.ErrorResponse.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::PromptLayer.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::PromptLayer.ErrorResponse.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::PromptLayer.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -247,7 +247,7 @@ namespace PromptLayer
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::PromptLayer.GetRequestSearchSuggestionsResponse.FromJson(__content, JsonSerializerOptions) ??
+                        global::PromptLayer.GetRequestSearchSuggestionsResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -277,7 +277,7 @@ namespace PromptLayer
                     ).ConfigureAwait(false);
 
                     return
-                        await global::PromptLayer.GetRequestSearchSuggestionsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::PromptLayer.GetRequestSearchSuggestionsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
