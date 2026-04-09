@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class EvaluationsClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_GetEvaluationRowsSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_GetEvaluationRowsSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_GetEvaluationRowsSecurityRequirement0,
+            };
         partial void PrepareGetEvaluationRowsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int evaluationId,
@@ -57,6 +76,12 @@ namespace PromptLayer
                 page: ref page,
                 perPage: ref perPage);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetEvaluationRowsSecurityRequirements,
+                operationName: "GetEvaluationRowsAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: $"/api/public/v2/evaluations/{evaluationId}/rows",
                 baseUri: HttpClient.BaseAddress); 
@@ -64,7 +89,7 @@ namespace PromptLayer
                 .AddOptionalParameter("workspace_id", workspaceId?.ToString())
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -74,7 +99,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

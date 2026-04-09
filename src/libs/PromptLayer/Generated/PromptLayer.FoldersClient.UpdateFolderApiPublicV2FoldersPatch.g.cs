@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class FoldersClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_UpdateFolderApiPublicV2FoldersPatchSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_UpdateFolderApiPublicV2FoldersPatchSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_UpdateFolderApiPublicV2FoldersPatchSecurityRequirement0,
+            };
         partial void PrepareUpdateFolderApiPublicV2FoldersPatchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int folderId,
@@ -48,9 +67,15 @@ namespace PromptLayer
                 folderId: ref folderId,
                 request: request);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateFolderApiPublicV2FoldersPatchSecurityRequirements,
+                operationName: "UpdateFolderApiPublicV2FoldersPatchAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: $"/api/public/v2/folders/{folderId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
@@ -60,7 +85,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

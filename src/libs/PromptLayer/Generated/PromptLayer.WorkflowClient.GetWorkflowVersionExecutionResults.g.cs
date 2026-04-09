@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class WorkflowClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_GetWorkflowVersionExecutionResultsSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_GetWorkflowVersionExecutionResultsSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_GetWorkflowVersionExecutionResultsSecurityRequirement0,
+            };
         partial void PrepareGetWorkflowVersionExecutionResultsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref long workflowVersionExecutionId,
@@ -44,13 +63,19 @@ namespace PromptLayer
                 workflowVersionExecutionId: ref workflowVersionExecutionId,
                 returnAllOutputs: ref returnAllOutputs);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetWorkflowVersionExecutionResultsSecurityRequirements,
+                operationName: "GetWorkflowVersionExecutionResultsAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: "/workflow-version-execution-results",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("workflow_version_execution_id", workflowVersionExecutionId.ToString()!)
                 .AddOptionalParameter("return_all_outputs", returnAllOutputs?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -60,7 +85,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

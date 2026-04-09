@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class WorkflowClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_ListWorkflowsSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_ListWorkflowsSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_ListWorkflowsSecurityRequirement0,
+            };
         partial void PrepareListWorkflowsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -46,13 +65,19 @@ namespace PromptLayer
                 page: ref page,
                 perPage: ref perPage);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListWorkflowsSecurityRequirements,
+                operationName: "ListWorkflowsAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: "/workflows",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -62,7 +87,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

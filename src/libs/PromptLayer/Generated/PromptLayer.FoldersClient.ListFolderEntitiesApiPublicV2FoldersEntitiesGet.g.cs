@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class FoldersClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_ListFolderEntitiesApiPublicV2FoldersEntitiesGetSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_ListFolderEntitiesApiPublicV2FoldersEntitiesGetSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_ListFolderEntitiesApiPublicV2FoldersEntitiesGetSecurityRequirement0,
+            };
         partial void PrepareListFolderEntitiesApiPublicV2FoldersEntitiesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int workspaceId,
@@ -77,6 +96,12 @@ namespace PromptLayer
                 flatten: ref flatten,
                 includeMetadata: ref includeMetadata);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListFolderEntitiesApiPublicV2FoldersEntitiesGetSecurityRequirements,
+                operationName: "ListFolderEntitiesApiPublicV2FoldersEntitiesGetAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: "/api/public/v2/folders/entities",
                 baseUri: HttpClient.BaseAddress); 
@@ -87,7 +112,7 @@ namespace PromptLayer
                 .AddOptionalParameter("search_query", searchQuery)
                 .AddOptionalParameter("flatten", flatten?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("include_metadata", includeMetadata?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -97,7 +122,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
