@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class PromptsClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_CreatePromptLabelSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_CreatePromptLabelSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_CreatePromptLabelSecurityRequirement0,
+            };
         partial void PrepareCreatePromptLabelArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int promptId,
@@ -45,9 +64,15 @@ namespace PromptLayer
                 promptId: ref promptId,
                 request: request);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreatePromptLabelSecurityRequirements,
+                operationName: "CreatePromptLabelAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: $"/prompts/{promptId}/label",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -57,7 +82,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

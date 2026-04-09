@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class PromptTemplatesClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_GetAllPromptTemplatesGetSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_GetAllPromptTemplatesGetSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_GetAllPromptTemplatesGetSecurityRequirement0,
+            };
         partial void PrepareGetAllPromptTemplatesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -64,6 +83,12 @@ namespace PromptLayer
                 tags: ref tags,
                 status: ref status);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAllPromptTemplatesGetSecurityRequirements,
+                operationName: "GetAllPromptTemplatesGetAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: "/prompt-templates",
                 baseUri: HttpClient.BaseAddress); 
@@ -74,7 +99,7 @@ namespace PromptLayer
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("tags", tags?.ToString())
                 .AddOptionalParameter("status", status?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -84,7 +109,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

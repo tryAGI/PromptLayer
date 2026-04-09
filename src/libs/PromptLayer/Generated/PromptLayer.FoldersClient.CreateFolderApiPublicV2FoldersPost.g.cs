@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class FoldersClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_CreateFolderApiPublicV2FoldersPostSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_CreateFolderApiPublicV2FoldersPostSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_CreateFolderApiPublicV2FoldersPostSecurityRequirement0,
+            };
         partial void PrepareCreateFolderApiPublicV2FoldersPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::PromptLayer.CreateFolderRequest request);
@@ -41,9 +60,15 @@ namespace PromptLayer
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateFolderApiPublicV2FoldersPostSecurityRequirements,
+                operationName: "CreateFolderApiPublicV2FoldersPostAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: "/api/public/v2/folders",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

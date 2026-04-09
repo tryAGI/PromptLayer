@@ -6,6 +6,7 @@ namespace PromptLayer
     public sealed partial class PromptLayerClient
     {
         /// <inheritdoc cref="PromptLayerClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::PromptLayer.EndPointAuthorization}?, bool)"/>
+
         public PromptLayerClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

@@ -5,6 +5,25 @@ namespace PromptLayer
 {
     public partial class TrackingClient
     {
+
+
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_SearchRequestLogsSecurityRequirement0 =
+            new global::PromptLayer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
+                {                    new global::PromptLayer.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-KEY",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_SearchRequestLogsSecurityRequirements =
+            new global::PromptLayer.EndPointSecurityRequirement[]
+            {                s_SearchRequestLogsSecurityRequirement0,
+            };
         partial void PrepareSearchRequestLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::PromptLayer.SearchRequestLogsRequest request);
@@ -40,9 +59,15 @@ namespace PromptLayer
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SearchRequestLogsSecurityRequirements,
+                operationName: "SearchRequestLogsAsync");
+
             var __pathBuilder = new global::PromptLayer.PathBuilder(
                 path: "/api/public/v2/requests/search",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -52,7 +77,7 @@ namespace PromptLayer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
