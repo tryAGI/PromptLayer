@@ -12,12 +12,14 @@ namespace PromptLayer
         /// The prompt template name or ID.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreatePromptTemplateResponse> PatchPromptTemplateVersionAsync(
             string identifier,
 
             global::PromptLayer.PatchPromptTemplateVersion request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Patch Prompt Template Version<br/>
@@ -62,6 +64,7 @@ namespace PromptLayer
         /// <param name="releaseLabels">
         /// Release labels to create or move to the newly created version (e.g. ['staging', 'production']).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreatePromptTemplateResponse> PatchPromptTemplateVersionAsync(
@@ -78,6 +81,7 @@ namespace PromptLayer
             object? responseFormat = default,
             string? commitMessage = default,
             global::System.Collections.Generic.IList<string>? releaseLabels = default,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

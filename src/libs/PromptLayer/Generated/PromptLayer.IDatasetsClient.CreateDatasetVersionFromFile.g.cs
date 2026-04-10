@@ -8,11 +8,13 @@ namespace PromptLayer
         /// Create Dataset Version from File
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetVersionFromFileResponse> CreateDatasetVersionFromFileAsync(
 
             global::PromptLayer.CreateDatasetVersionFromFileRequest request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Dataset Version from File
@@ -26,12 +28,14 @@ namespace PromptLayer
         /// <param name="fileContentBase64">
         /// Base64 encoded content of the file. Maximum file size: 100MB. Supported formats: CSV, JSON
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetVersionFromFileResponse> CreateDatasetVersionFromFileAsync(
             int datasetGroupId,
             string fileName,
             string fileContentBase64,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

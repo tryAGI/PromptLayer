@@ -9,12 +9,14 @@ namespace PromptLayer
         /// </summary>
         /// <param name="workflowName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.RunWorkflowResponse> RunWorkflowAsync(
             string workflowName,
 
             global::PromptLayer.RunWorkflow request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Run Workflow
@@ -37,6 +39,7 @@ namespace PromptLayer
         /// If set to `true`, all outputs from the workflow execution will be returned.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.RunWorkflowResponse> RunWorkflowAsync(
@@ -46,6 +49,7 @@ namespace PromptLayer
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             object? inputVariables = default,
             bool? returnAllOutputs = default,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
