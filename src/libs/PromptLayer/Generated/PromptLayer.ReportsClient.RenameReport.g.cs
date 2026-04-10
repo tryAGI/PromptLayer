@@ -3,11 +3,11 @@
 
 namespace PromptLayer
 {
-    public partial class DatasetsClient
+    public partial class ReportsClient
     {
 
 
-        private static readonly global::PromptLayer.EndPointSecurityRequirement s_CreateDatasetGroupSecurityRequirement0 =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_RenameReportSecurityRequirement0 =
             new global::PromptLayer.EndPointSecurityRequirement
             {
                 Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
@@ -21,36 +21,41 @@ namespace PromptLayer
                     },
                 },
             };
-        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_CreateDatasetGroupSecurityRequirements =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_RenameReportSecurityRequirements =
             new global::PromptLayer.EndPointSecurityRequirement[]
-            {                s_CreateDatasetGroupSecurityRequirement0,
+            {                s_RenameReportSecurityRequirement0,
             };
-        partial void PrepareCreateDatasetGroupArguments(
+        partial void PrepareRenameReportArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::PromptLayer.CreateDatasetGroupRequest request);
-        partial void PrepareCreateDatasetGroupRequest(
+            ref int reportId,
+            global::PromptLayer.RenameReportRequest request);
+        partial void PrepareRenameReportRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::PromptLayer.CreateDatasetGroupRequest request);
-        partial void ProcessCreateDatasetGroupResponse(
+            int reportId,
+            global::PromptLayer.RenameReportRequest request);
+        partial void ProcessRenameReportResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateDatasetGroupResponseContent(
+        partial void ProcessRenameReportResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Dataset Group
+        /// Rename Evaluation Pipeline<br/>
+        /// Rename or retag an evaluation pipeline. Provide name, tags, or both. Use this instead of recreating a misnamed pipeline.
         /// </summary>
+        /// <param name="reportId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetGroupResponse> CreateDatasetGroupAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.RenameReportResponse> RenameReportAsync(
+            int reportId,
 
-            global::PromptLayer.CreateDatasetGroupRequest request,
+            global::PromptLayer.RenameReportRequest request,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -58,15 +63,16 @@ namespace PromptLayer
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateDatasetGroupArguments(
+            PrepareRenameReportArguments(
                 httpClient: HttpClient,
+                reportId: ref reportId,
                 request: request);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateDatasetGroupSecurityRequirements,
-                operationName: "CreateDatasetGroupAsync");
+                securityRequirements: s_RenameReportSecurityRequirements,
+                operationName: "RenameReportAsync");
 
             using var __timeoutCancellationTokenSource = global::PromptLayer.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -85,7 +91,7 @@ namespace PromptLayer
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::PromptLayer.PathBuilder(
-                                path: "/api/public/v2/dataset-groups",
+                                path: $"/reports/{reportId}/rename",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -93,7 +99,7 @@ namespace PromptLayer
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -130,9 +136,10 @@ namespace PromptLayer
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateDatasetGroupRequest(
+                PrepareRenameReportRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    reportId: reportId,
                     request: request);
 
                 return __httpRequest;
@@ -150,10 +157,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "RenameReport",
+                                methodName: "RenameReportAsync",
+                                pathTemplate: "$\"/reports/{reportId}/rename\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -177,10 +184,10 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "RenameReport",
+                                methodName: "RenameReportAsync",
+                                pathTemplate: "$\"/reports/{reportId}/rename\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -212,10 +219,10 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "RenameReport",
+                                methodName: "RenameReportAsync",
+                                pathTemplate: "$\"/reports/{reportId}/rename\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -251,7 +258,7 @@ namespace PromptLayer
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateDatasetGroupResponse(
+                ProcessRenameReportResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -259,10 +266,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "RenameReport",
+                                methodName: "RenameReportAsync",
+                                pathTemplate: "$\"/reports/{reportId}/rename\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -279,10 +286,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "RenameReport",
+                                methodName: "RenameReportAsync",
+                                pathTemplate: "$\"/reports/{reportId}/rename\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -294,24 +301,20 @@ namespace PromptLayer
                                 willRetry: false,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request - Invalid workspace_id or dataset with this name already exists
+                            // 
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::PromptLayer.ErrorResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -319,13 +322,78 @@ namespace PromptLayer
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+                                throw new global::PromptLayer.ApiException(
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     statusCode: __response.StatusCode)
                                 {
                                     ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_404,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -345,7 +413,7 @@ namespace PromptLayer
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateDatasetGroupResponseContent(
+                                ProcessRenameReportResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -355,7 +423,7 @@ namespace PromptLayer
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::PromptLayer.CreateDatasetGroupResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::PromptLayer.RenameReportResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -385,7 +453,7 @@ namespace PromptLayer
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::PromptLayer.CreateDatasetGroupResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::PromptLayer.RenameReportResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -425,35 +493,34 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Create Dataset Group
+        /// Rename Evaluation Pipeline<br/>
+        /// Rename or retag an evaluation pipeline. Provide name, tags, or both. Use this instead of recreating a misnamed pipeline.
         /// </summary>
+        /// <param name="reportId"></param>
         /// <param name="name">
-        /// Name of the dataset group. Must be unique within the workspace.
+        /// New name for the evaluation pipeline.
         /// </param>
-        /// <param name="workspaceId">
-        /// Optional: ID of the workspace where the dataset group will be created. If not provided, uses the workspace associated with your API key.
-        /// </param>
-        /// <param name="folderId">
-        /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
+        /// <param name="tags">
+        /// Replacement tags. Pass an empty array to clear all tags.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetGroupResponse> CreateDatasetGroupAsync(
-            string name,
-            int? workspaceId = default,
-            int? folderId = default,
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.RenameReportResponse> RenameReportAsync(
+            int reportId,
+            string? name = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::PromptLayer.CreateDatasetGroupRequest
+            var __request = new global::PromptLayer.RenameReportRequest
             {
                 Name = name,
-                WorkspaceId = workspaceId,
-                FolderId = folderId,
+                Tags = tags,
             };
 
-            return await CreateDatasetGroupAsync(
+            return await RenameReportAsync(
+                reportId: reportId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
