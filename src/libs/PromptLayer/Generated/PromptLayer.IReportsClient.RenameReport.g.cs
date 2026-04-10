@@ -2,39 +2,41 @@
 
 namespace PromptLayer
 {
-    public partial interface IDatasetsClient
+    public partial interface IReportsClient
     {
         /// <summary>
-        /// Create Dataset Group
+        /// Rename Evaluation Pipeline<br/>
+        /// Rename or retag an evaluation pipeline. Provide name, tags, or both. Use this instead of recreating a misnamed pipeline.
         /// </summary>
+        /// <param name="reportId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetGroupResponse> CreateDatasetGroupAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.RenameReportResponse> RenameReportAsync(
+            int reportId,
 
-            global::PromptLayer.CreateDatasetGroupRequest request,
+            global::PromptLayer.RenameReportRequest request,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Dataset Group
+        /// Rename Evaluation Pipeline<br/>
+        /// Rename or retag an evaluation pipeline. Provide name, tags, or both. Use this instead of recreating a misnamed pipeline.
         /// </summary>
+        /// <param name="reportId"></param>
         /// <param name="name">
-        /// Name of the dataset group. Must be unique within the workspace.
+        /// New name for the evaluation pipeline.
         /// </param>
-        /// <param name="workspaceId">
-        /// Optional: ID of the workspace where the dataset group will be created. If not provided, uses the workspace associated with your API key.
-        /// </param>
-        /// <param name="folderId">
-        /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
+        /// <param name="tags">
+        /// Replacement tags. Pass an empty array to clear all tags.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetGroupResponse> CreateDatasetGroupAsync(
-            string name,
-            int? workspaceId = default,
-            int? folderId = default,
+        global::System.Threading.Tasks.Task<global::PromptLayer.RenameReportResponse> RenameReportAsync(
+            int reportId,
+            string? name = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

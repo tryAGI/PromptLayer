@@ -3,11 +3,11 @@
 
 namespace PromptLayer
 {
-    public partial class DatasetsClient
+    public partial class ReportsClient
     {
 
 
-        private static readonly global::PromptLayer.EndPointSecurityRequirement s_CreateDatasetGroupSecurityRequirement0 =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_EditReportColumnSecurityRequirement0 =
             new global::PromptLayer.EndPointSecurityRequirement
             {
                 Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
@@ -21,36 +21,41 @@ namespace PromptLayer
                     },
                 },
             };
-        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_CreateDatasetGroupSecurityRequirements =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_EditReportColumnSecurityRequirements =
             new global::PromptLayer.EndPointSecurityRequirement[]
-            {                s_CreateDatasetGroupSecurityRequirement0,
+            {                s_EditReportColumnSecurityRequirement0,
             };
-        partial void PrepareCreateDatasetGroupArguments(
+        partial void PrepareEditReportColumnArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::PromptLayer.CreateDatasetGroupRequest request);
-        partial void PrepareCreateDatasetGroupRequest(
+            ref int reportColumnId,
+            global::PromptLayer.EditReportColumnRequest request);
+        partial void PrepareEditReportColumnRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::PromptLayer.CreateDatasetGroupRequest request);
-        partial void ProcessCreateDatasetGroupResponse(
+            int reportColumnId,
+            global::PromptLayer.EditReportColumnRequest request);
+        partial void ProcessEditReportColumnResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateDatasetGroupResponseContent(
+        partial void ProcessEditReportColumnResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Dataset Group
+        /// Edit Evaluation Pipeline Column<br/>
+        /// Update an existing column on an evaluation pipeline. Use this to fix a bug in a CODE_EXECUTION script, change a column's configuration, rename it, or reorder it — without recreating the whole pipeline. Cannot edit DATASET columns. Editing a column re-queues the affected cells.
         /// </summary>
+        /// <param name="reportColumnId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetGroupResponse> CreateDatasetGroupAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.EditReportColumnResponse> EditReportColumnAsync(
+            int reportColumnId,
 
-            global::PromptLayer.CreateDatasetGroupRequest request,
+            global::PromptLayer.EditReportColumnRequest request,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -58,15 +63,16 @@ namespace PromptLayer
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateDatasetGroupArguments(
+            PrepareEditReportColumnArguments(
                 httpClient: HttpClient,
+                reportColumnId: ref reportColumnId,
                 request: request);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateDatasetGroupSecurityRequirements,
-                operationName: "CreateDatasetGroupAsync");
+                securityRequirements: s_EditReportColumnSecurityRequirements,
+                operationName: "EditReportColumnAsync");
 
             using var __timeoutCancellationTokenSource = global::PromptLayer.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -85,7 +91,7 @@ namespace PromptLayer
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::PromptLayer.PathBuilder(
-                                path: "/api/public/v2/dataset-groups",
+                                path: $"/report-columns/{reportColumnId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -93,7 +99,7 @@ namespace PromptLayer
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -130,9 +136,10 @@ namespace PromptLayer
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateDatasetGroupRequest(
+                PrepareEditReportColumnRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    reportColumnId: reportColumnId,
                     request: request);
 
                 return __httpRequest;
@@ -150,10 +157,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "EditReportColumn",
+                                methodName: "EditReportColumnAsync",
+                                pathTemplate: "$\"/report-columns/{reportColumnId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -177,10 +184,10 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "EditReportColumn",
+                                methodName: "EditReportColumnAsync",
+                                pathTemplate: "$\"/report-columns/{reportColumnId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -212,10 +219,10 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "EditReportColumn",
+                                methodName: "EditReportColumnAsync",
+                                pathTemplate: "$\"/report-columns/{reportColumnId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -251,7 +258,7 @@ namespace PromptLayer
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateDatasetGroupResponse(
+                ProcessEditReportColumnResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -259,10 +266,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "EditReportColumn",
+                                methodName: "EditReportColumnAsync",
+                                pathTemplate: "$\"/report-columns/{reportColumnId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -279,10 +286,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDatasetGroup",
-                                methodName: "CreateDatasetGroupAsync",
-                                pathTemplate: "\"/api/public/v2/dataset-groups\"",
-                                httpMethod: "POST",
+                                operationId: "EditReportColumn",
+                                methodName: "EditReportColumnAsync",
+                                pathTemplate: "$\"/report-columns/{reportColumnId}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -294,24 +301,20 @@ namespace PromptLayer
                                 willRetry: false,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request - Invalid workspace_id or dataset with this name already exists
+                            // 
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::PromptLayer.ErrorResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_400 = global::PromptLayer.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -319,13 +322,111 @@ namespace PromptLayer
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+                                throw new global::PromptLayer.ApiException(
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     statusCode: __response.StatusCode)
                                 {
                                     ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_403,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // 
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_404,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -345,7 +446,7 @@ namespace PromptLayer
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateDatasetGroupResponseContent(
+                                ProcessEditReportColumnResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -355,7 +456,7 @@ namespace PromptLayer
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::PromptLayer.CreateDatasetGroupResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::PromptLayer.EditReportColumnResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -385,7 +486,7 @@ namespace PromptLayer
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::PromptLayer.CreateDatasetGroupResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::PromptLayer.EditReportColumnResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -425,35 +526,49 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Create Dataset Group
+        /// Edit Evaluation Pipeline Column<br/>
+        /// Update an existing column on an evaluation pipeline. Use this to fix a bug in a CODE_EXECUTION script, change a column's configuration, rename it, or reorder it — without recreating the whole pipeline. Cannot edit DATASET columns. Editing a column re-queues the affected cells.
         /// </summary>
+        /// <param name="reportColumnId"></param>
+        /// <param name="reportId">
+        /// Parent evaluation pipeline ID. Must match the column's report.
+        /// </param>
+        /// <param name="columnType">
+        /// Column type. DATASET is not allowed.
+        /// </param>
+        /// <param name="configuration">
+        /// Replacement column configuration. Schema varies by column_type.
+        /// </param>
         /// <param name="name">
-        /// Name of the dataset group. Must be unique within the workspace.
+        /// New column name. Must be unique within the pipeline.
         /// </param>
-        /// <param name="workspaceId">
-        /// Optional: ID of the workspace where the dataset group will be created. If not provided, uses the workspace associated with your API key.
-        /// </param>
-        /// <param name="folderId">
-        /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
+        /// <param name="position">
+        /// New 1-based position. Cannot overwrite dataset columns.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetGroupResponse> CreateDatasetGroupAsync(
-            string name,
-            int? workspaceId = default,
-            int? folderId = default,
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.EditReportColumnResponse> EditReportColumnAsync(
+            int reportColumnId,
+            int reportId,
+            global::PromptLayer.EditReportColumnRequestColumnType columnType,
+            object? configuration = default,
+            string? name = default,
+            int? position = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::PromptLayer.CreateDatasetGroupRequest
+            var __request = new global::PromptLayer.EditReportColumnRequest
             {
+                ReportId = reportId,
+                ColumnType = columnType,
+                Configuration = configuration,
                 Name = name,
-                WorkspaceId = workspaceId,
-                FolderId = folderId,
+                Position = position,
             };
 
-            return await CreateDatasetGroupAsync(
+            return await EditReportColumnAsync(
+                reportColumnId: reportColumnId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
