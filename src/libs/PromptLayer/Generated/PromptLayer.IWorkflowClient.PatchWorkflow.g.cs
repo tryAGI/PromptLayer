@@ -9,12 +9,14 @@ namespace PromptLayer
         /// </summary>
         /// <param name="workflowIdOrName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreateWorkflowResponse> PatchWorkflowAsync(
             string workflowIdOrName,
 
             global::PromptLayer.PatchWorkflow request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Patch Workflow
@@ -38,6 +40,7 @@ namespace PromptLayer
         /// <param name="releaseLabels">
         /// Labels to attach to the new version.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreateWorkflowResponse> PatchWorkflowAsync(
@@ -48,6 +51,7 @@ namespace PromptLayer
             global::System.Collections.Generic.Dictionary<string, string>? requiredInputVariables = default,
             global::System.Collections.Generic.IList<global::PromptLayer.Edge>? edges = default,
             global::System.Collections.Generic.IList<string>? releaseLabels = default,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

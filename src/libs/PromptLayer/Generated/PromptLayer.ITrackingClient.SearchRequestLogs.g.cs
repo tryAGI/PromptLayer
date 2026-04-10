@@ -8,11 +8,13 @@ namespace PromptLayer
         /// Search Request Logs
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.SearchRequestLogsResponse> SearchRequestLogsAsync(
 
             global::PromptLayer.SearchRequestLogsRequest request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search Request Logs
@@ -38,6 +40,7 @@ namespace PromptLayer
         /// <param name="includePromptName">
         /// When true, includes the prompt template name in each result item. Defaults to false.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.SearchRequestLogsResponse> SearchRequestLogsAsync(
@@ -48,6 +51,7 @@ namespace PromptLayer
             global::PromptLayer.SearchRequestLogsRequestSortBy? sortBy = default,
             global::PromptLayer.SearchRequestLogsRequestSortOrder? sortOrder = default,
             bool? includePromptName = default,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

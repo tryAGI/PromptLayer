@@ -28,6 +28,7 @@ namespace PromptLayer
         /// When true, includes type-specific metadata for each entity (e.g., prompt type, latest version number).<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.ListFolderEntitiesResponse> ListFolderEntitiesApiPublicV2FoldersEntitiesGetAsync(
@@ -37,6 +38,7 @@ namespace PromptLayer
             string? searchQuery = default,
             bool? flatten = default,
             bool? includeMetadata = default,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

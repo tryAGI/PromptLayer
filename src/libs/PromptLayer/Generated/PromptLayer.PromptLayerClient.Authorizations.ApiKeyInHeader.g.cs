@@ -26,6 +26,7 @@ namespace PromptLayer
             Authorizations.Add(new global::PromptLayer.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyXApiKey",
                 Location = "Header",
                 Name = "X-API-KEY",
                 Value = apiKey,
