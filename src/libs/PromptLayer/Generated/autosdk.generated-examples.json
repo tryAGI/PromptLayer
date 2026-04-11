@@ -1,0 +1,26 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Add Column to Evaluation Pipeline",
+      "Slug": "addreportcolumn",
+      "Description": "Adds a new evaluation step (column) to an existing evaluation pipeline. Columns execute sequentially from left to right and can reference data from previous columns.\n\n**Column Types Available:**\n- **Primary**: PROMPT_TEMPLATE, ENDPOINT, MCP, HUMAN, CODE_EXECUTION, CODING_AGENT, CONVERSATION_SIMULATOR, WORKFLOW\n- **Evaluation**: LLM_ASSERTION, AI_DATA_EXTRACTION, COMPARE, CONTAINS, REGEX, REGEX_EXTRACTION, COSINE_SIMILARITY, ABSOLUTE_NUMERIC_DISTANCE\n- **Helper**: JSON_PATH, XML_PATH, PARSE_VALUE, APPLY_DIFF, VARIABLE, ASSERT_VALID, COALESCE, COMBINE_COLUMNS, COUNT, MATH_OPERATOR, MIN_MAX\n\nSee the full documentation for detailed configuration requirements for each column type.",
+      "Language": "csharp",
+      "Code": "using var client = new PromptLayerClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::PromptLayer.AddReportColumnRequest\u003E(\n    @\u0022{\n  \u0022\u0022report_id\u0022\u0022: 456,\n  \u0022\u0022column_type\u0022\u0022: \u0022\u0022PROMPT_TEMPLATE\u0022\u0022,\n  \u0022\u0022name\u0022\u0022: \u0022\u0022Generate Answer\u0022\u0022,\n  \u0022\u0022configuration\u0022\u0022: {\n    \u0022\u0022template\u0022\u0022: {\n      \u0022\u0022name\u0022\u0022: \u0022\u0022qa_template\u0022\u0022,\n      \u0022\u0022version_number\u0022\u0022: null\n    },\n    \u0022\u0022prompt_template_variable_mappings\u0022\u0022: {\n      \u0022\u0022question\u0022\u0022: \u0022\u0022input_question\u0022\u0022\n    },\n    \u0022\u0022engine\u0022\u0022: {\n      \u0022\u0022provider\u0022\u0022: \u0022\u0022openai\u0022\u0022,\n      \u0022\u0022model\u0022\u0022: \u0022\u0022gpt-4\u0022\u0022,\n      \u0022\u0022parameters\u0022\u0022: {\n        \u0022\u0022temperature\u0022\u0022: 0.7\n      }\n    }\n  }\n}\u0022)!;\n\nvar response = await client.Reports.AddReportColumnAsync(\n    request: request\n);",
+      "Format": "sdk",
+      "OperationId": "addReportColumn",
+      "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 2,
+      "Title": "Create Evaluation Pipeline",
+      "Slug": "createevaluationpipeline",
+      "Description": "Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.",
+      "Language": "csharp",
+      "Code": "using var client = new PromptLayerClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::PromptLayer.CreateEvaluationPipelineRequest\u003E(\n    @\u0022{\n  \u0022\u0022dataset_group_id\u0022\u0022: 123,\n  \u0022\u0022name\u0022\u0022: \u0022\u0022QA Evaluation Pipeline\u0022\u0022,\n  \u0022\u0022columns\u0022\u0022: [\n    {\n      \u0022\u0022column_type\u0022\u0022: \u0022\u0022LLM_ASSERTION\u0022\u0022,\n      \u0022\u0022name\u0022\u0022: \u0022\u0022Language Check\u0022\u0022,\n      \u0022\u0022configuration\u0022\u0022: {\n        \u0022\u0022source\u0022\u0022: \u0022\u0022response\u0022\u0022,\n        \u0022\u0022prompt\u0022\u0022: \u0022\u0022Is the response written in {language}?\u0022\u0022,\n        \u0022\u0022variable_mappings\u0022\u0022: {\n          \u0022\u0022language\u0022\u0022: \u0022\u0022target_language\u0022\u0022\n        }\n      },\n      \u0022\u0022is_part_of_score\u0022\u0022: true\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.Reports.CreateEvaluationPipelineAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022success\u0022: true,\n//   \u0022report_id\u0022: 456,\n//   \u0022report_columns\u0022: [\n//     {\n//       \u0022id\u0022: 789,\n//       \u0022report_id\u0022: 456,\n//       \u0022column_type\u0022: \u0022LLM_ASSERTION\u0022,\n//       \u0022name\u0022: \u0022Language Check\u0022,\n//       \u0022position\u0022: 2,\n//       \u0022is_part_of_score\u0022: true,\n//       \u0022configuration\u0022: {\n//         \u0022source\u0022: \u0022response\u0022,\n//         \u0022prompt\u0022: \u0022Is the response written in {language}?\u0022,\n//         \u0022variable_mappings\u0022: {\n//           \u0022language\u0022: \u0022target_language\u0022\n//         }\n//       }\n//     }\n//   ]\n// }",
+      "Format": "sdk",
+      "OperationId": "createEvaluationPipeline",
+      "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    }
+  ]
+}
