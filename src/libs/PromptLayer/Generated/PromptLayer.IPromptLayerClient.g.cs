@@ -112,6 +112,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public SkillCollectionsClient SkillCollections { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SpansClient Spans { get; }
 
         /// <summary>

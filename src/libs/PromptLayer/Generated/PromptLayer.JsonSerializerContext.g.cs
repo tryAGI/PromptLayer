@@ -321,6 +321,10 @@ namespace PromptLayer
 
             typeof(global::PromptLayer.JsonConverters.IngestOtlpTracesContentEncodingNullableJsonConverter),
 
+            typeof(global::PromptLayer.JsonConverters.GetSkillCollectionPublicFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetSkillCollectionPublicFormatNullableJsonConverter),
+
             typeof(global::PromptLayer.JsonConverters.GetRequestSearchSuggestionsFieldJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.GetRequestSearchSuggestionsFieldNullableJsonConverter),
@@ -380,6 +384,8 @@ namespace PromptLayer
             typeof(global::PromptLayer.JsonConverters.PromptTemplate5JsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.NodeUpdate, object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.SkillCollectionVersion, object>),
 
             typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, int?>),
 
@@ -464,6 +470,28 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateWorkflowResponseNode>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateWorkflowResponseNode))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SkillCollectionErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SkillCollection))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SkillCollectionVersion))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.InitialFileUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.FileUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.FileMove))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateSkillCollectionRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.InitialFileUpdate>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateSkillCollectionMultipartRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateSkillCollectionRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SaveSkillCollectionVersionRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.FileUpdate>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.FileMove>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SaveSkillCollectionVersionMultipartRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListSkillCollectionsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.SkillCollection>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetSkillCollectionResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.SkillCollectionVersion, object>), TypeInfoPropertyName = "OneOfSkillCollectionVersionObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateSkillCollectionResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateSkillCollectionResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SaveSkillCollectionVersionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Base))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Function))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.FunctionCall))]
@@ -747,6 +775,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.IngestOtlpTracesContentType), TypeInfoPropertyName = "IngestOtlpTracesContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.IngestOtlpTracesContentEncoding), TypeInfoPropertyName = "IngestOtlpTracesContentEncoding2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetSkillCollectionPublicFormat), TypeInfoPropertyName = "GetSkillCollectionPublicFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetRequestSearchSuggestionsField), TypeInfoPropertyName = "GetRequestSearchSuggestionsField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreatePromptLabelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplatesLabelsPromptLabelIdPatchResponse))]
@@ -846,6 +875,10 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.WorkflowNode>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.Edge>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateWorkflowResponseNode>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.InitialFileUpdate>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.FileUpdate>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.FileMove>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.SkillCollection>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ContentItem>))]
