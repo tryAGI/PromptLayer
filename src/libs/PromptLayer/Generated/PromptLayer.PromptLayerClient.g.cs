@@ -159,6 +159,15 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public SkillCollectionsClient SkillCollections => new SkillCollectionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SpansClient Spans => new SpansClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
