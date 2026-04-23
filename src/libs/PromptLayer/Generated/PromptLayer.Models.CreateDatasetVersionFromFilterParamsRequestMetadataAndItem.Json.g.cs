@@ -2,7 +2,7 @@
 
 namespace PromptLayer
 {
-    public sealed partial class CreateDatasetVersionFromFilterParamsRequestMetadata
+    public sealed partial class CreateDatasetVersionFromFilterParamsRequestMetadataAndItem
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace PromptLayer
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata? FromJson(
+        public static global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata),
-                jsonSerializerContext) as global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata;
+                typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem),
+                jsonSerializerContext) as global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata? FromJson(
+        public static global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace PromptLayer
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata),
-                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata;
+                typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem),
+                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadata?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
