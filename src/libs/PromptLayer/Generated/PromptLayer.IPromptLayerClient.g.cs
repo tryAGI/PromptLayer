@@ -122,6 +122,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public ToolRegistryClient ToolRegistry { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TrackingClient Tracking { get; }
 
         /// <summary>

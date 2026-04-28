@@ -6069,6 +6069,211 @@
           }
         }
       }
+    },
+    "/api/public/v2/tool-registry": {
+      "get": {
+        "tags": [
+          "tool-registry"
+        ],
+        "summary": "List Tool Registries",
+        "description": "List all tools in the Tool Registry for the workspace.",
+        "operationId": "list_tool_registries",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool_registries": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "workspace_id": {
+                            "type": "integer"
+                          },
+                          "folder_id": {
+                            "type": "integer",
+                            "nullable": true
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "tool-registry"
+        ],
+        "summary": "Create Tool Registry",
+        "description": "Create a new tool in the Tool Registry with an initial version.",
+        "operationId": "create_tool_registry",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "tool_definition"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Tool name (unique per workspace)"
+                  },
+                  "tool_definition": {
+                    "type": "object",
+                    "description": "Tool definition in OpenAI function-calling format"
+                  },
+                  "folder_id": {
+                    "type": "integer",
+                    "description": "Folder ID to place tool in",
+                    "nullable": true
+                  },
+                  "commit_message": {
+                    "type": "string",
+                    "description": "Commit message for the initial version",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Tool created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool_registry": {
+                      "type": "object"
+                    },
+                    "version": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/tool-registry/{identifier}": {
+      "get": {
+        "tags": [
+          "tool-registry"
+        ],
+        "summary": "Get Tool Registry",
+        "description": "Get a tool from the Tool Registry by ID or name. Optionally resolve a specific version by label or version number.",
+        "operationId": "get_tool_registry",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Tool ID (numeric) or name"
+            }
+          },
+          {
+            "name": "label",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Resolve version by label name (e.g. production)"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Resolve by specific version number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool_registry": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "workspace_id": {
+                          "type": "integer"
+                        },
+                        "labels": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          }
+                        },
+                        "version": {
+                          "type": "object",
+                          "nullable": true
+                        },
+                        "tool_definition": {
+                          "type": "object",
+                          "nullable": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
