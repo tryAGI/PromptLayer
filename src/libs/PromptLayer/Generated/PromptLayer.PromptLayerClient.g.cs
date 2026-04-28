@@ -177,6 +177,15 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public ToolRegistryClient ToolRegistry => new ToolRegistryClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TrackingClient Tracking => new TrackingClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
