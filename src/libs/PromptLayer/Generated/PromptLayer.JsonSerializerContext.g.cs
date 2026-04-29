@@ -293,17 +293,9 @@ namespace PromptLayer
 
             typeof(global::PromptLayer.JsonConverters.EditReportColumnRequestColumnTypeNullableJsonConverter),
 
-            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestScoreOperatorJsonConverter),
+            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestFilterGroupLogicJsonConverter),
 
-            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestScoreOperatorNullableJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestStatuJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestStatuNullableJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestSortByJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestSortByNullableJsonConverter),
+            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestFilterGroupLogicNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestSortOrderJsonConverter),
 
@@ -775,20 +767,10 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetGroupRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFileRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataOrItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataOrItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestPromptTemplatesIncludeItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestPromptTemplatesIncludeItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestPromptTemplatesExcludeItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestPromptTemplatesExcludeItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestScore>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestScore))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestScoreOperator), TypeInfoPropertyName = "CreateDatasetVersionFromFilterParamsRequestScoreOperator2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestStatu>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestStatu), TypeInfoPropertyName = "CreateDatasetVersionFromFilterParamsRequestStatu2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortBy), TypeInfoPropertyName = "CreateDatasetVersionFromFilterParamsRequestSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestFilterGroup))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestFilterGroupLogic), TypeInfoPropertyName = "CreateDatasetVersionFromFilterParamsRequestFilterGroupLogic2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestFilterGroupFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestFilterGroupFilter))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortOrder), TypeInfoPropertyName = "CreateDatasetVersionFromFilterParamsRequestSortOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDraftDatasetVersionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AddRequestLogToDatasetVersionRequest))]
@@ -947,12 +929,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.OtlpSpanLink>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.OneOf<global::PromptLayer.StructuredFilter, global::PromptLayer.StructuredFilterGroup>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateEvaluationPipelineRequestColumn>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataAndItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestMetadataOrItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestPromptTemplatesIncludeItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestPromptTemplatesExcludeItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestScore>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestStatu>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestFilterGroupFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>))]
