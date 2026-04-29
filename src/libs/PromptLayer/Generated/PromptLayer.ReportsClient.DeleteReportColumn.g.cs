@@ -120,7 +120,7 @@ namespace PromptLayer
                 PrepareDeleteReportColumnRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    reportColumnId: reportColumnId);
+                    reportColumnId: reportColumnId!);
 
                 return __httpRequest;
             }

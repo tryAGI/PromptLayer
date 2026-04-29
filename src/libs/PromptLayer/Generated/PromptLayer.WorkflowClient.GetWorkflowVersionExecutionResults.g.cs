@@ -135,7 +135,7 @@ namespace PromptLayer
                 PrepareGetWorkflowVersionExecutionResultsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowVersionExecutionId: workflowVersionExecutionId,
+                    workflowVersionExecutionId: workflowVersionExecutionId!,
                     returnAllOutputs: returnAllOutputs);
 
                 return __httpRequest;

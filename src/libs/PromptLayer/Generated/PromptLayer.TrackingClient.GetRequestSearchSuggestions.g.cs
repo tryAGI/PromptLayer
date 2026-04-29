@@ -151,7 +151,7 @@ namespace PromptLayer
                 PrepareGetRequestSearchSuggestionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    field: field,
+                    field: field!,
                     prefix: prefix,
                     metadataKey: metadataKey,
                     promptId: promptId,

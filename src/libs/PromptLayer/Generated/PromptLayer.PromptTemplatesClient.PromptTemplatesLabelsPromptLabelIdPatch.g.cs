@@ -138,7 +138,7 @@ namespace PromptLayer
                 PreparePromptTemplatesLabelsPromptLabelIdPatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptLabelId: promptLabelId,
+                    promptLabelId: promptLabelId!,
                     request: request);
 
                 return __httpRequest;

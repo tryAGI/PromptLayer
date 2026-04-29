@@ -172,7 +172,7 @@ namespace PromptLayer
                 PrepareListFolderEntitiesApiPublicV2FoldersEntitiesGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceId: workspaceId,
+                    workspaceId: workspaceId!,
                     folderId: folderId,
                     filterType: filterType,
                     searchQuery: searchQuery,

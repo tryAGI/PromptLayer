@@ -145,7 +145,7 @@ namespace PromptLayer
                 PrepareGetToolRegistryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier,
+                    identifier: identifier!,
                     label: label,
                     version: version);
 

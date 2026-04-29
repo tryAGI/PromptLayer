@@ -137,7 +137,7 @@ namespace PromptLayer
                 PrepareGetSnippetUsageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier,
+                    identifier: identifier!,
                     promptVersionNumber: promptVersionNumber);
 
                 return __httpRequest;

@@ -138,7 +138,7 @@ namespace PromptLayer
                 PrepareRunWorkflowRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowName: workflowName,
+                    workflowName: workflowName!,
                     request: request);
 
                 return __httpRequest;

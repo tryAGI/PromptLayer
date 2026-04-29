@@ -124,7 +124,7 @@ namespace PromptLayer
                 PrepareGetReportScoreRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    reportId: reportId);
+                    reportId: reportId!);
 
                 return __httpRequest;
             }

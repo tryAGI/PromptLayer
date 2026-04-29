@@ -138,7 +138,7 @@ namespace PromptLayer
                 PreparePatchWorkflowRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowIdOrName: workflowIdOrName,
+                    workflowIdOrName: workflowIdOrName!,
                     request: request);
 
                 return __httpRequest;
