@@ -138,8 +138,8 @@ namespace PromptLayer
                 PrepareResolveFolderIdApiPublicV2FoldersResolveIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceId: workspaceId,
-                    path: path);
+                    workspaceId: workspaceId!,
+                    path: path!);
 
                 return __httpRequest;
             }

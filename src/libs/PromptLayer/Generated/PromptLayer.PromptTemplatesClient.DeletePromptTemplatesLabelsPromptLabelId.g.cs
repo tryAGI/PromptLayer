@@ -124,7 +124,7 @@ namespace PromptLayer
                 PrepareDeletePromptTemplatesLabelsPromptLabelIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptLabelId: promptLabelId);
+                    promptLabelId: promptLabelId!);
 
                 return __httpRequest;
             }

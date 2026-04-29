@@ -144,7 +144,7 @@ namespace PromptLayer
                 PrepareGetSkillCollectionPublicRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier,
+                    identifier: identifier!,
                     format: format,
                     label: label,
                     version: version);

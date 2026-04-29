@@ -124,7 +124,7 @@ namespace PromptLayer
                 PrepareDeleteReportsByNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    reportName: reportName);
+                    reportName: reportName!);
 
                 return __httpRequest;
             }

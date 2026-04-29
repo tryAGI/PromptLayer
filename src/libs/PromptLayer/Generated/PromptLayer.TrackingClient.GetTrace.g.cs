@@ -124,7 +124,7 @@ namespace PromptLayer
                 PrepareGetTraceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    traceId: traceId);
+                    traceId: traceId!);
 
                 return __httpRequest;
             }

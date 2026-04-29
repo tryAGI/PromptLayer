@@ -139,7 +139,7 @@ namespace PromptLayer
                 PrepareEditReportColumnRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    reportColumnId: reportColumnId,
+                    reportColumnId: reportColumnId!,
                     request: request);
 
                 return __httpRequest;

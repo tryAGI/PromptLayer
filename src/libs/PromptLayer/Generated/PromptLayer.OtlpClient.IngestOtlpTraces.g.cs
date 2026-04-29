@@ -157,7 +157,7 @@ namespace PromptLayer
                 PrepareIngestOtlpTracesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
+                    contentType: contentType!,
                     contentEncoding: contentEncoding,
                     request: request);
 

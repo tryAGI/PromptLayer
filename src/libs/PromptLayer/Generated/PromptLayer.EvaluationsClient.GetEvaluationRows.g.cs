@@ -149,7 +149,7 @@ namespace PromptLayer
                 PrepareGetEvaluationRowsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evaluationId: evaluationId,
+                    evaluationId: evaluationId!,
                     workspaceId: workspaceId,
                     page: page,
                     perPage: perPage);

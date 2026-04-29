@@ -155,7 +155,7 @@ namespace PromptLayer
                 PrepareGetDatasetRowsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
+                    datasetId: datasetId!,
                     workspaceId: workspaceId,
                     page: page,
                     perPage: perPage,

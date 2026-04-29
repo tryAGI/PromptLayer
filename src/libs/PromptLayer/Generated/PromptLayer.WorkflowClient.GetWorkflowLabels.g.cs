@@ -124,7 +124,7 @@ namespace PromptLayer
                 PrepareGetWorkflowLabelsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowIdOrName: workflowIdOrName);
+                    workflowIdOrName: workflowIdOrName!);
 
                 return __httpRequest;
             }

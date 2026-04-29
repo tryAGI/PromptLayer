@@ -163,7 +163,7 @@ namespace PromptLayer
                 PrepareGetPromptTemplateRawRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier,
+                    identifier: identifier!,
                     version: version,
                     label: label,
                     resolveSnippets: resolveSnippets,
