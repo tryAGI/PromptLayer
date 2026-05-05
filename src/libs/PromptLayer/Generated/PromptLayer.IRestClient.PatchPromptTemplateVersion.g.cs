@@ -28,6 +28,23 @@ namespace PromptLayer
         /// <param name="identifier">
         /// The prompt template name or ID.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.CreatePromptTemplateResponse>> PatchPromptTemplateVersionAsResponseAsync(
+            string identifier,
+
+            global::PromptLayer.PatchPromptTemplateVersion request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Patch Prompt Template Version<br/>
+        /// Partially update a prompt template by creating a new version with merged changes. This endpoint fetches a base version (latest by default), applies your patches, validates the result, and creates a new version.
+        /// </summary>
+        /// <param name="identifier">
+        /// The prompt template name or ID.
+        /// </param>
         /// <param name="version">
         /// The base version number to patch from. Mutually exclusive with `label`. If neither is provided, the latest version is used.
         /// </param>

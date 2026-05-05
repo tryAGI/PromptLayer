@@ -21,6 +21,19 @@ namespace PromptLayer
         /// Create Evaluation Pipeline<br/>
         /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.CreateEvaluationPipelineResponse>> CreateEvaluationPipelineAsResponseAsync(
+
+            global::PromptLayer.CreateEvaluationPipelineRequest request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Evaluation Pipeline<br/>
+        /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
+        /// </summary>
         /// <param name="datasetGroupId">
         /// The ID of the dataset group containing the dataset versions to evaluate. The dataset group must be within a workspace accessible to the authenticated user.
         /// </param>

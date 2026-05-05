@@ -24,6 +24,21 @@ namespace PromptLayer
         /// Rename or retag an evaluation pipeline. Provide name, tags, or both. Use this instead of recreating a misnamed pipeline.
         /// </summary>
         /// <param name="reportId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.RenameReportResponse>> RenameReportAsResponseAsync(
+            int reportId,
+
+            global::PromptLayer.RenameReportRequest request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Rename Evaluation Pipeline<br/>
+        /// Rename or retag an evaluation pipeline. Provide name, tags, or both. Use this instead of recreating a misnamed pipeline.
+        /// </summary>
+        /// <param name="reportId"></param>
         /// <param name="name">
         /// New name for the evaluation pipeline.
         /// </param>

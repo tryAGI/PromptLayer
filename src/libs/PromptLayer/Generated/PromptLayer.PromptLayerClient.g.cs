@@ -42,7 +42,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -51,7 +51,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public EvaluationsClient Evaluations => new EvaluationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EvaluationsClient Evaluations => new EvaluationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -60,7 +60,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public FoldersClient Folders => new FoldersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FoldersClient Folders => new FoldersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -69,7 +69,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public GroupClient Group => new GroupClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GroupClient Group => new GroupClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -78,7 +78,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public MetadataClient Metadata => new MetadataClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetadataClient Metadata => new MetadataClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -87,7 +87,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public OtlpClient Otlp => new OtlpClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OtlpClient Otlp => new OtlpClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -96,7 +96,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public PromptClient Prompt => new PromptClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PromptClient Prompt => new PromptClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -105,7 +105,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public PromptTemplatesClient PromptTemplates => new PromptTemplatesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PromptTemplatesClient PromptTemplates => new PromptTemplatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -114,7 +114,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PromptsClient Prompts => new PromptsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -123,7 +123,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public ReportsClient Reports => new ReportsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ReportsClient Reports => new ReportsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -132,7 +132,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public RequestClient Request => new RequestClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RequestClient Request => new RequestClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -141,7 +141,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public RestClient Rest => new RestClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RestClient Rest => new RestClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -150,7 +150,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public ScoreClient Score => new ScoreClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ScoreClient Score => new ScoreClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -159,7 +159,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public SkillCollectionsClient SkillCollections => new SkillCollectionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SkillCollectionsClient SkillCollections => new SkillCollectionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -168,7 +168,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public SpansClient Spans => new SpansClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SpansClient Spans => new SpansClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -177,7 +177,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public ToolRegistryClient ToolRegistry => new ToolRegistryClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ToolRegistryClient ToolRegistry => new ToolRegistryClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -186,7 +186,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public TrackingClient Tracking => new TrackingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TrackingClient Tracking => new TrackingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -195,7 +195,7 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public WorkflowClient Workflow => new WorkflowClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WorkflowClient Workflow => new WorkflowClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -234,10 +234,10 @@ namespace PromptLayer
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public PromptLayerClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::PromptLayer.EndPointAuthorization>? authorizations = null,
-            global::PromptLayer.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::PromptLayer.EndPointAuthorization>? authorizations,
+            global::PromptLayer.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

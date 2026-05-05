@@ -82,6 +82,51 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetPromptTemplateRawAsResponseAsync(
+                identifier: identifier,
+                version: version,
+                label: label,
+                resolveSnippets: resolveSnippets,
+                includeLlmKwargs: includeLlmKwargs,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get Prompt Template Raw Data<br/>
+        /// Retrieve raw prompt template data without applying input variables. Designed for GitHub sync, local caching, and template inspection. By default, snippets are resolved (expanded). Use resolve_snippets=false to get the raw template with snippet references intact.
+        /// </summary>
+        /// <param name="identifier">
+        /// The identifier can be either the prompt name or the prompt id.
+        /// </param>
+        /// <param name="version">
+        /// Specific version number to retrieve. Mutually exclusive with `label`.
+        /// </param>
+        /// <param name="label">
+        /// Release label name to retrieve (e.g. 'prod', 'staging'). Mutually exclusive with `version`.
+        /// </param>
+        /// <param name="resolveSnippets">
+        /// When true (default), snippets are expanded in the returned prompt_template. When false, raw @@@snippet@@@ references are preserved.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="includeLlmKwargs">
+        /// When true, includes provider-specific llm_kwargs in the response. Requires model metadata to be set on the template.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetPromptTemplateRawResponse>> GetPromptTemplateRawAsResponseAsync(
+            string identifier,
+            int? version = default,
+            string? label = default,
+            bool? resolveSnippets = default,
+            bool? includeLlmKwargs = default,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetPromptTemplateRawArguments(
@@ -114,14 +159,15 @@ namespace PromptLayer
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::PromptLayer.PathBuilder(
                                 path: $"/prompt-templates/{identifier}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("version", version?.ToString())
                                 .AddOptionalParameter("label", label)
                                 .AddOptionalParameter("resolve_snippets", resolveSnippets?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("include_llm_kwargs", includeLlmKwargs?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("include_llm_kwargs", includeLlmKwargs?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -197,6 +243,8 @@ namespace PromptLayer
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -207,6 +255,11 @@ namespace PromptLayer
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::PromptLayer.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -224,6 +277,8 @@ namespace PromptLayer
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -233,8 +288,7 @@ namespace PromptLayer
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -243,6 +297,11 @@ namespace PromptLayer
                         __attempt < __maxAttempts &&
                         global::PromptLayer.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::PromptLayer.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -259,14 +318,15 @@ namespace PromptLayer
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -306,6 +366,8 @@ namespace PromptLayer
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -326,6 +388,8 @@ namespace PromptLayer
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Prompt template not found
@@ -426,9 +490,13 @@ namespace PromptLayer
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::PromptLayer.GetPromptTemplateRawResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::PromptLayer.GetPromptTemplateRawResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetPromptTemplateRawResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -456,9 +524,13 @@ namespace PromptLayer
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::PromptLayer.GetPromptTemplateRawResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::PromptLayer.GetPromptTemplateRawResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetPromptTemplateRawResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
