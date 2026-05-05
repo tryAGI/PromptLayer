@@ -22,6 +22,20 @@ namespace PromptLayer
         /// Run Workflow
         /// </summary>
         /// <param name="workflowName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.RunWorkflowResponse>> RunWorkflowAsResponseAsync(
+            string workflowName,
+
+            global::PromptLayer.RunWorkflow request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Run Workflow
+        /// </summary>
+        /// <param name="workflowName"></param>
         /// <param name="workflowLabelName">
         /// Specify a workflow label name to run a specific labeled version.
         /// </param>

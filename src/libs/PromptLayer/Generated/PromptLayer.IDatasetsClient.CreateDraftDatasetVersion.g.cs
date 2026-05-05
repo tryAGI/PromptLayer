@@ -19,6 +19,18 @@ namespace PromptLayer
         /// <summary>
         /// Create Draft Dataset Version
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.CreateDraftDatasetVersionResponse>> CreateDraftDatasetVersionAsResponseAsync(
+
+            global::PromptLayer.CreateDraftDatasetVersionRequest request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Draft Dataset Version
+        /// </summary>
         /// <param name="datasetGroupId">
         /// ID of the dataset group to create a draft version for
         /// </param>
