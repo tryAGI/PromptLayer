@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Microsoft.Extensions.AI;
 
 namespace PromptLayer;
@@ -31,7 +30,7 @@ public static class PromptLayerToolExtensions
                     name: name,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(new
+                return new
                 {
                     total = response.Total,
                     page = response.Page,
@@ -43,7 +42,7 @@ public static class PromptLayerToolExtensions
                         version = p.Version,
                         commitMessage = p.CommitMessage,
                     }),
-                });
+                };
             },
             name: "ListPromptTemplates",
             description: "Lists available prompt templates in PromptLayer. Optionally filter by name. Returns template IDs, names, versions, and commit messages.");
@@ -69,7 +68,7 @@ public static class PromptLayerToolExtensions
                     label: label,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(new
+                return new
                 {
                     id = response.Id,
                     name = response.PromptName,
@@ -78,7 +77,7 @@ public static class PromptLayerToolExtensions
                     commitMessage = response.CommitMessage,
                     createdAt = response.CreatedAt,
                     promptTemplate = response.PromptTemplate,
-                });
+                };
             },
             name: "GetPromptTemplate",
             description: "Retrieves a specific prompt template from PromptLayer by its name or ID. Optionally specify a version number or label. Returns the template content, metadata, and version info.");
@@ -107,13 +106,13 @@ public static class PromptLayerToolExtensions
                     perPage: perPage,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(new
+                return new
                 {
                     total = response.Total,
                     page = response.Page,
                     pages = response.Pages,
                     items = response.Items,
-                });
+                };
             },
             name: "SearchRequestLogs",
             description: "Searches tracked LLM request logs in PromptLayer. Optionally filter by a text query. Returns paginated request log entries including inputs, outputs, and metadata.");
@@ -141,7 +140,7 @@ public static class PromptLayerToolExtensions
                     perPage: perPage,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return JsonSerializer.Serialize(new
+                return new
                 {
                     total = response.Total,
                     page = response.Page,
@@ -153,7 +152,7 @@ public static class PromptLayerToolExtensions
                         latestVersion = w.LatestVersionNumber,
                         releaseLabels = w.ReleaseLabels,
                     }),
-                });
+                };
             },
             name: "ListWorkflows",
             description: "Lists available workflows in PromptLayer. Returns workflow IDs, names, latest version numbers, and release labels.");
