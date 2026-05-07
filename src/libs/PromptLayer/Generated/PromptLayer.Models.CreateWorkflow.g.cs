@@ -64,6 +64,12 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<string>? ReleaseLabels { get; set; }
 
         /// <summary>
+        /// Identifiers from other systems.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -99,6 +105,9 @@ namespace PromptLayer
         /// <param name="releaseLabels">
         /// Labels to attach to this version.
         /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,7 +120,8 @@ namespace PromptLayer
             string? commitMessage,
             global::System.Collections.Generic.Dictionary<string, string>? requiredInputVariables,
             global::System.Collections.Generic.IList<global::PromptLayer.Edge>? edges,
-            global::System.Collections.Generic.IList<string>? releaseLabels)
+            global::System.Collections.Generic.IList<string>? releaseLabels,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Name = name;
             this.WorkflowId = workflowId;
@@ -122,6 +132,7 @@ namespace PromptLayer
             this.RequiredInputVariables = requiredInputVariables;
             this.Edges = edges;
             this.ReleaseLabels = releaseLabels;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

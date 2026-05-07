@@ -27,7 +27,7 @@ namespace PromptLayer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::PromptLayer.GetPromptTemplateResponse> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::PromptLayer.ListPromptTemplateItem> Items { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace PromptLayer
         public ListPromptTemplates(
             bool hasNext,
             bool hasPrev,
-            global::System.Collections.Generic.IList<global::PromptLayer.GetPromptTemplateResponse> items,
+            global::System.Collections.Generic.IList<global::PromptLayer.ListPromptTemplateItem> items,
             int nextNum,
             int prevNum,
             int page,

@@ -31,9 +31,18 @@ namespace PromptLayer
         /// <summary>
         /// Publish Prompt Template
         /// </summary>
-        /// <param name="promptTemplate"></param>
-        /// <param name="promptVersion"></param>
-        /// <param name="releaseLabels"></param>
+        /// <param name="promptTemplate">
+        /// Template metadata, including prompt name, tags, folder, and workspace fields.
+        /// </param>
+        /// <param name="promptVersion">
+        /// Version content and configuration.
+        /// </param>
+        /// <param name="releaseLabels">
+        /// Release labels to create or move to the newly created version.
+        /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -41,6 +50,7 @@ namespace PromptLayer
             global::PromptLayer.BasePromptTemplate promptTemplate,
             global::PromptLayer.PromptVersion promptVersion,
             global::System.Collections.Generic.IList<string>? releaseLabels = default,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -57,6 +57,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public ExternalIdsClient ExternalIds { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FoldersClient Folders { get; }
 
         /// <summary>

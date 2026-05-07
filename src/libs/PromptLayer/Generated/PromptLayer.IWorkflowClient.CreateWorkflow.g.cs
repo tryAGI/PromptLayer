@@ -58,6 +58,9 @@ namespace PromptLayer
         /// <param name="releaseLabels">
         /// Labels to attach to this version.
         /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -71,6 +74,7 @@ namespace PromptLayer
             global::System.Collections.Generic.Dictionary<string, string>? requiredInputVariables = default,
             global::System.Collections.Generic.IList<global::PromptLayer.Edge>? edges = default,
             global::System.Collections.Generic.IList<string>? releaseLabels = default,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

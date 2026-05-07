@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// The ID of the folder to publish the prompt template into. If not provided, the prompt will be published to the root level.
+    /// The ID of the folder to publish the prompt template into. If omitted, the prompt is created at the workspace root. Use Resolve Folder ID by Path to look up an ID from a path, or Create Folder to make one.
     /// </summary>
     public sealed partial class BasePromptTemplateFolderId
     {

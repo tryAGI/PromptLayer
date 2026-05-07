@@ -5,7 +5,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    /// The prompt content, either chat or completion.
     /// </summary>
     public readonly partial struct PromptTemplate3 : global::System.IEquatable<PromptTemplate3>
     {
