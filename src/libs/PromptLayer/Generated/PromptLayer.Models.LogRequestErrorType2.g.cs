@@ -19,6 +19,10 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        ProviderPartialResponse,
+        /// <summary>
+        /// 
+        /// </summary>
         ProviderQuotaLimit,
         /// <summary>
         /// 
@@ -56,6 +60,7 @@ namespace PromptLayer
             {
                 LogRequestErrorType2.ProviderAuthError => "PROVIDER_AUTH_ERROR",
                 LogRequestErrorType2.ProviderError => "PROVIDER_ERROR",
+                LogRequestErrorType2.ProviderPartialResponse => "PROVIDER_PARTIAL_RESPONSE",
                 LogRequestErrorType2.ProviderQuotaLimit => "PROVIDER_QUOTA_LIMIT",
                 LogRequestErrorType2.ProviderRateLimit => "PROVIDER_RATE_LIMIT",
                 LogRequestErrorType2.ProviderTimeout => "PROVIDER_TIMEOUT",
@@ -74,6 +79,7 @@ namespace PromptLayer
             {
                 "PROVIDER_AUTH_ERROR" => LogRequestErrorType2.ProviderAuthError,
                 "PROVIDER_ERROR" => LogRequestErrorType2.ProviderError,
+                "PROVIDER_PARTIAL_RESPONSE" => LogRequestErrorType2.ProviderPartialResponse,
                 "PROVIDER_QUOTA_LIMIT" => LogRequestErrorType2.ProviderQuotaLimit,
                 "PROVIDER_RATE_LIMIT" => LogRequestErrorType2.ProviderRateLimit,
                 "PROVIDER_TIMEOUT" => LogRequestErrorType2.ProviderTimeout,

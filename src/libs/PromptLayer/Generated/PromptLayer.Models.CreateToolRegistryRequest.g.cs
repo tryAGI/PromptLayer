@@ -35,6 +35,12 @@ namespace PromptLayer
         public string? CommitMessage { get; set; }
 
         /// <summary>
+        /// Identifiers from other systems.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +61,9 @@ namespace PromptLayer
         /// <param name="commitMessage">
         /// Commit message for the initial version
         /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +71,14 @@ namespace PromptLayer
             string name,
             object toolDefinition,
             int? folderId,
-            string? commitMessage)
+            string? commitMessage,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ToolDefinition = toolDefinition ?? throw new global::System.ArgumentNullException(nameof(toolDefinition));
             this.FolderId = folderId;
             this.CommitMessage = commitMessage;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

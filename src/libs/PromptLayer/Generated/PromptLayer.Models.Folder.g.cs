@@ -51,6 +51,12 @@ namespace PromptLayer
         public int? ParentId { get; set; }
 
         /// <summary>
+        /// External ID mappings for the folder.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -80,6 +86,9 @@ namespace PromptLayer
         /// <param name="parentId">
         /// ID of the parent folder. Null for root-level folders.
         /// </param>
+        /// <param name="externalIds">
+        /// External ID mappings for the folder.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,7 +99,8 @@ namespace PromptLayer
             global::System.DateTime? updatedAt,
             global::System.Collections.Generic.IList<object>? path,
             int? workspaceId,
-            int? parentId)
+            int? parentId,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.Name = name;
@@ -99,6 +109,7 @@ namespace PromptLayer
             this.Path = path;
             this.WorkspaceId = workspaceId;
             this.ParentId = parentId;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

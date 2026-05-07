@@ -68,6 +68,13 @@ namespace PromptLayer
         public global::System.Collections.Generic.Dictionary<string, string>? RequiredInputVariables { get; set; }
 
         /// <summary>
+        /// External ID mappings for the workflow.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,6 +98,9 @@ namespace PromptLayer
         /// <param name="versionNumber">
         /// The version number.
         /// </param>
+        /// <param name="externalIds">
+        /// External ID mappings for the workflow.
+        /// </param>
         /// <param name="baseVersion">
         /// The base version this was created from (PATCH only).
         /// </param>
@@ -112,6 +122,7 @@ namespace PromptLayer
             string workflowName,
             int workflowVersionId,
             int versionNumber,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> externalIds,
             int? baseVersion,
             global::System.Collections.Generic.IList<string>? releaseLabels,
             global::System.Collections.Generic.IList<global::PromptLayer.CreateWorkflowResponseNode>? nodes,
@@ -126,6 +137,7 @@ namespace PromptLayer
             this.ReleaseLabels = releaseLabels;
             this.Nodes = nodes;
             this.RequiredInputVariables = requiredInputVariables;
+            this.ExternalIds = externalIds ?? throw new global::System.ArgumentNullException(nameof(externalIds));
         }
 
         /// <summary>

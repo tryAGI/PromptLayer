@@ -1,113 +1,221 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace PromptLayer
 {
     /// <summary>
-    /// Search and filter request logs with structured filters, free-text search, sorting, and pagination.
+    /// Search and filter request logs with structured filters, free-text search, sorting, and pagination. Extends `RequestLogQuery` with pagination and `include_prompt_name`.
     /// </summary>
-    public sealed partial class SearchRequestLogsRequest
+    public readonly partial struct SearchRequestLogsRequest : global::System.IEquatable<SearchRequestLogsRequest>
     {
         /// <summary>
-        /// Nested filter group with AND/OR logic. Use this for complex queries.
+        /// Canonical request-log query payload — the filter / search / sort fields shared by `POST /api/public/v2/requests/search` (which also accepts pagination + `include_prompt_name`) and `POST /api/public/v2/requests/analytics`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filter_group")]
-        public global::PromptLayer.StructuredFilterGroup? FilterGroup { get; set; }
-
-        /// <summary>
-        /// Free-text search query. Searches across the prompt input and LLM output text using fuzzy prefix matching.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("q")]
-        public string? Q { get; set; }
-
-        /// <summary>
-        /// Page number for pagination. Defaults to 1.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("page")]
-        public int? Page { get; set; }
-
-        /// <summary>
-        /// Number of results per page. Defaults to 10, maximum 25.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("per_page")]
-        public int? PerPage { get; set; }
-
-        /// <summary>
-        /// Field to sort results by.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort_by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.SearchRequestLogsRequestSortByJsonConverter))]
-        public global::PromptLayer.SearchRequestLogsRequestSortBy? SortBy { get; set; }
-
-        /// <summary>
-        /// Sort direction. Must be provided together with sort_by.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sort_order")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.SearchRequestLogsRequestSortOrderJsonConverter))]
-        public global::PromptLayer.SearchRequestLogsRequestSortOrder? SortOrder { get; set; }
-
-        /// <summary>
-        /// When true, includes the prompt template name in each result item. Defaults to false.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("include_prompt_name")]
-        public bool? IncludePromptName { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchRequestLogsRequest" /> class.
-        /// </summary>
-        /// <param name="filterGroup">
-        /// Nested filter group with AND/OR logic. Use this for complex queries.
-        /// </param>
-        /// <param name="q">
-        /// Free-text search query. Searches across the prompt input and LLM output text using fuzzy prefix matching.
-        /// </param>
-        /// <param name="page">
-        /// Page number for pagination. Defaults to 1.
-        /// </param>
-        /// <param name="perPage">
-        /// Number of results per page. Defaults to 10, maximum 25.
-        /// </param>
-        /// <param name="sortBy">
-        /// Field to sort results by.
-        /// </param>
-        /// <param name="sortOrder">
-        /// Sort direction. Must be provided together with sort_by.
-        /// </param>
-        /// <param name="includePromptName">
-        /// When true, includes the prompt template name in each result item. Defaults to false.
-        /// </param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::PromptLayer.RequestLogQuery? RequestLogQuery { get; init; }
+#else
+        public global::PromptLayer.RequestLogQuery? RequestLogQuery { get; }
 #endif
-        public SearchRequestLogsRequest(
-            global::PromptLayer.StructuredFilterGroup? filterGroup,
-            string? q,
-            int? page,
-            int? perPage,
-            global::PromptLayer.SearchRequestLogsRequestSortBy? sortBy,
-            global::PromptLayer.SearchRequestLogsRequestSortOrder? sortOrder,
-            bool? includePromptName)
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RequestLogQuery))]
+#endif
+        public bool IsRequestLogQuery => RequestLogQuery != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::PromptLayer.SearchRequestLogsRequestVariant2? SearchRequestLogsRequestVariant2 { get; init; }
+#else
+        public global::PromptLayer.SearchRequestLogsRequestVariant2? SearchRequestLogsRequestVariant2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchRequestLogsRequestVariant2))]
+#endif
+        public bool IsSearchRequestLogsRequestVariant2 => SearchRequestLogsRequestVariant2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator SearchRequestLogsRequest(global::PromptLayer.RequestLogQuery value) => new SearchRequestLogsRequest((global::PromptLayer.RequestLogQuery?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::PromptLayer.RequestLogQuery?(SearchRequestLogsRequest @this) => @this.RequestLogQuery;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SearchRequestLogsRequest(global::PromptLayer.RequestLogQuery? value)
         {
-            this.FilterGroup = filterGroup;
-            this.Q = q;
-            this.Page = page;
-            this.PerPage = perPage;
-            this.SortBy = sortBy;
-            this.SortOrder = sortOrder;
-            this.IncludePromptName = includePromptName;
+            RequestLogQuery = value;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SearchRequestLogsRequest" /> class.
+        /// 
         /// </summary>
-        public SearchRequestLogsRequest()
+        public static implicit operator SearchRequestLogsRequest(global::PromptLayer.SearchRequestLogsRequestVariant2 value) => new SearchRequestLogsRequest((global::PromptLayer.SearchRequestLogsRequestVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::PromptLayer.SearchRequestLogsRequestVariant2?(SearchRequestLogsRequest @this) => @this.SearchRequestLogsRequestVariant2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SearchRequestLogsRequest(global::PromptLayer.SearchRequestLogsRequestVariant2? value)
         {
+            SearchRequestLogsRequestVariant2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SearchRequestLogsRequest(
+            global::PromptLayer.RequestLogQuery? requestLogQuery,
+            global::PromptLayer.SearchRequestLogsRequestVariant2? searchRequestLogsRequestVariant2
+            )
+        {
+            RequestLogQuery = requestLogQuery;
+            SearchRequestLogsRequestVariant2 = searchRequestLogsRequestVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            SearchRequestLogsRequestVariant2 as object ??
+            RequestLogQuery as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            RequestLogQuery?.ToString() ??
+            SearchRequestLogsRequestVariant2?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsRequestLogQuery && IsSearchRequestLogsRequestVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::PromptLayer.RequestLogQuery?, TResult>? requestLogQuery = null,
+            global::System.Func<global::PromptLayer.SearchRequestLogsRequestVariant2?, TResult>? searchRequestLogsRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRequestLogQuery && requestLogQuery != null)
+            {
+                return requestLogQuery(RequestLogQuery!);
+            }
+            else if (IsSearchRequestLogsRequestVariant2 && searchRequestLogsRequestVariant2 != null)
+            {
+                return searchRequestLogsRequestVariant2(SearchRequestLogsRequestVariant2!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::PromptLayer.RequestLogQuery?>? requestLogQuery = null,
+            global::System.Action<global::PromptLayer.SearchRequestLogsRequestVariant2?>? searchRequestLogsRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRequestLogQuery)
+            {
+                requestLogQuery?.Invoke(RequestLogQuery!);
+            }
+            else if (IsSearchRequestLogsRequestVariant2)
+            {
+                searchRequestLogsRequestVariant2?.Invoke(SearchRequestLogsRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                RequestLogQuery,
+                typeof(global::PromptLayer.RequestLogQuery),
+                SearchRequestLogsRequestVariant2,
+                typeof(global::PromptLayer.SearchRequestLogsRequestVariant2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(SearchRequestLogsRequest other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.RequestLogQuery?>.Default.Equals(RequestLogQuery, other.RequestLogQuery) &&
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.SearchRequestLogsRequestVariant2?>.Default.Equals(SearchRequestLogsRequestVariant2, other.SearchRequestLogsRequestVariant2) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(SearchRequestLogsRequest obj1, SearchRequestLogsRequest obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<SearchRequestLogsRequest>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(SearchRequestLogsRequest obj1, SearchRequestLogsRequest obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is SearchRequestLogsRequest o && Equals(o);
         }
     }
 }

@@ -40,6 +40,9 @@ namespace PromptLayer
         /// <param name="folderId">
         /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
         /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -47,6 +50,7 @@ namespace PromptLayer
             string name,
             int? workspaceId = default,
             int? folderId = default,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

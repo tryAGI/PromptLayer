@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Example: {"success":true,"report_id":456,"report_columns":[{"id":789,"report_id":456,"column_type":"LLM_ASSERTION","name":"Language Check","position":2,"is_part_of_score":true,"configuration":{"source":"response","prompt":"Is the response written in {language}?","variable_mappings":{"language":"target_language"}}}]}
+    /// Example: {"success":true,"report_id":456,"report_columns":[{"id":789,"report_id":456,"column_type":"LLM_ASSERTION","name":"Language Check","position":2,"is_part_of_score":true,"configuration":{"source":"response","prompt":"Is the response written in {language}?","variable_mappings":{"language":"target_language"}}}],"external_ids":[]}
     /// </summary>
     public sealed partial class CreateEvaluationPipelineResponse
     {
@@ -33,6 +33,13 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::PromptLayer.CreateEvaluationPipelineResponseReportColumn>? ReportColumns { get; set; }
 
         /// <summary>
+        /// External ID mappings for the evaluation pipeline.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +56,9 @@ namespace PromptLayer
         /// The unique ID of the created evaluation pipeline. Use this ID to run evaluations.<br/>
         /// Example: 456
         /// </param>
+        /// <param name="externalIds">
+        /// External ID mappings for the evaluation pipeline.
+        /// </param>
         /// <param name="reportColumns">
         /// List of created columns (only present if columns were provided in the request)
         /// </param>
@@ -58,11 +68,13 @@ namespace PromptLayer
         public CreateEvaluationPipelineResponse(
             bool success,
             int reportId,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> externalIds,
             global::System.Collections.Generic.IList<global::PromptLayer.CreateEvaluationPipelineResponseReportColumn>? reportColumns)
         {
             this.Success = success;
             this.ReportId = reportId;
             this.ReportColumns = reportColumns;
+            this.ExternalIds = externalIds ?? throw new global::System.ArgumentNullException(nameof(externalIds));
         }
 
         /// <summary>

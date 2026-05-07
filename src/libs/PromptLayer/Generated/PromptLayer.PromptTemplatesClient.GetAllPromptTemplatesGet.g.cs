@@ -32,7 +32,9 @@ namespace PromptLayer
             ref string? label,
             ref string? name,
             ref global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags,
-            ref global::PromptLayer.GetAllPromptTemplatesGetStatus? status);
+            ref global::PromptLayer.GetAllPromptTemplatesGetStatus? status,
+            ref string? externalSource,
+            ref string? externalId);
         partial void PrepareGetAllPromptTemplatesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -41,7 +43,9 @@ namespace PromptLayer
             string? label,
             string? name,
             global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags,
-            global::PromptLayer.GetAllPromptTemplatesGetStatus? status);
+            global::PromptLayer.GetAllPromptTemplatesGetStatus? status,
+            string? externalSource,
+            string? externalId);
         partial void ProcessGetAllPromptTemplatesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,6 +66,8 @@ namespace PromptLayer
         /// <param name="status">
         /// Default Value: active
         /// </param>
+        /// <param name="externalSource"></param>
+        /// <param name="externalId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -72,6 +78,8 @@ namespace PromptLayer
             string? name = default,
             global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
             global::PromptLayer.GetAllPromptTemplatesGetStatus? status = default,
+            string? externalSource = default,
+            string? externalId = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -82,6 +90,8 @@ namespace PromptLayer
                 name: name,
                 tags: tags,
                 status: status,
+                externalSource: externalSource,
+                externalId: externalId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -99,6 +109,8 @@ namespace PromptLayer
         /// <param name="status">
         /// Default Value: active
         /// </param>
+        /// <param name="externalSource"></param>
+        /// <param name="externalId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -109,6 +121,8 @@ namespace PromptLayer
             string? name = default,
             global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
             global::PromptLayer.GetAllPromptTemplatesGetStatus? status = default,
+            string? externalSource = default,
+            string? externalId = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -121,7 +135,9 @@ namespace PromptLayer
                 label: ref label,
                 name: ref name,
                 tags: ref tags,
-                status: ref status);
+                status: ref status,
+                externalSource: ref externalSource,
+                externalId: ref externalId);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
@@ -156,6 +172,8 @@ namespace PromptLayer
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("tags", tags?.ToString())
                                 .AddOptionalParameter("status", status?.ToValueString())
+                                .AddOptionalParameter("external_source", externalSource)
+                                .AddOptionalParameter("external_id", externalId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -202,7 +220,9 @@ namespace PromptLayer
                     label: label,
                     name: name,
                     tags: tags,
-                    status: status);
+                    status: status,
+                    externalSource: externalSource,
+                    externalId: externalId);
 
                 return __httpRequest;
             }

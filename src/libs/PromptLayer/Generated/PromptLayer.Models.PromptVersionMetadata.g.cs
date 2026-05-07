@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    /// Metadata to attach to the prompt version.
     /// </summary>
     public sealed partial class PromptVersionMetadata
     {

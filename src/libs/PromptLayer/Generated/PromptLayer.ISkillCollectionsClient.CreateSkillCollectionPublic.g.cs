@@ -38,6 +38,9 @@ namespace PromptLayer
         /// Default Value: []
         /// </param>
         /// <param name="commitMessage"></param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -47,6 +50,7 @@ namespace PromptLayer
             string? provider = default,
             global::System.Collections.Generic.IList<global::PromptLayer.InitialFileUpdate>? files = default,
             string? commitMessage = default,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

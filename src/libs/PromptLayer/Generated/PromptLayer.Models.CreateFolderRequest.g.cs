@@ -22,6 +22,18 @@ namespace PromptLayer
         public int? ParentId { get; set; }
 
         /// <summary>
+        /// Optional workspace ID. If not provided, uses the workspace associated with your API key.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public int? WorkspaceId { get; set; }
+
+        /// <summary>
+        /// Identifiers from other systems.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +48,25 @@ namespace PromptLayer
         /// <param name="parentId">
         /// The ID of the parent folder. If null or not provided, the folder will be created at the root level of the workspace.
         /// </param>
+        /// <param name="workspaceId">
+        /// Optional workspace ID. If not provided, uses the workspace associated with your API key.
+        /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateFolderRequest(
             string name,
-            int? parentId)
+            int? parentId,
+            int? workspaceId,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ParentId = parentId;
+            this.WorkspaceId = workspaceId;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

@@ -414,6 +414,16 @@
               }
             }
           },
+          "409": {
+            "description": "External ID conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -929,6 +939,13 @@
                     "required": [
                       "code"
                     ]
+                  },
+                  "external_ids": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ExternalId"
+                    },
+                    "description": "Identifiers from other systems."
                   }
                 },
                 "required": [
@@ -1003,11 +1020,19 @@
                           }
                         }
                       }
+                    },
+                    "external_ids": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ExternalId"
+                      },
+                      "description": "External ID mappings for the evaluation pipeline."
                     }
                   },
                   "required": [
                     "success",
-                    "report_id"
+                    "report_id",
+                    "external_ids"
                   ],
                   "example": {
                     "success": true,
@@ -1028,7 +1053,8 @@
                           }
                         }
                       }
-                    ]
+                    ],
+                    "external_ids": []
                   }
                 }
               }
@@ -1084,6 +1110,16 @@
           },
           "401": {
             "description": "Unauthorized - Invalid or missing authentication"
+          },
+          "409": {
+            "description": "External ID conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3064,6 +3100,13 @@
                     "minimum": 1,
                     "nullable": true,
                     "description": "Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root."
+                  },
+                  "external_ids": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ExternalId"
+                    },
+                    "description": "Identifiers from other systems."
                   }
                 },
                 "required": [
@@ -3092,13 +3135,21 @@
                     },
                     "dataset": {
                       "$ref": "#/components/schemas/Dataset"
+                    },
+                    "external_ids": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ExternalId"
+                      },
+                      "description": "External ID mappings for the dataset group."
                     }
                   },
                   "required": [
                     "success",
                     "message",
                     "dataset_group",
-                    "dataset"
+                    "dataset",
+                    "external_ids"
                   ]
                 }
               }
@@ -3110,6 +3161,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "External ID conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
                 }
               }
             }
@@ -3762,6 +3823,24 @@
               "title": "Status"
             },
             "description": "Filter prompt templates by status: 'active' (default) returns only active templates, 'deleted' returns only deleted/archived templates, 'all' returns both"
+          },
+          {
+            "in": "query",
+            "name": "external_source",
+            "schema": {
+              "type": "string",
+              "title": "External Source"
+            },
+            "description": "External ID source to filter by. Must be provided with external_id."
+          },
+          {
+            "in": "query",
+            "name": "external_id",
+            "schema": {
+              "type": "string",
+              "title": "External Id"
+            },
+            "description": "External ID value to filter by. Must be provided with external_source."
           }
         ],
         "responses": {
@@ -4028,6 +4107,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "External ID conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
                 }
               }
             }
@@ -4770,6 +4859,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "External ID conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -5389,6 +5488,69 @@
         }
       }
     },
+    "/api/public/v2/requests/analytics": {
+      "post": {
+        "summary": "Request Analytics",
+        "operationId": "getRequestAnalytics",
+        "tags": [
+          "tracking"
+        ],
+        "description": "Aggregate analytics across request logs — totals, time-series breakdowns, latency percentiles, and model/prompt/provider/tag breakdowns. Body is the same `RequestLogQuery` shape as `POST /api/public/v2/requests/search` but returns aggregated values instead of paginated rows.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestLogQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Aggregated analytics for the matching request logs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestAnalyticsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid filter or unsupported analytics filter.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid workspace.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/public/v2/skill-collections": {
       "get": {
         "summary": "List Skill Collections",
@@ -5499,6 +5661,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SkillCollectionErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "External ID conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
                 }
               }
             }
@@ -5999,6 +6171,13 @@
                     "type": "string",
                     "description": "Commit message for the initial version",
                     "nullable": true
+                  },
+                  "external_ids": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ExternalId"
+                    },
+                    "description": "Identifiers from other systems."
                   }
                 }
               }
@@ -6021,8 +6200,28 @@
                     },
                     "version": {
                       "type": "object"
+                    },
+                    "external_ids": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ExternalId"
+                      },
+                      "description": "External ID mappings for the tool."
                     }
-                  }
+                  },
+                  "required": [
+                    "external_ids"
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "External ID conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
                 }
               }
             }
@@ -6107,6 +6306,1931 @@
                       }
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prompt-templates/by-external-id/{source}/{external_id}": {
+      "put": {
+        "tags": [
+          "external-ids",
+          "prompt-templates"
+        ],
+        "summary": "Upsert Prompt Template by External ID",
+        "description": "Publish a prompt template by external ID. Existing mappings create a new version on the mapped prompt template. Missing mappings create or update a prompt template and attach the mapping.",
+        "operationId": "upsert_prompt_template_by_external_id",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePromptTemplate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Prompt template updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePromptTemplateResponse"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Prompt template created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePromptTemplateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prompt-templates/{prompt_template_id}/external-ids": {
+      "post": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Attach Prompt Template External ID",
+        "operationId": "attach_prompt_template_id_external_id",
+        "parameters": [
+          {
+            "name": "prompt_template_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "prompt_template_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachExternalIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "External ID attached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdAttachResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "List Prompt Template External IDs",
+        "operationId": "list_prompt_template_id_external_ids",
+        "parameters": [
+          {
+            "name": "prompt_template_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "prompt_template_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External IDs for the entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prompt-templates/{prompt_template_id}/external-ids/{source}/{external_id}": {
+      "delete": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Delete Prompt Template External ID",
+        "operationId": "delete_prompt_template_id_external_id",
+        "parameters": [
+          {
+            "name": "prompt_template_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "prompt_template_id"
+            }
+          },
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External ID detached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/folders/{folder_id}/external-ids": {
+      "post": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Attach Folder External ID",
+        "operationId": "attach_folder_id_external_id",
+        "parameters": [
+          {
+            "name": "folder_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "folder_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachExternalIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "External ID attached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdAttachResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "List Folder External IDs",
+        "operationId": "list_folder_id_external_ids",
+        "parameters": [
+          {
+            "name": "folder_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "folder_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External IDs for the entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/folders/{folder_id}/external-ids/{source}/{external_id}": {
+      "delete": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Delete Folder External ID",
+        "operationId": "delete_folder_id_external_id",
+        "parameters": [
+          {
+            "name": "folder_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "folder_id"
+            }
+          },
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External ID detached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workflows/{workflow_id}/external-ids": {
+      "post": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Attach Workflow External ID",
+        "operationId": "attach_workflow_id_external_id",
+        "parameters": [
+          {
+            "name": "workflow_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "workflow_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachExternalIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "External ID attached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdAttachResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "List Workflow External IDs",
+        "operationId": "list_workflow_id_external_ids",
+        "parameters": [
+          {
+            "name": "workflow_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "workflow_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External IDs for the entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workflows/{workflow_id}/external-ids/{source}/{external_id}": {
+      "delete": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Delete Workflow External ID",
+        "operationId": "delete_workflow_id_external_id",
+        "parameters": [
+          {
+            "name": "workflow_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "workflow_id"
+            }
+          },
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External ID detached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/dataset-groups/{dataset_group_id}/external-ids": {
+      "post": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Attach Dataset Group External ID",
+        "operationId": "attach_dataset_group_id_external_id",
+        "parameters": [
+          {
+            "name": "dataset_group_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "dataset_group_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachExternalIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "External ID attached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdAttachResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "List Dataset Group External IDs",
+        "operationId": "list_dataset_group_id_external_ids",
+        "parameters": [
+          {
+            "name": "dataset_group_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "dataset_group_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External IDs for the entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/dataset-groups/{dataset_group_id}/external-ids/{source}/{external_id}": {
+      "delete": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Delete Dataset Group External ID",
+        "operationId": "delete_dataset_group_id_external_id",
+        "parameters": [
+          {
+            "name": "dataset_group_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "dataset_group_id"
+            }
+          },
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External ID detached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/{report_id}/external-ids": {
+      "post": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Attach Report External ID",
+        "operationId": "attach_report_id_external_id",
+        "parameters": [
+          {
+            "name": "report_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "report_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachExternalIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "External ID attached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdAttachResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "List Report External IDs",
+        "operationId": "list_report_id_external_ids",
+        "parameters": [
+          {
+            "name": "report_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "report_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External IDs for the entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/{report_id}/external-ids/{source}/{external_id}": {
+      "delete": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Delete Report External ID",
+        "operationId": "delete_report_id_external_id",
+        "parameters": [
+          {
+            "name": "report_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "report_id"
+            }
+          },
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External ID detached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/tool-registry/{tool_id}/external-ids": {
+      "post": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Attach Tool Registry External ID",
+        "operationId": "attach_tool_id_external_id",
+        "parameters": [
+          {
+            "name": "tool_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "tool_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachExternalIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "External ID attached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdAttachResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "List Tool Registry External IDs",
+        "operationId": "list_tool_id_external_ids",
+        "parameters": [
+          {
+            "name": "tool_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "tool_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External IDs for the entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/tool-registry/{tool_id}/external-ids/{source}/{external_id}": {
+      "delete": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Delete Tool Registry External ID",
+        "operationId": "delete_tool_id_external_id",
+        "parameters": [
+          {
+            "name": "tool_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "tool_id"
+            }
+          },
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External ID detached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/skill-collections/{skill_collection_id}/external-ids": {
+      "post": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Attach Skill Collection External ID",
+        "operationId": "attach_skill_collection_id_external_id",
+        "parameters": [
+          {
+            "name": "skill_collection_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "skill_collection_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachExternalIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "External ID attached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdAttachResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "List Skill Collection External IDs",
+        "operationId": "list_skill_collection_id_external_ids",
+        "parameters": [
+          {
+            "name": "skill_collection_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "skill_collection_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External IDs for the entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public/v2/skill-collections/{skill_collection_id}/external-ids/{source}/{external_id}": {
+      "delete": {
+        "tags": [
+          "external-ids"
+        ],
+        "summary": "Delete Skill Collection External ID",
+        "operationId": "delete_skill_collection_id_external_id",
+        "parameters": [
+          {
+            "name": "skill_collection_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "skill_collection_id"
+            }
+          },
+          {
+            "name": "source",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "source",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "description": "External ID source."
+          },
+          {
+            "name": "external_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "external_id",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "description": "External ID value. URL-encode any reserved path characters."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External ID detached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalIdErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -6605,6 +8729,13 @@
             },
             "nullable": true,
             "description": "Labels to attach to this version."
+          },
+          "external_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "description": "Identifiers from other systems."
           }
         },
         "required": [
@@ -6759,6 +8890,13 @@
               "type": "string"
             },
             "description": "Required input variables for the workflow."
+          },
+          "external_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "description": "External ID mappings for the workflow."
           }
         },
         "required": [
@@ -6766,7 +8904,8 @@
           "workflow_id",
           "workflow_name",
           "workflow_version_id",
-          "version_number"
+          "version_number",
+          "external_ids"
         ],
         "description": "Response after creating or patching a workflow."
       },
@@ -6984,6 +9123,13 @@
           "commit_message": {
             "type": "string",
             "nullable": true
+          },
+          "external_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "description": "Identifiers from other systems."
           }
         }
       },
@@ -7137,7 +9283,8 @@
         "type": "object",
         "required": [
           "success",
-          "skill_collection"
+          "skill_collection",
+          "external_ids"
         ],
         "properties": {
           "success": {
@@ -7148,6 +9295,13 @@
           },
           "skill_collection": {
             "$ref": "#/components/schemas/SkillCollection"
+          },
+          "external_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "description": "External ID mappings for the skill collection."
           }
         }
       },
@@ -10030,7 +12184,8 @@
             "type": "string",
             "maxLength": 512,
             "minLength": 1,
-            "title": "Prompt Name"
+            "title": "Prompt Name",
+            "description": "The unique prompt name within the workspace. 1-512 characters."
           },
           "tags": {
             "items": {
@@ -10038,7 +12193,8 @@
             },
             "type": "array",
             "title": "Tags",
-            "default": []
+            "default": [],
+            "description": "Tags to attach to the prompt registry entry."
           },
           "folder_id": {
             "anyOf": [
@@ -10051,7 +12207,19 @@
               }
             ],
             "title": "Folder Id",
-            "description": "The ID of the folder to publish the prompt template into. If not provided, the prompt will be published to the root level."
+            "description": "The ID of the folder to publish the prompt template into. If omitted, the prompt is created at the workspace root. Use Resolve Folder ID by Path to look up an ID from a path, or Create Folder to make one."
+          },
+          "workspace_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workspace Id",
+            "description": "Optional workspace override; defaults to the workspace associated with the API key."
           }
         },
         "type": "object",
@@ -10078,7 +12246,8 @@
                 "chat": "#/components/schemas/ChatPrompt",
                 "completion": "#/components/schemas/CompletionPrompt"
               }
-            }
+            },
+            "description": "The prompt content, either chat or completion."
           },
           "commit_message": {
             "anyOf": [
@@ -10090,7 +12259,8 @@
                 "type": "null"
               }
             ],
-            "title": "Commit Message"
+            "title": "Commit Message",
+            "description": "Message describing the changes in this version. Maximum 72 characters."
           },
           "metadata": {
             "anyOf": [
@@ -10100,7 +12270,8 @@
               {
                 "type": "null"
               }
-            ]
+            ],
+            "description": "Metadata to attach to the prompt version."
           }
         },
         "type": "object",
@@ -10298,10 +12469,12 @@
       "CreatePromptTemplate": {
         "properties": {
           "prompt_template": {
-            "$ref": "#/components/schemas/BasePromptTemplate"
+            "$ref": "#/components/schemas/BasePromptTemplate",
+            "description": "Template metadata, including prompt name, tags, folder, and workspace fields."
           },
           "prompt_version": {
-            "$ref": "#/components/schemas/PromptVersion"
+            "$ref": "#/components/schemas/PromptVersion",
+            "description": "Version content and configuration."
           },
           "release_labels": {
             "type": [
@@ -10311,7 +12484,19 @@
             "items": {
               "type": "string"
             },
-            "title": "Release Labels"
+            "title": "Release Labels",
+            "description": "Release labels to create or move to the newly created version."
+          },
+          "external_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "title": "External Ids",
+            "description": "Identifiers from other systems."
           }
         },
         "type": "object",
@@ -10398,6 +12583,14 @@
               }
             ],
             "title": "Commit Message"
+          },
+          "external_ids": {
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "type": "array",
+            "title": "External Ids",
+            "description": "External ID mappings attached to the prompt template."
           }
         },
         "type": "object",
@@ -10407,7 +12600,8 @@
           "prompt_version_id",
           "version_number",
           "tags",
-          "prompt_template"
+          "prompt_template",
+          "external_ids"
         ],
         "title": "CreatePromptTemplateResponse"
       },
@@ -10660,7 +12854,7 @@
           },
           "items": {
             "items": {
-              "$ref": "#/components/schemas/GetPromptTemplateResponse"
+              "$ref": "#/components/schemas/ListPromptTemplateItem"
             },
             "type": "array",
             "title": "Items"
@@ -11028,6 +13222,7 @@
                   "PROVIDER_TIMEOUT",
                   "PROVIDER_QUOTA_LIMIT",
                   "PROVIDER_RATE_LIMIT",
+                  "PROVIDER_PARTIAL_RESPONSE",
                   "PROVIDER_AUTH_ERROR",
                   "PROVIDER_ERROR",
                   "TEMPLATE_RENDER_ERROR",
@@ -11041,7 +13236,7 @@
             ],
             "default": null,
             "title": "Error Type",
-            "description": "Categorized error type.\n\n| Value | Description | Allowed Statuses |\n|-------|-------------|------------------|\n| `PROVIDER_RATE_LIMIT` | Rate limit hit on provider API | WARNING, ERROR |\n| `PROVIDER_QUOTA_LIMIT` | Account quota or spending limit exceeded | WARNING, ERROR |\n| `VARIABLE_MISSING_OR_EMPTY` | Required template variable was missing or empty | WARNING |\n| `PROVIDER_TIMEOUT` | Request timed out | ERROR |\n| `PROVIDER_AUTH_ERROR` | Authentication failed with provider | ERROR |\n| `PROVIDER_ERROR` | General provider-side error | ERROR |\n| `TEMPLATE_RENDER_ERROR` | Failed to render prompt template | ERROR |\n| `UNKNOWN_ERROR` | Uncategorized error | WARNING, ERROR |"
+            "description": "Categorized error type.\n\n| Value | Description | Allowed Statuses |\n|-------|-------------|------------------|\n| `PROVIDER_RATE_LIMIT` | Rate limit hit on provider API | WARNING, ERROR |\n| `PROVIDER_QUOTA_LIMIT` | Account quota or spending limit exceeded | WARNING, ERROR |\n| `PROVIDER_PARTIAL_RESPONSE` | Provider returned a successful response, but the saved output may be incomplete, filtered, blocked, malformed, or otherwise partial | WARNING |\n| `VARIABLE_MISSING_OR_EMPTY` | Required template variable was missing or empty | WARNING |\n| `PROVIDER_TIMEOUT` | Request timed out | ERROR |\n| `PROVIDER_AUTH_ERROR` | Authentication failed with provider | ERROR |\n| `PROVIDER_ERROR` | General provider-side error | ERROR |\n| `TEMPLATE_RENDER_ERROR` | Failed to render prompt template | ERROR |\n| `UNKNOWN_ERROR` | Uncategorized error | WARNING, ERROR |"
           },
           "error_message": {
             "anyOf": [
@@ -11545,6 +13740,18 @@
             "type": "integer",
             "nullable": true,
             "description": "The ID of the parent folder. If null or not provided, the folder will be created at the root level of the workspace."
+          },
+          "workspace_id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Optional workspace ID. If not provided, uses the workspace associated with your API key."
+          },
+          "external_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "description": "Identifiers from other systems."
           }
         },
         "title": "CreateFolderRequest"
@@ -11599,6 +13806,13 @@
             "type": "integer",
             "nullable": true,
             "description": "ID of the parent folder. Null for root-level folders."
+          },
+          "external_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "description": "External ID mappings for the folder."
           }
         },
         "title": "Folder"
@@ -12137,10 +14351,10 @@
           }
         }
       },
-      "SearchRequestLogsRequest": {
+      "RequestLogQuery": {
         "type": "object",
-        "title": "SearchRequestLogsRequest",
-        "description": "Search and filter request logs with structured filters, free-text search, sorting, and pagination.",
+        "title": "RequestLogQuery",
+        "description": "Canonical request-log query payload — the filter / search / sort fields shared by `POST /api/public/v2/requests/search` (which also accepts pagination + `include_prompt_name`) and `POST /api/public/v2/requests/analytics`.",
         "properties": {
           "filter_group": {
             "nullable": true,
@@ -12151,19 +14365,6 @@
             "type": "string",
             "nullable": true,
             "description": "Free-text search query. Searches across the prompt input and LLM output text using fuzzy prefix matching."
-          },
-          "page": {
-            "type": "integer",
-            "minimum": 1,
-            "nullable": true,
-            "description": "Page number for pagination. Defaults to 1."
-          },
-          "per_page": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 25,
-            "nullable": true,
-            "description": "Number of results per page. Defaults to 10, maximum 25."
           },
           "sort_by": {
             "type": "string",
@@ -12176,7 +14377,7 @@
               "latency_ms",
               "status"
             ],
-            "description": "Field to sort results by."
+            "description": "Field to sort results by. Does not affect aggregated output for `/requests/analytics`."
           },
           "sort_order": {
             "type": "string",
@@ -12186,13 +14387,455 @@
               "desc"
             ],
             "description": "Sort direction. Must be provided together with sort_by."
-          },
-          "include_prompt_name": {
-            "type": "boolean",
-            "nullable": true,
-            "description": "When true, includes the prompt template name in each result item. Defaults to false."
           }
         }
+      },
+      "RequestAnalyticsLatencyByDay": {
+        "type": "object",
+        "description": "Per-bucket latency percentiles in seconds. Keys are bucket dates (e.g. `2025-03-15`); values are seconds.",
+        "properties": {
+          "average_latency": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "p50_latency": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "p90_latency": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "p95_latency": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "RequestAnalyticsDimensionLatency": {
+        "type": "object",
+        "description": "Per-dimension (model / prompt template / provider) latency series. Each percentile is a list of `[date, seconds]` pairs.",
+        "properties": {
+          "average_latency": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "p50_latency": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "p90_latency": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "p95_latency": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {}
+            }
+          }
+        }
+      },
+      "RequestAnalyticsStat": {
+        "type": "object",
+        "description": "One time-series bucket.",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "ISO bucket key (e.g. `2025-03-15`)."
+          },
+          "dateLabel": {
+            "type": "string",
+            "description": "Human-readable bucket label."
+          },
+          "requests": {
+            "type": "integer"
+          },
+          "tokens": {
+            "type": "integer"
+          },
+          "inputTokens": {
+            "type": "integer"
+          },
+          "outputTokens": {
+            "type": "integer"
+          },
+          "cost": {
+            "type": "number"
+          },
+          "latency": {
+            "type": "number",
+            "description": "Average latency in seconds."
+          },
+          "cachedTokens": {
+            "type": "integer"
+          },
+          "thinkingTokens": {
+            "type": "integer"
+          },
+          "traceShare": {
+            "type": "number",
+            "description": "Fraction of requests in the bucket that have a trace."
+          },
+          "statusCounts": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "outputShapeCounts": {
+            "type": "object",
+            "properties": {
+              "json": {
+                "type": "integer"
+              },
+              "toolCall": {
+                "type": "integer"
+              },
+              "plainText": {
+                "type": "integer"
+              }
+            }
+          },
+          "avgTurnCount": {
+            "type": "number"
+          },
+          "avgToolCallCount": {
+            "type": "number"
+          },
+          "toolCallCountP95": {
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "RequestAnalyticsBreakdownEntry": {
+        "type": "object",
+        "description": "Aggregated breakdown row (provider / prompt / tag).",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "Set on provider breakdown rows."
+          },
+          "promptId": {
+            "type": "string",
+            "description": "Set on prompt breakdown rows."
+          },
+          "tag": {
+            "type": "string",
+            "description": "Set on tag breakdown rows."
+          },
+          "requests": {
+            "type": "integer"
+          },
+          "cost": {
+            "type": "number"
+          },
+          "tokens": {
+            "type": "integer"
+          },
+          "inputTokens": {
+            "type": "integer"
+          },
+          "outputTokens": {
+            "type": "integer"
+          }
+        }
+      },
+      "RequestAnalyticsToolLatency": {
+        "type": "object",
+        "description": "Per-tool latency stats.",
+        "properties": {
+          "toolName": {
+            "type": "string"
+          },
+          "requests": {
+            "type": "integer"
+          },
+          "avgLatencySeconds": {
+            "type": "number",
+            "nullable": true
+          },
+          "minLatencySeconds": {
+            "type": "number",
+            "nullable": true
+          },
+          "maxLatencySeconds": {
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "RequestAnalyticsResponse": {
+        "type": "object",
+        "title": "RequestAnalyticsResponse",
+        "description": "Aggregated analytics across the matching request logs. Bucket size is selected automatically based on the filter time range (seconds → minutes → hours → days).",
+        "required": [
+          "success"
+        ],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "chartInterval": {
+            "type": "object",
+            "description": "Bucket-interval metadata describing how the time-series was bucketed.",
+            "properties": {
+              "interval": {
+                "type": "string"
+              },
+              "bucketSizeMs": {
+                "type": "integer"
+              },
+              "bucketMinutes": {
+                "type": "integer",
+                "nullable": true
+              }
+            }
+          },
+          "averageLatency": {
+            "type": "number",
+            "description": "Overall average latency across all matching requests, in seconds."
+          },
+          "totalCost": {
+            "type": "number"
+          },
+          "totalTokens": {
+            "type": "integer"
+          },
+          "totalRequests": {
+            "type": "integer"
+          },
+          "totalCachedTokens": {
+            "type": "integer"
+          },
+          "totalThinkingTokens": {
+            "type": "integer"
+          },
+          "cacheTokenRatio": {
+            "type": "number",
+            "nullable": true,
+            "description": "`totalCachedTokens / total_input_tokens`, or null when there are no input tokens."
+          },
+          "stats": {
+            "type": "array",
+            "description": "Per-bucket time-series.",
+            "items": {
+              "$ref": "#/components/schemas/RequestAnalyticsStat"
+            }
+          },
+          "mostUsedModels": {
+            "type": "array",
+            "description": "List of `[modelName, requestCount]` pairs ordered by usage.",
+            "items": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "modelRequestsByDay": {
+            "type": "object",
+            "description": "Map of model name → list of `[date, requestCount]` pairs.",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          },
+          "mostUsedPromptTemplates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "promptId": {
+                  "type": "string"
+                },
+                "requests": {
+                  "type": "integer"
+                },
+                "promptName": {
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "promptTemplateRequestsByDay": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          },
+          "providerRequestsByDay": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          },
+          "latency": {
+            "$ref": "#/components/schemas/RequestAnalyticsLatencyByDay"
+          },
+          "latencyByModelByDay": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RequestAnalyticsDimensionLatency"
+            }
+          },
+          "latencyByPromptTemplateByDay": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RequestAnalyticsDimensionLatency"
+            }
+          },
+          "latencyByProviderByDay": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RequestAnalyticsDimensionLatency"
+            }
+          },
+          "errorTypes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "errorType": {
+                  "type": "string"
+                },
+                "requests": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "providerBreakdown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RequestAnalyticsBreakdownEntry"
+            }
+          },
+          "promptBreakdown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RequestAnalyticsBreakdownEntry"
+            }
+          },
+          "tagsBreakdown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RequestAnalyticsBreakdownEntry"
+            }
+          },
+          "metadataKeysTop": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "requests": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "outputKeysTop": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "requests": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "toolsLatency": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RequestAnalyticsToolLatency"
+            }
+          },
+          "toolsUsageBars": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "requests": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "SearchRequestLogsRequest": {
+        "title": "SearchRequestLogsRequest",
+        "description": "Search and filter request logs with structured filters, free-text search, sorting, and pagination. Extends `RequestLogQuery` with pagination and `include_prompt_name`.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RequestLogQuery"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "page": {
+                "type": "integer",
+                "minimum": 1,
+                "nullable": true,
+                "description": "Page number for pagination. Defaults to 1."
+              },
+              "per_page": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 25,
+                "nullable": true,
+                "description": "Number of results per page. Defaults to 10, maximum 25."
+              },
+              "include_prompt_name": {
+                "type": "boolean",
+                "nullable": true,
+                "description": "When true, includes the prompt template name in each result item. Defaults to false."
+              }
+            }
+          }
+        ]
       },
       "StructuredFilter": {
         "type": "object",
@@ -12378,6 +15021,217 @@
             "description": "Previous page number, or null if on the first page."
           }
         }
+      },
+      "ExternalId": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Source",
+            "description": "The external system or namespace that owns the ID."
+          },
+          "external_id": {
+            "type": "string",
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "External Id",
+            "description": "The identifier for this entity in the external system."
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "external_id"
+        ],
+        "additionalProperties": false,
+        "title": "ExternalId",
+        "description": "Customer-defined mapping between a PromptLayer entity and an external system identifier."
+      },
+      "AttachExternalIdRequest": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Source",
+            "description": "The external system or namespace that owns the ID."
+          },
+          "external_id": {
+            "type": "string",
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "External Id",
+            "description": "The identifier for this entity in the external system."
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "external_id"
+        ],
+        "additionalProperties": false,
+        "title": "AttachExternalIdRequest",
+        "description": "External ID mapping to attach to an entity."
+      },
+      "ExternalIdAttachResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "const": true,
+            "default": true,
+            "title": "Success"
+          },
+          "external_id": {
+            "$ref": "#/components/schemas/ExternalId"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "external_id"
+        ],
+        "title": "ExternalIdAttachResponse"
+      },
+      "ExternalIdsListResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "const": true,
+            "default": true,
+            "title": "Success"
+          },
+          "external_ids": {
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "type": "array",
+            "title": "External Ids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "external_ids"
+        ],
+        "title": "ExternalIdsListResponse"
+      },
+      "ExternalIdDeleteResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "const": true,
+            "default": true,
+            "title": "Success"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success"
+        ],
+        "title": "ExternalIdDeleteResponse"
+      },
+      "ExternalIdErrorResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "const": false,
+            "default": false,
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "ExternalIdErrorResponse"
+      },
+      "ListPromptTemplateItem": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "prompt_name": {
+            "type": "string",
+            "title": "Prompt Name"
+          },
+          "prompt_template": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CompletionPrompt"
+              },
+              {
+                "$ref": "#/components/schemas/ChatPrompt"
+              }
+            ],
+            "title": "Prompt Template",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "chat": "#/components/schemas/ChatPrompt",
+                "completion": "#/components/schemas/CompletionPrompt"
+              }
+            }
+          },
+          "metadata": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Metadata"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "commit_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Commit Message"
+          },
+          "llm_kwargs": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Llm Kwargs",
+            "description": "When you optionally specify `provider` in the body, `llm_kwargs` will be returned for that specific provider and you can pass these kwargs to the provider's API directly. **Important:** This object's structure is provider-specific and may change without notice as LLM providers update their APIs. For stable, provider-agnostic prompt data, use `prompt_template` instead."
+          },
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          },
+          "external_ids": {
+            "items": {
+              "$ref": "#/components/schemas/ExternalId"
+            },
+            "type": "array",
+            "title": "External Ids",
+            "description": "External ID mappings attached to the prompt template."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "prompt_name",
+          "prompt_template",
+          "external_ids"
+        ],
+        "title": "ListPromptTemplateItem"
       }
     }
   },

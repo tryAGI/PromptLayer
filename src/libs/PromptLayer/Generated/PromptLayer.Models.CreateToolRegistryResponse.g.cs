@@ -27,6 +27,13 @@ namespace PromptLayer
         public object? Version { get; set; }
 
         /// <summary>
+        /// External ID mappings for the tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,6 +42,9 @@ namespace PromptLayer
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateToolRegistryResponse" /> class.
         /// </summary>
+        /// <param name="externalIds">
+        /// External ID mappings for the tool.
+        /// </param>
         /// <param name="success"></param>
         /// <param name="toolRegistry"></param>
         /// <param name="version"></param>
@@ -42,6 +52,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateToolRegistryResponse(
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> externalIds,
             bool? success,
             object? toolRegistry,
             object? version)
@@ -49,6 +60,7 @@ namespace PromptLayer
             this.Success = success;
             this.ToolRegistry = toolRegistry;
             this.Version = version;
+            this.ExternalIds = externalIds ?? throw new global::System.ArgumentNullException(nameof(externalIds));
         }
 
         /// <summary>
