@@ -34,6 +34,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.TextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ThinkingContent? Thinking { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
 #endif
         public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ThinkingContent? value)
+        {
+            value = Thinking;
+            return IsThinking;
+        }
 
         /// <summary>
         /// Code content block (e.g. from code execution tools).
@@ -68,6 +94,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.CodeContent? value)
+        {
+            value = Code;
+            return IsCode;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ImageContent? ImageUrl { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
         public bool IsImageUrl => ImageUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ImageContent? value)
+        {
+            value = ImageUrl;
+            return IsImageUrl;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMedia(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.MediaContent? value)
+        {
+            value = Media;
+            return IsMedia;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.MediaVariable? MediaVariable { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MediaVariable))]
 #endif
         public bool IsMediaVariable => MediaVariable != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMediaVariable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.MediaVariable? value)
+        {
+            value = MediaVariable;
+            return IsMediaVariable;
+        }
 
         /// <summary>
         /// LLM-generated media output (e.g. from image generation tools).
@@ -134,6 +212,19 @@ namespace PromptLayer
         public bool IsOutputMedia => OutputMedia != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputMedia(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.OutputMediaContent? value)
+        {
+            value = OutputMedia;
+            return IsOutputMedia;
+        }
+
+        /// <summary>
         /// Server-side tool use block (e.g. web search, code execution).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -149,6 +240,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
 #endif
         public bool IsServerToolUse => ServerToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickServerToolUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ServerToolUseContent? value)
+        {
+            value = ServerToolUse;
+            return IsServerToolUse;
+        }
 
         /// <summary>
         /// Results from a web search tool invocation.
@@ -168,6 +272,19 @@ namespace PromptLayer
         public bool IsWebSearchToolResult => WebSearchToolResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.WebSearchToolResultContent? value)
+        {
+            value = WebSearchToolResult;
+            return IsWebSearchToolResult;
+        }
+
+        /// <summary>
         /// Result from a code execution tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -183,6 +300,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionResult))]
 #endif
         public bool IsCodeExecutionResult => CodeExecutionResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeExecutionResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.CodeExecutionResultContent? value)
+        {
+            value = CodeExecutionResult;
+            return IsCodeExecutionResult;
+        }
 
         /// <summary>
         /// MCP list tools response block.
@@ -202,6 +332,19 @@ namespace PromptLayer
         public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpListTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.McpListToolsContent? value)
+        {
+            value = McpListTools;
+            return IsMcpListTools;
+        }
+
+        /// <summary>
         /// MCP tool call block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -217,6 +360,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
 #endif
         public bool IsMcpCall => McpCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.McpCallContent? value)
+        {
+            value = McpCall;
+            return IsMcpCall;
+        }
 
         /// <summary>
         /// MCP tool approval request block.
@@ -236,6 +392,19 @@ namespace PromptLayer
         public bool IsMcpApprovalRequest => McpApprovalRequest != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpApprovalRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.McpApprovalRequestContent? value)
+        {
+            value = McpApprovalRequest;
+            return IsMcpApprovalRequest;
+        }
+
+        /// <summary>
         /// MCP tool approval response block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -251,6 +420,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
 #endif
         public bool IsMcpApprovalResponse => McpApprovalResponse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpApprovalResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.McpApprovalResponseContent? value)
+        {
+            value = McpApprovalResponse;
+            return IsMcpApprovalResponse;
+        }
 
         /// <summary>
         /// Result from bash code execution tool.
@@ -270,6 +452,19 @@ namespace PromptLayer
         public bool IsBashCodeExecutionToolResult => BashCodeExecutionToolResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBashCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.BashCodeExecutionToolResultContent? value)
+        {
+            value = BashCodeExecutionToolResult;
+            return IsBashCodeExecutionToolResult;
+        }
+
+        /// <summary>
         /// Result from text editor code execution tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -285,6 +480,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
 #endif
         public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.TextEditorCodeExecutionToolResultContent? value)
+        {
+            value = TextEditorCodeExecutionToolResult;
+            return IsTextEditorCodeExecutionToolResult;
+        }
 
         /// <summary>
         /// Shell tool call block.
@@ -304,6 +512,19 @@ namespace PromptLayer
         public bool IsShellCall => ShellCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShellCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ShellCallContent? value)
+        {
+            value = ShellCall;
+            return IsShellCall;
+        }
+
+        /// <summary>
         /// Shell tool output block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -319,6 +540,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCallOutput))]
 #endif
         public bool IsShellCallOutput => ShellCallOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShellCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ShellCallOutputContent? value)
+        {
+            value = ShellCallOutput;
+            return IsShellCallOutput;
+        }
 
         /// <summary>
         /// Apply patch tool call block.
@@ -338,6 +572,19 @@ namespace PromptLayer
         public bool IsApplyPatchCall => ApplyPatchCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApplyPatchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ApplyPatchCallContent? value)
+        {
+            value = ApplyPatchCall;
+            return IsApplyPatchCall;
+        }
+
+        /// <summary>
         /// Apply patch tool output block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -353,6 +600,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutput))]
 #endif
         public bool IsApplyPatchCallOutput => ApplyPatchCallOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApplyPatchCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ApplyPatchCallOutputContent? value)
+        {
+            value = ApplyPatchCallOutput;
+            return IsApplyPatchCallOutput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -828,26 +1088,26 @@ namespace PromptLayer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::PromptLayer.TextContent?, TResult>? text = null,
-            global::System.Func<global::PromptLayer.ThinkingContent?, TResult>? thinking = null,
-            global::System.Func<global::PromptLayer.CodeContent?, TResult>? code = null,
-            global::System.Func<global::PromptLayer.ImageContent?, TResult>? imageUrl = null,
-            global::System.Func<global::PromptLayer.MediaContent?, TResult>? media = null,
-            global::System.Func<global::PromptLayer.MediaVariable?, TResult>? mediaVariable = null,
-            global::System.Func<global::PromptLayer.OutputMediaContent?, TResult>? outputMedia = null,
-            global::System.Func<global::PromptLayer.ServerToolUseContent?, TResult>? serverToolUse = null,
-            global::System.Func<global::PromptLayer.WebSearchToolResultContent?, TResult>? webSearchToolResult = null,
-            global::System.Func<global::PromptLayer.CodeExecutionResultContent?, TResult>? codeExecutionResult = null,
-            global::System.Func<global::PromptLayer.McpListToolsContent?, TResult>? mcpListTools = null,
-            global::System.Func<global::PromptLayer.McpCallContent?, TResult>? mcpCall = null,
-            global::System.Func<global::PromptLayer.McpApprovalRequestContent?, TResult>? mcpApprovalRequest = null,
-            global::System.Func<global::PromptLayer.McpApprovalResponseContent?, TResult>? mcpApprovalResponse = null,
-            global::System.Func<global::PromptLayer.BashCodeExecutionToolResultContent?, TResult>? bashCodeExecutionToolResult = null,
-            global::System.Func<global::PromptLayer.TextEditorCodeExecutionToolResultContent?, TResult>? textEditorCodeExecutionToolResult = null,
-            global::System.Func<global::PromptLayer.ShellCallContent?, TResult>? shellCall = null,
-            global::System.Func<global::PromptLayer.ShellCallOutputContent?, TResult>? shellCallOutput = null,
-            global::System.Func<global::PromptLayer.ApplyPatchCallContent?, TResult>? applyPatchCall = null,
-            global::System.Func<global::PromptLayer.ApplyPatchCallOutputContent?, TResult>? applyPatchCallOutput = null,
+            global::System.Func<global::PromptLayer.TextContent, TResult>? text = null,
+            global::System.Func<global::PromptLayer.ThinkingContent, TResult>? thinking = null,
+            global::System.Func<global::PromptLayer.CodeContent, TResult>? code = null,
+            global::System.Func<global::PromptLayer.ImageContent, TResult>? imageUrl = null,
+            global::System.Func<global::PromptLayer.MediaContent, TResult>? media = null,
+            global::System.Func<global::PromptLayer.MediaVariable, TResult>? mediaVariable = null,
+            global::System.Func<global::PromptLayer.OutputMediaContent, TResult>? outputMedia = null,
+            global::System.Func<global::PromptLayer.ServerToolUseContent, TResult>? serverToolUse = null,
+            global::System.Func<global::PromptLayer.WebSearchToolResultContent, TResult>? webSearchToolResult = null,
+            global::System.Func<global::PromptLayer.CodeExecutionResultContent, TResult>? codeExecutionResult = null,
+            global::System.Func<global::PromptLayer.McpListToolsContent, TResult>? mcpListTools = null,
+            global::System.Func<global::PromptLayer.McpCallContent, TResult>? mcpCall = null,
+            global::System.Func<global::PromptLayer.McpApprovalRequestContent, TResult>? mcpApprovalRequest = null,
+            global::System.Func<global::PromptLayer.McpApprovalResponseContent, TResult>? mcpApprovalResponse = null,
+            global::System.Func<global::PromptLayer.BashCodeExecutionToolResultContent, TResult>? bashCodeExecutionToolResult = null,
+            global::System.Func<global::PromptLayer.TextEditorCodeExecutionToolResultContent, TResult>? textEditorCodeExecutionToolResult = null,
+            global::System.Func<global::PromptLayer.ShellCallContent, TResult>? shellCall = null,
+            global::System.Func<global::PromptLayer.ShellCallOutputContent, TResult>? shellCallOutput = null,
+            global::System.Func<global::PromptLayer.ApplyPatchCallContent, TResult>? applyPatchCall = null,
+            global::System.Func<global::PromptLayer.ApplyPatchCallOutputContent, TResult>? applyPatchCallOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -943,26 +1203,158 @@ namespace PromptLayer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::PromptLayer.TextContent?>? text = null,
-            global::System.Action<global::PromptLayer.ThinkingContent?>? thinking = null,
-            global::System.Action<global::PromptLayer.CodeContent?>? code = null,
-            global::System.Action<global::PromptLayer.ImageContent?>? imageUrl = null,
-            global::System.Action<global::PromptLayer.MediaContent?>? media = null,
-            global::System.Action<global::PromptLayer.MediaVariable?>? mediaVariable = null,
-            global::System.Action<global::PromptLayer.OutputMediaContent?>? outputMedia = null,
-            global::System.Action<global::PromptLayer.ServerToolUseContent?>? serverToolUse = null,
-            global::System.Action<global::PromptLayer.WebSearchToolResultContent?>? webSearchToolResult = null,
-            global::System.Action<global::PromptLayer.CodeExecutionResultContent?>? codeExecutionResult = null,
-            global::System.Action<global::PromptLayer.McpListToolsContent?>? mcpListTools = null,
-            global::System.Action<global::PromptLayer.McpCallContent?>? mcpCall = null,
-            global::System.Action<global::PromptLayer.McpApprovalRequestContent?>? mcpApprovalRequest = null,
-            global::System.Action<global::PromptLayer.McpApprovalResponseContent?>? mcpApprovalResponse = null,
-            global::System.Action<global::PromptLayer.BashCodeExecutionToolResultContent?>? bashCodeExecutionToolResult = null,
-            global::System.Action<global::PromptLayer.TextEditorCodeExecutionToolResultContent?>? textEditorCodeExecutionToolResult = null,
-            global::System.Action<global::PromptLayer.ShellCallContent?>? shellCall = null,
-            global::System.Action<global::PromptLayer.ShellCallOutputContent?>? shellCallOutput = null,
-            global::System.Action<global::PromptLayer.ApplyPatchCallContent?>? applyPatchCall = null,
-            global::System.Action<global::PromptLayer.ApplyPatchCallOutputContent?>? applyPatchCallOutput = null,
+            global::System.Action<global::PromptLayer.TextContent>? text = null,
+
+            global::System.Action<global::PromptLayer.ThinkingContent>? thinking = null,
+
+            global::System.Action<global::PromptLayer.CodeContent>? code = null,
+
+            global::System.Action<global::PromptLayer.ImageContent>? imageUrl = null,
+
+            global::System.Action<global::PromptLayer.MediaContent>? media = null,
+
+            global::System.Action<global::PromptLayer.MediaVariable>? mediaVariable = null,
+
+            global::System.Action<global::PromptLayer.OutputMediaContent>? outputMedia = null,
+
+            global::System.Action<global::PromptLayer.ServerToolUseContent>? serverToolUse = null,
+
+            global::System.Action<global::PromptLayer.WebSearchToolResultContent>? webSearchToolResult = null,
+
+            global::System.Action<global::PromptLayer.CodeExecutionResultContent>? codeExecutionResult = null,
+
+            global::System.Action<global::PromptLayer.McpListToolsContent>? mcpListTools = null,
+
+            global::System.Action<global::PromptLayer.McpCallContent>? mcpCall = null,
+
+            global::System.Action<global::PromptLayer.McpApprovalRequestContent>? mcpApprovalRequest = null,
+
+            global::System.Action<global::PromptLayer.McpApprovalResponseContent>? mcpApprovalResponse = null,
+
+            global::System.Action<global::PromptLayer.BashCodeExecutionToolResultContent>? bashCodeExecutionToolResult = null,
+
+            global::System.Action<global::PromptLayer.TextEditorCodeExecutionToolResultContent>? textEditorCodeExecutionToolResult = null,
+
+            global::System.Action<global::PromptLayer.ShellCallContent>? shellCall = null,
+
+            global::System.Action<global::PromptLayer.ShellCallOutputContent>? shellCallOutput = null,
+
+            global::System.Action<global::PromptLayer.ApplyPatchCallContent>? applyPatchCall = null,
+
+            global::System.Action<global::PromptLayer.ApplyPatchCallOutputContent>? applyPatchCallOutput = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsMedia)
+            {
+                media?.Invoke(Media!);
+            }
+            else if (IsMediaVariable)
+            {
+                mediaVariable?.Invoke(MediaVariable!);
+            }
+            else if (IsOutputMedia)
+            {
+                outputMedia?.Invoke(OutputMedia!);
+            }
+            else if (IsServerToolUse)
+            {
+                serverToolUse?.Invoke(ServerToolUse!);
+            }
+            else if (IsWebSearchToolResult)
+            {
+                webSearchToolResult?.Invoke(WebSearchToolResult!);
+            }
+            else if (IsCodeExecutionResult)
+            {
+                codeExecutionResult?.Invoke(CodeExecutionResult!);
+            }
+            else if (IsMcpListTools)
+            {
+                mcpListTools?.Invoke(McpListTools!);
+            }
+            else if (IsMcpCall)
+            {
+                mcpCall?.Invoke(McpCall!);
+            }
+            else if (IsMcpApprovalRequest)
+            {
+                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+            }
+            else if (IsMcpApprovalResponse)
+            {
+                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+            }
+            else if (IsBashCodeExecutionToolResult)
+            {
+                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+            }
+            else if (IsTextEditorCodeExecutionToolResult)
+            {
+                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+            }
+            else if (IsShellCall)
+            {
+                shellCall?.Invoke(ShellCall!);
+            }
+            else if (IsShellCallOutput)
+            {
+                shellCallOutput?.Invoke(ShellCallOutput!);
+            }
+            else if (IsApplyPatchCall)
+            {
+                applyPatchCall?.Invoke(ApplyPatchCall!);
+            }
+            else if (IsApplyPatchCallOutput)
+            {
+                applyPatchCallOutput?.Invoke(ApplyPatchCallOutput!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::PromptLayer.TextContent>? text = null,
+            global::System.Action<global::PromptLayer.ThinkingContent>? thinking = null,
+            global::System.Action<global::PromptLayer.CodeContent>? code = null,
+            global::System.Action<global::PromptLayer.ImageContent>? imageUrl = null,
+            global::System.Action<global::PromptLayer.MediaContent>? media = null,
+            global::System.Action<global::PromptLayer.MediaVariable>? mediaVariable = null,
+            global::System.Action<global::PromptLayer.OutputMediaContent>? outputMedia = null,
+            global::System.Action<global::PromptLayer.ServerToolUseContent>? serverToolUse = null,
+            global::System.Action<global::PromptLayer.WebSearchToolResultContent>? webSearchToolResult = null,
+            global::System.Action<global::PromptLayer.CodeExecutionResultContent>? codeExecutionResult = null,
+            global::System.Action<global::PromptLayer.McpListToolsContent>? mcpListTools = null,
+            global::System.Action<global::PromptLayer.McpCallContent>? mcpCall = null,
+            global::System.Action<global::PromptLayer.McpApprovalRequestContent>? mcpApprovalRequest = null,
+            global::System.Action<global::PromptLayer.McpApprovalResponseContent>? mcpApprovalResponse = null,
+            global::System.Action<global::PromptLayer.BashCodeExecutionToolResultContent>? bashCodeExecutionToolResult = null,
+            global::System.Action<global::PromptLayer.TextEditorCodeExecutionToolResultContent>? textEditorCodeExecutionToolResult = null,
+            global::System.Action<global::PromptLayer.ShellCallContent>? shellCall = null,
+            global::System.Action<global::PromptLayer.ShellCallOutputContent>? shellCallOutput = null,
+            global::System.Action<global::PromptLayer.ApplyPatchCallContent>? applyPatchCall = null,
+            global::System.Action<global::PromptLayer.ApplyPatchCallOutputContent>? applyPatchCallOutput = null,
             bool validate = true)
         {
             if (validate)

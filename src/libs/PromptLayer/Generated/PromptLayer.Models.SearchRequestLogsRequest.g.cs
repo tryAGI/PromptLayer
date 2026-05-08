@@ -29,6 +29,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRequestLogQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.RequestLogQuery? value)
+        {
+            value = RequestLogQuery;
+            return IsRequestLogQuery;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.SearchRequestLogsRequestVariant2? SearchRequestLogsRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchRequestLogsRequestVariant2))]
 #endif
         public bool IsSearchRequestLogsRequestVariant2 => SearchRequestLogsRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchRequestLogsRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.SearchRequestLogsRequestVariant2? value)
+        {
+            value = SearchRequestLogsRequestVariant2;
+            return IsSearchRequestLogsRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace PromptLayer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::PromptLayer.RequestLogQuery?, TResult>? requestLogQuery = null,
-            global::System.Func<global::PromptLayer.SearchRequestLogsRequestVariant2?, TResult>? searchRequestLogsRequestVariant2 = null,
+            global::System.Func<global::PromptLayer.RequestLogQuery, TResult>? requestLogQuery = null,
+            global::System.Func<global::PromptLayer.SearchRequestLogsRequestVariant2, TResult>? searchRequestLogsRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace PromptLayer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::PromptLayer.RequestLogQuery?>? requestLogQuery = null,
-            global::System.Action<global::PromptLayer.SearchRequestLogsRequestVariant2?>? searchRequestLogsRequestVariant2 = null,
+            global::System.Action<global::PromptLayer.RequestLogQuery>? requestLogQuery = null,
+
+            global::System.Action<global::PromptLayer.SearchRequestLogsRequestVariant2>? searchRequestLogsRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRequestLogQuery)
+            {
+                requestLogQuery?.Invoke(RequestLogQuery!);
+            }
+            else if (IsSearchRequestLogsRequestVariant2)
+            {
+                searchRequestLogsRequestVariant2?.Invoke(SearchRequestLogsRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::PromptLayer.RequestLogQuery>? requestLogQuery = null,
+            global::System.Action<global::PromptLayer.SearchRequestLogsRequestVariant2>? searchRequestLogsRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

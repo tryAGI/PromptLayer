@@ -34,6 +34,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.SystemMessage? value)
+        {
+            value = System;
+            return IsSystem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.UserMessage? User { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
 #endif
         public bool IsUser => User != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.UserMessage? value)
+        {
+            value = User;
+            return IsUser;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.AssistantMessage? value)
+        {
+            value = Assistant;
+            return IsAssistant;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.FunctionMessage? Function { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
         public bool IsFunction => Function != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.FunctionMessage? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ToolMessage? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.PlaceholderMessage? Placeholder { get; init; }
 #else
@@ -119,6 +184,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPlaceholder(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.PlaceholderMessage? value)
+        {
+            value = Placeholder;
+            return IsPlaceholder;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.DeveloperMessage? Developer { get; init; }
 #else
@@ -132,6 +210,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
 #endif
         public bool IsDeveloper => Developer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeveloper(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.DeveloperMessage? value)
+        {
+            value = Developer;
+            return IsDeveloper;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -321,13 +412,13 @@ namespace PromptLayer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::PromptLayer.SystemMessage?, TResult>? system = null,
-            global::System.Func<global::PromptLayer.UserMessage?, TResult>? user = null,
-            global::System.Func<global::PromptLayer.AssistantMessage?, TResult>? assistant = null,
-            global::System.Func<global::PromptLayer.FunctionMessage?, TResult>? function = null,
-            global::System.Func<global::PromptLayer.ToolMessage?, TResult>? tool = null,
-            global::System.Func<global::PromptLayer.PlaceholderMessage?, TResult>? placeholder = null,
-            global::System.Func<global::PromptLayer.DeveloperMessage?, TResult>? developer = null,
+            global::System.Func<global::PromptLayer.SystemMessage, TResult>? system = null,
+            global::System.Func<global::PromptLayer.UserMessage, TResult>? user = null,
+            global::System.Func<global::PromptLayer.AssistantMessage, TResult>? assistant = null,
+            global::System.Func<global::PromptLayer.FunctionMessage, TResult>? function = null,
+            global::System.Func<global::PromptLayer.ToolMessage, TResult>? tool = null,
+            global::System.Func<global::PromptLayer.PlaceholderMessage, TResult>? placeholder = null,
+            global::System.Func<global::PromptLayer.DeveloperMessage, TResult>? developer = null,
             bool validate = true)
         {
             if (validate)
@@ -371,13 +462,67 @@ namespace PromptLayer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::PromptLayer.SystemMessage?>? system = null,
-            global::System.Action<global::PromptLayer.UserMessage?>? user = null,
-            global::System.Action<global::PromptLayer.AssistantMessage?>? assistant = null,
-            global::System.Action<global::PromptLayer.FunctionMessage?>? function = null,
-            global::System.Action<global::PromptLayer.ToolMessage?>? tool = null,
-            global::System.Action<global::PromptLayer.PlaceholderMessage?>? placeholder = null,
-            global::System.Action<global::PromptLayer.DeveloperMessage?>? developer = null,
+            global::System.Action<global::PromptLayer.SystemMessage>? system = null,
+
+            global::System.Action<global::PromptLayer.UserMessage>? user = null,
+
+            global::System.Action<global::PromptLayer.AssistantMessage>? assistant = null,
+
+            global::System.Action<global::PromptLayer.FunctionMessage>? function = null,
+
+            global::System.Action<global::PromptLayer.ToolMessage>? tool = null,
+
+            global::System.Action<global::PromptLayer.PlaceholderMessage>? placeholder = null,
+
+            global::System.Action<global::PromptLayer.DeveloperMessage>? developer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsPlaceholder)
+            {
+                placeholder?.Invoke(Placeholder!);
+            }
+            else if (IsDeveloper)
+            {
+                developer?.Invoke(Developer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::PromptLayer.SystemMessage>? system = null,
+            global::System.Action<global::PromptLayer.UserMessage>? user = null,
+            global::System.Action<global::PromptLayer.AssistantMessage>? assistant = null,
+            global::System.Action<global::PromptLayer.FunctionMessage>? function = null,
+            global::System.Action<global::PromptLayer.ToolMessage>? tool = null,
+            global::System.Action<global::PromptLayer.PlaceholderMessage>? placeholder = null,
+            global::System.Action<global::PromptLayer.DeveloperMessage>? developer = null,
             bool validate = true)
         {
             if (validate)
