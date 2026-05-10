@@ -42,6 +42,13 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public global::PromptLayer.RequestLogQuery PickRequestLogQuery() => IsRequestLogQuery
+            ? RequestLogQuery!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequestLogQuery' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.SearchRequestLogsRequestVariant2? SearchRequestLogsRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace PromptLayer
             value = SearchRequestLogsRequestVariant2;
             return IsSearchRequestLogsRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.SearchRequestLogsRequestVariant2 PickSearchRequestLogsRequestVariant2() => IsSearchRequestLogsRequestVariant2
+            ? SearchRequestLogsRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchRequestLogsRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static SearchRequestLogsRequest FromRequestLogQuery(global::PromptLayer.RequestLogQuery? value) => new SearchRequestLogsRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchRequestLogsRequest(global::PromptLayer.SearchRequestLogsRequestVariant2 value) => new SearchRequestLogsRequest((global::PromptLayer.SearchRequestLogsRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace PromptLayer
         {
             SearchRequestLogsRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchRequestLogsRequest FromSearchRequestLogsRequestVariant2(global::PromptLayer.SearchRequestLogsRequestVariant2? value) => new SearchRequestLogsRequest(value);
 
         /// <summary>
         /// 
