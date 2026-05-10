@@ -40,5 +40,6 @@ namespace PromptLayer
         public PlaceholderMessageContentVariant1ItemDiscriminator()
         {
         }
+
     }
 }

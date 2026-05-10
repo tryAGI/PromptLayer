@@ -102,5 +102,6 @@ namespace PromptLayer
         public MapAnnotation()
         {
         }
+
     }
 }

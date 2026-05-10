@@ -103,5 +103,6 @@ namespace PromptLayer
         public GetSnippetUsageResponse()
         {
         }
+
     }
 }

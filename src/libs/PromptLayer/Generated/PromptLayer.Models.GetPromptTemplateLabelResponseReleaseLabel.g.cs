@@ -70,5 +70,6 @@ namespace PromptLayer
         public GetPromptTemplateLabelResponseReleaseLabel()
         {
         }
+
     }
 }

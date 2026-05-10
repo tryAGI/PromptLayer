@@ -59,5 +59,6 @@ namespace PromptLayer
         public CreateSpansBulkResponse()
         {
         }
+
     }
 }

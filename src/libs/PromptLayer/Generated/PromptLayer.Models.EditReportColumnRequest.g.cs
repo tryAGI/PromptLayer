@@ -88,5 +88,6 @@ namespace PromptLayer
         public EditReportColumnRequest()
         {
         }
+
     }
 }

@@ -57,5 +57,6 @@ namespace PromptLayer
         public RequestAnalyticsStatOutputShapeCounts()
         {
         }
+
     }
 }

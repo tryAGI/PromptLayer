@@ -140,5 +140,6 @@ namespace PromptLayer
         public SearchRequestLogsResponse()
         {
         }
+
     }
 }

@@ -80,5 +80,6 @@ namespace PromptLayer
         public WebSearchResult()
         {
         }
+
     }
 }
