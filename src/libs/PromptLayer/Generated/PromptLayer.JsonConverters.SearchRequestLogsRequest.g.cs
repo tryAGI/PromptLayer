@@ -90,6 +90,7 @@ namespace PromptLayer.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.RequestLogQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.RequestLogQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.RequestLogQuery).Name}");
                     requestLogQuery = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -100,9 +101,13 @@ namespace PromptLayer.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (requestLogQuery == null && searchRequestLogsRequestVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.SearchRequestLogsRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.SearchRequestLogsRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.SearchRequestLogsRequestVariant2).Name}");
                     searchRequestLogsRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
