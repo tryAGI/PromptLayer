@@ -85,5 +85,6 @@ namespace PromptLayer
         public GetReportResponse()
         {
         }
+
     }
 }

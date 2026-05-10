@@ -54,5 +54,6 @@ namespace PromptLayer
         public AddReportColumnResponse3()
         {
         }
+
     }
 }

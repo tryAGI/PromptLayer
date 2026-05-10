@@ -195,5 +195,6 @@ namespace PromptLayer
         public GetTraceResponseSpan()
         {
         }
+
     }
 }

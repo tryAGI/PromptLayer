@@ -42,5 +42,6 @@ namespace PromptLayer
         public UpdateFolderRequest()
         {
         }
+
     }
 }
