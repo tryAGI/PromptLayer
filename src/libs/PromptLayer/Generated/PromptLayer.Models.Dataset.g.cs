@@ -63,6 +63,12 @@ namespace PromptLayer
         public global::PromptLayer.DatasetGroup? DatasetGroup { get; set; }
 
         /// <summary>
+        /// External ID mappings attached to this dataset group.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +101,9 @@ namespace PromptLayer
         /// <param name="datasetGroup">
         /// Associated dataset group information
         /// </param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to this dataset group.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -106,7 +115,8 @@ namespace PromptLayer
             bool isDeleted,
             int userId,
             object? filterParams,
-            global::PromptLayer.DatasetGroup? datasetGroup)
+            global::PromptLayer.DatasetGroup? datasetGroup,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.DatasetGroupId = datasetGroupId;
@@ -116,6 +126,7 @@ namespace PromptLayer
             this.IsDeleted = isDeleted;
             this.UserId = userId;
             this.DatasetGroup = datasetGroup;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

@@ -75,6 +75,12 @@ namespace PromptLayer
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
+        /// External ID mappings attached to this skill collection.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -94,6 +100,9 @@ namespace PromptLayer
         /// <param name="createdAt"></param>
         /// <param name="updatedBy"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to this skill collection.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,7 +117,8 @@ namespace PromptLayer
             int? createdBy,
             global::System.DateTime? createdAt,
             int? updatedBy,
-            global::System.DateTime? updatedAt)
+            global::System.DateTime? updatedAt,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.WorkspaceId = workspaceId;
@@ -121,6 +131,7 @@ namespace PromptLayer
             this.CreatedAt = createdAt;
             this.UpdatedBy = updatedBy;
             this.UpdatedAt = updatedAt;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

@@ -34,7 +34,15 @@ namespace PromptLayer
             ref global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags,
             ref global::PromptLayer.GetAllPromptTemplatesGetStatus? status,
             ref string? externalSource,
-            ref string? externalId);
+            ref string? externalId,
+            ref string? createdByEmail,
+            ref global::System.DateTime? createdAfter,
+            ref global::System.DateTime? createdBefore,
+            ref global::System.DateTime? updatedAfter,
+            ref global::System.DateTime? updatedBefore,
+            ref global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy,
+            ref global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder,
+            ref bool? isSnippet);
         partial void PrepareGetAllPromptTemplatesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -45,7 +53,15 @@ namespace PromptLayer
             global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags,
             global::PromptLayer.GetAllPromptTemplatesGetStatus? status,
             string? externalSource,
-            string? externalId);
+            string? externalId,
+            string? createdByEmail,
+            global::System.DateTime? createdAfter,
+            global::System.DateTime? createdBefore,
+            global::System.DateTime? updatedAfter,
+            global::System.DateTime? updatedBefore,
+            global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy,
+            global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder,
+            bool? isSnippet);
         partial void ProcessGetAllPromptTemplatesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,6 +84,16 @@ namespace PromptLayer
         /// </param>
         /// <param name="externalSource"></param>
         /// <param name="externalId"></param>
+        /// <param name="createdByEmail"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
+        /// <param name="updatedAfter"></param>
+        /// <param name="updatedBefore"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="isSnippet"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -80,6 +106,14 @@ namespace PromptLayer
             global::PromptLayer.GetAllPromptTemplatesGetStatus? status = default,
             string? externalSource = default,
             string? externalId = default,
+            string? createdByEmail = default,
+            global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
+            global::System.DateTime? updatedAfter = default,
+            global::System.DateTime? updatedBefore = default,
+            global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy = default,
+            global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder = default,
+            bool? isSnippet = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -92,6 +126,14 @@ namespace PromptLayer
                 status: status,
                 externalSource: externalSource,
                 externalId: externalId,
+                createdByEmail: createdByEmail,
+                createdAfter: createdAfter,
+                createdBefore: createdBefore,
+                updatedAfter: updatedAfter,
+                updatedBefore: updatedBefore,
+                sortBy: sortBy,
+                sortOrder: sortOrder,
+                isSnippet: isSnippet,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -111,6 +153,16 @@ namespace PromptLayer
         /// </param>
         /// <param name="externalSource"></param>
         /// <param name="externalId"></param>
+        /// <param name="createdByEmail"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
+        /// <param name="updatedAfter"></param>
+        /// <param name="updatedBefore"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="isSnippet"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -123,6 +175,14 @@ namespace PromptLayer
             global::PromptLayer.GetAllPromptTemplatesGetStatus? status = default,
             string? externalSource = default,
             string? externalId = default,
+            string? createdByEmail = default,
+            global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
+            global::System.DateTime? updatedAfter = default,
+            global::System.DateTime? updatedBefore = default,
+            global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy = default,
+            global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder = default,
+            bool? isSnippet = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -137,7 +197,15 @@ namespace PromptLayer
                 tags: ref tags,
                 status: ref status,
                 externalSource: ref externalSource,
-                externalId: ref externalId);
+                externalId: ref externalId,
+                createdByEmail: ref createdByEmail,
+                createdAfter: ref createdAfter,
+                createdBefore: ref createdBefore,
+                updatedAfter: ref updatedAfter,
+                updatedBefore: ref updatedBefore,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder,
+                isSnippet: ref isSnippet);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
@@ -174,6 +242,14 @@ namespace PromptLayer
                                 .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("external_source", externalSource)
                                 .AddOptionalParameter("external_id", externalId)
+                                .AddOptionalParameter("created_by_email", createdByEmail)
+                                .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("created_before", createdBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("updated_after", updatedAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("updated_before", updatedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
+                                .AddOptionalParameter("is_snippet", isSnippet?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -222,7 +298,15 @@ namespace PromptLayer
                     tags: tags,
                     status: status,
                     externalSource: externalSource,
-                    externalId: externalId);
+                    externalId: externalId,
+                    createdByEmail: createdByEmail,
+                    createdAfter: createdAfter,
+                    createdBefore: createdBefore,
+                    updatedAfter: updatedAfter,
+                    updatedBefore: updatedBefore,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder,
+                    isSnippet: isSnippet);
 
                 return __httpRequest;
             }

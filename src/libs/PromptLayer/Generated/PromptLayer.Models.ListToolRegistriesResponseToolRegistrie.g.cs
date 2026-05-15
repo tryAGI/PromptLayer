@@ -45,6 +45,12 @@ namespace PromptLayer
         public string? UpdatedAt { get; set; }
 
         /// <summary>
+        /// External ID mappings attached to this tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -59,6 +65,9 @@ namespace PromptLayer
         /// <param name="folderId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to this tool.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,7 +77,8 @@ namespace PromptLayer
             int? workspaceId,
             int? folderId,
             string? createdAt,
-            string? updatedAt)
+            string? updatedAt,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.Name = name;
@@ -76,6 +86,7 @@ namespace PromptLayer
             this.FolderId = folderId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

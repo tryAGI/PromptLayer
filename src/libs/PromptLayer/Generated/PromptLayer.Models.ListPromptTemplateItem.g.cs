@@ -62,6 +62,12 @@ namespace PromptLayer
         public required global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> ExternalIds { get; set; }
 
         /// <summary>
+        /// Whether this prompt template record is a snippet.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_snippet")]
+        public bool? IsSnippet { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -82,6 +88,9 @@ namespace PromptLayer
         /// When you optionally specify `provider` in the body, `llm_kwargs` will be returned for that specific provider and you can pass these kwargs to the provider's API directly. **Important:** This object's structure is provider-specific and may change without notice as LLM providers update their APIs. For stable, provider-agnostic prompt data, use `prompt_template` instead.
         /// </param>
         /// <param name="version"></param>
+        /// <param name="isSnippet">
+        /// Whether this prompt template record is a snippet.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,7 +102,8 @@ namespace PromptLayer
             global::PromptLayer.Metadata? metadata,
             string? commitMessage,
             object? llmKwargs,
-            int? version)
+            int? version,
+            bool? isSnippet)
         {
             this.Id = id;
             this.PromptName = promptName ?? throw new global::System.ArgumentNullException(nameof(promptName));
@@ -103,6 +113,7 @@ namespace PromptLayer
             this.LlmKwargs = llmKwargs;
             this.Version = version;
             this.ExternalIds = externalIds ?? throw new global::System.ArgumentNullException(nameof(externalIds));
+            this.IsSnippet = isSnippet;
         }
 
         /// <summary>
