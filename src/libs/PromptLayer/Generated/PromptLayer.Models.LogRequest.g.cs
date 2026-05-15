@@ -110,7 +110,7 @@ namespace PromptLayer
         public int? OutputTokens { get; set; }
 
         /// <summary>
-        /// Default Value: 0F
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("price")]
         public double? Price { get; set; }
@@ -217,7 +217,7 @@ namespace PromptLayer
         /// Default Value: 0
         /// </param>
         /// <param name="price">
-        /// Default Value: 0F
+        /// Default Value: 0
         /// </param>
         /// <param name="functionName"></param>
         /// <param name="score">

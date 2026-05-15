@@ -102,6 +102,12 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::PromptLayer.EvaluationRun>? Runs { get; set; }
 
         /// <summary>
+        /// External ID mappings attached to this evaluation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -155,6 +161,9 @@ namespace PromptLayer
         /// <param name="runs">
         /// Batch runs for this evaluation. Only present when include_runs=true.
         /// </param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to this evaluation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -173,7 +182,8 @@ namespace PromptLayer
             bool? deleted,
             int? parentReportId,
             object? scoreConfiguration,
-            global::System.Collections.Generic.IList<global::PromptLayer.EvaluationRun>? runs)
+            global::System.Collections.Generic.IList<global::PromptLayer.EvaluationRun>? runs,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -190,6 +200,7 @@ namespace PromptLayer
             this.ParentReportId = parentReportId;
             this.ScoreConfiguration = scoreConfiguration;
             this.Runs = runs;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

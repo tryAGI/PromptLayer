@@ -68,7 +68,7 @@ namespace PromptLayer
         /// Default Value: 0
         /// </param>
         /// <param name="price">
-        /// Default Value: 0F
+        /// Default Value: 0
         /// </param>
         /// <param name="functionName"></param>
         /// <param name="score">

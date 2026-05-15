@@ -449,44 +449,6 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Unsupported content type.
-                            if ((int)__response.StatusCode == 415)
-                            {
-                                string? __content_415 = null;
-                                global::System.Exception? __exception_415 = null;
-                                global::PromptLayer.SkillCollectionErrorResponse? __value_415 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_415 = global::PromptLayer.SkillCollectionErrorResponse.FromJson(__content_415, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_415 = global::PromptLayer.SkillCollectionErrorResponse.FromJson(__content_415, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_415 = __ex;
-                                }
-
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.SkillCollectionErrorResponse>(
-                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_415,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_415,
-                                    ResponseObject = __value_415,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
                             // External ID conflict
                             if ((int)__response.StatusCode == 409)
                             {
@@ -519,6 +481,44 @@ namespace PromptLayer
                                 {
                                     ResponseBody = __content_409,
                                     ResponseObject = __value_409,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Unsupported content type.
+                            if ((int)__response.StatusCode == 415)
+                            {
+                                string? __content_415 = null;
+                                global::System.Exception? __exception_415 = null;
+                                global::PromptLayer.SkillCollectionErrorResponse? __value_415 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_415 = global::PromptLayer.SkillCollectionErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_415 = global::PromptLayer.SkillCollectionErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_415 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.SkillCollectionErrorResponse>(
+                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_415,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_415,
+                                    ResponseObject = __value_415,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
