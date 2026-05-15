@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Replacement column configuration. Schema varies by column_type.
+    /// Replacement column configuration. Schema depends on column_type.
     /// </summary>
     public sealed partial class EditReportColumnRequestConfiguration
     {

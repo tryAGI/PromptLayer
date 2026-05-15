@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IPromptTemplatesClient
     {
         /// <summary>
-        /// Get Prompt Template Raw Data<br/>
-        /// Retrieve raw prompt template data without applying input variables. Designed for GitHub sync, local caching, and template inspection. By default, snippets are resolved (expanded). Use resolve_snippets=false to get the raw template with snippet references intact.
+        /// Get Prompt Template Raw Data
         /// </summary>
         /// <param name="identifier">
         /// The identifier can be either the prompt name or the prompt id.
@@ -37,8 +36,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Prompt Template Raw Data<br/>
-        /// Retrieve raw prompt template data without applying input variables. Designed for GitHub sync, local caching, and template inspection. By default, snippets are resolved (expanded). Use resolve_snippets=false to get the raw template with snippet references intact.
+        /// Get Prompt Template Raw Data
         /// </summary>
         /// <param name="identifier">
         /// The identifier can be either the prompt name or the prompt id.

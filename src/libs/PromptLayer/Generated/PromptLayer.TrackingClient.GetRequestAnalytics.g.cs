@@ -42,8 +42,7 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// Request Analytics<br/>
-        /// Aggregate analytics across request logs — totals, time-series breakdowns, latency percentiles, and model/prompt/provider/tag breakdowns. Body is the same `RequestLogQuery` shape as `POST /api/public/v2/requests/search` but returns aggregated values instead of paginated rows.
+        /// Request Analytics
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,8 +64,7 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Request Analytics<br/>
-        /// Aggregate analytics across request logs — totals, time-series breakdowns, latency percentiles, and model/prompt/provider/tag breakdowns. Body is the same `RequestLogQuery` shape as `POST /api/public/v2/requests/search` but returns aggregated values instead of paginated rows.
+        /// Request Analytics
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -375,7 +373,7 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Authentication failed.
+                            // Unauthorized - missing or invalid API key.
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -413,7 +411,7 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Invalid workspace.
+                            // Forbidden - API key does not have access to the requested resource.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -445,6 +443,44 @@ namespace PromptLayer
                                 {
                                     ResponseBody = __content_403,
                                     ResponseObject = __value_403,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -552,8 +588,7 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Request Analytics<br/>
-        /// Aggregate analytics across request logs — totals, time-series breakdowns, latency percentiles, and model/prompt/provider/tag breakdowns. Body is the same `RequestLogQuery` shape as `POST /api/public/v2/requests/search` but returns aggregated values instead of paginated rows.
+        /// Request Analytics
         /// </summary>
         /// <param name="filterGroup">
         /// Nested filter group with AND/OR logic. Use this for complex queries.

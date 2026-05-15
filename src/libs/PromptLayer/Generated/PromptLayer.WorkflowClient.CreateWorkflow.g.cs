@@ -373,7 +373,7 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Unauthorized
+                            // Unauthorized - missing or invalid API key.
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -411,7 +411,7 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Not Found
+                            // Not found - requested resource does not exist or is not accessible.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -481,6 +481,44 @@ namespace PromptLayer
                                 {
                                     ResponseBody = __content_409,
                                     ResponseObject = __value_409,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -606,7 +644,7 @@ namespace PromptLayer
         /// A message describing the changes in this version.
         /// </param>
         /// <param name="nodes">
-        /// The nodes in the workflow.
+        /// Complete list of workflow nodes. At least one node must be marked is_output_node=true.
         /// </param>
         /// <param name="requiredInputVariables">
         /// A mapping of variable names to their types.

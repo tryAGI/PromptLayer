@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Sort direction. Defaults to `desc` when `sort_by` is provided.
+    /// 
     /// </summary>
     public enum CreateDatasetVersionFromFilterParamsRequestSortOrder
     {

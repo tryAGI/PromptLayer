@@ -48,7 +48,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.SaveDraftDatasetVersionResponse> SaveDraftDatasetVersionAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.DraftDatasetVersionResponse> SaveDraftDatasetVersionAsync(
 
             global::PromptLayer.SaveDraftDatasetVersionRequest request,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
@@ -70,7 +70,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.SaveDraftDatasetVersionResponse>> SaveDraftDatasetVersionAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.DraftDatasetVersionResponse>> SaveDraftDatasetVersionAsResponseAsync(
 
             global::PromptLayer.SaveDraftDatasetVersionRequest request,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
@@ -335,7 +335,45 @@ namespace PromptLayer
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Access denied to this dataset group
+                            // Unauthorized - missing or invalid API key.
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::PromptLayer.ErrorResponse? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Forbidden - API key does not have access to the requested resource.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -373,7 +411,7 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Dataset group not found or no draft version exists
+                            // Not found - requested resource does not exist or is not accessible.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -411,6 +449,44 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -433,9 +509,9 @@ namespace PromptLayer
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::PromptLayer.SaveDraftDatasetVersionResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::PromptLayer.DraftDatasetVersionResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.SaveDraftDatasetVersionResponse>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.DraftDatasetVersionResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -467,9 +543,9 @@ namespace PromptLayer
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::PromptLayer.SaveDraftDatasetVersionResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::PromptLayer.DraftDatasetVersionResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.SaveDraftDatasetVersionResponse>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.DraftDatasetVersionResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -515,12 +591,12 @@ namespace PromptLayer
         /// Save Draft Dataset Version
         /// </summary>
         /// <param name="datasetGroupId">
-        /// ID of the dataset group containing the draft to save
+        /// ID of the dataset group containing the draft to save.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.SaveDraftDatasetVersionResponse> SaveDraftDatasetVersionAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.DraftDatasetVersionResponse> SaveDraftDatasetVersionAsync(
             int datasetGroupId,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

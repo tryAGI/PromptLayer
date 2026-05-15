@@ -4,7 +4,8 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Canonical request-log query payload — the filter / search / sort fields shared by `POST /api/public/v2/requests/search` (which also accepts pagination + `include_prompt_name`) and `POST /api/public/v2/requests/analytics`.
+    /// Canonical request-log query payload — the filter / search / sort fields shared by `POST /api/public/v2/requests/search` (which also accepts pagination + `include_prompt_name`) and `POST /api/public/v2/requests/analytics`.<br/>
+    /// Example: {"filter_group":{"logic":"AND","filters":[{"field":"engine","operator":"is","value":"gpt-4o"}]},"sort_by":"request_start_time","sort_order":"desc"}
     /// </summary>
     public sealed partial class RequestLogQuery
     {

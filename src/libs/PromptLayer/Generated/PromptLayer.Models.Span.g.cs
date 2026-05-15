@@ -84,7 +84,7 @@ namespace PromptLayer
         public required global::PromptLayer.SpanResource Resource { get; set; }
 
         /// <summary>
-        /// 
+        /// Optional request log to create alongside the span. If request times are omitted, they are inherited from the span start/end times.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("log_request")]
         public global::PromptLayer.LogRequest? LogRequest { get; set; }
@@ -113,7 +113,9 @@ namespace PromptLayer
         /// <param name="links">
         /// Default Value: []
         /// </param>
-        /// <param name="logRequest"></param>
+        /// <param name="logRequest">
+        /// Optional request log to create alongside the span. If request times are omitted, they are inherited from the span start/end times.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

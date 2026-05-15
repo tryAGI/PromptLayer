@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IReportsClient
     {
         /// <summary>
-        /// Delete Evaluation Pipeline<br/>
-        /// Archive a single evaluation pipeline by ID. Prefer this over deleteReportsByName when you have the report's ID, since names can collide.
+        /// Delete Evaluation Pipeline
         /// </summary>
         /// <param name="reportId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,8 +16,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete Evaluation Pipeline<br/>
-        /// Archive a single evaluation pipeline by ID. Prefer this over deleteReportsByName when you have the report's ID, since names can collide.
+        /// Delete Evaluation Pipeline
         /// </summary>
         /// <param name="reportId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

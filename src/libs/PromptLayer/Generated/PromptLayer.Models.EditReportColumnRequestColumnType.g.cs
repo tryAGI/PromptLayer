@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Column type. DATASET is not allowed.
+    /// Replacement column type. DATASET columns cannot be edited.
     /// </summary>
     public enum EditReportColumnRequestColumnType
     {
@@ -19,10 +19,6 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        ApplyDiff,
-        /// <summary>
-        /// 
-        /// </summary>
         AssertValid,
         /// <summary>
         /// 
@@ -32,10 +28,6 @@ namespace PromptLayer
         /// 
         /// </summary>
         CodeExecution,
-        /// <summary>
-        /// 
-        /// </summary>
-        CodingAgent,
         /// <summary>
         /// 
         /// </summary>
@@ -132,11 +124,9 @@ namespace PromptLayer
             {
                 EditReportColumnRequestColumnType.AbsoluteNumericDistance => "ABSOLUTE_NUMERIC_DISTANCE",
                 EditReportColumnRequestColumnType.AiDataExtraction => "AI_DATA_EXTRACTION",
-                EditReportColumnRequestColumnType.ApplyDiff => "APPLY_DIFF",
                 EditReportColumnRequestColumnType.AssertValid => "ASSERT_VALID",
                 EditReportColumnRequestColumnType.Coalesce => "COALESCE",
                 EditReportColumnRequestColumnType.CodeExecution => "CODE_EXECUTION",
-                EditReportColumnRequestColumnType.CodingAgent => "CODING_AGENT",
                 EditReportColumnRequestColumnType.CombineColumns => "COMBINE_COLUMNS",
                 EditReportColumnRequestColumnType.Compare => "COMPARE",
                 EditReportColumnRequestColumnType.Contains => "CONTAINS",
@@ -169,11 +159,9 @@ namespace PromptLayer
             {
                 "ABSOLUTE_NUMERIC_DISTANCE" => EditReportColumnRequestColumnType.AbsoluteNumericDistance,
                 "AI_DATA_EXTRACTION" => EditReportColumnRequestColumnType.AiDataExtraction,
-                "APPLY_DIFF" => EditReportColumnRequestColumnType.ApplyDiff,
                 "ASSERT_VALID" => EditReportColumnRequestColumnType.AssertValid,
                 "COALESCE" => EditReportColumnRequestColumnType.Coalesce,
                 "CODE_EXECUTION" => EditReportColumnRequestColumnType.CodeExecution,
-                "CODING_AGENT" => EditReportColumnRequestColumnType.CodingAgent,
                 "COMBINE_COLUMNS" => EditReportColumnRequestColumnType.CombineColumns,
                 "COMPARE" => EditReportColumnRequestColumnType.Compare,
                 "CONTAINS" => EditReportColumnRequestColumnType.Contains,

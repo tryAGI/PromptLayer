@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Parameters to run a workflow.
+    /// Parameters to run a workflow by label, version number, or latest version. workflow_label_name and workflow_version_number are mutually exclusive.
     /// </summary>
     public sealed partial class RunWorkflow
     {
@@ -41,6 +41,12 @@ namespace PromptLayer
         public bool? ReturnAllOutputs { get; set; }
 
         /// <summary>
+        /// HTTP URL where execution results are posted asynchronously. When provided, the API returns 202 Accepted immediately.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
+        public string? CallbackUrl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +72,9 @@ namespace PromptLayer
         /// If set to `true`, all outputs from the workflow execution will be returned.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="callbackUrl">
+        /// HTTP URL where execution results are posted asynchronously. When provided, the API returns 202 Accepted immediately.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,13 +83,15 @@ namespace PromptLayer
             int? workflowVersionNumber,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             object? inputVariables,
-            bool? returnAllOutputs)
+            bool? returnAllOutputs,
+            string? callbackUrl)
         {
             this.WorkflowLabelName = workflowLabelName;
             this.WorkflowVersionNumber = workflowVersionNumber;
             this.Metadata = metadata;
             this.InputVariables = inputVariables;
             this.ReturnAllOutputs = returnAllOutputs;
+            this.CallbackUrl = callbackUrl;
         }
 
         /// <summary>

@@ -19,25 +19,24 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
-        /// ID of the created draft dataset
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DatasetId { get; set; }
 
         /// <summary>
-        /// ID of the dataset group
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_group_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DatasetGroupId { get; set; }
 
         /// <summary>
-        /// Version number of the dataset (-1 for draft)
+        /// Version number of the draft or generated dataset version.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,28 +52,24 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="CreateDatasetVersionFromFilterParamsResponse" /> class.
         /// </summary>
         /// <param name="success"></param>
-        /// <param name="message"></param>
-        /// <param name="datasetId">
-        /// ID of the created draft dataset
-        /// </param>
-        /// <param name="datasetGroupId">
-        /// ID of the dataset group
-        /// </param>
+        /// <param name="datasetId"></param>
+        /// <param name="datasetGroupId"></param>
         /// <param name="versionNumber">
-        /// Version number of the dataset (-1 for draft)
+        /// Version number of the draft or generated dataset version.
         /// </param>
+        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateDatasetVersionFromFilterParamsResponse(
             bool success,
-            string message,
             int datasetId,
             int datasetGroupId,
-            int versionNumber)
+            int versionNumber,
+            string? message)
         {
             this.Success = success;
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Message = message;
             this.DatasetId = datasetId;
             this.DatasetGroupId = datasetGroupId;
             this.VersionNumber = versionNumber;

@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IToolRegistryClient
     {
         /// <summary>
-        /// List Tool Registries<br/>
-        /// List all tools in the Tool Registry for the workspace.
+        /// List Tool Registries
         /// </summary>
         /// <param name="createdByEmail"></param>
         /// <param name="createdAfter"></param>
@@ -35,8 +34,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List Tool Registries<br/>
-        /// List all tools in the Tool Registry for the workspace.
+        /// List Tool Registries
         /// </summary>
         /// <param name="createdByEmail"></param>
         /// <param name="createdAfter"></param>

@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IReportsClient
     {
         /// <summary>
-        /// Edit Evaluation Pipeline Column<br/>
-        /// Update an existing column on an evaluation pipeline. Use this to fix a bug in a CODE_EXECUTION script, change a column's configuration, rename it, or reorder it — without recreating the whole pipeline. Cannot edit DATASET columns. Editing a column re-queues the affected cells.
+        /// Edit Evaluation Pipeline Column
         /// </summary>
         /// <param name="reportColumnId"></param>
         /// <param name="request"></param>
@@ -20,8 +19,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Edit Evaluation Pipeline Column<br/>
-        /// Update an existing column on an evaluation pipeline. Use this to fix a bug in a CODE_EXECUTION script, change a column's configuration, rename it, or reorder it — without recreating the whole pipeline. Cannot edit DATASET columns. Editing a column re-queues the affected cells.
+        /// Edit Evaluation Pipeline Column
         /// </summary>
         /// <param name="reportColumnId"></param>
         /// <param name="request"></param>
@@ -35,18 +33,17 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Edit Evaluation Pipeline Column<br/>
-        /// Update an existing column on an evaluation pipeline. Use this to fix a bug in a CODE_EXECUTION script, change a column's configuration, rename it, or reorder it — without recreating the whole pipeline. Cannot edit DATASET columns. Editing a column re-queues the affected cells.
+        /// Edit Evaluation Pipeline Column
         /// </summary>
         /// <param name="reportColumnId"></param>
         /// <param name="reportId">
-        /// Parent evaluation pipeline ID. Must match the column's report.
+        /// Parent evaluation pipeline ID. Must match the column parent.
         /// </param>
         /// <param name="columnType">
-        /// Column type. DATASET is not allowed.
+        /// Replacement column type. DATASET columns cannot be edited.
         /// </param>
         /// <param name="configuration">
-        /// Replacement column configuration. Schema varies by column_type.
+        /// Replacement column configuration. Schema depends on column_type.
         /// </param>
         /// <param name="name">
         /// New column name. Must be unique within the pipeline.

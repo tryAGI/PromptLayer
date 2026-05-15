@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Release labels to create or move to the newly created version (e.g. ['staging', 'production']).
+    /// Release labels to create or move to the newly created version.
     /// </summary>
     public sealed partial class PatchPromptTemplateVersionReleaseLabels
     {

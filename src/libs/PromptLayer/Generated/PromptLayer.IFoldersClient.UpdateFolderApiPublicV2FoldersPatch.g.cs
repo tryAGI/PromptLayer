@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IFoldersClient
     {
         /// <summary>
-        /// Update Folder<br/>
-        /// Renames an existing folder. The new name must be unique within the folder's parent (or at root level). The folder must belong to a workspace accessible by the authenticated user.
+        /// Update Folder
         /// </summary>
         /// <param name="folderId">
         /// The ID of the folder to update.
@@ -22,8 +21,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update Folder<br/>
-        /// Renames an existing folder. The new name must be unique within the folder's parent (or at root level). The folder must belong to a workspace accessible by the authenticated user.
+        /// Update Folder
         /// </summary>
         /// <param name="folderId">
         /// The ID of the folder to update.
@@ -39,8 +37,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update Folder<br/>
-        /// Renames an existing folder. The new name must be unique within the folder's parent (or at root level). The folder must belong to a workspace accessible by the authenticated user.
+        /// Update Folder
         /// </summary>
         /// <param name="folderId">
         /// The ID of the folder to update.

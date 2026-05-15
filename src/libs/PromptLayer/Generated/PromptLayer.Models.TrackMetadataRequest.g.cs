@@ -9,14 +9,15 @@ namespace PromptLayer
     public sealed partial class TrackMetadataRequest
     {
         /// <summary>
-        /// The unique identifier for the request to which the metadata is associated.
+        /// PromptLayer request ID to update.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RequestId { get; set; }
+        public required global::PromptLayer.AnyOf<int?, string> RequestId { get; set; }
 
         /// <summary>
-        /// A dictionary of metadata items to associate with the request. Can include session_ids, user_ids, location, etc.
+        /// Metadata dictionary to associate with the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,16 +33,16 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="TrackMetadataRequest" /> class.
         /// </summary>
         /// <param name="requestId">
-        /// The unique identifier for the request to which the metadata is associated.
+        /// PromptLayer request ID to update.
         /// </param>
         /// <param name="metadata">
-        /// A dictionary of metadata items to associate with the request. Can include session_ids, user_ids, location, etc.
+        /// Metadata dictionary to associate with the request.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TrackMetadataRequest(
-            int requestId,
+            global::PromptLayer.AnyOf<int?, string> requestId,
             object metadata)
         {
             this.RequestId = requestId;
