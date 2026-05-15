@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IFoldersClient
     {
         /// <summary>
-        /// Resolve Folder ID by Path<br/>
-        /// Resolves a folder's ID from its path. The path uses dot-separated folder names representing the hierarchy (e.g., "My Folder.Subfolder").
+        /// Resolve Folder ID by Path
         /// </summary>
         /// <param name="workspaceId">
         /// The ID of the workspace containing the folder.
@@ -23,8 +22,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Resolve Folder ID by Path<br/>
-        /// Resolves a folder's ID from its path. The path uses dot-separated folder names representing the hierarchy (e.g., "My Folder.Subfolder").
+        /// Resolve Folder ID by Path
         /// </summary>
         /// <param name="workspaceId">
         /// The ID of the workspace containing the folder.

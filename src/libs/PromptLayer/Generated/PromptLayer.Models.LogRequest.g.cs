@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    /// Request body for custom logging. Chat message content must be an array of content blocks, not a plain string.
     /// </summary>
     public sealed partial class LogRequest
     {

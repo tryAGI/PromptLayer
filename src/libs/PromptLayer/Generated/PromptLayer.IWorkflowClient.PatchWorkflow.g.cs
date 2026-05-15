@@ -43,16 +43,16 @@ namespace PromptLayer
         /// A message describing the changes.
         /// </param>
         /// <param name="nodes">
-        /// Node updates keyed by node name. Use null to remove a node.
+        /// Node updates keyed by node name. Provide an object to add/update a node, or null to remove a node. Node configuration is deep-merged; dependencies are replaced.
         /// </param>
         /// <param name="requiredInputVariables">
         /// If provided, replaces the input variables entirely.
         /// </param>
         /// <param name="edges">
-        /// If provided, replaces edges entirely.
+        /// If provided, replaces edges entirely. If omitted, existing edges are copied except edges that reference removed nodes.
         /// </param>
         /// <param name="releaseLabels">
-        /// Labels to attach to the new version.
+        /// Labels to move or attach to the newly created workflow version.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

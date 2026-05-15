@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Request body for creating a new workflow or workflow version.
+    /// Request body for creating a new workflow or a new version of an existing workflow. Use name for a new workflow, or workflow_id/workflow_name to version an existing workflow.
     /// </summary>
     public sealed partial class CreateWorkflow
     {
@@ -39,7 +39,7 @@ namespace PromptLayer
         public string? CommitMessage { get; set; }
 
         /// <summary>
-        /// The nodes in the workflow.
+        /// Complete list of workflow nodes. At least one node must be marked is_output_node=true.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nodes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -79,7 +79,7 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="CreateWorkflow" /> class.
         /// </summary>
         /// <param name="nodes">
-        /// The nodes in the workflow.
+        /// Complete list of workflow nodes. At least one node must be marked is_output_node=true.
         /// </param>
         /// <param name="name">
         /// The name for a new workflow. If not provided, a name will be auto-generated.

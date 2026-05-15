@@ -32,16 +32,16 @@ namespace PromptLayer
         /// Create Dataset Group
         /// </summary>
         /// <param name="name">
-        /// Name of the dataset group. Must be unique within the workspace.
+        /// Name for the dataset group. Must be unique within the workspace.
         /// </param>
         /// <param name="workspaceId">
-        /// Optional: ID of the workspace where the dataset group will be created. If not provided, uses the workspace associated with your API key.
+        /// Workspace ID. Defaults to the workspace associated with the API key.
         /// </param>
         /// <param name="folderId">
-        /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
+        /// Folder ID to create the dataset group in. Omit to create at the workspace root.
         /// </param>
         /// <param name="externalIds">
-        /// Identifiers from other systems.
+        /// External ID mappings to attach to the dataset group.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

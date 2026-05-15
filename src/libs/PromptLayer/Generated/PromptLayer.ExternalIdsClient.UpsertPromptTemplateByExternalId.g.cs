@@ -46,8 +46,7 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// Upsert Prompt Template by External ID<br/>
-        /// Publish a prompt template by external ID. Existing mappings create a new version on the mapped prompt template. Missing mappings create or update a prompt template and attach the mapping.
+        /// Upsert Prompt Template by External ID
         /// </summary>
         /// <param name="source"></param>
         /// <param name="externalId"></param>
@@ -75,8 +74,7 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Upsert Prompt Template by External ID<br/>
-        /// Publish a prompt template by external ID. Existing mappings create a new version on the mapped prompt template. Missing mappings create or update a prompt template and attach the mapping.
+        /// Upsert Prompt Template by External ID
         /// </summary>
         /// <param name="source"></param>
         /// <param name="externalId"></param>
@@ -646,8 +644,7 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Upsert Prompt Template by External ID<br/>
-        /// Publish a prompt template by external ID. Existing mappings create a new version on the mapped prompt template. Missing mappings create or update a prompt template and attach the mapping.
+        /// Upsert Prompt Template by External ID
         /// </summary>
         /// <param name="source"></param>
         /// <param name="externalId"></param>

@@ -41,7 +41,11 @@ namespace PromptLayer
             ref string? externalSource,
             ref string? externalId,
             ref global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy,
-            ref global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder);
+            ref global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder,
+            ref global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags,
+            ref bool? semanticSearch,
+            ref int? semanticSearchTopK,
+            ref double? semanticSearchThreshold);
         partial void PrepareListFolderEntitiesApiPublicV2FoldersEntitiesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -59,7 +63,11 @@ namespace PromptLayer
             string? externalSource,
             string? externalId,
             global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy,
-            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder);
+            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder,
+            global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags,
+            bool? semanticSearch,
+            int? semanticSearchTopK,
+            double? semanticSearchThreshold);
         partial void ProcessListFolderEntitiesApiPublicV2FoldersEntitiesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -70,8 +78,7 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// List Folder Entities<br/>
-        /// Lists entities within a folder or at the workspace root. Returns folders, prompts, snippets, workflows, datasets, evaluations, AB tests, and input variable sets. Supports filtering by entity type, searching by name, flattening the folder hierarchy, and optionally including entity metadata.
+        /// List Folder Entities
         /// </summary>
         /// <param name="workspaceId">
         /// The ID of the workspace to list entities from.
@@ -104,6 +111,14 @@ namespace PromptLayer
         /// <param name="sortOrder">
         /// Default Value: desc
         /// </param>
+        /// <param name="tags"></param>
+        /// <param name="semanticSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="semanticSearchTopK">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="semanticSearchThreshold"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -123,6 +138,10 @@ namespace PromptLayer
             string? externalId = default,
             global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy = default,
             global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder = default,
+            global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
+            bool? semanticSearch = default,
+            int? semanticSearchTopK = default,
+            double? semanticSearchThreshold = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -142,6 +161,10 @@ namespace PromptLayer
                 externalId: externalId,
                 sortBy: sortBy,
                 sortOrder: sortOrder,
+                tags: tags,
+                semanticSearch: semanticSearch,
+                semanticSearchTopK: semanticSearchTopK,
+                semanticSearchThreshold: semanticSearchThreshold,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -149,8 +172,7 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// List Folder Entities<br/>
-        /// Lists entities within a folder or at the workspace root. Returns folders, prompts, snippets, workflows, datasets, evaluations, AB tests, and input variable sets. Supports filtering by entity type, searching by name, flattening the folder hierarchy, and optionally including entity metadata.
+        /// List Folder Entities
         /// </summary>
         /// <param name="workspaceId">
         /// The ID of the workspace to list entities from.
@@ -183,6 +205,14 @@ namespace PromptLayer
         /// <param name="sortOrder">
         /// Default Value: desc
         /// </param>
+        /// <param name="tags"></param>
+        /// <param name="semanticSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="semanticSearchTopK">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="semanticSearchThreshold"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -202,6 +232,10 @@ namespace PromptLayer
             string? externalId = default,
             global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy = default,
             global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder = default,
+            global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
+            bool? semanticSearch = default,
+            int? semanticSearchTopK = default,
+            double? semanticSearchThreshold = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -223,7 +257,11 @@ namespace PromptLayer
                 externalSource: ref externalSource,
                 externalId: ref externalId,
                 sortBy: ref sortBy,
-                sortOrder: ref sortOrder);
+                sortOrder: ref sortOrder,
+                tags: ref tags,
+                semanticSearch: ref semanticSearch,
+                semanticSearchTopK: ref semanticSearchTopK,
+                semanticSearchThreshold: ref semanticSearchThreshold);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
@@ -267,6 +305,10 @@ namespace PromptLayer
                                 .AddOptionalParameter("external_id", externalId)
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
+                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("semantic_search", semanticSearch?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("semantic_search_top_k", semanticSearchTopK?.ToString())
+                                .AddOptionalParameter("semantic_search_threshold", semanticSearchThreshold?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -322,7 +364,11 @@ namespace PromptLayer
                     externalSource: externalSource,
                     externalId: externalId,
                     sortBy: sortBy,
-                    sortOrder: sortOrder);
+                    sortOrder: sortOrder,
+                    tags: tags,
+                    semanticSearch: semanticSearch,
+                    semanticSearchTopK: semanticSearchTopK,
+                    semanticSearchThreshold: semanticSearchThreshold);
 
                 return __httpRequest;
             }
@@ -539,6 +585,44 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
+                            // Unauthorized - missing or invalid API key.
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::PromptLayer.ErrorResponse? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
                             // Folder not found
                             if ((int)__response.StatusCode == 404)
                             {
@@ -571,6 +655,44 @@ namespace PromptLayer
                                 {
                                     ResponseBody = __content_404,
                                     ResponseObject = __value_404,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

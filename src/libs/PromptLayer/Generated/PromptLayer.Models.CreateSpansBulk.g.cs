@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    /// Create multiple observability spans in a single request. Each span may include log_request to create an associated request log.
     /// </summary>
     public sealed partial class CreateSpansBulk
     {

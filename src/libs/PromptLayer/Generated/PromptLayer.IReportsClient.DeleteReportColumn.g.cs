@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IReportsClient
     {
         /// <summary>
-        /// Delete Evaluation Pipeline Column<br/>
-        /// Delete a single column from an evaluation pipeline. Surrounding columns shift left to fill the gap. Cannot delete DATASET columns. Cells in columns to the right of the deleted column are re-queued.
+        /// Delete Evaluation Pipeline Column
         /// </summary>
         /// <param name="reportColumnId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,8 +16,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete Evaluation Pipeline Column<br/>
-        /// Delete a single column from an evaluation pipeline. Surrounding columns shift left to fill the gap. Cannot delete DATASET columns. Cells in columns to the right of the deleted column are re-queued.
+        /// Delete Evaluation Pipeline Column
         /// </summary>
         /// <param name="reportColumnId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

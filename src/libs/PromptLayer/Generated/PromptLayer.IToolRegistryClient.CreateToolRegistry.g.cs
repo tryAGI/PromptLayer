@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IToolRegistryClient
     {
         /// <summary>
-        /// Create Tool Registry<br/>
-        /// Create a new tool in the Tool Registry with an initial version.
+        /// Create Tool Registry
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +17,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Tool Registry<br/>
-        /// Create a new tool in the Tool Registry with an initial version.
+        /// Create Tool Registry
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +29,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Tool Registry<br/>
-        /// Create a new tool in the Tool Registry with an initial version.
+        /// Create Tool Registry
         /// </summary>
         /// <param name="name">
         /// Tool name (unique per workspace)

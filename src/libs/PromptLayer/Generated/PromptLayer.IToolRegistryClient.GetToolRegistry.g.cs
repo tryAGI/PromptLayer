@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IToolRegistryClient
     {
         /// <summary>
-        /// Get Tool Registry<br/>
-        /// Get a tool from the Tool Registry by ID or name. Optionally resolve a specific version by label or version number.
+        /// Get Tool Registry
         /// </summary>
         /// <param name="identifier">
         /// Tool ID (numeric) or name
@@ -27,8 +26,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Tool Registry<br/>
-        /// Get a tool from the Tool Registry by ID or name. Optionally resolve a specific version by label or version number.
+        /// Get Tool Registry
         /// </summary>
         /// <param name="identifier">
         /// Tool ID (numeric) or name

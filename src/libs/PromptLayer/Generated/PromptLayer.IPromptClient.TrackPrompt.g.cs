@@ -11,7 +11,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.TrackPromptResponse> TrackPromptAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.TrackResponse> TrackPromptAsync(
 
             global::PromptLayer.TrackPromptRequest request,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
@@ -23,7 +23,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.TrackPromptResponse>> TrackPromptAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.TrackResponse>> TrackPromptAsResponseAsync(
 
             global::PromptLayer.TrackPromptRequest request,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
@@ -32,28 +32,28 @@ namespace PromptLayer
         /// Track Prompt
         /// </summary>
         /// <param name="promptName">
-        /// The name of the prompt template.
+        /// Prompt template name to associate with the request.
         /// </param>
         /// <param name="promptInputVariables">
-        /// Input variables for the prompt template.
+        /// Variables used to render the prompt.
         /// </param>
         /// <param name="requestId">
-        /// The unique identifier for the request.
+        /// PromptLayer request ID to update.
         /// </param>
         /// <param name="version">
-        /// The version of the prompt template. Both version and label cannot be specified. Only one or none.
+        /// Prompt template version to associate.
         /// </param>
         /// <param name="label">
-        /// The label of the prompt template version. Both version and label cannot be specified. Only one or none.
+        /// Release label to resolve to a prompt template version.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.TrackPromptResponse> TrackPromptAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.TrackResponse> TrackPromptAsync(
             string promptName,
-            int requestId,
-            global::System.Collections.Generic.Dictionary<string, string>? promptInputVariables = default,
-            int? version = default,
+            global::PromptLayer.AnyOf<int?, string> requestId,
+            object? promptInputVariables = default,
+            global::PromptLayer.AnyOf<int?, string, object>? version = default,
             string? label = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

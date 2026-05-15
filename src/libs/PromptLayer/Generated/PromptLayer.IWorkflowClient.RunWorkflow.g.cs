@@ -53,6 +53,9 @@ namespace PromptLayer
         /// If set to `true`, all outputs from the workflow execution will be returned.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="callbackUrl">
+        /// HTTP URL where execution results are posted asynchronously. When provided, the API returns 202 Accepted immediately.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -63,6 +66,7 @@ namespace PromptLayer
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             object? inputVariables = default,
             bool? returnAllOutputs = default,
+            string? callbackUrl = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

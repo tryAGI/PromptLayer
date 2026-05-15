@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Input variables for the prompt template.
+    /// Variables used to render the prompt.
     /// </summary>
     public sealed partial class TrackPromptRequestPromptInputVariables
     {

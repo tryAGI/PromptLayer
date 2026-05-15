@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Request body for partially updating a workflow.
+    /// Request body for partially updating a workflow. The server fetches base_version (latest if omitted), merges node updates, and creates a new version.
     /// </summary>
     public sealed partial class PatchWorkflow
     {
@@ -21,7 +21,7 @@ namespace PromptLayer
         public string? CommitMessage { get; set; }
 
         /// <summary>
-        /// Node updates keyed by node name. Use null to remove a node.
+        /// Node updates keyed by node name. Provide an object to add/update a node, or null to remove a node. Node configuration is deep-merged; dependencies are replaced.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nodes")]
         public object? Nodes { get; set; }
@@ -33,13 +33,13 @@ namespace PromptLayer
         public global::System.Collections.Generic.Dictionary<string, string>? RequiredInputVariables { get; set; }
 
         /// <summary>
-        /// If provided, replaces edges entirely.
+        /// If provided, replaces edges entirely. If omitted, existing edges are copied except edges that reference removed nodes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edges")]
         public global::System.Collections.Generic.IList<global::PromptLayer.Edge>? Edges { get; set; }
 
         /// <summary>
-        /// Labels to attach to the new version.
+        /// Labels to move or attach to the newly created workflow version.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release_labels")]
         public global::System.Collections.Generic.IList<string>? ReleaseLabels { get; set; }
@@ -60,16 +60,16 @@ namespace PromptLayer
         /// A message describing the changes.
         /// </param>
         /// <param name="nodes">
-        /// Node updates keyed by node name. Use null to remove a node.
+        /// Node updates keyed by node name. Provide an object to add/update a node, or null to remove a node. Node configuration is deep-merged; dependencies are replaced.
         /// </param>
         /// <param name="requiredInputVariables">
         /// If provided, replaces the input variables entirely.
         /// </param>
         /// <param name="edges">
-        /// If provided, replaces edges entirely.
+        /// If provided, replaces edges entirely. If omitted, existing edges are copied except edges that reference removed nodes.
         /// </param>
         /// <param name="releaseLabels">
-        /// Labels to attach to the new version.
+        /// Labels to move or attach to the newly created workflow version.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

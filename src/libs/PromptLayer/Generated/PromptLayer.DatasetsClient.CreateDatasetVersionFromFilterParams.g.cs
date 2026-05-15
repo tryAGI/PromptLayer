@@ -335,7 +335,45 @@ namespace PromptLayer
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Access denied to this dataset group
+                            // Unauthorized - missing or invalid API key.
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::PromptLayer.ErrorResponse? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Forbidden - API key does not have access to the requested resource.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -373,7 +411,7 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Dataset group not found
+                            // Not found - requested resource does not exist or is not accessible.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -405,6 +443,44 @@ namespace PromptLayer
                                 {
                                     ResponseBody = __content_404,
                                     ResponseObject = __value_404,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -515,25 +591,21 @@ namespace PromptLayer
         /// Create Dataset Version from Filter Params
         /// </summary>
         /// <param name="datasetGroupId">
-        /// ID of the dataset group where the new version will be created.
+        /// Dataset group that will receive the generated dataset version.
         /// </param>
         /// <param name="requestLogIds">
-        /// Explicit list of request_log ids to include. Capped at 50,000. All ids must belong to the same workspace as the dataset group; cross-workspace ids return 400. Datasets created in this mode are static snapshots — `filter_params` is left null and the dataset cannot be refreshed via run-report.
+        /// Explicit request log IDs to snapshot. When provided, this mode takes precedence over filter_group.
         /// </param>
         /// <param name="filterGroup">
-        /// Structured filter group, identical in shape to the one accepted by `POST /api/public/v2/requests/search`. The full payload is persisted to the dataset so it can be replayed on refresh.
+        /// Structured request-log filters used to populate the dataset asynchronously.
         /// </param>
         /// <param name="q">
-        /// Free-text search query applied alongside `filter_group`. Mirrors `q` from the unified request-log search.
+        /// Free-text request-log search query applied with filter_group.
         /// </param>
-        /// <param name="sortBy">
-        /// Field to sort the structured query by. Same allowed values as `POST /api/public/v2/requests/search` (e.g. `request_start_time`, `input_tokens`, `output_tokens`, `cost`, `latency_ms`, `status`).
-        /// </param>
-        /// <param name="sortOrder">
-        /// Sort direction. Defaults to `desc` when `sort_by` is provided.
-        /// </param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder"></param>
         /// <param name="variablesToParse">
-        /// List of input variables to extract as columns in the resulting dataset.
+        /// Request fields or variables to parse into dataset columns.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -541,9 +613,9 @@ namespace PromptLayer
         public async global::System.Threading.Tasks.Task<global::PromptLayer.CreateDatasetVersionFromFilterParamsResponse> CreateDatasetVersionFromFilterParamsAsync(
             int datasetGroupId,
             global::System.Collections.Generic.IList<int>? requestLogIds = default,
-            global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestFilterGroup? filterGroup = default,
+            global::PromptLayer.StructuredFilterGroup? filterGroup = default,
             string? q = default,
-            string? sortBy = default,
+            global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortBy? sortBy = default,
             global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortOrder? sortOrder = default,
             global::System.Collections.Generic.IList<string>? variablesToParse = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,

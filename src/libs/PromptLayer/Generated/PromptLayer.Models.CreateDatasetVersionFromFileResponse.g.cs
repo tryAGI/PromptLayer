@@ -23,7 +23,7 @@ namespace PromptLayer
         public required string Message { get; set; }
 
         /// <summary>
-        /// ID of the created draft dataset
+        /// ID of the draft dataset created for asynchronous processing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -41,7 +41,7 @@ namespace PromptLayer
         /// <param name="success"></param>
         /// <param name="message"></param>
         /// <param name="datasetId">
-        /// ID of the created draft dataset
+        /// ID of the draft dataset created for asynchronous processing.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

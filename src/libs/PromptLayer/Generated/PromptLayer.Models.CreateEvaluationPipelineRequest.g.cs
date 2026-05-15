@@ -4,49 +4,49 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Example: {"dataset_group_id":123,"name":"QA Evaluation Pipeline","columns":[{"column_type":"LLM_ASSERTION","name":"Language Check","configuration":{"source":"response","prompt":"Is the response written in {language}?","variable_mappings":{"language":"target_language"}},"is_part_of_score":true}]}
+    /// 
     /// </summary>
     public sealed partial class CreateEvaluationPipelineRequest
     {
         /// <summary>
-        /// The ID of the dataset group containing the dataset versions to evaluate. The dataset group must be within a workspace accessible to the authenticated user.
+        /// ID of the dataset group to use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_group_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DatasetGroupId { get; set; }
 
         /// <summary>
-        /// Optional name for the evaluation pipeline. If not provided, a unique name will be auto-generated. Must be between 1 and 255 characters if specified.
+        /// Name for the pipeline. Auto-generated if omitted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Optional folder ID to organize the pipeline within your workspace. If not specified, the pipeline will be created at the root level.
+        /// Folder ID for organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("folder_id")]
         public int? FolderId { get; set; }
 
         /// <summary>
-        /// Optional specific dataset version number to use. If not specified, the latest non-draft version will be used. Cannot be -1 (draft version).
+        /// Specific dataset version. Uses latest published version if omitted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_version_number")]
         public int? DatasetVersionNumber { get; set; }
 
         /// <summary>
-        /// Optional list of evaluation columns to create with the pipeline.
+        /// Evaluation columns to add to the pipeline.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("columns")]
-        public global::System.Collections.Generic.IList<global::PromptLayer.CreateEvaluationPipelineRequestColumn>? Columns { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.EvaluationColumnDefinition>? Columns { get; set; }
 
         /// <summary>
-        /// Optional custom scoring logic configuration.
+        /// Optional custom scoring logic.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_configuration")]
-        public global::PromptLayer.CreateEvaluationPipelineRequestScoreConfiguration? ScoreConfiguration { get; set; }
+        public global::PromptLayer.ScoreConfiguration? ScoreConfiguration { get; set; }
 
         /// <summary>
-        /// Identifiers from other systems.
+        /// External ID mappings to attach to the pipeline.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
         public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
@@ -61,25 +61,25 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="CreateEvaluationPipelineRequest" /> class.
         /// </summary>
         /// <param name="datasetGroupId">
-        /// The ID of the dataset group containing the dataset versions to evaluate. The dataset group must be within a workspace accessible to the authenticated user.
+        /// ID of the dataset group to use.
         /// </param>
         /// <param name="name">
-        /// Optional name for the evaluation pipeline. If not provided, a unique name will be auto-generated. Must be between 1 and 255 characters if specified.
+        /// Name for the pipeline. Auto-generated if omitted.
         /// </param>
         /// <param name="folderId">
-        /// Optional folder ID to organize the pipeline within your workspace. If not specified, the pipeline will be created at the root level.
+        /// Folder ID for organization.
         /// </param>
         /// <param name="datasetVersionNumber">
-        /// Optional specific dataset version number to use. If not specified, the latest non-draft version will be used. Cannot be -1 (draft version).
+        /// Specific dataset version. Uses latest published version if omitted.
         /// </param>
         /// <param name="columns">
-        /// Optional list of evaluation columns to create with the pipeline.
+        /// Evaluation columns to add to the pipeline.
         /// </param>
         /// <param name="scoreConfiguration">
-        /// Optional custom scoring logic configuration.
+        /// Optional custom scoring logic.
         /// </param>
         /// <param name="externalIds">
-        /// Identifiers from other systems.
+        /// External ID mappings to attach to the pipeline.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -89,8 +89,8 @@ namespace PromptLayer
             string? name,
             int? folderId,
             int? datasetVersionNumber,
-            global::System.Collections.Generic.IList<global::PromptLayer.CreateEvaluationPipelineRequestColumn>? columns,
-            global::PromptLayer.CreateEvaluationPipelineRequestScoreConfiguration? scoreConfiguration,
+            global::System.Collections.Generic.IList<global::PromptLayer.EvaluationColumnDefinition>? columns,
+            global::PromptLayer.ScoreConfiguration? scoreConfiguration,
             global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.DatasetGroupId = datasetGroupId;

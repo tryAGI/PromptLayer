@@ -42,8 +42,7 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// Create Evaluation Pipeline<br/>
-        /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
+        /// Create Evaluation Pipeline
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,8 +64,7 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Create Evaluation Pipeline<br/>
-        /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
+        /// Create Evaluation Pipeline
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -375,20 +373,24 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // 
+                            // Unauthorized - missing or invalid API key.
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
+                                global::PromptLayer.ErrorResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -396,36 +398,37 @@ namespace PromptLayer
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException(
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     statusCode: __response.StatusCode)
                                 {
                                     ResponseBody = __content_401,
+                                    ResponseObject = __value_401,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
                                         h => h.Value),
                                 };
                             }
-                            // Forbidden - Access to dataset group not allowed or missing permissions
+                            // Forbidden - API key does not have access to the requested resource.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::PromptLayer.CreateEvaluationPipelineResponse3? __value_403 = null;
+                                global::PromptLayer.ErrorResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::PromptLayer.CreateEvaluationPipelineResponse3.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::PromptLayer.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::PromptLayer.CreateEvaluationPipelineResponse3.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::PromptLayer.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -433,7 +436,7 @@ namespace PromptLayer
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.CreateEvaluationPipelineResponse3>(
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     statusCode: __response.StatusCode)
@@ -446,24 +449,24 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
-                            // Not Found - Dataset group or version not found
+                            // Not found - requested resource does not exist or is not accessible.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::PromptLayer.CreateEvaluationPipelineResponse4? __value_404 = null;
+                                global::PromptLayer.ErrorResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::PromptLayer.CreateEvaluationPipelineResponse4.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::PromptLayer.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::PromptLayer.CreateEvaluationPipelineResponse4.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::PromptLayer.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -471,7 +474,7 @@ namespace PromptLayer
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.CreateEvaluationPipelineResponse4>(
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     statusCode: __response.StatusCode)
@@ -516,6 +519,44 @@ namespace PromptLayer
                                 {
                                     ResponseBody = __content_409,
                                     ResponseObject = __value_409,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -623,29 +664,28 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Create Evaluation Pipeline<br/>
-        /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
+        /// Create Evaluation Pipeline
         /// </summary>
         /// <param name="datasetGroupId">
-        /// The ID of the dataset group containing the dataset versions to evaluate. The dataset group must be within a workspace accessible to the authenticated user.
+        /// ID of the dataset group to use.
         /// </param>
         /// <param name="name">
-        /// Optional name for the evaluation pipeline. If not provided, a unique name will be auto-generated. Must be between 1 and 255 characters if specified.
+        /// Name for the pipeline. Auto-generated if omitted.
         /// </param>
         /// <param name="folderId">
-        /// Optional folder ID to organize the pipeline within your workspace. If not specified, the pipeline will be created at the root level.
+        /// Folder ID for organization.
         /// </param>
         /// <param name="datasetVersionNumber">
-        /// Optional specific dataset version number to use. If not specified, the latest non-draft version will be used. Cannot be -1 (draft version).
+        /// Specific dataset version. Uses latest published version if omitted.
         /// </param>
         /// <param name="columns">
-        /// Optional list of evaluation columns to create with the pipeline.
+        /// Evaluation columns to add to the pipeline.
         /// </param>
         /// <param name="scoreConfiguration">
-        /// Optional custom scoring logic configuration.
+        /// Optional custom scoring logic.
         /// </param>
         /// <param name="externalIds">
-        /// Identifiers from other systems.
+        /// External ID mappings to attach to the pipeline.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -655,8 +695,8 @@ namespace PromptLayer
             string? name = default,
             int? folderId = default,
             int? datasetVersionNumber = default,
-            global::System.Collections.Generic.IList<global::PromptLayer.CreateEvaluationPipelineRequestColumn>? columns = default,
-            global::PromptLayer.CreateEvaluationPipelineRequestScoreConfiguration? scoreConfiguration = default,
+            global::System.Collections.Generic.IList<global::PromptLayer.EvaluationColumnDefinition>? columns = default,
+            global::PromptLayer.ScoreConfiguration? scoreConfiguration = default,
             global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
