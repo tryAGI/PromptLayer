@@ -54,6 +54,12 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<string>? VariablesToParse { get; set; }
 
         /// <summary>
+        /// Maximum number of request logs to include. When set, only the first N matching rows (in the current sort order) are added to the dataset version.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
+        public int? Limit { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -79,6 +85,9 @@ namespace PromptLayer
         /// <param name="variablesToParse">
         /// Request fields or variables to parse into dataset columns.
         /// </param>
+        /// <param name="limit">
+        /// Maximum number of request logs to include. When set, only the first N matching rows (in the current sort order) are added to the dataset version.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,7 +98,8 @@ namespace PromptLayer
             string? q,
             global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortBy? sortBy,
             global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortOrder? sortOrder,
-            global::System.Collections.Generic.IList<string>? variablesToParse)
+            global::System.Collections.Generic.IList<string>? variablesToParse,
+            int? limit)
         {
             this.DatasetGroupId = datasetGroupId;
             this.RequestLogIds = requestLogIds;
@@ -98,6 +108,7 @@ namespace PromptLayer
             this.SortBy = sortBy;
             this.SortOrder = sortOrder;
             this.VariablesToParse = variablesToParse;
+            this.Limit = limit;
         }
 
         /// <summary>

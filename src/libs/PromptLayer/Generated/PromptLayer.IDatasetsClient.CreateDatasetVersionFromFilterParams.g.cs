@@ -48,6 +48,9 @@ namespace PromptLayer
         /// <param name="variablesToParse">
         /// Request fields or variables to parse into dataset columns.
         /// </param>
+        /// <param name="limit">
+        /// Maximum number of request logs to include. When set, only the first N matching rows (in the current sort order) are added to the dataset version.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -59,6 +62,7 @@ namespace PromptLayer
             global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortBy? sortBy = default,
             global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortOrder? sortOrder = default,
             global::System.Collections.Generic.IList<string>? variablesToParse = default,
+            int? limit = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

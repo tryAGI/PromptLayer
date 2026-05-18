@@ -1852,163 +1852,171 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponse? Type456 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.GetReportResponseReportColumn>? Type456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponseScore? Type457 { get; set; }
+        public global::PromptLayer.GetReportResponseReportColumn? Type457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponseScoreScoreType? Type458 { get; set; }
+        public global::PromptLayer.GetReportScoreResponse? Type458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1? Type459 { get; set; }
+        public global::PromptLayer.GetReportScoreResponseScore? Type459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2? Type460 { get; set; }
+        public global::PromptLayer.GetReportScoreResponseScoreScoreType? Type460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2Column>? Type461 { get; set; }
+        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1? Type461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2Column? Type462 { get; set; }
+        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3? Type463 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2Column>? Type463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4? Type464 { get; set; }
+        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2Column? Type464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListDatasetsResponse? Type465 { get; set; }
+        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3? Type465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.Dataset>? Type466 { get; set; }
+        public global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4? Type466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListEvaluationsResponse? Type467 { get; set; }
+        public global::PromptLayer.ListDatasetsResponse? Type467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.Evaluation>? Type468 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.Dataset>? Type468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.AnyOf<global::PromptLayer.BadRequestError, global::PromptLayer.ValidationError>? Type469 { get; set; }
+        public global::PromptLayer.ListEvaluationsResponse? Type469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12>, object>? Type470 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.Evaluation>? Type470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12>? Type471 { get; set; }
+        public global::PromptLayer.AnyOf<global::PromptLayer.BadRequestError, global::PromptLayer.ValidationError>? Type471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12? Type472 { get; set; }
+        public global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12>, object>? Type472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>, object>? Type473 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12>? Type473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>? Type474 { get; set; }
+        public global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12? Type474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14? Type475 { get; set; }
+        public global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>, object>? Type475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListWorkflowsResponse? Type476 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>? Type476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ListWorkflowsResponseItem>? Type477 { get; set; }
+        public global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14? Type477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListWorkflowsResponseItem? Type478 { get; set; }
+        public global::PromptLayer.ListWorkflowsResponse? Type478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListWorkflowsResponse2? Type479 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ListWorkflowsResponseItem>? Type479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListWorkflowsResponse3? Type480 { get; set; }
+        public global::PromptLayer.ListWorkflowsResponseItem? Type480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetWorkflowResponse? Type481 { get; set; }
+        public global::PromptLayer.ListWorkflowsResponse2? Type481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.GetWorkflowResponseNode>? Type482 { get; set; }
+        public global::PromptLayer.ListWorkflowsResponse3? Type482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetWorkflowResponseNode? Type483 { get; set; }
+        public global::PromptLayer.GetWorkflowResponse? Type483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.GetWorkflowResponseEdge>? Type484 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.GetWorkflowResponseNode>? Type484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetWorkflowResponseEdge? Type485 { get; set; }
+        public global::PromptLayer.GetWorkflowResponseNode? Type485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetWorkflowLabelsResponse? Type486 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.GetWorkflowResponseEdge>? Type486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.GetWorkflowLabelsResponseReleaseLabel>? Type487 { get; set; }
+        public global::PromptLayer.GetWorkflowResponseEdge? Type487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetWorkflowLabelsResponseReleaseLabel? Type488 { get; set; }
+        public global::PromptLayer.GetWorkflowLabelsResponse? Type488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.AnyOf<global::PromptLayer.FolderExistsError, string>? Type489 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.GetWorkflowLabelsResponseReleaseLabel>? Type489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListToolRegistriesResponse? Type490 { get; set; }
+        public global::PromptLayer.GetWorkflowLabelsResponseReleaseLabel? Type490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ListToolRegistriesResponseToolRegistrie>? Type491 { get; set; }
+        public global::PromptLayer.AnyOf<global::PromptLayer.FolderExistsError, string>? Type491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.ListToolRegistriesResponseToolRegistrie? Type492 { get; set; }
+        public global::PromptLayer.ListToolRegistriesResponse? Type492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.CreateToolRegistryResponse? Type493 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ListToolRegistriesResponseToolRegistrie>? Type493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetToolRegistryResponse? Type494 { get; set; }
+        public global::PromptLayer.ListToolRegistriesResponseToolRegistrie? Type494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::PromptLayer.GetToolRegistryResponseToolRegistry? Type495 { get; set; }
+        public global::PromptLayer.CreateToolRegistryResponse? Type495 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.GetToolRegistryResponse? Type496 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.GetToolRegistryResponseToolRegistry? Type497 { get; set; }
 
         /// <summary>
         /// 
@@ -2273,34 +2281,38 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2Column>? ListType65 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.GetReportResponseReportColumn>? ListType65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.Dataset>? ListType66 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2Column>? ListType66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.Evaluation>? ListType67 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.Dataset>? ListType67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ListWorkflowsResponseItem>? ListType68 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.Evaluation>? ListType68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.GetWorkflowResponseNode>? ListType69 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ListWorkflowsResponseItem>? ListType69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.GetWorkflowResponseEdge>? ListType70 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.GetWorkflowResponseNode>? ListType70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.GetWorkflowLabelsResponseReleaseLabel>? ListType71 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.GetWorkflowResponseEdge>? ListType71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ListToolRegistriesResponseToolRegistrie>? ListType72 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.GetWorkflowLabelsResponseReleaseLabel>? ListType72 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::PromptLayer.ListToolRegistriesResponseToolRegistrie>? ListType73 { get; set; }
     }
 }
