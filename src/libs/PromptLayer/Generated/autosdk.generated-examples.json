@@ -13,6 +13,17 @@
     },
     {
       "Order": 2,
+      "Title": "Add Trace to Draft Dataset",
+      "Slug": "addtracetodatasetversion",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new PromptLayerClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::PromptLayer.AddTraceToDatasetRequest\u003E(\n    @\u0022{\n  \u0022\u0022dataset_group_id\u0022\u0022: 123,\n  \u0022\u0022trace_id\u0022\u0022: \u0022\u0022abc123def456\u0022\u0022,\n  \u0022\u0022span_id\u0022\u0022: \u0022\u0022span789xyz\u0022\u0022\n}\u0022)!;\n\nvar response = await client.Datasets.AddTraceToDatasetVersionAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022success\u0022: true,\n//   \u0022draft_dataset_id\u0022: 789,\n//   \u0022mode\u0022: \u0022trace\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "addTraceToDatasetVersion",
+      "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 3,
       "Title": "Create Dataset Group",
       "Slug": "createdatasetgroup",
       "Description": "Generated from OpenAPI examples.",
@@ -23,7 +34,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 3,
+      "Order": 4,
       "Title": "Create Dataset Version from File",
       "Slug": "createdatasetversionfromfile",
       "Description": "Generated from OpenAPI examples.",
@@ -34,7 +45,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 4,
+      "Order": 5,
       "Title": "Create Dataset Version from Filter Params",
       "Slug": "createdatasetversionfromfilterparams",
       "Description": "Generated from OpenAPI examples.",
@@ -45,7 +56,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 5,
+      "Order": 6,
       "Title": "Create Draft Dataset Version",
       "Slug": "createdraftdatasetversion",
       "Description": "Generated from OpenAPI examples.",
@@ -56,7 +67,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 6,
+      "Order": 7,
       "Title": "Get Dataset Rows",
       "Slug": "getdatasetrows",
       "Description": "Generated from OpenAPI examples.",
@@ -67,7 +78,7 @@
       "Setup": null
     },
     {
-      "Order": 7,
+      "Order": 8,
       "Title": "Save Draft Dataset Version",
       "Slug": "savedraftdatasetversion",
       "Description": "Generated from OpenAPI examples.",
@@ -78,7 +89,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 8,
+      "Order": 9,
       "Title": "Get Evaluation Rows",
       "Slug": "getevaluationrows",
       "Description": "Generated from OpenAPI examples.",
@@ -89,7 +100,7 @@
       "Setup": null
     },
     {
-      "Order": 9,
+      "Order": 10,
       "Title": "Track Metadata",
       "Slug": "trackmetadata",
       "Description": "Generated from OpenAPI examples.",
@@ -100,7 +111,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 10,
+      "Order": 11,
       "Title": "Ingest Traces (OTLP)",
       "Slug": "ingestotlptraces",
       "Description": "Generated from OpenAPI examples.",
@@ -111,7 +122,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 11,
+      "Order": 12,
       "Title": "Track Prompt",
       "Slug": "trackprompt",
       "Description": "Generated from OpenAPI examples.",
@@ -122,7 +133,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 12,
+      "Order": 13,
       "Title": "Get Prompt Template Raw Data",
       "Slug": "get-prompt-template-raw",
       "Description": "Generated from OpenAPI examples.",
@@ -133,7 +144,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 13,
+      "Order": 14,
       "Title": "Add Column to Evaluation Pipeline",
       "Slug": "addreportcolumn",
       "Description": "Generated from OpenAPI examples.",
@@ -144,7 +155,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 14,
+      "Order": 15,
       "Title": "Create Evaluation Pipeline",
       "Slug": "createevaluationpipeline",
       "Description": "Generated from OpenAPI examples.",
@@ -155,7 +166,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 15,
+      "Order": 16,
       "Title": "Delete Evaluation Pipeline",
       "Slug": "deletereport",
       "Description": "Generated from OpenAPI examples.",
@@ -166,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 16,
+      "Order": 17,
       "Title": "Edit Evaluation Pipeline Column",
       "Slug": "editreportcolumn",
       "Description": "Generated from OpenAPI examples.",
@@ -177,7 +188,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 18,
       "Title": "Rename Evaluation Pipeline",
       "Slug": "renamereport",
       "Description": "Generated from OpenAPI examples.",
@@ -188,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 19,
       "Title": "Configure Custom Scoring",
       "Slug": "updatereportscorecard",
       "Description": "Generated from OpenAPI examples.",
@@ -199,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 20,
       "Title": "Log Request",
       "Slug": "logrequest",
       "Description": "Generated from OpenAPI examples.",
@@ -210,7 +221,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 20,
+      "Order": 21,
       "Title": "Patch Prompt Template Version",
       "Slug": "patch-prompt-template-version",
       "Description": "Generated from OpenAPI examples.",
@@ -221,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 22,
       "Title": "Get Skill Collection",
       "Slug": "getskillcollectionpublic",
       "Description": "Generated from OpenAPI examples.",
@@ -232,7 +243,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 22,
+      "Order": 23,
       "Title": "Create Spans Bulk",
       "Slug": "createspansbulk",
       "Description": "Generated from OpenAPI examples.",
@@ -243,7 +254,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 23,
+      "Order": 24,
       "Title": "Get Request",
       "Slug": "getrequest",
       "Description": "Generated from OpenAPI examples.",
@@ -254,7 +265,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 24,
+      "Order": 25,
       "Title": "Request Analytics",
       "Slug": "getrequestanalytics",
       "Description": "Generated from OpenAPI examples.",
@@ -265,7 +276,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 25,
+      "Order": 26,
       "Title": "Search Request Suggestions",
       "Slug": "getrequestsearchsuggestions",
       "Description": "Generated from OpenAPI examples.",
@@ -276,7 +287,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 26,
+      "Order": 27,
       "Title": "Get Trace",
       "Slug": "gettrace",
       "Description": "Generated from OpenAPI examples.",
@@ -287,7 +298,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 27,
+      "Order": 28,
       "Title": "Search Request Logs",
       "Slug": "searchrequestlogs",
       "Description": "Generated from OpenAPI examples.",
@@ -298,7 +309,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 28,
+      "Order": 29,
       "Title": "Create Workflow",
       "Slug": "createworkflow",
       "Description": "Generated from OpenAPI examples.",
@@ -309,7 +320,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 29,
+      "Order": 30,
       "Title": "Get Agent",
       "Slug": "getworkflow",
       "Description": "Generated from OpenAPI examples.",
@@ -320,7 +331,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 30,
+      "Order": 31,
       "Title": "Patch Workflow",
       "Slug": "patchworkflow",
       "Description": "Generated from OpenAPI examples.",
@@ -331,7 +342,7 @@
       "Setup": null
     },
     {
-      "Order": 31,
+      "Order": 32,
       "Title": "Run Workflow",
       "Slug": "runworkflow",
       "Description": "Generated from OpenAPI examples.",
