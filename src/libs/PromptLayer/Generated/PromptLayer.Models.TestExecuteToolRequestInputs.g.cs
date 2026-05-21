@@ -4,9 +4,9 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Resolved version object — includes `tool_definition` and (if set) `execution: { type, language, code }`.
+    /// Arguments passed to the tool body. Same shape the LLM would emit — keys match the tool's parameter names.
     /// </summary>
-    public sealed partial class GetToolRegistryResponseToolRegistryVersion
+    public sealed partial class TestExecuteToolRequestInputs
     {
 
         /// <summary>
