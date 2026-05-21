@@ -23,6 +23,12 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public int? WorkspaceId { get; set; }
 
@@ -61,6 +67,7 @@ namespace PromptLayer
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="workspaceId"></param>
         /// <param name="folderId"></param>
         /// <param name="createdAt"></param>
@@ -74,6 +81,7 @@ namespace PromptLayer
         public ListToolRegistriesResponseToolRegistrie(
             int? id,
             string? name,
+            string? description,
             int? workspaceId,
             int? folderId,
             string? createdAt,
@@ -82,6 +90,7 @@ namespace PromptLayer
         {
             this.Id = id;
             this.Name = name;
+            this.Description = description;
             this.WorkspaceId = workspaceId;
             this.FolderId = folderId;
             this.CreatedAt = createdAt;

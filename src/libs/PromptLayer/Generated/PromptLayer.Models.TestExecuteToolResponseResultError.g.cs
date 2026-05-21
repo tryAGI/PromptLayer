@@ -4,9 +4,9 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Resolved version object — includes `tool_definition` and (if set) `execution: { type, language, code }`.
+    /// Present on status="error". Includes `type` and `message`.
     /// </summary>
-    public sealed partial class GetToolRegistryResponseToolRegistryVersion
+    public sealed partial class TestExecuteToolResponseResultError
     {
 
         /// <summary>

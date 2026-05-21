@@ -7,7 +7,7 @@ namespace PromptLayer
     {
 
 
-        private static readonly global::PromptLayer.EndPointSecurityRequirement s_CreateToolRegistrySecurityRequirement0 =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_TestExecuteToolSecurityRequirement0 =
             new global::PromptLayer.EndPointSecurityRequirement
             {
                 Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
@@ -21,42 +21,63 @@ namespace PromptLayer
                     },
                 },
             };
-        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_CreateToolRegistrySecurityRequirements =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_TestExecuteToolSecurityRequirements =
             new global::PromptLayer.EndPointSecurityRequirement[]
-            {                s_CreateToolRegistrySecurityRequirement0,
+            {                s_TestExecuteToolSecurityRequirement0,
             };
-        partial void PrepareCreateToolRegistryArguments(
+        partial void PrepareTestExecuteToolArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::PromptLayer.CreateToolRegistryRequest request);
-        partial void PrepareCreateToolRegistryRequest(
+            ref string identifier,
+            ref string? label,
+            ref string? version,
+            global::PromptLayer.TestExecuteToolRequest request);
+        partial void PrepareTestExecuteToolRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::PromptLayer.CreateToolRegistryRequest request);
-        partial void ProcessCreateToolRegistryResponse(
+            string identifier,
+            string? label,
+            string? version,
+            global::PromptLayer.TestExecuteToolRequest request);
+        partial void ProcessTestExecuteToolResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateToolRegistryResponseContent(
+        partial void ProcessTestExecuteToolResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Tool Registry
+        /// Test Execute Tool
         /// </summary>
+        /// <param name="identifier">
+        /// Tool ID (numeric) or name
+        /// </param>
+        /// <param name="label">
+        /// Resolve version by label name (e.g. production). Falls back to latest if neither label nor version supplied.
+        /// </param>
+        /// <param name="version">
+        /// Resolve by specific version number
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.CreateToolRegistryResponse> CreateToolRegistryAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.TestExecuteToolResponse> TestExecuteToolAsync(
+            string identifier,
 
-            global::PromptLayer.CreateToolRegistryRequest request,
+            global::PromptLayer.TestExecuteToolRequest request,
+            string? label = default,
+            string? version = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateToolRegistryAsResponseAsync(
+            var __response = await TestExecuteToolAsResponseAsync(
+                identifier: identifier,
 
                 request: request,
+                label: label,
+                version: version,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -64,15 +85,27 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Create Tool Registry
+        /// Test Execute Tool
         /// </summary>
+        /// <param name="identifier">
+        /// Tool ID (numeric) or name
+        /// </param>
+        /// <param name="label">
+        /// Resolve version by label name (e.g. production). Falls back to latest if neither label nor version supplied.
+        /// </param>
+        /// <param name="version">
+        /// Resolve by specific version number
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.CreateToolRegistryResponse>> CreateToolRegistryAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.TestExecuteToolResponse>> TestExecuteToolAsResponseAsync(
+            string identifier,
 
-            global::PromptLayer.CreateToolRegistryRequest request,
+            global::PromptLayer.TestExecuteToolRequest request,
+            string? label = default,
+            string? version = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -80,15 +113,18 @@ namespace PromptLayer
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateToolRegistryArguments(
+            PrepareTestExecuteToolArguments(
                 httpClient: HttpClient,
+                identifier: ref identifier,
+                label: ref label,
+                version: ref version,
                 request: request);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateToolRegistrySecurityRequirements,
-                operationName: "CreateToolRegistryAsync");
+                securityRequirements: s_TestExecuteToolSecurityRequirements,
+                operationName: "TestExecuteToolAsync");
 
             using var __timeoutCancellationTokenSource = global::PromptLayer.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -108,8 +144,12 @@ namespace PromptLayer
             {
 
                             var __pathBuilder = new global::PromptLayer.PathBuilder(
-                                path: "/api/public/v2/tool-registry",
+                                path: $"/api/public/v2/tool-registry/{identifier}/test-execute",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("label", label)
+                                .AddOptionalParameter("version", version)
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -153,9 +193,12 @@ namespace PromptLayer
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateToolRegistryRequest(
+                PrepareTestExecuteToolRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    identifier: identifier!,
+                    label: label,
+                    version: version,
                     request: request);
 
                 return __httpRequest;
@@ -173,9 +216,9 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateToolRegistry",
-                                methodName: "CreateToolRegistryAsync",
-                                pathTemplate: "\"/api/public/v2/tool-registry\"",
+                                operationId: "TestExecuteTool",
+                                methodName: "TestExecuteToolAsync",
+                                pathTemplate: "$\"/api/public/v2/tool-registry/{identifier}/test-execute\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -207,9 +250,9 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateToolRegistry",
-                                methodName: "CreateToolRegistryAsync",
-                                pathTemplate: "\"/api/public/v2/tool-registry\"",
+                                operationId: "TestExecuteTool",
+                                methodName: "TestExecuteToolAsync",
+                                pathTemplate: "$\"/api/public/v2/tool-registry/{identifier}/test-execute\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -248,9 +291,9 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateToolRegistry",
-                                methodName: "CreateToolRegistryAsync",
-                                pathTemplate: "\"/api/public/v2/tool-registry\"",
+                                operationId: "TestExecuteTool",
+                                methodName: "TestExecuteToolAsync",
+                                pathTemplate: "$\"/api/public/v2/tool-registry/{identifier}/test-execute\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -288,7 +331,7 @@ namespace PromptLayer
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateToolRegistryResponse(
+                ProcessTestExecuteToolResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -296,9 +339,9 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateToolRegistry",
-                                methodName: "CreateToolRegistryAsync",
-                                pathTemplate: "\"/api/public/v2/tool-registry\"",
+                                operationId: "TestExecuteTool",
+                                methodName: "TestExecuteToolAsync",
+                                pathTemplate: "$\"/api/public/v2/tool-registry/{identifier}/test-execute\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -318,9 +361,9 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateToolRegistry",
-                                methodName: "CreateToolRegistryAsync",
-                                pathTemplate: "\"/api/public/v2/tool-registry\"",
+                                operationId: "TestExecuteTool",
+                                methodName: "TestExecuteToolAsync",
+                                pathTemplate: "$\"/api/public/v2/tool-registry/{identifier}/test-execute\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -335,114 +378,99 @@ namespace PromptLayer
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized - missing or invalid API key.
-                            if ((int)__response.StatusCode == 401)
+                            // 
+                            if ((int)__response.StatusCode == 400)
                             {
-                                string? __content_401 = null;
-                                global::System.Exception? __exception_401 = null;
-                                global::PromptLayer.ErrorResponse? __value_401 = null;
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                     else
                                     {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_401 = __ex;
+                                    __exception_400 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_401,
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
+                                    ResponseBody = __content_400,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
                                         h => h.Value),
                                 };
                             }
-                            // External ID conflict
-                            if ((int)__response.StatusCode == 409)
+                            // 
+                            if ((int)__response.StatusCode == 404)
                             {
-                                string? __content_409 = null;
-                                global::System.Exception? __exception_409 = null;
-                                global::PromptLayer.ExternalIdErrorResponse? __value_409 = null;
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::PromptLayer.ExternalIdErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                     else
                                     {
-                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_409 = global::PromptLayer.ExternalIdErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_409 = __ex;
+                                    __exception_404 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ExternalIdErrorResponse>(
-                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_409,
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_409,
-                                    ResponseObject = __value_409,
+                                    ResponseBody = __content_404,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
                                         h => h.Value),
                                 };
                             }
-                            // Validation error - request parameters or body are invalid.
-                            if ((int)__response.StatusCode == 422)
+                            // 
+                            if ((int)__response.StatusCode == 502)
                             {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                string? __content_502 = null;
+                                global::System.Exception? __exception_502 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                        __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                     else
                                     {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                        __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    __exception_422 = __ex;
+                                    __exception_502 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>(
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
+                                throw new global::PromptLayer.ApiException(
+                                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_502,
                                     statusCode: __response.StatusCode)
                                 {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
+                                    ResponseBody = __content_502,
                                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -462,7 +490,7 @@ namespace PromptLayer
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateToolRegistryResponseContent(
+                                ProcessTestExecuteToolResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -471,9 +499,9 @@ namespace PromptLayer
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::PromptLayer.CreateToolRegistryResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::PromptLayer.TestExecuteToolResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.CreateToolRegistryResponse>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.TestExecuteToolResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -505,9 +533,9 @@ namespace PromptLayer
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::PromptLayer.CreateToolRegistryResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::PromptLayer.TestExecuteToolResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.CreateToolRegistryResponse>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.TestExecuteToolResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -550,55 +578,50 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Create Tool Registry
+        /// Test Execute Tool
         /// </summary>
-        /// <param name="name">
-        /// Tool name (unique per workspace)
+        /// <param name="identifier">
+        /// Tool ID (numeric) or name
         /// </param>
-        /// <param name="toolDefinition">
-        /// Tool definition in OpenAI function-calling format
+        /// <param name="label">
+        /// Resolve version by label name (e.g. production). Falls back to latest if neither label nor version supplied.
         /// </param>
-        /// <param name="description">
-        /// Optional human-readable description of the tool
+        /// <param name="version">
+        /// Resolve by specific version number
         /// </param>
-        /// <param name="folderId">
-        /// Folder ID to place tool in
-        /// </param>
-        /// <param name="commitMessage">
-        /// Commit message for the initial version
-        /// </param>
-        /// <param name="externalIds">
-        /// Identifiers from other systems.
+        /// <param name="inputs">
+        /// Arguments passed to the tool body. Same shape the LLM would emit — keys match the tool's parameter names.
         /// </param>
         /// <param name="execution">
-        /// Optional sandbox-executable body for the tool. When set, PromptLayer auto-runs the body between LLM turns. See the Auto Tool Execution feature page.
+        /// In-flight override of the stored execution config. Lets you test unsaved code.
+        /// </param>
+        /// <param name="toolDefinition">
+        /// In-flight override of the stored tool definition. Used to test against a different function name without saving.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.CreateToolRegistryResponse> CreateToolRegistryAsync(
-            string name,
-            object toolDefinition,
-            string? description = default,
-            int? folderId = default,
-            string? commitMessage = default,
-            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
-            global::PromptLayer.CreateToolRegistryRequestExecution? execution = default,
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.TestExecuteToolResponse> TestExecuteToolAsync(
+            string identifier,
+            string? label = default,
+            string? version = default,
+            object? inputs = default,
+            global::PromptLayer.TestExecuteToolRequestExecution? execution = default,
+            object? toolDefinition = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::PromptLayer.CreateToolRegistryRequest
+            var __request = new global::PromptLayer.TestExecuteToolRequest
             {
-                Name = name,
-                ToolDefinition = toolDefinition,
-                Description = description,
-                FolderId = folderId,
-                CommitMessage = commitMessage,
-                ExternalIds = externalIds,
+                Inputs = inputs,
                 Execution = execution,
+                ToolDefinition = toolDefinition,
             };
 
-            return await CreateToolRegistryAsync(
+            return await TestExecuteToolAsync(
+                identifier: identifier,
+                label: label,
+                version: version,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

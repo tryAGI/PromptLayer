@@ -23,6 +23,12 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public int? WorkspaceId { get; set; }
 
@@ -33,7 +39,7 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<object>? Labels { get; set; }
 
         /// <summary>
-        /// 
+        /// Resolved version object — includes `tool_definition` and (if set) `execution: { type, language, code }`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public object? Version { get; set; }
@@ -55,9 +61,12 @@ namespace PromptLayer
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="workspaceId"></param>
         /// <param name="labels"></param>
-        /// <param name="version"></param>
+        /// <param name="version">
+        /// Resolved version object — includes `tool_definition` and (if set) `execution: { type, language, code }`.
+        /// </param>
         /// <param name="toolDefinition"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,6 +74,7 @@ namespace PromptLayer
         public GetToolRegistryResponseToolRegistry(
             int? id,
             string? name,
+            string? description,
             int? workspaceId,
             global::System.Collections.Generic.IList<object>? labels,
             object? version,
@@ -72,6 +82,7 @@ namespace PromptLayer
         {
             this.Id = id;
             this.Name = name;
+            this.Description = description;
             this.WorkspaceId = workspaceId;
             this.Labels = labels;
             this.Version = version;
