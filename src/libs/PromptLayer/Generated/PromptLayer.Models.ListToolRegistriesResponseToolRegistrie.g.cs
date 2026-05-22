@@ -42,13 +42,13 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public string? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        public string? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// External ID mappings attached to this tool.
@@ -84,8 +84,8 @@ namespace PromptLayer
             string? description,
             int? workspaceId,
             int? folderId,
-            string? createdAt,
-            string? updatedAt,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
             global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;

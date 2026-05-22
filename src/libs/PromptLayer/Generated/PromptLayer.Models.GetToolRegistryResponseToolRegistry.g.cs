@@ -35,6 +35,18 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
+        public global::System.DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         public global::System.Collections.Generic.IList<object>? Labels { get; set; }
 
@@ -63,6 +75,8 @@ namespace PromptLayer
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="workspaceId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="labels"></param>
         /// <param name="version">
         /// Resolved version object — includes `tool_definition` and (if set) `execution: { type, language, code }`.
@@ -76,6 +90,8 @@ namespace PromptLayer
             string? name,
             string? description,
             int? workspaceId,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
             global::System.Collections.Generic.IList<object>? labels,
             object? version,
             object? toolDefinition)
@@ -84,6 +100,8 @@ namespace PromptLayer
             this.Name = name;
             this.Description = description;
             this.WorkspaceId = workspaceId;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Labels = labels;
             this.Version = version;
             this.ToolDefinition = toolDefinition;
