@@ -60,6 +60,15 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public ExternalIdsClient ExternalIds => new ExternalIdsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FoldersClient Folders => new FoldersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

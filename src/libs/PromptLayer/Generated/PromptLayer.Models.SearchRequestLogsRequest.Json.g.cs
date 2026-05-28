@@ -2,7 +2,7 @@
 
 namespace PromptLayer
 {
-    public sealed partial class SearchRequestLogsRequest
+    public readonly partial struct SearchRequestLogsRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -41,7 +41,7 @@ namespace PromptLayer
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::PromptLayer.SearchRequestLogsRequest),
-                jsonSerializerContext) as global::PromptLayer.SearchRequestLogsRequest;
+                jsonSerializerContext) as global::PromptLayer.SearchRequestLogsRequest?;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace PromptLayer
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::PromptLayer.SearchRequestLogsRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.SearchRequestLogsRequest;
+                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.SearchRequestLogsRequest?;
         }
 
         /// <summary>

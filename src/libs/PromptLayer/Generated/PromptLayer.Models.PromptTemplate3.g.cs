@@ -5,7 +5,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    /// The prompt content, either chat or completion.
     /// </summary>
     public readonly partial struct PromptTemplate3 : global::System.IEquatable<PromptTemplate3>
     {
@@ -34,6 +34,19 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompletion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.CompletionPrompt? value)
+        {
+            value = Completion;
+            return IsCompletion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ChatPrompt? Chat { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chat))]
 #endif
         public bool IsChat => Chat != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.ChatPrompt? value)
+        {
+            value = Chat;
+            return IsChat;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace PromptLayer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::PromptLayer.CompletionPrompt?, TResult>? completion = null,
-            global::System.Func<global::PromptLayer.ChatPrompt?, TResult>? chat = null,
+            global::System.Func<global::PromptLayer.CompletionPrompt, TResult>? completion = null,
+            global::System.Func<global::PromptLayer.ChatPrompt, TResult>? chat = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace PromptLayer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::PromptLayer.CompletionPrompt?>? completion = null,
-            global::System.Action<global::PromptLayer.ChatPrompt?>? chat = null,
+            global::System.Action<global::PromptLayer.CompletionPrompt>? completion = null,
+
+            global::System.Action<global::PromptLayer.ChatPrompt>? chat = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompletion)
+            {
+                completion?.Invoke(Completion!);
+            }
+            else if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::PromptLayer.CompletionPrompt>? completion = null,
+            global::System.Action<global::PromptLayer.ChatPrompt>? chat = null,
             bool validate = true)
         {
             if (validate)

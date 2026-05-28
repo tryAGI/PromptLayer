@@ -32,6 +32,19 @@ namespace PromptLayer
         public bool IsFunction => Function != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.FunctionTool? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
         /// A provider-native built-in tool (e.g. web search, code interpreter, bash).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
 #endif
         public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PromptLayer.BuiltInTool? value)
+        {
+            value = WebSearch;
+            return IsWebSearch;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace PromptLayer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::PromptLayer.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::PromptLayer.BuiltInTool?, TResult>? webSearch = null,
+            global::System.Func<global::PromptLayer.FunctionTool, TResult>? function = null,
+            global::System.Func<global::PromptLayer.BuiltInTool, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace PromptLayer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::PromptLayer.FunctionTool?>? function = null,
-            global::System.Action<global::PromptLayer.BuiltInTool?>? webSearch = null,
+            global::System.Action<global::PromptLayer.FunctionTool>? function = null,
+
+            global::System.Action<global::PromptLayer.BuiltInTool>? webSearch = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::PromptLayer.FunctionTool>? function = null,
+            global::System.Action<global::PromptLayer.BuiltInTool>? webSearch = null,
             bool validate = true)
         {
             if (validate)

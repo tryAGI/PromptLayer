@@ -24,4 +24,5 @@ autosdk generate openapi.json \
   --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
-  --security-scheme ApiKey:Header:X-API-KEY
+  --security-scheme ApiKey:Header:X-API-KEY \
+  --auth-env-var PROMPTLAYER_API_KEY

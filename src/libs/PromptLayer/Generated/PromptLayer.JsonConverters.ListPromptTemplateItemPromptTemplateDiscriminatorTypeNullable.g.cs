@@ -3,10 +3,10 @@
 namespace PromptLayer.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class SearchRequestLogsRequestSortOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::PromptLayer.SearchRequestLogsRequestSortOrder>
+    public sealed class ListPromptTemplateItemPromptTemplateDiscriminatorTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType?>
     {
         /// <inheritdoc />
-        public override global::PromptLayer.SearchRequestLogsRequestSortOrder Read(
+        public override global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace PromptLayer.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::PromptLayer.SearchRequestLogsRequestSortOrderExtensions.ToEnum(stringValue) ?? default;
+                        return global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace PromptLayer.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::PromptLayer.SearchRequestLogsRequestSortOrder)numValue;
+                    return (global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::PromptLayer.SearchRequestLogsRequestSortOrder);
+                    return default(global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace PromptLayer.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::PromptLayer.SearchRequestLogsRequestSortOrder value,
+            global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::PromptLayer.SearchRequestLogsRequestSortOrderExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorTypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

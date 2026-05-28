@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    /// Message describing the changes in this version. Maximum 72 characters.
     /// </summary>
     public sealed partial class PromptVersionCommitMessage
     {

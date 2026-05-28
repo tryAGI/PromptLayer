@@ -70,6 +70,13 @@ namespace PromptLayer
         public string? CommitMessage { get; set; }
 
         /// <summary>
+        /// External ID mappings attached to the prompt template.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -92,6 +99,9 @@ namespace PromptLayer
         /// </param>
         /// <param name="tags"></param>
         /// <param name="promptTemplate"></param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to the prompt template.
+        /// </param>
         /// <param name="releaseLabels"></param>
         /// <param name="metadata"></param>
         /// <param name="commitMessage"></param>
@@ -105,6 +115,7 @@ namespace PromptLayer
             int versionNumber,
             global::System.Collections.Generic.IList<string> tags,
             global::PromptLayer.PromptTemplate4 promptTemplate,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> externalIds,
             global::System.Collections.Generic.IList<string>? releaseLabels,
             global::PromptLayer.Metadata? metadata,
             string? commitMessage)
@@ -118,6 +129,7 @@ namespace PromptLayer
             this.PromptTemplate = promptTemplate;
             this.Metadata = metadata;
             this.CommitMessage = commitMessage;
+            this.ExternalIds = externalIds ?? throw new global::System.ArgumentNullException(nameof(externalIds));
         }
 
         /// <summary>

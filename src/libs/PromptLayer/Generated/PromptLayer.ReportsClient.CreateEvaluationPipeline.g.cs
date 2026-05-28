@@ -484,6 +484,44 @@ namespace PromptLayer
                                         h => h.Value),
                                 };
                             }
+                            // External ID conflict
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::PromptLayer.ExternalIdErrorResponse? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::PromptLayer.ExternalIdErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::PromptLayer.ExternalIdErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+                                throw new global::PromptLayer.ApiException<global::PromptLayer.ExternalIdErrorResponse>(
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_409,
+                                    ResponseObject = __value_409,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -606,6 +644,9 @@ namespace PromptLayer
         /// <param name="scoreConfiguration">
         /// Optional custom scoring logic configuration.
         /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -616,6 +657,7 @@ namespace PromptLayer
             int? datasetVersionNumber = default,
             global::System.Collections.Generic.IList<global::PromptLayer.CreateEvaluationPipelineRequestColumn>? columns = default,
             global::PromptLayer.CreateEvaluationPipelineRequestScoreConfiguration? scoreConfiguration = default,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -627,6 +669,7 @@ namespace PromptLayer
                 DatasetVersionNumber = datasetVersionNumber,
                 Columns = columns,
                 ScoreConfiguration = scoreConfiguration,
+                ExternalIds = externalIds,
             };
 
             return await CreateEvaluationPipelineAsync(

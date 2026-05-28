@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace PromptLayer
+{
+    public partial interface ITrackingClient
+    {
+        /// <summary>
+        /// Request Analytics<br/>
+        /// Aggregate analytics across request logs — totals, time-series breakdowns, latency percentiles, and model/prompt/provider/tag breakdowns. Body is the same `RequestLogQuery` shape as `POST /api/public/v2/requests/search` but returns aggregated values instead of paginated rows.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.RequestAnalyticsResponse> GetRequestAnalyticsAsync(
+
+            global::PromptLayer.RequestLogQuery request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Request Analytics<br/>
+        /// Aggregate analytics across request logs — totals, time-series breakdowns, latency percentiles, and model/prompt/provider/tag breakdowns. Body is the same `RequestLogQuery` shape as `POST /api/public/v2/requests/search` but returns aggregated values instead of paginated rows.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::PromptLayer.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.RequestAnalyticsResponse>> GetRequestAnalyticsAsResponseAsync(
+
+            global::PromptLayer.RequestLogQuery request,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Request Analytics<br/>
+        /// Aggregate analytics across request logs — totals, time-series breakdowns, latency percentiles, and model/prompt/provider/tag breakdowns. Body is the same `RequestLogQuery` shape as `POST /api/public/v2/requests/search` but returns aggregated values instead of paginated rows.
+        /// </summary>
+        /// <param name="filterGroup">
+        /// Nested filter group with AND/OR logic. Use this for complex queries.
+        /// </param>
+        /// <param name="q">
+        /// Free-text search query. Searches across the prompt input and LLM output text using fuzzy prefix matching.
+        /// </param>
+        /// <param name="sortBy">
+        /// Field to sort results by. Does not affect aggregated output for `/requests/analytics`.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort direction. Must be provided together with sort_by.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::PromptLayer.RequestAnalyticsResponse> GetRequestAnalyticsAsync(
+            global::PromptLayer.StructuredFilterGroup? filterGroup = default,
+            string? q = default,
+            global::PromptLayer.RequestLogQuerySortBy? sortBy = default,
+            global::PromptLayer.RequestLogQuerySortOrder? sortOrder = default,
+            global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

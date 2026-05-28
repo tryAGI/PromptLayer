@@ -9,6 +9,7 @@ namespace PromptLayer
     /// |-------|-------------|------------------|<br/>
     /// | `PROVIDER_RATE_LIMIT` | Rate limit hit on provider API | WARNING, ERROR |<br/>
     /// | `PROVIDER_QUOTA_LIMIT` | Account quota or spending limit exceeded | WARNING, ERROR |<br/>
+    /// | `PROVIDER_PARTIAL_RESPONSE` | Provider returned a successful response, but the saved output may be incomplete, filtered, blocked, malformed, or otherwise partial | WARNING |<br/>
     /// | `VARIABLE_MISSING_OR_EMPTY` | Required template variable was missing or empty | WARNING |<br/>
     /// | `PROVIDER_TIMEOUT` | Request timed out | ERROR |<br/>
     /// | `PROVIDER_AUTH_ERROR` | Authentication failed with provider | ERROR |<br/>

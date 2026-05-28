@@ -46,6 +46,12 @@ namespace PromptLayer
         public global::PromptLayer.CreateEvaluationPipelineRequestScoreConfiguration? ScoreConfiguration { get; set; }
 
         /// <summary>
+        /// Identifiers from other systems.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +78,9 @@ namespace PromptLayer
         /// <param name="scoreConfiguration">
         /// Optional custom scoring logic configuration.
         /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,7 +90,8 @@ namespace PromptLayer
             int? folderId,
             int? datasetVersionNumber,
             global::System.Collections.Generic.IList<global::PromptLayer.CreateEvaluationPipelineRequestColumn>? columns,
-            global::PromptLayer.CreateEvaluationPipelineRequestScoreConfiguration? scoreConfiguration)
+            global::PromptLayer.CreateEvaluationPipelineRequestScoreConfiguration? scoreConfiguration,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.DatasetGroupId = datasetGroupId;
             this.Name = name;
@@ -89,6 +99,7 @@ namespace PromptLayer
             this.DatasetVersionNumber = datasetVersionNumber;
             this.Columns = columns;
             this.ScoreConfiguration = scoreConfiguration;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>

@@ -28,6 +28,12 @@ namespace PromptLayer
         public int? FolderId { get; set; }
 
         /// <summary>
+        /// Identifiers from other systems.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,17 +51,22 @@ namespace PromptLayer
         /// <param name="folderId">
         /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
         /// </param>
+        /// <param name="externalIds">
+        /// Identifiers from other systems.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateDatasetGroupRequest(
             string name,
             int? workspaceId,
-            int? folderId)
+            int? folderId,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.WorkspaceId = workspaceId;
             this.FolderId = folderId;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>
