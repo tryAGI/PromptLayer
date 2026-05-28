@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IExternalIdsClient
     {
         /// <summary>
-        /// Upsert Prompt Template by External ID<br/>
-        /// Publish a prompt template by external ID. Existing mappings create a new version on the mapped prompt template. Missing mappings create or update a prompt template and attach the mapping.
+        /// Upsert Prompt Template by External ID
         /// </summary>
         /// <param name="source"></param>
         /// <param name="externalId"></param>
@@ -22,8 +21,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upsert Prompt Template by External ID<br/>
-        /// Publish a prompt template by external ID. Existing mappings create a new version on the mapped prompt template. Missing mappings create or update a prompt template and attach the mapping.
+        /// Upsert Prompt Template by External ID
         /// </summary>
         /// <param name="source"></param>
         /// <param name="externalId"></param>
@@ -39,8 +37,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upsert Prompt Template by External ID<br/>
-        /// Publish a prompt template by external ID. Existing mappings create a new version on the mapped prompt template. Missing mappings create or update a prompt template and attach the mapping.
+        /// Upsert Prompt Template by External ID
         /// </summary>
         /// <param name="source"></param>
         /// <param name="externalId"></param>

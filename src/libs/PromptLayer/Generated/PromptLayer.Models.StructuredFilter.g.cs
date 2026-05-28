@@ -9,7 +9,7 @@ namespace PromptLayer
     public sealed partial class StructuredFilter
     {
         /// <summary>
-        /// The request log field to filter on.
+        /// The request log field to filter on. Intent fields are virtual fields that classify request content by tone and do not require any additional logging configuration. `user_intent` classifies the user's message; valid values: `frustrated`, `satisfied`, `curious`. `agent_intent` classifies the agent's response; valid values: `apologetic`, `refusal`, `uncertain`. Intent fields support operators: `is`, `is_not`, `in`, `not_in`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.StructuredFilterFieldJsonConverter))]
@@ -47,7 +47,7 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="StructuredFilter" /> class.
         /// </summary>
         /// <param name="field">
-        /// The request log field to filter on.
+        /// The request log field to filter on. Intent fields are virtual fields that classify request content by tone and do not require any additional logging configuration. `user_intent` classifies the user's message; valid values: `frustrated`, `satisfied`, `curious`. `agent_intent` classifies the agent's response; valid values: `apologetic`, `refusal`, `uncertain`. Intent fields support operators: `is`, `is_not`, `in`, `not_in`.
         /// </param>
         /// <param name="operator">
         /// The comparison operator.
@@ -79,5 +79,6 @@ namespace PromptLayer
         public StructuredFilter()
         {
         }
+
     }
 }

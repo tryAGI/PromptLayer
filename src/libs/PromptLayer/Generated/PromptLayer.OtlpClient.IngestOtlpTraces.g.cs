@@ -46,14 +46,7 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// Ingest Traces (OTLP)<br/>
-        /// Ingest OpenTelemetry traces using the standard OTLP/HTTP protocol.<br/>
-        /// This endpoint accepts an `ExportTraceServiceRequest` as defined by the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otel/protocol/otlp/#otlphttp). Spans carrying [GenAI semantic convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) attributes are automatically converted into PromptLayer request logs.<br/>
-        /// Supported content types:<br/>
-        /// - `application/x-protobuf` — binary protobuf encoding (recommended)<br/>
-        /// - `application/json` — JSON encoding<br/>
-        /// Gzip `Content-Encoding` is supported for both formats.<br/>
-        /// Spans can include `promptlayer.prompt.name` (or `promptlayer.prompt.id`) and `promptlayer.prompt.version` (or `promptlayer.prompt.label`) attributes to link the generated request log to an existing prompt template in your workspace.
+        /// Ingest Traces (OTLP)
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
@@ -81,14 +74,7 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Ingest Traces (OTLP)<br/>
-        /// Ingest OpenTelemetry traces using the standard OTLP/HTTP protocol.<br/>
-        /// This endpoint accepts an `ExportTraceServiceRequest` as defined by the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otel/protocol/otlp/#otlphttp). Spans carrying [GenAI semantic convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) attributes are automatically converted into PromptLayer request logs.<br/>
-        /// Supported content types:<br/>
-        /// - `application/x-protobuf` — binary protobuf encoding (recommended)<br/>
-        /// - `application/json` — JSON encoding<br/>
-        /// Gzip `Content-Encoding` is supported for both formats.<br/>
-        /// Spans can include `promptlayer.prompt.name` (or `promptlayer.prompt.id`) and `promptlayer.prompt.version` (or `promptlayer.prompt.label`) attributes to link the generated request log to an existing prompt template in your workspace.
+        /// Ingest Traces (OTLP)
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
@@ -374,6 +360,43 @@ namespace PromptLayer
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Unauthorized - missing or invalid API key.
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::PromptLayer.ErrorResponse? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Unsupported Content-Type
                             if ((int)__response.StatusCode == 415)
                             {
@@ -399,18 +422,54 @@ namespace PromptLayer
                                     __exception_415 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_415,
-                                    ResponseObject = __value_415,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_415,
+                                    responseObject: __value_415,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
                             // Internal server error during ingestion
                             if ((int)__response.StatusCode == 500)
@@ -437,18 +496,17 @@ namespace PromptLayer
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -482,17 +540,15 @@ namespace PromptLayer
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -529,17 +585,15 @@ namespace PromptLayer
                                     {
                                     }
 
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -551,14 +605,7 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Ingest Traces (OTLP)<br/>
-        /// Ingest OpenTelemetry traces using the standard OTLP/HTTP protocol.<br/>
-        /// This endpoint accepts an `ExportTraceServiceRequest` as defined by the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otel/protocol/otlp/#otlphttp). Spans carrying [GenAI semantic convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) attributes are automatically converted into PromptLayer request logs.<br/>
-        /// Supported content types:<br/>
-        /// - `application/x-protobuf` — binary protobuf encoding (recommended)<br/>
-        /// - `application/json` — JSON encoding<br/>
-        /// Gzip `Content-Encoding` is supported for both formats.<br/>
-        /// Spans can include `promptlayer.prompt.name` (or `promptlayer.prompt.id`) and `promptlayer.prompt.version` (or `promptlayer.prompt.label`) attributes to link the generated request log to an existing prompt template in your workspace.
+        /// Ingest Traces (OTLP)
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>

@@ -56,6 +56,12 @@ namespace PromptLayer
         public required global::System.Collections.Generic.IList<string> ReleaseLabels { get; set; }
 
         /// <summary>
+        /// External ID mappings attached to this workflow.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -85,6 +91,9 @@ namespace PromptLayer
         /// <param name="latestVersionNumber">
         /// The latest version number of the workflow
         /// </param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to this workflow.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,7 +104,8 @@ namespace PromptLayer
             bool isDeleted,
             global::System.Collections.Generic.IList<string> releaseLabels,
             int? userId,
-            int? latestVersionNumber)
+            int? latestVersionNumber,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.WorkspaceId = workspaceId;
@@ -104,6 +114,7 @@ namespace PromptLayer
             this.IsDeleted = isDeleted;
             this.LatestVersionNumber = latestVersionNumber;
             this.ReleaseLabels = releaseLabels ?? throw new global::System.ArgumentNullException(nameof(releaseLabels));
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>
@@ -112,5 +123,6 @@ namespace PromptLayer
         public ListWorkflowsResponseItem()
         {
         }
+
     }
 }

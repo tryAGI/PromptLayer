@@ -12,37 +12,38 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Success { get; set; }
+        public bool? Success { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// The report data with all fields
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("report")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.GetReportResponseReport Report { get; set; }
+        public global::PromptLayer.GetReportResponseReport? Report { get; set; }
 
         /// <summary>
         /// Overall status of the report execution
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.GetReportResponseStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.GetReportResponseStatus Status { get; set; }
+        public global::PromptLayer.GetReportResponseStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stats")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.GetReportResponseStats Stats { get; set; }
+        public global::PromptLayer.GetReportResponseStats? Stats { get; set; }
+
+        /// <summary>
+        /// Ordered list of column configurations for this report.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("report_columns")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.GetReportResponseReportColumn>? ReportColumns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,21 +63,26 @@ namespace PromptLayer
         /// Overall status of the report execution
         /// </param>
         /// <param name="stats"></param>
+        /// <param name="reportColumns">
+        /// Ordered list of column configurations for this report.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetReportResponse(
-            bool success,
-            string message,
-            global::PromptLayer.GetReportResponseReport report,
-            global::PromptLayer.GetReportResponseStatus status,
-            global::PromptLayer.GetReportResponseStats stats)
+            bool? success,
+            string? message,
+            global::PromptLayer.GetReportResponseReport? report,
+            global::PromptLayer.GetReportResponseStatus? status,
+            global::PromptLayer.GetReportResponseStats? stats,
+            global::System.Collections.Generic.IList<global::PromptLayer.GetReportResponseReportColumn>? reportColumns)
         {
             this.Success = success;
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Report = report ?? throw new global::System.ArgumentNullException(nameof(report));
+            this.Message = message;
+            this.Report = report;
             this.Status = status;
-            this.Stats = stats ?? throw new global::System.ArgumentNullException(nameof(stats));
+            this.Stats = stats;
+            this.ReportColumns = reportColumns;
         }
 
         /// <summary>
@@ -85,5 +91,6 @@ namespace PromptLayer
         public GetReportResponse()
         {
         }
+
     }
 }

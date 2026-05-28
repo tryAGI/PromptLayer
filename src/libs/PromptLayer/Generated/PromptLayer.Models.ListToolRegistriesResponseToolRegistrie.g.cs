@@ -23,6 +23,12 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public int? WorkspaceId { get; set; }
 
@@ -36,13 +42,19 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public string? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        public string? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// External ID mappings attached to this tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,27 +67,35 @@ namespace PromptLayer
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="workspaceId"></param>
         /// <param name="folderId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to this tool.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListToolRegistriesResponseToolRegistrie(
             int? id,
             string? name,
+            string? description,
             int? workspaceId,
             int? folderId,
-            string? createdAt,
-            string? updatedAt)
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.Name = name;
+            this.Description = description;
             this.WorkspaceId = workspaceId;
             this.FolderId = folderId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>
@@ -84,5 +104,6 @@ namespace PromptLayer
         public ListToolRegistriesResponseToolRegistrie()
         {
         }
+
     }
 }

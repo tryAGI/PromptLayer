@@ -45,6 +45,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
         /// A provider-native built-in tool (e.g. web search, code interpreter, bash).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace PromptLayer
             value = WebSearch;
             return IsWebSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.BuiltInTool PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromFunction(global::PromptLayer.FunctionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::PromptLayer.BuiltInTool value) => new Tool((global::PromptLayer.BuiltInTool?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace PromptLayer
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromWebSearch(global::PromptLayer.BuiltInTool? value) => new Tool(value);
 
         /// <summary>
         /// 

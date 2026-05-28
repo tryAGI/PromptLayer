@@ -19,25 +19,26 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_group")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.DatasetGroup, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.DatasetGroup DatasetGroup { get; set; }
+        public required global::PromptLayer.AnyOf<global::PromptLayer.DatasetGroup, object> DatasetGroup { get; set; }
+
+        /// <summary>
+        /// Initial draft dataset created with version_number = -1.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.Dataset, object>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::PromptLayer.AnyOf<global::PromptLayer.Dataset, object> Dataset { get; set; }
 
         /// <summary>
         /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("dataset")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.Dataset Dataset { get; set; }
-
-        /// <summary>
-        /// External ID mappings for the dataset group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,26 +54,26 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="CreateDatasetGroupResponse" /> class.
         /// </summary>
         /// <param name="success"></param>
-        /// <param name="message"></param>
         /// <param name="datasetGroup"></param>
-        /// <param name="dataset"></param>
-        /// <param name="externalIds">
-        /// External ID mappings for the dataset group.
+        /// <param name="dataset">
+        /// Initial draft dataset created with version_number = -1.
         /// </param>
+        /// <param name="externalIds"></param>
+        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateDatasetGroupResponse(
             bool success,
-            string message,
-            global::PromptLayer.DatasetGroup datasetGroup,
-            global::PromptLayer.Dataset dataset,
-            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> externalIds)
+            global::PromptLayer.AnyOf<global::PromptLayer.DatasetGroup, object> datasetGroup,
+            global::PromptLayer.AnyOf<global::PromptLayer.Dataset, object> dataset,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> externalIds,
+            string? message)
         {
             this.Success = success;
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.DatasetGroup = datasetGroup ?? throw new global::System.ArgumentNullException(nameof(datasetGroup));
-            this.Dataset = dataset ?? throw new global::System.ArgumentNullException(nameof(dataset));
+            this.Message = message;
+            this.DatasetGroup = datasetGroup;
+            this.Dataset = dataset;
             this.ExternalIds = externalIds ?? throw new global::System.ArgumentNullException(nameof(externalIds));
         }
 
@@ -82,5 +83,6 @@ namespace PromptLayer
         public CreateDatasetGroupResponse()
         {
         }
+
     }
 }

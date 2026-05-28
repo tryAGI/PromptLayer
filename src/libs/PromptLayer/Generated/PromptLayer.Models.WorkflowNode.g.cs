@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    /// Example: {"name":"greeting","node_type":"VARIABLE","is_output_node":true,"configuration":{"value":{"type":"string","value":"Hello, World!"}},"dependencies":[]}
     /// </summary>
     public sealed partial class WorkflowNode
     {
@@ -89,5 +89,6 @@ namespace PromptLayer
         public WorkflowNode()
         {
         }
+
     }
 }

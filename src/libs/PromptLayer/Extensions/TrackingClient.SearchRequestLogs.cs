@@ -3,7 +3,7 @@ namespace PromptLayer;
 public sealed partial class TrackingClient
 {
     /// <summary>
-    /// Searches tracked LLM request logs with the pre-regeneration convenience parameters.
+    /// Searches tracked LLM request logs with convenience parameters.
     /// </summary>
     /// <param name="q">Free-text search query.</param>
     /// <param name="page">Page number for pagination.</param>

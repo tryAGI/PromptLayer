@@ -4,10 +4,14 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// The request log field to filter on.
+    /// The request log field to filter on. Intent fields are virtual fields that classify request content by tone and do not require any additional logging configuration. `user_intent` classifies the user's message; valid values: `frustrated`, `satisfied`, `curious`. `agent_intent` classifies the agent's response; valid values: `apologetic`, `refusal`, `uncertain`. Intent fields support operators: `is`, `is_not`, `in`, `not_in`.
     /// </summary>
     public enum StructuredFilterField
     {
+        /// <summary>
+        /// `frustrated`, `satisfied`, `curious`. `agent_intent` classifies the agent's response; valid values: `apologetic`, `refusal`, `uncertain`. Intent fields support operators: `is`, `is_not`, `in`, `not_in`.
+        /// </summary>
+        AgentIntent,
         /// <summary>
         /// 
         /// </summary>
@@ -108,6 +112,10 @@ namespace PromptLayer
         /// 
         /// </summary>
         ToolNames,
+        /// <summary>
+        /// `frustrated`, `satisfied`, `curious`. `agent_intent` classifies the agent's response; valid values: `apologetic`, `refusal`, `uncertain`. Intent fields support operators: `is`, `is_not`, `in`, `not_in`.
+        /// </summary>
+        UserIntent,
     }
 
     /// <summary>
@@ -122,6 +130,7 @@ namespace PromptLayer
         {
             return value switch
             {
+                StructuredFilterField.AgentIntent => "agent_intent",
                 StructuredFilterField.Cost => "cost",
                 StructuredFilterField.Engine => "engine",
                 StructuredFilterField.InputText => "input_text",
@@ -147,6 +156,7 @@ namespace PromptLayer
                 StructuredFilterField.Status => "status",
                 StructuredFilterField.Tags => "tags",
                 StructuredFilterField.ToolNames => "tool_names",
+                StructuredFilterField.UserIntent => "user_intent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -157,6 +167,7 @@ namespace PromptLayer
         {
             return value switch
             {
+                "agent_intent" => StructuredFilterField.AgentIntent,
                 "cost" => StructuredFilterField.Cost,
                 "engine" => StructuredFilterField.Engine,
                 "input_text" => StructuredFilterField.InputText,
@@ -182,6 +193,7 @@ namespace PromptLayer
                 "status" => StructuredFilterField.Status,
                 "tags" => StructuredFilterField.Tags,
                 "tool_names" => StructuredFilterField.ToolNames,
+                "user_intent" => StructuredFilterField.UserIntent,
                 _ => null,
             };
         }

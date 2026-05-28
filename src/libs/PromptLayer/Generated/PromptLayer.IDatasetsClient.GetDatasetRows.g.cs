@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IDatasetsClient
     {
         /// <summary>
-        /// Get Dataset Rows<br/>
-        /// Retrieve paginated rows from a dataset. Each row is an array of cells matching the order of the `columns` array. All cells have `{"type": "dataset", "value": ...}`.
+        /// Get Dataset Rows
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="workspaceId"></param>
@@ -20,7 +19,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.GetDatasetRowsResponse> GetDatasetRowsAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.DatasetRowsResponse> GetDatasetRowsAsync(
             int datasetId,
             int? workspaceId = default,
             int? page = default,
@@ -29,8 +28,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Dataset Rows<br/>
-        /// Retrieve paginated rows from a dataset. Each row is an array of cells matching the order of the `columns` array. All cells have `{"type": "dataset", "value": ...}`.
+        /// Get Dataset Rows
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="workspaceId"></param>
@@ -44,7 +42,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetDatasetRowsResponse>> GetDatasetRowsAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.DatasetRowsResponse>> GetDatasetRowsAsResponseAsync(
             int datasetId,
             int? workspaceId = default,
             int? page = default,

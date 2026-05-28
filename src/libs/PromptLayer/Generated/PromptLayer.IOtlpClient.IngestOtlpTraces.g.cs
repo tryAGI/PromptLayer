@@ -5,14 +5,7 @@ namespace PromptLayer
     public partial interface IOtlpClient
     {
         /// <summary>
-        /// Ingest Traces (OTLP)<br/>
-        /// Ingest OpenTelemetry traces using the standard OTLP/HTTP protocol.<br/>
-        /// This endpoint accepts an `ExportTraceServiceRequest` as defined by the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otel/protocol/otlp/#otlphttp). Spans carrying [GenAI semantic convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) attributes are automatically converted into PromptLayer request logs.<br/>
-        /// Supported content types:<br/>
-        /// - `application/x-protobuf` — binary protobuf encoding (recommended)<br/>
-        /// - `application/json` — JSON encoding<br/>
-        /// Gzip `Content-Encoding` is supported for both formats.<br/>
-        /// Spans can include `promptlayer.prompt.name` (or `promptlayer.prompt.id`) and `promptlayer.prompt.version` (or `promptlayer.prompt.label`) attributes to link the generated request log to an existing prompt template in your workspace.
+        /// Ingest Traces (OTLP)
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
@@ -28,14 +21,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Ingest Traces (OTLP)<br/>
-        /// Ingest OpenTelemetry traces using the standard OTLP/HTTP protocol.<br/>
-        /// This endpoint accepts an `ExportTraceServiceRequest` as defined by the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otel/protocol/otlp/#otlphttp). Spans carrying [GenAI semantic convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) attributes are automatically converted into PromptLayer request logs.<br/>
-        /// Supported content types:<br/>
-        /// - `application/x-protobuf` — binary protobuf encoding (recommended)<br/>
-        /// - `application/json` — JSON encoding<br/>
-        /// Gzip `Content-Encoding` is supported for both formats.<br/>
-        /// Spans can include `promptlayer.prompt.name` (or `promptlayer.prompt.id`) and `promptlayer.prompt.version` (or `promptlayer.prompt.label`) attributes to link the generated request log to an existing prompt template in your workspace.
+        /// Ingest Traces (OTLP)
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
@@ -51,14 +37,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Ingest Traces (OTLP)<br/>
-        /// Ingest OpenTelemetry traces using the standard OTLP/HTTP protocol.<br/>
-        /// This endpoint accepts an `ExportTraceServiceRequest` as defined by the [OpenTelemetry specification](https://opentelemetry.io/docs/specs/otel/protocol/otlp/#otlphttp). Spans carrying [GenAI semantic convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) attributes are automatically converted into PromptLayer request logs.<br/>
-        /// Supported content types:<br/>
-        /// - `application/x-protobuf` — binary protobuf encoding (recommended)<br/>
-        /// - `application/json` — JSON encoding<br/>
-        /// Gzip `Content-Encoding` is supported for both formats.<br/>
-        /// Spans can include `promptlayer.prompt.name` (or `promptlayer.prompt.id`) and `promptlayer.prompt.version` (or `promptlayer.prompt.label`) attributes to link the generated request log to an existing prompt template in your workspace.
+        /// Ingest Traces (OTLP)
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>

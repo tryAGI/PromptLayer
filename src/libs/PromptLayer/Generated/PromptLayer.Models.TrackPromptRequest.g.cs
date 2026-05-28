@@ -9,33 +9,35 @@ namespace PromptLayer
     public sealed partial class TrackPromptRequest
     {
         /// <summary>
-        /// The name of the prompt template.
+        /// Prompt template name to associate with the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PromptName { get; set; }
 
         /// <summary>
-        /// Input variables for the prompt template.
+        /// Variables used to render the prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_input_variables")]
-        public global::System.Collections.Generic.Dictionary<string, string>? PromptInputVariables { get; set; }
+        public object? PromptInputVariables { get; set; }
 
         /// <summary>
-        /// The unique identifier for the request.
+        /// PromptLayer request ID to update.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RequestId { get; set; }
+        public required global::PromptLayer.AnyOf<int?, string> RequestId { get; set; }
 
         /// <summary>
-        /// The version of the prompt template. Both version and label cannot be specified. Only one or none.
+        /// Prompt template version to associate.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        public int? Version { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
+        public global::PromptLayer.AnyOf<int?, string, object>? Version { get; set; }
 
         /// <summary>
-        /// The label of the prompt template version. Both version and label cannot be specified. Only one or none.
+        /// Release label to resolve to a prompt template version.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         public string? Label { get; set; }
@@ -50,28 +52,28 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="TrackPromptRequest" /> class.
         /// </summary>
         /// <param name="promptName">
-        /// The name of the prompt template.
+        /// Prompt template name to associate with the request.
         /// </param>
         /// <param name="requestId">
-        /// The unique identifier for the request.
+        /// PromptLayer request ID to update.
         /// </param>
         /// <param name="promptInputVariables">
-        /// Input variables for the prompt template.
+        /// Variables used to render the prompt.
         /// </param>
         /// <param name="version">
-        /// The version of the prompt template. Both version and label cannot be specified. Only one or none.
+        /// Prompt template version to associate.
         /// </param>
         /// <param name="label">
-        /// The label of the prompt template version. Both version and label cannot be specified. Only one or none.
+        /// Release label to resolve to a prompt template version.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TrackPromptRequest(
             string promptName,
-            int requestId,
-            global::System.Collections.Generic.Dictionary<string, string>? promptInputVariables,
-            int? version,
+            global::PromptLayer.AnyOf<int?, string> requestId,
+            object? promptInputVariables,
+            global::PromptLayer.AnyOf<int?, string, object>? version,
             string? label)
         {
             this.PromptName = promptName ?? throw new global::System.ArgumentNullException(nameof(promptName));
@@ -87,5 +89,6 @@ namespace PromptLayer
         public TrackPromptRequest()
         {
         }
+
     }
 }

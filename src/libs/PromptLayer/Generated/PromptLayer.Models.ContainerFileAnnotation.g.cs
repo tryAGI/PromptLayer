@@ -94,5 +94,18 @@ namespace PromptLayer
         public ContainerFileAnnotation()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ContainerFileAnnotation"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ContainerFileAnnotation FromContainerId(string containerId)
+        {
+            return new ContainerFileAnnotation
+            {
+                ContainerId = containerId,
+            };
+        }
+
     }
 }

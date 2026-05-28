@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IPromptTemplatesClient
     {
         /// <summary>
-        /// Get Snippet Usage<br/>
-        /// Get all prompts that use a given snippet (prompt template). Returns a list of prompts and their version numbers that reference this snippet.
+        /// Get Snippet Usage
         /// </summary>
         /// <param name="identifier">
         /// The identifier can be either the prompt name or the prompt id.
@@ -23,8 +22,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Snippet Usage<br/>
-        /// Get all prompts that use a given snippet (prompt template). Returns a list of prompts and their version numbers that reference this snippet.
+        /// Get Snippet Usage
         /// </summary>
         /// <param name="identifier">
         /// The identifier can be either the prompt name or the prompt id.

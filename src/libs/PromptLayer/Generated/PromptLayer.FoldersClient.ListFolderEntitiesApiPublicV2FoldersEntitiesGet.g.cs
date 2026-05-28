@@ -32,7 +32,20 @@ namespace PromptLayer
             ref global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>? filterType,
             ref string? searchQuery,
             ref bool? flatten,
-            ref bool? includeMetadata);
+            ref bool? includeMetadata,
+            ref string? createdByEmail,
+            ref global::System.DateTime? createdAfter,
+            ref global::System.DateTime? createdBefore,
+            ref global::System.DateTime? updatedAfter,
+            ref global::System.DateTime? updatedBefore,
+            ref string? externalSource,
+            ref string? externalId,
+            ref global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy,
+            ref global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder,
+            ref global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags,
+            ref bool? semanticSearch,
+            ref int? semanticSearchTopK,
+            ref double? semanticSearchThreshold);
         partial void PrepareListFolderEntitiesApiPublicV2FoldersEntitiesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -41,7 +54,20 @@ namespace PromptLayer
             global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>? filterType,
             string? searchQuery,
             bool? flatten,
-            bool? includeMetadata);
+            bool? includeMetadata,
+            string? createdByEmail,
+            global::System.DateTime? createdAfter,
+            global::System.DateTime? createdBefore,
+            global::System.DateTime? updatedAfter,
+            global::System.DateTime? updatedBefore,
+            string? externalSource,
+            string? externalId,
+            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy,
+            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder,
+            global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags,
+            bool? semanticSearch,
+            int? semanticSearchTopK,
+            double? semanticSearchThreshold);
         partial void ProcessListFolderEntitiesApiPublicV2FoldersEntitiesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,8 +78,7 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// List Folder Entities<br/>
-        /// Lists entities within a folder or at the workspace root. Returns folders, prompts, snippets, workflows, datasets, evaluations, AB tests, and input variable sets. Supports filtering by entity type, searching by name, flattening the folder hierarchy, and optionally including entity metadata.
+        /// List Folder Entities
         /// </summary>
         /// <param name="workspaceId">
         /// The ID of the workspace to list entities from.
@@ -75,6 +100,25 @@ namespace PromptLayer
         /// When true, includes type-specific metadata for each entity (e.g., prompt type, latest version number).<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="createdByEmail"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
+        /// <param name="updatedAfter"></param>
+        /// <param name="updatedBefore"></param>
+        /// <param name="externalSource"></param>
+        /// <param name="externalId"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="tags"></param>
+        /// <param name="semanticSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="semanticSearchTopK">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="semanticSearchThreshold"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -85,6 +129,19 @@ namespace PromptLayer
             string? searchQuery = default,
             bool? flatten = default,
             bool? includeMetadata = default,
+            string? createdByEmail = default,
+            global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
+            global::System.DateTime? updatedAfter = default,
+            global::System.DateTime? updatedBefore = default,
+            string? externalSource = default,
+            string? externalId = default,
+            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy = default,
+            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder = default,
+            global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
+            bool? semanticSearch = default,
+            int? semanticSearchTopK = default,
+            double? semanticSearchThreshold = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -95,6 +152,19 @@ namespace PromptLayer
                 searchQuery: searchQuery,
                 flatten: flatten,
                 includeMetadata: includeMetadata,
+                createdByEmail: createdByEmail,
+                createdAfter: createdAfter,
+                createdBefore: createdBefore,
+                updatedAfter: updatedAfter,
+                updatedBefore: updatedBefore,
+                externalSource: externalSource,
+                externalId: externalId,
+                sortBy: sortBy,
+                sortOrder: sortOrder,
+                tags: tags,
+                semanticSearch: semanticSearch,
+                semanticSearchTopK: semanticSearchTopK,
+                semanticSearchThreshold: semanticSearchThreshold,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -102,8 +172,7 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// List Folder Entities<br/>
-        /// Lists entities within a folder or at the workspace root. Returns folders, prompts, snippets, workflows, datasets, evaluations, AB tests, and input variable sets. Supports filtering by entity type, searching by name, flattening the folder hierarchy, and optionally including entity metadata.
+        /// List Folder Entities
         /// </summary>
         /// <param name="workspaceId">
         /// The ID of the workspace to list entities from.
@@ -125,6 +194,25 @@ namespace PromptLayer
         /// When true, includes type-specific metadata for each entity (e.g., prompt type, latest version number).<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="createdByEmail"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
+        /// <param name="updatedAfter"></param>
+        /// <param name="updatedBefore"></param>
+        /// <param name="externalSource"></param>
+        /// <param name="externalId"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="tags"></param>
+        /// <param name="semanticSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="semanticSearchTopK">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="semanticSearchThreshold"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
@@ -135,6 +223,19 @@ namespace PromptLayer
             string? searchQuery = default,
             bool? flatten = default,
             bool? includeMetadata = default,
+            string? createdByEmail = default,
+            global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
+            global::System.DateTime? updatedAfter = default,
+            global::System.DateTime? updatedBefore = default,
+            string? externalSource = default,
+            string? externalId = default,
+            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy? sortBy = default,
+            global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder? sortOrder = default,
+            global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
+            bool? semanticSearch = default,
+            int? semanticSearchTopK = default,
+            double? semanticSearchThreshold = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -147,7 +248,20 @@ namespace PromptLayer
                 filterType: ref filterType,
                 searchQuery: ref searchQuery,
                 flatten: ref flatten,
-                includeMetadata: ref includeMetadata);
+                includeMetadata: ref includeMetadata,
+                createdByEmail: ref createdByEmail,
+                createdAfter: ref createdAfter,
+                createdBefore: ref createdBefore,
+                updatedAfter: ref updatedAfter,
+                updatedBefore: ref updatedBefore,
+                externalSource: ref externalSource,
+                externalId: ref externalId,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder,
+                tags: ref tags,
+                semanticSearch: ref semanticSearch,
+                semanticSearchTopK: ref semanticSearchTopK,
+                semanticSearchThreshold: ref semanticSearchThreshold);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
@@ -182,6 +296,19 @@ namespace PromptLayer
                                 .AddOptionalParameter("search_query", searchQuery)
                                 .AddOptionalParameter("flatten", flatten?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("include_metadata", includeMetadata?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("created_by_email", createdByEmail)
+                                .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("created_before", createdBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("updated_after", updatedAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("updated_before", updatedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("external_source", externalSource)
+                                .AddOptionalParameter("external_id", externalId)
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
+                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("semantic_search", semanticSearch?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("semantic_search_top_k", semanticSearchTopK?.ToString())
+                                .AddOptionalParameter("semantic_search_threshold", semanticSearchThreshold?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -228,7 +355,20 @@ namespace PromptLayer
                     filterType: filterType,
                     searchQuery: searchQuery,
                     flatten: flatten,
-                    includeMetadata: includeMetadata);
+                    includeMetadata: includeMetadata,
+                    createdByEmail: createdByEmail,
+                    createdAfter: createdAfter,
+                    createdBefore: createdBefore,
+                    updatedAfter: updatedAfter,
+                    updatedBefore: updatedBefore,
+                    externalSource: externalSource,
+                    externalId: externalId,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder,
+                    tags: tags,
+                    semanticSearch: semanticSearch,
+                    semanticSearchTopK: semanticSearchTopK,
+                    semanticSearchThreshold: semanticSearchThreshold);
 
                 return __httpRequest;
             }
@@ -432,18 +572,54 @@ namespace PromptLayer
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // Unauthorized - missing or invalid API key.
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::PromptLayer.ErrorResponse? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::PromptLayer.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
                             // Folder not found
                             if ((int)__response.StatusCode == 404)
@@ -470,18 +646,54 @@ namespace PromptLayer
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.FolderNotFoundError>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.FolderNotFoundError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -515,17 +727,15 @@ namespace PromptLayer
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -562,17 +772,15 @@ namespace PromptLayer
                                     {
                                     }
 
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

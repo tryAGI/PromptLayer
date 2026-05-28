@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IToolRegistryClient
     {
         /// <summary>
-        /// Create Tool Registry<br/>
-        /// Create a new tool in the Tool Registry with an initial version.
+        /// Create Tool Registry
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +17,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Tool Registry<br/>
-        /// Create a new tool in the Tool Registry with an initial version.
+        /// Create Tool Registry
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,14 +29,16 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Tool Registry<br/>
-        /// Create a new tool in the Tool Registry with an initial version.
+        /// Create Tool Registry
         /// </summary>
         /// <param name="name">
         /// Tool name (unique per workspace)
         /// </param>
         /// <param name="toolDefinition">
         /// Tool definition in OpenAI function-calling format
+        /// </param>
+        /// <param name="description">
+        /// Optional human-readable description of the tool
         /// </param>
         /// <param name="folderId">
         /// Folder ID to place tool in
@@ -49,15 +49,20 @@ namespace PromptLayer
         /// <param name="externalIds">
         /// Identifiers from other systems.
         /// </param>
+        /// <param name="execution">
+        /// Optional sandbox-executable body for the tool. When set, PromptLayer auto-runs the body between LLM turns. See the Auto Tool Execution feature page.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreateToolRegistryResponse> CreateToolRegistryAsync(
             string name,
             object toolDefinition,
+            string? description = default,
             int? folderId = default,
             string? commitMessage = default,
             global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds = default,
+            global::PromptLayer.CreateToolRegistryRequestExecution? execution = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

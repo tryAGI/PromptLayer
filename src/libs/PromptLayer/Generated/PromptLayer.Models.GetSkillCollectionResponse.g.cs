@@ -73,5 +73,6 @@ namespace PromptLayer
         public GetSkillCollectionResponse()
         {
         }
+
     }
 }

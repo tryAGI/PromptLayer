@@ -47,7 +47,7 @@ namespace PromptLayer
         /// A message describing the changes in this version.
         /// </param>
         /// <param name="nodes">
-        /// The nodes in the workflow.
+        /// Complete list of workflow nodes. At least one node must be marked is_output_node=true.
         /// </param>
         /// <param name="requiredInputVariables">
         /// A mapping of variable names to their types.

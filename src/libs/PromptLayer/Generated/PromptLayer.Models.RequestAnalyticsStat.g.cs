@@ -182,5 +182,6 @@ namespace PromptLayer
         public RequestAnalyticsStat()
         {
         }
+
     }
 }

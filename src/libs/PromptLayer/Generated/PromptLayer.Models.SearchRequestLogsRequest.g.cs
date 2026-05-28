@@ -5,12 +5,14 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Search and filter request logs with structured filters, free-text search, sorting, and pagination. Extends `RequestLogQuery` with pagination and `include_prompt_name`.
+    /// Search and filter request logs with structured filters, free-text search, sorting, and pagination. Extends `RequestLogQuery` with pagination and `include_prompt_name`.<br/>
+    /// Example: {"filter_group":{"logic":"AND","filters":[{"field":"cost","operator":"gte","value":0.1}]},"page":1,"per_page":25,"sort_by":"cost","sort_order":"desc"}
     /// </summary>
     public readonly partial struct SearchRequestLogsRequest : global::System.IEquatable<SearchRequestLogsRequest>
     {
         /// <summary>
-        /// Canonical request-log query payload — the filter / search / sort fields shared by `POST /api/public/v2/requests/search` (which also accepts pagination + `include_prompt_name`) and `POST /api/public/v2/requests/analytics`.
+        /// Canonical request-log query payload — the filter / search / sort fields shared by `POST /api/public/v2/requests/search` (which also accepts pagination + `include_prompt_name`) and `POST /api/public/v2/requests/analytics`.<br/>
+        /// Example: {"filter_group":{"logic":"AND","filters":[{"field":"engine","operator":"is","value":"gpt-4o"}]},"sort_by":"request_start_time","sort_order":"desc"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.RequestLogQuery? RequestLogQuery { get; init; }
@@ -42,6 +44,13 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public global::PromptLayer.RequestLogQuery PickRequestLogQuery() => IsRequestLogQuery
+            ? RequestLogQuery!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequestLogQuery' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.SearchRequestLogsRequestVariant2? SearchRequestLogsRequestVariant2 { get; init; }
 #else
@@ -68,6 +77,13 @@ namespace PromptLayer
             value = SearchRequestLogsRequestVariant2;
             return IsSearchRequestLogsRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.SearchRequestLogsRequestVariant2 PickSearchRequestLogsRequestVariant2() => IsSearchRequestLogsRequestVariant2
+            ? SearchRequestLogsRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchRequestLogsRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +105,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static SearchRequestLogsRequest FromRequestLogQuery(global::PromptLayer.RequestLogQuery? value) => new SearchRequestLogsRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchRequestLogsRequest(global::PromptLayer.SearchRequestLogsRequestVariant2 value) => new SearchRequestLogsRequest((global::PromptLayer.SearchRequestLogsRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +124,11 @@ namespace PromptLayer
         {
             SearchRequestLogsRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchRequestLogsRequest FromSearchRequestLogsRequestVariant2(global::PromptLayer.SearchRequestLogsRequestVariant2? value) => new SearchRequestLogsRequest(value);
 
         /// <summary>
         /// 

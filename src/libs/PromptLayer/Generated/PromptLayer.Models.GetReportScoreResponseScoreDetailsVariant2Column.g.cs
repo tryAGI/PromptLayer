@@ -66,5 +66,6 @@ namespace PromptLayer
         public GetReportScoreResponseScoreDetailsVariant2Column()
         {
         }
+
     }
 }

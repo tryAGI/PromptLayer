@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Parameters to shallow-merge into the existing model parameters (e.g. temperature, max_tokens). Existing keys not specified here are preserved.
+    /// Parameters to shallow-merge into existing model parameters. Existing keys not provided are preserved.
     /// </summary>
     public sealed partial class PatchPromptTemplateVersionModelParameters
     {
@@ -14,5 +14,6 @@ namespace PromptLayer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
     }
 }

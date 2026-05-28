@@ -369,20 +369,19 @@ namespace PromptLayer
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
-                            // Unauthorized
+                            // Unauthorized - missing or invalid API key.
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -407,20 +406,19 @@ namespace PromptLayer
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
-                            // Not Found
+                            // Not found - requested resource does not exist or is not accessible.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -445,18 +443,54 @@ namespace PromptLayer
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -490,17 +524,15 @@ namespace PromptLayer
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -537,17 +569,15 @@ namespace PromptLayer
                                     {
                                     }
 
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -569,16 +599,16 @@ namespace PromptLayer
         /// A message describing the changes.
         /// </param>
         /// <param name="nodes">
-        /// Node updates keyed by node name. Use null to remove a node.
+        /// Node updates keyed by node name. Provide an object to add/update a node, or null to remove a node. Node configuration is deep-merged; dependencies are replaced.
         /// </param>
         /// <param name="requiredInputVariables">
         /// If provided, replaces the input variables entirely.
         /// </param>
         /// <param name="edges">
-        /// If provided, replaces edges entirely.
+        /// If provided, replaces edges entirely. If omitted, existing edges are copied except edges that reference removed nodes.
         /// </param>
         /// <param name="releaseLabels">
-        /// Labels to attach to the new version.
+        /// Labels to move or attach to the newly created workflow version.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

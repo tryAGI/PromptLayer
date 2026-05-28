@@ -28,12 +28,30 @@ namespace PromptLayer
         partial void PrepareListWorkflowsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
-            ref int? perPage);
+            ref int? perPage,
+            ref string? createdByEmail,
+            ref global::System.DateTime? createdAfter,
+            ref global::System.DateTime? createdBefore,
+            ref global::System.DateTime? updatedAfter,
+            ref global::System.DateTime? updatedBefore,
+            ref string? externalSource,
+            ref string? externalId,
+            ref global::PromptLayer.ListWorkflowsSortBy? sortBy,
+            ref global::PromptLayer.ListWorkflowsSortOrder? sortOrder);
         partial void PrepareListWorkflowsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? page,
-            int? perPage);
+            int? perPage,
+            string? createdByEmail,
+            global::System.DateTime? createdAfter,
+            global::System.DateTime? createdBefore,
+            global::System.DateTime? updatedAfter,
+            global::System.DateTime? updatedBefore,
+            string? externalSource,
+            string? externalId,
+            global::PromptLayer.ListWorkflowsSortBy? sortBy,
+            global::PromptLayer.ListWorkflowsSortOrder? sortOrder);
         partial void ProcessListWorkflowsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,18 +70,47 @@ namespace PromptLayer
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
+        /// <param name="createdByEmail"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
+        /// <param name="updatedAfter"></param>
+        /// <param name="updatedBefore"></param>
+        /// <param name="externalSource"></param>
+        /// <param name="externalId"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::PromptLayer.ListWorkflowsResponse> ListWorkflowsAsync(
             int? page = default,
             int? perPage = default,
+            string? createdByEmail = default,
+            global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
+            global::System.DateTime? updatedAfter = default,
+            global::System.DateTime? updatedBefore = default,
+            string? externalSource = default,
+            string? externalId = default,
+            global::PromptLayer.ListWorkflowsSortBy? sortBy = default,
+            global::PromptLayer.ListWorkflowsSortOrder? sortOrder = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListWorkflowsAsResponseAsync(
                 page: page,
                 perPage: perPage,
+                createdByEmail: createdByEmail,
+                createdAfter: createdAfter,
+                createdBefore: createdBefore,
+                updatedAfter: updatedAfter,
+                updatedBefore: updatedBefore,
+                externalSource: externalSource,
+                externalId: externalId,
+                sortBy: sortBy,
+                sortOrder: sortOrder,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -79,12 +126,32 @@ namespace PromptLayer
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
+        /// <param name="createdByEmail"></param>
+        /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
+        /// <param name="updatedAfter"></param>
+        /// <param name="updatedBefore"></param>
+        /// <param name="externalSource"></param>
+        /// <param name="externalId"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder">
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.ListWorkflowsResponse>> ListWorkflowsAsResponseAsync(
             int? page = default,
             int? perPage = default,
+            string? createdByEmail = default,
+            global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
+            global::System.DateTime? updatedAfter = default,
+            global::System.DateTime? updatedBefore = default,
+            string? externalSource = default,
+            string? externalId = default,
+            global::PromptLayer.ListWorkflowsSortBy? sortBy = default,
+            global::PromptLayer.ListWorkflowsSortOrder? sortOrder = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -93,7 +160,16 @@ namespace PromptLayer
             PrepareListWorkflowsArguments(
                 httpClient: HttpClient,
                 page: ref page,
-                perPage: ref perPage);
+                perPage: ref perPage,
+                createdByEmail: ref createdByEmail,
+                createdAfter: ref createdAfter,
+                createdBefore: ref createdBefore,
+                updatedAfter: ref updatedAfter,
+                updatedBefore: ref updatedBefore,
+                externalSource: ref externalSource,
+                externalId: ref externalId,
+                sortBy: ref sortBy,
+                sortOrder: ref sortOrder);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
@@ -124,6 +200,15 @@ namespace PromptLayer
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("per_page", perPage?.ToString())
+                                .AddOptionalParameter("created_by_email", createdByEmail)
+                                .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("created_before", createdBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("updated_after", updatedAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("updated_before", updatedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("external_source", externalSource)
+                                .AddOptionalParameter("external_id", externalId)
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -166,7 +251,16 @@ namespace PromptLayer
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     page: page,
-                    perPage: perPage);
+                    perPage: perPage,
+                    createdByEmail: createdByEmail,
+                    createdAfter: createdAfter,
+                    createdBefore: createdBefore,
+                    updatedAfter: updatedAfter,
+                    updatedBefore: updatedBefore,
+                    externalSource: externalSource,
+                    externalId: externalId,
+                    sortBy: sortBy,
+                    sortOrder: sortOrder);
 
                 return __httpRequest;
             }
@@ -370,18 +464,17 @@ namespace PromptLayer
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ListWorkflowsResponse2>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ListWorkflowsResponse2>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthorized
                             if ((int)__response.StatusCode == 401)
@@ -408,18 +501,54 @@ namespace PromptLayer
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::PromptLayer.ApiException<global::PromptLayer.ListWorkflowsResponse3>(
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ListWorkflowsResponse3>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
+                            }
+                            // Validation error - request parameters or body are invalid.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -453,17 +582,15 @@ namespace PromptLayer
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -500,17 +627,15 @@ namespace PromptLayer
                                     {
                                     }
 
-                                    throw new global::PromptLayer.ApiException(
+                                    throw global::PromptLayer.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

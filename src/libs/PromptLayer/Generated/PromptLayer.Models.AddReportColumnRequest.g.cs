@@ -90,5 +90,6 @@ namespace PromptLayer
         public AddReportColumnRequest()
         {
         }
+
     }
 }

@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IRestClient
     {
         /// <summary>
-        /// Patch Prompt Template Version<br/>
-        /// Partially update a prompt template by creating a new version with merged changes. This endpoint fetches a base version (latest by default), applies your patches, validates the result, and creates a new version.
+        /// Patch Prompt Template Version
         /// </summary>
         /// <param name="identifier">
         /// The prompt template name or ID.
@@ -22,8 +21,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Patch Prompt Template Version<br/>
-        /// Partially update a prompt template by creating a new version with merged changes. This endpoint fetches a base version (latest by default), applies your patches, validates the result, and creates a new version.
+        /// Patch Prompt Template Version
         /// </summary>
         /// <param name="identifier">
         /// The prompt template name or ID.
@@ -39,8 +37,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Patch Prompt Template Version<br/>
-        /// Partially update a prompt template by creating a new version with merged changes. This endpoint fetches a base version (latest by default), applies your patches, validates the result, and creates a new version.
+        /// Patch Prompt Template Version
         /// </summary>
         /// <param name="identifier">
         /// The prompt template name or ID.
@@ -52,7 +49,7 @@ namespace PromptLayer
         /// The release label identifying the base version to patch from (e.g. 'prod', 'staging'). Mutually exclusive with `version`.
         /// </param>
         /// <param name="messages">
-        /// Patch for chat template messages. Pass an object with index keys for index-based patching, or an array for full replacement. Chat templates only.
+        /// Patch for chat template messages. Object keys are message indexes for index-based patching; arrays replace all messages.
         /// </param>
         /// <param name="tools">
         /// Patch for tools. Object for index-based patching, array for full replacement, null to remove. Chat templates only.
@@ -70,7 +67,7 @@ namespace PromptLayer
         /// Patch for completion template content. Object for index-based patching, array for full replacement. Completion templates only.
         /// </param>
         /// <param name="modelParameters">
-        /// Parameters to shallow-merge into the existing model parameters (e.g. temperature, max_tokens). Existing keys not specified here are preserved.
+        /// Parameters to shallow-merge into existing model parameters. Existing keys not provided are preserved.
         /// </param>
         /// <param name="responseFormat">
         /// Convenience field to set response_format in model parameters. Cannot be used simultaneously with response_format inside model_parameters. Set to null to remove.
@@ -79,7 +76,7 @@ namespace PromptLayer
         /// A message describing the changes in this version.
         /// </param>
         /// <param name="releaseLabels">
-        /// Release labels to create or move to the newly created version (e.g. ['staging', 'production']).
+        /// Release labels to create or move to the newly created version.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

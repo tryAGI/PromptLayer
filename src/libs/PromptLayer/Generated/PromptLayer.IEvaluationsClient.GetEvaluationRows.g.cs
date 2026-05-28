@@ -5,8 +5,7 @@ namespace PromptLayer
     public partial interface IEvaluationsClient
     {
         /// <summary>
-        /// Get Evaluation Rows<br/>
-        /// Retrieve paginated evaluation results with dataset input variables and evaluation cell outcomes. Each row is an array of cells matching the order of the `columns` array. Dataset input cells have `{"type": "dataset", "value": ...}`. Eval result cells have `{"type": "eval", "status": ..., "value": ...}`.
+        /// Get Evaluation Rows
         /// </summary>
         /// <param name="evaluationId"></param>
         /// <param name="workspaceId"></param>
@@ -19,7 +18,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.GetEvaluationRowsResponse> GetEvaluationRowsAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.EvaluationRowsResponse> GetEvaluationRowsAsync(
             int evaluationId,
             int? workspaceId = default,
             int? page = default,
@@ -27,8 +26,7 @@ namespace PromptLayer
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Evaluation Rows<br/>
-        /// Retrieve paginated evaluation results with dataset input variables and evaluation cell outcomes. Each row is an array of cells matching the order of the `columns` array. Dataset input cells have `{"type": "dataset", "value": ...}`. Eval result cells have `{"type": "eval", "status": ..., "value": ...}`.
+        /// Get Evaluation Rows
         /// </summary>
         /// <param name="evaluationId"></param>
         /// <param name="workspaceId"></param>
@@ -41,7 +39,7 @@ namespace PromptLayer
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetEvaluationRowsResponse>> GetEvaluationRowsAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.EvaluationRowsResponse>> GetEvaluationRowsAsResponseAsync(
             int evaluationId,
             int? workspaceId = default,
             int? page = default,

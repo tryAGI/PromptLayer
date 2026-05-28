@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Replacement column configuration. Schema varies by column_type.
+    /// Replacement column configuration. Schema depends on column_type.
     /// </summary>
     public sealed partial class EditReportColumnRequestConfiguration
     {
@@ -14,5 +14,6 @@ namespace PromptLayer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
     }
 }

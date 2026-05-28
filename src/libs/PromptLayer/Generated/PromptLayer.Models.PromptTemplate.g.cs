@@ -47,6 +47,13 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public global::PromptLayer.CompletionPrompt PickCompletion() => IsCompletion
+            ? Completion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ChatPrompt? Chat { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace PromptLayer
             value = Chat;
             return IsChat;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ChatPrompt PickChat() => IsChat
+            ? Chat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +108,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static PromptTemplate FromCompletion(global::PromptLayer.CompletionPrompt? value) => new PromptTemplate(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PromptTemplate(global::PromptLayer.ChatPrompt value) => new PromptTemplate((global::PromptLayer.ChatPrompt?)value);
 
         /// <summary>
@@ -108,6 +127,11 @@ namespace PromptLayer
         {
             Chat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PromptTemplate FromChat(global::PromptLayer.ChatPrompt? value) => new PromptTemplate(value);
 
         /// <summary>
         /// 

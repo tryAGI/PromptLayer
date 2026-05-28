@@ -12,13 +12,15 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
-        public bool? Success { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Success { get; set; }
 
         /// <summary>
-        /// The updated column
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("report_column")]
-        public object? ReportColumn { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::PromptLayer.ReportColumnSummary ReportColumn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +32,16 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="EditReportColumnResponse" /> class.
         /// </summary>
         /// <param name="success"></param>
-        /// <param name="reportColumn">
-        /// The updated column
-        /// </param>
+        /// <param name="reportColumn"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EditReportColumnResponse(
-            bool? success,
-            object? reportColumn)
+            bool success,
+            global::PromptLayer.ReportColumnSummary reportColumn)
         {
             this.Success = success;
-            this.ReportColumn = reportColumn;
+            this.ReportColumn = reportColumn ?? throw new global::System.ArgumentNullException(nameof(reportColumn));
         }
 
         /// <summary>
@@ -50,5 +50,6 @@ namespace PromptLayer
         public EditReportColumnResponse()
         {
         }
+
     }
 }

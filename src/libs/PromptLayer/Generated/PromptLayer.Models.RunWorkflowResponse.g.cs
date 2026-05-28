@@ -23,7 +23,7 @@ namespace PromptLayer
         public required string Message { get; set; }
 
         /// <summary>
-        /// Any warnings about missing input variables.
+        /// Warning about missing or unused input variables, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warning")]
         public string? Warning { get; set; }
@@ -54,7 +54,7 @@ namespace PromptLayer
         /// The ID of the created workflow execution.
         /// </param>
         /// <param name="warning">
-        /// Any warnings about missing input variables.
+        /// Warning about missing or unused input variables, if any.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,5 +77,6 @@ namespace PromptLayer
         public RunWorkflowResponse()
         {
         }
+
     }
 }

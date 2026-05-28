@@ -9,14 +9,14 @@ namespace PromptLayer
     public sealed partial class EditReportColumnRequest
     {
         /// <summary>
-        /// Parent evaluation pipeline ID. Must match the column's report.
+        /// Parent evaluation pipeline ID. Must match the column parent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("report_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ReportId { get; set; }
 
         /// <summary>
-        /// Column type. DATASET is not allowed.
+        /// Replacement column type. DATASET columns cannot be edited.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.EditReportColumnRequestColumnTypeJsonConverter))]
@@ -24,7 +24,7 @@ namespace PromptLayer
         public required global::PromptLayer.EditReportColumnRequestColumnType ColumnType { get; set; }
 
         /// <summary>
-        /// Replacement column configuration. Schema varies by column_type.
+        /// Replacement column configuration. Schema depends on column_type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
         public object? Configuration { get; set; }
@@ -51,13 +51,13 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="EditReportColumnRequest" /> class.
         /// </summary>
         /// <param name="reportId">
-        /// Parent evaluation pipeline ID. Must match the column's report.
+        /// Parent evaluation pipeline ID. Must match the column parent.
         /// </param>
         /// <param name="columnType">
-        /// Column type. DATASET is not allowed.
+        /// Replacement column type. DATASET columns cannot be edited.
         /// </param>
         /// <param name="configuration">
-        /// Replacement column configuration. Schema varies by column_type.
+        /// Replacement column configuration. Schema depends on column_type.
         /// </param>
         /// <param name="name">
         /// New column name. Must be unique within the pipeline.
@@ -88,5 +88,6 @@ namespace PromptLayer
         public EditReportColumnRequest()
         {
         }
+
     }
 }

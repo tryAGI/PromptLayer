@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Error response format.
+    /// Standard error response. Some legacy endpoints may return either message or error.
     /// </summary>
     public sealed partial class ErrorResponse
     {
@@ -13,15 +13,19 @@ namespace PromptLayer
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Success { get; set; }
+        public bool? Success { get; set; }
 
         /// <summary>
-        /// Error message explaining why the request failed.
+        /// Human-readable error message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        public string? Message { get; set; }
+
+        /// <summary>
+        /// Machine-readable or fallback error message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,18 +40,23 @@ namespace PromptLayer
         /// Indicates that the request failed.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="message">
+        /// Human-readable error message.
+        /// </param>
         /// <param name="error">
-        /// Error message explaining why the request failed.
+        /// Machine-readable or fallback error message.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ErrorResponse(
-            bool success,
-            string error)
+            bool? success,
+            string? message,
+            string? error)
         {
             this.Success = success;
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Message = message;
+            this.Error = error;
         }
 
         /// <summary>
@@ -56,5 +65,6 @@ namespace PromptLayer
         public ErrorResponse()
         {
         }
+
     }
 }

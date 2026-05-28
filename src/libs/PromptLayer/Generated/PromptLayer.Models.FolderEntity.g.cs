@@ -63,6 +63,12 @@ namespace PromptLayer
         public global::PromptLayer.OneOf<global::PromptLayer.PromptEntityMetadata, global::PromptLayer.WorkflowEntityMetadata, global::PromptLayer.DatasetEntityMetadata, object>? Metadata { get; set; }
 
         /// <summary>
+        /// External ID mappings attached to this entity.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +101,9 @@ namespace PromptLayer
         /// <param name="metadata">
         /// Type-specific metadata. Included only when include_metadata=true.
         /// </param>
+        /// <param name="externalIds">
+        /// External ID mappings attached to this entity.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -106,7 +115,8 @@ namespace PromptLayer
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
             int? folderId,
-            global::PromptLayer.OneOf<global::PromptLayer.PromptEntityMetadata, global::PromptLayer.WorkflowEntityMetadata, global::PromptLayer.DatasetEntityMetadata, object>? metadata)
+            global::PromptLayer.OneOf<global::PromptLayer.PromptEntityMetadata, global::PromptLayer.WorkflowEntityMetadata, global::PromptLayer.DatasetEntityMetadata, object>? metadata,
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -116,6 +126,7 @@ namespace PromptLayer
             this.FolderId = folderId;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Metadata = metadata;
+            this.ExternalIds = externalIds;
         }
 
         /// <summary>
@@ -124,5 +135,6 @@ namespace PromptLayer
         public FolderEntity()
         {
         }
+
     }
 }

@@ -9,26 +9,26 @@ namespace PromptLayer
     public sealed partial class CreateDatasetGroupRequest
     {
         /// <summary>
-        /// Name of the dataset group. Must be unique within the workspace.
+        /// Name for the dataset group. Must be unique within the workspace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Optional: ID of the workspace where the dataset group will be created. If not provided, uses the workspace associated with your API key.
+        /// Workspace ID. Defaults to the workspace associated with the API key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public int? WorkspaceId { get; set; }
 
         /// <summary>
-        /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
+        /// Folder ID to create the dataset group in. Omit to create at the workspace root.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("folder_id")]
         public int? FolderId { get; set; }
 
         /// <summary>
-        /// Identifiers from other systems.
+        /// External ID mappings to attach to the dataset group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_ids")]
         public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
@@ -43,16 +43,16 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="CreateDatasetGroupRequest" /> class.
         /// </summary>
         /// <param name="name">
-        /// Name of the dataset group. Must be unique within the workspace.
+        /// Name for the dataset group. Must be unique within the workspace.
         /// </param>
         /// <param name="workspaceId">
-        /// Optional: ID of the workspace where the dataset group will be created. If not provided, uses the workspace associated with your API key.
+        /// Workspace ID. Defaults to the workspace associated with the API key.
         /// </param>
         /// <param name="folderId">
-        /// Optional folder ID to create the dataset group inside. If omitted, the dataset group is created at the workspace root.
+        /// Folder ID to create the dataset group in. Omit to create at the workspace root.
         /// </param>
         /// <param name="externalIds">
-        /// Identifiers from other systems.
+        /// External ID mappings to attach to the dataset group.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -75,5 +75,6 @@ namespace PromptLayer
         public CreateDatasetGroupRequest()
         {
         }
+
     }
 }

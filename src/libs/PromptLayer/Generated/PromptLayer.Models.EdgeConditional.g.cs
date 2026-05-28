@@ -79,5 +79,6 @@ namespace PromptLayer
         public EdgeConditional()
         {
         }
+
     }
 }

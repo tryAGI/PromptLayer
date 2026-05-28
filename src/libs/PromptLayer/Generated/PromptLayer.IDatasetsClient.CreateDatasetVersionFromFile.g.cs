@@ -32,13 +32,13 @@ namespace PromptLayer
         /// Create Dataset Version from File
         /// </summary>
         /// <param name="datasetGroupId">
-        /// ID of the dataset group where the new version will be created
+        /// ID of the dataset group where the new version will be created.
         /// </param>
         /// <param name="fileName">
-        /// Name of the file being uploaded (must end with .csv or .json)
+        /// Name of the CSV or JSON file. Must end with .csv or .json.
         /// </param>
         /// <param name="fileContentBase64">
-        /// Base64 encoded content of the file. Maximum file size: 100MB. Supported formats: CSV, JSON
+        /// Base64-encoded file content. Maximum decoded file size is 100MB.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

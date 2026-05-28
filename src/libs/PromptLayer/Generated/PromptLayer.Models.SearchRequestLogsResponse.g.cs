@@ -18,7 +18,7 @@ namespace PromptLayer
         /// List of matching request log summaries.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
-        public global::System.Collections.Generic.IList<object>? Items { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.RequestLogSearchResult>? Items { get; set; }
 
         /// <summary>
         /// Current page number.
@@ -112,7 +112,7 @@ namespace PromptLayer
 #endif
         public SearchRequestLogsResponse(
             bool? success,
-            global::System.Collections.Generic.IList<object>? items,
+            global::System.Collections.Generic.IList<global::PromptLayer.RequestLogSearchResult>? items,
             int? page,
             int? pages,
             int? perPage,
@@ -140,5 +140,6 @@ namespace PromptLayer
         public SearchRequestLogsResponse()
         {
         }
+
     }
 }

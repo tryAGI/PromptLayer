@@ -47,6 +47,13 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public global::PromptLayer.TextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ThinkingContent? Thinking { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace PromptLayer
             value = Thinking;
             return IsThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ThinkingContent PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
         /// Code content block (e.g. from code execution tools).
@@ -107,6 +121,13 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public global::PromptLayer.CodeContent PickCode() => IsCode
+            ? Code!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ImageContent? ImageUrl { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace PromptLayer
             value = ImageUrl;
             return IsImageUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ImageContent PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public global::PromptLayer.MediaContent PickMedia() => IsMedia
+            ? Media!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.MediaVariable? MediaVariable { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace PromptLayer
             value = MediaVariable;
             return IsMediaVariable;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.MediaVariable PickMediaVariable() => IsMediaVariable
+            ? MediaVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MediaVariable' but the value was {ToString()}.");
 
         /// <summary>
         /// LLM-generated media output (e.g. from image generation tools).
@@ -225,6 +267,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.OutputMediaContent PickOutputMedia() => IsOutputMedia
+            ? OutputMedia!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMedia' but the value was {ToString()}.");
+
+        /// <summary>
         /// Server-side tool use block (e.g. web search, code execution).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -253,6 +302,13 @@ namespace PromptLayer
             value = ServerToolUse;
             return IsServerToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ServerToolUseContent PickServerToolUse() => IsServerToolUse
+            ? ServerToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// Results from a web search tool invocation.
@@ -285,6 +341,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.WebSearchToolResultContent PickWebSearchToolResult() => IsWebSearchToolResult
+            ? WebSearchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Result from a code execution tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -313,6 +376,13 @@ namespace PromptLayer
             value = CodeExecutionResult;
             return IsCodeExecutionResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.CodeExecutionResultContent PickCodeExecutionResult() => IsCodeExecutionResult
+            ? CodeExecutionResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionResult' but the value was {ToString()}.");
 
         /// <summary>
         /// MCP list tools response block.
@@ -345,6 +415,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.McpListToolsContent PickMcpListTools() => IsMcpListTools
+            ? McpListTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
+
+        /// <summary>
         /// MCP tool call block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -373,6 +450,13 @@ namespace PromptLayer
             value = McpCall;
             return IsMcpCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.McpCallContent PickMcpCall() => IsMcpCall
+            ? McpCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
 
         /// <summary>
         /// MCP tool approval request block.
@@ -405,6 +489,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.McpApprovalRequestContent PickMcpApprovalRequest() => IsMcpApprovalRequest
+            ? McpApprovalRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
+
+        /// <summary>
         /// MCP tool approval response block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -433,6 +524,13 @@ namespace PromptLayer
             value = McpApprovalResponse;
             return IsMcpApprovalResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.McpApprovalResponseContent PickMcpApprovalResponse() => IsMcpApprovalResponse
+            ? McpApprovalResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
 
         /// <summary>
         /// Result from bash code execution tool.
@@ -465,6 +563,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.BashCodeExecutionToolResultContent PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
+            ? BashCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Result from text editor code execution tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -493,6 +598,13 @@ namespace PromptLayer
             value = TextEditorCodeExecutionToolResult;
             return IsTextEditorCodeExecutionToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.TextEditorCodeExecutionToolResultContent PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
+            ? TextEditorCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// Shell tool call block.
@@ -525,6 +637,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ShellCallContent PickShellCall() => IsShellCall
+            ? ShellCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// Shell tool output block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -553,6 +672,13 @@ namespace PromptLayer
             value = ShellCallOutput;
             return IsShellCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ShellCallOutputContent PickShellCallOutput() => IsShellCallOutput
+            ? ShellCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
         /// Apply patch tool call block.
@@ -585,6 +711,13 @@ namespace PromptLayer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ApplyPatchCallContent PickApplyPatchCall() => IsApplyPatchCall
+            ? ApplyPatchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// Apply patch tool output block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -613,6 +746,13 @@ namespace PromptLayer
             value = ApplyPatchCallOutput;
             return IsApplyPatchCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PromptLayer.ApplyPatchCallOutputContent PickApplyPatchCallOutput() => IsApplyPatchCallOutput
+            ? ApplyPatchCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -630,6 +770,11 @@ namespace PromptLayer
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromText(global::PromptLayer.TextContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -652,6 +797,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromThinking(global::PromptLayer.ThinkingContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.CodeContent value) => new ContentItem((global::PromptLayer.CodeContent?)value);
 
         /// <summary>
@@ -666,6 +816,11 @@ namespace PromptLayer
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromCode(global::PromptLayer.CodeContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -688,6 +843,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromImageUrl(global::PromptLayer.ImageContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.MediaContent value) => new ContentItem((global::PromptLayer.MediaContent?)value);
 
         /// <summary>
@@ -702,6 +862,11 @@ namespace PromptLayer
         {
             Media = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromMedia(global::PromptLayer.MediaContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -724,6 +889,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromMediaVariable(global::PromptLayer.MediaVariable? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.OutputMediaContent value) => new ContentItem((global::PromptLayer.OutputMediaContent?)value);
 
         /// <summary>
@@ -738,6 +908,11 @@ namespace PromptLayer
         {
             OutputMedia = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromOutputMedia(global::PromptLayer.OutputMediaContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -760,6 +935,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromServerToolUse(global::PromptLayer.ServerToolUseContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.WebSearchToolResultContent value) => new ContentItem((global::PromptLayer.WebSearchToolResultContent?)value);
 
         /// <summary>
@@ -774,6 +954,11 @@ namespace PromptLayer
         {
             WebSearchToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromWebSearchToolResult(global::PromptLayer.WebSearchToolResultContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -796,6 +981,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromCodeExecutionResult(global::PromptLayer.CodeExecutionResultContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.McpListToolsContent value) => new ContentItem((global::PromptLayer.McpListToolsContent?)value);
 
         /// <summary>
@@ -810,6 +1000,11 @@ namespace PromptLayer
         {
             McpListTools = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromMcpListTools(global::PromptLayer.McpListToolsContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -832,6 +1027,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromMcpCall(global::PromptLayer.McpCallContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.McpApprovalRequestContent value) => new ContentItem((global::PromptLayer.McpApprovalRequestContent?)value);
 
         /// <summary>
@@ -846,6 +1046,11 @@ namespace PromptLayer
         {
             McpApprovalRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromMcpApprovalRequest(global::PromptLayer.McpApprovalRequestContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -868,6 +1073,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromMcpApprovalResponse(global::PromptLayer.McpApprovalResponseContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.BashCodeExecutionToolResultContent value) => new ContentItem((global::PromptLayer.BashCodeExecutionToolResultContent?)value);
 
         /// <summary>
@@ -882,6 +1092,11 @@ namespace PromptLayer
         {
             BashCodeExecutionToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromBashCodeExecutionToolResult(global::PromptLayer.BashCodeExecutionToolResultContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -904,6 +1119,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromTextEditorCodeExecutionToolResult(global::PromptLayer.TextEditorCodeExecutionToolResultContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ShellCallContent value) => new ContentItem((global::PromptLayer.ShellCallContent?)value);
 
         /// <summary>
@@ -918,6 +1138,11 @@ namespace PromptLayer
         {
             ShellCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromShellCall(global::PromptLayer.ShellCallContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 
@@ -940,6 +1165,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromShellCallOutput(global::PromptLayer.ShellCallOutputContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ApplyPatchCallContent value) => new ContentItem((global::PromptLayer.ApplyPatchCallContent?)value);
 
         /// <summary>
@@ -958,6 +1188,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromApplyPatchCall(global::PromptLayer.ApplyPatchCallContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ApplyPatchCallOutputContent value) => new ContentItem((global::PromptLayer.ApplyPatchCallOutputContent?)value);
 
         /// <summary>
@@ -972,6 +1207,11 @@ namespace PromptLayer
         {
             ApplyPatchCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem FromApplyPatchCallOutput(global::PromptLayer.ApplyPatchCallOutputContent? value) => new ContentItem(value);
 
         /// <summary>
         /// 

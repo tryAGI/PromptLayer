@@ -60,5 +60,6 @@ namespace PromptLayer
         public GetReportScoreResponse()
         {
         }
+
     }
 }

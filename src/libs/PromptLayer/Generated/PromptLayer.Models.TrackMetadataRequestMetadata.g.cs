@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// A dictionary of metadata items to associate with the request. Can include session_ids, user_ids, location, etc.
+    /// Metadata dictionary to associate with the request.
     /// </summary>
     public sealed partial class TrackMetadataRequestMetadata
     {
@@ -14,5 +14,6 @@ namespace PromptLayer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
     }
 }

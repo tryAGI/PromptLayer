@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// At least one of name or tags must be provided.
+    /// Provide name, tags, or both. At least one field is required.
     /// </summary>
     public sealed partial class RenameReportRequest
     {
         /// <summary>
-        /// New name for the evaluation pipeline.
+        /// New pipeline name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
@@ -30,7 +30,7 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="RenameReportRequest" /> class.
         /// </summary>
         /// <param name="name">
-        /// New name for the evaluation pipeline.
+        /// New pipeline name.
         /// </param>
         /// <param name="tags">
         /// Replacement tags. Pass an empty array to clear all tags.
@@ -52,5 +52,6 @@ namespace PromptLayer
         public RenameReportRequest()
         {
         }
+
     }
 }

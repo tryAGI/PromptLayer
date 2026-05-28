@@ -23,6 +23,12 @@ namespace PromptLayer
         public required object ToolDefinition { get; set; }
 
         /// <summary>
+        /// Optional human-readable description of the tool
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Folder ID to place tool in
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("folder_id")]
@@ -41,6 +47,12 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? ExternalIds { get; set; }
 
         /// <summary>
+        /// Optional sandbox-executable body for the tool. When set, PromptLayer auto-runs the body between LLM turns. See the Auto Tool Execution feature page.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution")]
+        public global::PromptLayer.CreateToolRegistryRequestExecution? Execution { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +67,9 @@ namespace PromptLayer
         /// <param name="toolDefinition">
         /// Tool definition in OpenAI function-calling format
         /// </param>
+        /// <param name="description">
+        /// Optional human-readable description of the tool
+        /// </param>
         /// <param name="folderId">
         /// Folder ID to place tool in
         /// </param>
@@ -64,21 +79,28 @@ namespace PromptLayer
         /// <param name="externalIds">
         /// Identifiers from other systems.
         /// </param>
+        /// <param name="execution">
+        /// Optional sandbox-executable body for the tool. When set, PromptLayer auto-runs the body between LLM turns. See the Auto Tool Execution feature page.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateToolRegistryRequest(
             string name,
             object toolDefinition,
+            string? description,
             int? folderId,
             string? commitMessage,
-            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds)
+            global::System.Collections.Generic.IList<global::PromptLayer.ExternalId>? externalIds,
+            global::PromptLayer.CreateToolRegistryRequestExecution? execution)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ToolDefinition = toolDefinition ?? throw new global::System.ArgumentNullException(nameof(toolDefinition));
+            this.Description = description;
             this.FolderId = folderId;
             this.CommitMessage = commitMessage;
             this.ExternalIds = externalIds;
+            this.Execution = execution;
         }
 
         /// <summary>
@@ -87,5 +109,6 @@ namespace PromptLayer
         public CreateToolRegistryRequest()
         {
         }
+
     }
 }
