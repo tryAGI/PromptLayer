@@ -43,6 +43,9 @@ namespace PromptLayer
         /// <param name="sortOrder">
         /// Sort direction. Must be provided together with sort_by.
         /// </param>
+        /// <param name="metadataCostBreakdownKey">
+        /// When provided, the analytics response includes a `metadataValueBreakdown` array with cost and request counts for each value of this metadata key. Omit or pass null to get an aggregate breakdown across the top metadata keys.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -51,6 +54,7 @@ namespace PromptLayer
             string? q = default,
             global::PromptLayer.RequestLogQuerySortBy? sortBy = default,
             global::PromptLayer.RequestLogQuerySortOrder? sortOrder = default,
+            string? metadataCostBreakdownKey = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

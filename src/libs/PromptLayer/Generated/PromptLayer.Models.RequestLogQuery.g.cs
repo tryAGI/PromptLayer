@@ -36,6 +36,12 @@ namespace PromptLayer
         public global::PromptLayer.RequestLogQuerySortOrder? SortOrder { get; set; }
 
         /// <summary>
+        /// When provided, the analytics response includes a `metadataValueBreakdown` array with cost and request counts for each value of this metadata key. Omit or pass null to get an aggregate breakdown across the top metadata keys.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata_cost_breakdown_key")]
+        public string? MetadataCostBreakdownKey { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,6 +62,9 @@ namespace PromptLayer
         /// <param name="sortOrder">
         /// Sort direction. Must be provided together with sort_by.
         /// </param>
+        /// <param name="metadataCostBreakdownKey">
+        /// When provided, the analytics response includes a `metadataValueBreakdown` array with cost and request counts for each value of this metadata key. Omit or pass null to get an aggregate breakdown across the top metadata keys.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,12 +72,14 @@ namespace PromptLayer
             global::PromptLayer.StructuredFilterGroup? filterGroup,
             string? q,
             global::PromptLayer.RequestLogQuerySortBy? sortBy,
-            global::PromptLayer.RequestLogQuerySortOrder? sortOrder)
+            global::PromptLayer.RequestLogQuerySortOrder? sortOrder,
+            string? metadataCostBreakdownKey)
         {
             this.FilterGroup = filterGroup;
             this.Q = q;
             this.SortBy = sortBy;
             this.SortOrder = sortOrder;
+            this.MetadataCostBreakdownKey = metadataCostBreakdownKey;
         }
 
         /// <summary>
