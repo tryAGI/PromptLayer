@@ -172,6 +172,12 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseToolsUsageBar>? ToolsUsageBars { get; set; }
 
         /// <summary>
+        /// Cost and request count breakdown by metadata key-value pairs. When `metadata_cost_breakdown_key` is set in the request, all entries share that key and the `label` equals the value. Otherwise entries span the top key-value combinations and `label` is `key = value`. Ordered by cost descending; up to 50 entries.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadataValueBreakdown")]
+        public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseMetadataValueBreakdownItem>? MetadataValueBreakdown { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -221,6 +227,9 @@ namespace PromptLayer
         /// <param name="outputKeysTop"></param>
         /// <param name="toolsLatency"></param>
         /// <param name="toolsUsageBars"></param>
+        /// <param name="metadataValueBreakdown">
+        /// Cost and request count breakdown by metadata key-value pairs. When `metadata_cost_breakdown_key` is set in the request, all entries share that key and the `label` equals the value. Otherwise entries span the top key-value combinations and `label` is `key = value`. Ordered by cost descending; up to 50 entries.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -251,7 +260,8 @@ namespace PromptLayer
             global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseMetadataKeysTopItem>? metadataKeysTop,
             global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseOutputKeysTopItem>? outputKeysTop,
             global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsToolLatency>? toolsLatency,
-            global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseToolsUsageBar>? toolsUsageBars)
+            global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseToolsUsageBar>? toolsUsageBars,
+            global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseMetadataValueBreakdownItem>? metadataValueBreakdown)
         {
             this.Success = success;
             this.ChartInterval = chartInterval;
@@ -280,6 +290,7 @@ namespace PromptLayer
             this.OutputKeysTop = outputKeysTop;
             this.ToolsLatency = toolsLatency;
             this.ToolsUsageBars = toolsUsageBars;
+            this.MetadataValueBreakdown = metadataValueBreakdown;
         }
 
         /// <summary>
