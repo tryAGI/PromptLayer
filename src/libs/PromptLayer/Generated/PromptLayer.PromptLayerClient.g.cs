@@ -177,6 +177,15 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public SmartTablesClient SmartTables => new SmartTablesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SpansClient Spans => new SpansClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

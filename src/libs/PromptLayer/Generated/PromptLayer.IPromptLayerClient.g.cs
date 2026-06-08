@@ -122,6 +122,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public SmartTablesClient SmartTables { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SpansClient Spans { get; }
 
         /// <summary>
