@@ -52,6 +52,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public EnvVarsClient EnvVars { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EvaluationsClient Evaluations { get; }
 
         /// <summary>
