@@ -43,7 +43,7 @@ namespace PromptLayer
 
         /// <summary>
         /// Create Table<br/>
-        /// Create a new Table. A default sheet with one text column is created automatically.
+        /// Create a new Table. A default sheet with one text column is created automatically. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,7 +66,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Create Table<br/>
-        /// Create a new Table. A default sheet with one text column is created automatically.
+        /// Create a new Table. A default sheet with one text column is created automatically. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -583,7 +583,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Create Table<br/>
-        /// Create a new Table. A default sheet with one text column is created automatically.
+        /// Create a new Table. A default sheet with one text column is created automatically. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="title">
         /// Table title. Defaults to a unique 'Untitled Table' name if omitted.

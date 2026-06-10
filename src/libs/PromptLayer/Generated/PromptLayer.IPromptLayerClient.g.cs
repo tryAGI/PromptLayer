@@ -137,6 +137,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public TablesClient Tables { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ToolRegistryClient ToolRegistry { get; }
 
         /// <summary>

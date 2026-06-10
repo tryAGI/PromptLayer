@@ -76,6 +76,24 @@ namespace PromptLayer
         public global::PromptLayer.SmartTableRequestMetrics? RequestMetrics { get; set; }
 
         /// <summary>
+        /// Execution ID associated with the current or most recent computed value, when available.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution_id")]
+        public global::System.Guid? ExecutionId { get; set; }
+
+        /// <summary>
+        /// Sheet version_count when this cell was last computed. Null for text cells, virtual cells, or cells that have not completed computation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_computed_version")]
+        public int? LastComputedVersion { get; set; }
+
+        /// <summary>
+        /// User-visible error message for failed computed cells, when available.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
+        public string? ErrorMessage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -105,6 +123,15 @@ namespace PromptLayer
         /// <param name="requestMetrics">
         /// Execution metrics populated for prompt-template column cells. Present only when the cell has an associated request log.
         /// </param>
+        /// <param name="executionId">
+        /// Execution ID associated with the current or most recent computed value, when available.
+        /// </param>
+        /// <param name="lastComputedVersion">
+        /// Sheet version_count when this cell was last computed. Null for text cells, virtual cells, or cells that have not completed computation.
+        /// </param>
+        /// <param name="errorMessage">
+        /// User-visible error message for failed computed cells, when available.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -119,7 +146,10 @@ namespace PromptLayer
             string? error,
             string? inputHash,
             global::System.DateTime? updatedAt,
-            global::PromptLayer.SmartTableRequestMetrics? requestMetrics)
+            global::PromptLayer.SmartTableRequestMetrics? requestMetrics,
+            global::System.Guid? executionId,
+            int? lastComputedVersion,
+            string? errorMessage)
         {
             this.Id = id;
             this.SheetId = sheetId;
@@ -132,6 +162,9 @@ namespace PromptLayer
             this.InputHash = inputHash;
             this.UpdatedAt = updatedAt;
             this.RequestMetrics = requestMetrics;
+            this.ExecutionId = executionId;
+            this.LastComputedVersion = lastComputedVersion;
+            this.ErrorMessage = errorMessage;
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ namespace PromptLayer
     {
         /// <summary>
         /// Recalculate Cell<br/>
-        /// Trigger recalculation for a single cell.
+        /// Trigger recalculation for a single cell. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -22,7 +22,7 @@ namespace PromptLayer
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Recalculate Cell<br/>
-        /// Trigger recalculation for a single cell.
+        /// Trigger recalculation for a single cell. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>

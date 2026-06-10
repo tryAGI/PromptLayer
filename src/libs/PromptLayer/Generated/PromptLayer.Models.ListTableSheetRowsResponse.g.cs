@@ -39,7 +39,7 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::PromptLayer.Column>? Columns { get; set; }
 
         /// <summary>
-        /// 
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public int? Version { get; set; }
@@ -66,7 +66,9 @@ namespace PromptLayer
         /// <param name="hasMore"></param>
         /// <param name="rowCount"></param>
         /// <param name="columns"></param>
-        /// <param name="version"></param>
+        /// <param name="version">
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
+        /// </param>
         /// <param name="executionMetadataAggregates">
         /// Sheet-level and per-column aggregates for price and latency metrics. Only present when `include_execution_metadata_aggregates=true`.
         /// </param>

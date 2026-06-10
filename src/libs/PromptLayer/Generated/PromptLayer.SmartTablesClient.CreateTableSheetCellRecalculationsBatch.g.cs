@@ -47,7 +47,7 @@ namespace PromptLayer
 
         /// <summary>
         /// Recalculate Cells (Batch)<br/>
-        /// Trigger recalculation for a batch of cells identified by ID.
+        /// Trigger recalculation for a batch of cells identified by ID. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -76,7 +76,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Recalculate Cells (Batch)<br/>
-        /// Trigger recalculation for a batch of cells identified by ID.
+        /// Trigger recalculation for a batch of cells identified by ID. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -564,7 +564,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Recalculate Cells (Batch)<br/>
-        /// Trigger recalculation for a batch of cells identified by ID.
+        /// Trigger recalculation for a batch of cells identified by ID. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>

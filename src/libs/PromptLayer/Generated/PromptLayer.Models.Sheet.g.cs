@@ -21,7 +21,7 @@ namespace PromptLayer
         public global::System.Guid? TableId { get; set; }
 
         /// <summary>
-        /// 
+        /// Workspace that owns this resource; determined by the authenticated request scope.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public int? WorkspaceId { get; set; }
@@ -45,7 +45,7 @@ namespace PromptLayer
         public int? RowCount { get; set; }
 
         /// <summary>
-        /// 
+        /// Current sheet version number. It increments when sheet data, layout, score configuration, imports, or execution output changes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version_count")]
         public int? VersionCount { get; set; }
@@ -73,13 +73,17 @@ namespace PromptLayer
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tableId"></param>
-        /// <param name="workspaceId"></param>
+        /// <param name="workspaceId">
+        /// Workspace that owns this resource; determined by the authenticated request scope.
+        /// </param>
         /// <param name="title"></param>
         /// <param name="index">
         /// Display order of the sheet within the table (0-based).
         /// </param>
         /// <param name="rowCount"></param>
-        /// <param name="versionCount"></param>
+        /// <param name="versionCount">
+        /// Current sheet version number. It increments when sheet data, layout, score configuration, imports, or execution output changes.
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER

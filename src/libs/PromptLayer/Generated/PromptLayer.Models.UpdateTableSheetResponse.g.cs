@@ -21,7 +21,7 @@ namespace PromptLayer
         public global::PromptLayer.Sheet? Sheet { get; set; }
 
         /// <summary>
-        /// 
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public int? Version { get; set; }
@@ -39,7 +39,9 @@ namespace PromptLayer
         /// <param name="sheet">
         /// A sheet within a Table.
         /// </param>
-        /// <param name="version"></param>
+        /// <param name="version">
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

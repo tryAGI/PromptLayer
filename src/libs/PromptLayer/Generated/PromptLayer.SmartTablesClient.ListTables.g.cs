@@ -57,7 +57,7 @@ namespace PromptLayer
 
         /// <summary>
         /// List Tables<br/>
-        /// List Tables in the workspace. Supports cursor-based pagination and optional filtering by folder or prompt column.
+        /// List Tables in the workspace. Supports cursor-based pagination and optional filtering by folder or prompt column. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="folderId">
         /// Filter by folder ID.
@@ -111,7 +111,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// List Tables<br/>
-        /// List Tables in the workspace. Supports cursor-based pagination and optional filtering by folder or prompt column.
+        /// List Tables in the workspace. Supports cursor-based pagination and optional filtering by folder or prompt column. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="folderId">
         /// Filter by folder ID.
