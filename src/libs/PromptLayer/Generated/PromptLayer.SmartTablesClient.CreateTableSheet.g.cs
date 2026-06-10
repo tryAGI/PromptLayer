@@ -45,7 +45,7 @@ namespace PromptLayer
 
         /// <summary>
         /// Create Sheet<br/>
-        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history.
+        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="request"></param>
@@ -71,7 +71,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Create Sheet<br/>
-        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history.
+        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="request"></param>
@@ -592,7 +592,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Create Sheet<br/>
-        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history.
+        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="title">

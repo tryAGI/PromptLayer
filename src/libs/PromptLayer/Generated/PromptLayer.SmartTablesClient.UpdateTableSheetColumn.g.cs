@@ -49,7 +49,7 @@ namespace PromptLayer
 
         /// <summary>
         /// Update Column<br/>
-        /// Update a column's title, config, or dependencies. Returns `requires_recalculation: true` when the change invalidates existing cell values.
+        /// Update a column's title, config, or dependencies. Returns `requires_recalculation: true` when the change invalidates existing cell values. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -81,7 +81,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Update Column<br/>
-        /// Update a column's title, config, or dependencies. Returns `requires_recalculation: true` when the change invalidates existing cell values.
+        /// Update a column's title, config, or dependencies. Returns `requires_recalculation: true` when the change invalidates existing cell values. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -573,7 +573,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Update Column<br/>
-        /// Update a column's title, config, or dependencies. Returns `requires_recalculation: true` when the change invalidates existing cell values.
+        /// Update a column's title, config, or dependencies. Returns `requires_recalculation: true` when the change invalidates existing cell values. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>

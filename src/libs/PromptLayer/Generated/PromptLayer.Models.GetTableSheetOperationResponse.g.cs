@@ -12,13 +12,15 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
-        public bool? Success { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Success { get; set; }
 
         /// <summary>
-        /// Status of an asynchronous sheet import operation.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
-        public global::PromptLayer.TableImportOperation? Operation { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::PromptLayer.TableSheetOperation Operation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +32,16 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="GetTableSheetOperationResponse" /> class.
         /// </summary>
         /// <param name="success"></param>
-        /// <param name="operation">
-        /// Status of an asynchronous sheet import operation.
-        /// </param>
+        /// <param name="operation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetTableSheetOperationResponse(
-            bool? success,
-            global::PromptLayer.TableImportOperation? operation)
+            bool success,
+            global::PromptLayer.TableSheetOperation operation)
         {
             this.Success = success;
-            this.Operation = operation;
+            this.Operation = operation ?? throw new global::System.ArgumentNullException(nameof(operation));
         }
 
         /// <summary>

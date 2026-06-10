@@ -45,14 +45,14 @@ namespace PromptLayer
 
         /// <summary>
         /// Get Sheet Import Operation<br/>
-        /// Poll the status of an asynchronous sheet import operation.
+        /// Poll the status of an asynchronous sheet import operation. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="operationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.GetTableSheetOperationResponse> GetTableSheetOperationAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.GetTableSheetOperationResponse2> GetTableSheetOperationAsync(
             global::System.Guid tableId,
             string operationId,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
@@ -69,14 +69,14 @@ namespace PromptLayer
         }
         /// <summary>
         /// Get Sheet Import Operation<br/>
-        /// Poll the status of an asynchronous sheet import operation.
+        /// Poll the status of an asynchronous sheet import operation. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="operationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetTableSheetOperationResponse>> GetTableSheetOperationAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetTableSheetOperationResponse2>> GetTableSheetOperationAsResponseAsync(
             global::System.Guid tableId,
             string operationId,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
@@ -431,9 +431,9 @@ namespace PromptLayer
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::PromptLayer.GetTableSheetOperationResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::PromptLayer.GetTableSheetOperationResponse2.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetTableSheetOperationResponse>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetTableSheetOperationResponse2>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -463,9 +463,9 @@ namespace PromptLayer
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::PromptLayer.GetTableSheetOperationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::PromptLayer.GetTableSheetOperationResponse2.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetTableSheetOperationResponse>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.GetTableSheetOperationResponse2>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

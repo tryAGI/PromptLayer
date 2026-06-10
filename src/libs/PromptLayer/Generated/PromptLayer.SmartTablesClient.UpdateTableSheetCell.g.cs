@@ -49,7 +49,7 @@ namespace PromptLayer
 
         /// <summary>
         /// Update Cell<br/>
-        /// Edit the value of a text column cell. Only cells in `text` type columns can be edited directly; computed cells are recalculated automatically.
+        /// Edit the value of a text column cell. Only cells in `text` type columns can be edited directly; computed cells are recalculated automatically. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -81,7 +81,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Update Cell<br/>
-        /// Edit the value of a text column cell. Only cells in `text` type columns can be edited directly; computed cells are recalculated automatically.
+        /// Edit the value of a text column cell. Only cells in `text` type columns can be edited directly; computed cells are recalculated automatically. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -573,7 +573,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Update Cell<br/>
-        /// Edit the value of a text column cell. Only cells in `text` type columns can be edited directly; computed cells are recalculated automatically.
+        /// Edit the value of a text column cell. Only cells in `text` type columns can be edited directly; computed cells are recalculated automatically. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>

@@ -21,7 +21,7 @@ namespace PromptLayer
         public global::PromptLayer.Cell? Cell { get; set; }
 
         /// <summary>
-        /// 
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public int? Version { get; set; }
@@ -45,7 +45,9 @@ namespace PromptLayer
         /// <param name="cell">
         /// A single cell at the intersection of a column and a row.
         /// </param>
-        /// <param name="version"></param>
+        /// <param name="version">
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
+        /// </param>
         /// <param name="staleCount">
         /// Number of downstream cells marked stale due to this edit.
         /// </param>

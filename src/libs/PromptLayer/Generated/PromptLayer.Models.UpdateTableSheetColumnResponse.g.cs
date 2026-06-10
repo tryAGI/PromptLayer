@@ -33,7 +33,7 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::System.Guid>? AffectedColumnIds { get; set; }
 
         /// <summary>
-        /// 
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public int? Version { get; set; }
@@ -53,7 +53,9 @@ namespace PromptLayer
         /// </param>
         /// <param name="requiresRecalculation"></param>
         /// <param name="affectedColumnIds"></param>
-        /// <param name="version"></param>
+        /// <param name="version">
+        /// Current sheet version_count for this response. It matches the sheet's version_count after any committed changes.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

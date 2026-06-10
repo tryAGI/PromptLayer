@@ -15,7 +15,7 @@ namespace PromptLayer
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Workspace that owns this resource; determined by the authenticated request scope.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public int? WorkspaceId { get; set; }
@@ -62,7 +62,9 @@ namespace PromptLayer
         /// <param name="id">
         /// Unique table identifier.
         /// </param>
-        /// <param name="workspaceId"></param>
+        /// <param name="workspaceId">
+        /// Workspace that owns this resource; determined by the authenticated request scope.
+        /// </param>
         /// <param name="title"></param>
         /// <param name="folderId"></param>
         /// <param name="sheetCount">

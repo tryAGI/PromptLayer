@@ -42,7 +42,8 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// Get Table
+        /// Get Table<br/>
+        /// Get Table. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -62,7 +63,8 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Get Table
+        /// Get Table<br/>
+        /// Get Table. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

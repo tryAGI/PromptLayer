@@ -44,7 +44,8 @@ namespace PromptLayer
             ref string content);
 
         /// <summary>
-        /// Update Table
+        /// Update Table<br/>
+        /// Update Table. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="request"></param>
@@ -69,7 +70,8 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Update Table
+        /// Update Table<br/>
+        /// Update Table. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="request"></param>
@@ -552,7 +554,8 @@ namespace PromptLayer
             }
         }
         /// <summary>
-        /// Update Table
+        /// Update Table<br/>
+        /// Update Table. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="title"></param>

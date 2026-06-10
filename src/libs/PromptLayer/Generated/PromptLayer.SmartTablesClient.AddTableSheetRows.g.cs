@@ -47,7 +47,7 @@ namespace PromptLayer
 
         /// <summary>
         /// Add Rows<br/>
-        /// Append one or more rows to a sheet. Text column values can be set immediately; non-text column cells are created with `stale` status and must be triggered via a recalculation.
+        /// Append one or more rows to a sheet. Text column values can be set immediately; non-text column cells are created with `stale` status and must be triggered via a recalculation. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -76,7 +76,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Add Rows<br/>
-        /// Append one or more rows to a sheet. Text column values can be set immediately; non-text column cells are created with `stale` status and must be triggered via a recalculation.
+        /// Append one or more rows to a sheet. Text column values can be set immediately; non-text column cells are created with `stale` status and must be triggered via a recalculation. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
@@ -601,7 +601,7 @@ namespace PromptLayer
         }
         /// <summary>
         /// Add Rows<br/>
-        /// Append one or more rows to a sheet. Text column values can be set immediately; non-text column cells are created with `stale` status and must be triggered via a recalculation.
+        /// Append one or more rows to a sheet. Text column values can be set immediately; non-text column cells are created with `stale` status and must be triggered via a recalculation. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
