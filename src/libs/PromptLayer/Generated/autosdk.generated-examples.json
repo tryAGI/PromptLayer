@@ -288,6 +288,17 @@
     },
     {
       "Order": 27,
+      "Title": "Request Analytics Custom Analytics",
+      "Slug": "getrequestanalyticscustomanalytics",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = PromptLayerClient.CreateFromEnvironment();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::PromptLayer.RequestAnalyticsCustomAnalyticsQuery\u003E(\n    @\u0022{\n  \u0022\u0022filter_group\u0022\u0022: {\n    \u0022\u0022logic\u0022\u0022: \u0022\u0022AND\u0022\u0022,\n    \u0022\u0022filters\u0022\u0022: [\n      {\n        \u0022\u0022field\u0022\u0022: \u0022\u0022request_start_time\u0022\u0022,\n        \u0022\u0022operator\u0022\u0022: \u0022\u0022between\u0022\u0022,\n        \u0022\u0022value\u0022\u0022: [\n          \u0022\u00222025-06-01T00:00:00Z\u0022\u0022,\n          \u0022\u00222025-06-08T00:00:00Z\u0022\u0022\n        ]\n      }\n    ]\n  },\n  \u0022\u0022customCharts\u0022\u0022: [\n    {\n      \u0022\u0022id\u0022\u0022: \u0022\u0022cost_by_model\u0022\u0022,\n      \u0022\u0022title\u0022\u0022: \u0022\u0022Cost by Model\u0022\u0022,\n      \u0022\u0022chartType\u0022\u0022: \u0022\u0022bar\u0022\u0022,\n      \u0022\u0022metric\u0022\u0022: \u0022\u0022sum\u0022\u0022,\n      \u0022\u0022metricField\u0022\u0022: \u0022\u0022cost\u0022\u0022,\n      \u0022\u0022groupByField\u0022\u0022: \u0022\u0022engine\u0022\u0022,\n      \u0022\u0022limit\u0022\u0022: 10\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.Tracking.GetRequestAnalyticsCustomAnalyticsAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022success\u0022: true,\n//   \u0022customCharts\u0022: [\n//     {\n//       \u0022id\u0022: \u0022cost_by_model\u0022,\n//       \u0022title\u0022: \u0022Cost by Model\u0022,\n//       \u0022chartType\u0022: \u0022bar\u0022,\n//       \u0022series\u0022: [\n//         {\n//           \u0022key\u0022: \u0022value\u0022,\n//           \u0022label\u0022: \u0022Cost\u0022,\n//           \u0022unit\u0022: \u0022currency\u0022\n//         }\n//       ],\n//       \u0022data\u0022: [\n//         {\n//           \u0022label\u0022: \u0022gpt-4o\u0022,\n//           \u0022value\u0022: 8.42\n//         },\n//         {\n//           \u0022label\u0022: \u0022claude-sonnet-4-6\u0022,\n//           \u0022value\u0022: 3.91\n//         }\n//       ]\n//     }\n//   ]\n// }",
+      "Format": "sdk",
+      "OperationId": "getRequestAnalyticsCustomAnalytics",
+      "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and a configured credential environment variable is set: \u0060PROMPTLAYER_API_KEY\u0060."
+    },
+    {
+      "Order": 28,
       "Title": "Search Request Suggestions",
       "Slug": "getrequestsearchsuggestions",
       "Description": "Generated from OpenAPI examples.",
@@ -298,7 +309,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and a configured credential environment variable is set: \u0060PROMPTLAYER_API_KEY\u0060."
     },
     {
-      "Order": 28,
+      "Order": 29,
       "Title": "Get Trace",
       "Slug": "gettrace",
       "Description": "Generated from OpenAPI examples.",
@@ -309,7 +320,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and a configured credential environment variable is set: \u0060PROMPTLAYER_API_KEY\u0060."
     },
     {
-      "Order": 29,
+      "Order": 30,
       "Title": "Search Request Logs",
       "Slug": "searchrequestlogs",
       "Description": "Generated from OpenAPI examples.",
@@ -320,7 +331,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and a configured credential environment variable is set: \u0060PROMPTLAYER_API_KEY\u0060."
     },
     {
-      "Order": 30,
+      "Order": 31,
       "Title": "Create Workflow",
       "Slug": "createworkflow",
       "Description": "Generated from OpenAPI examples.",
@@ -331,7 +342,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and a configured credential environment variable is set: \u0060PROMPTLAYER_API_KEY\u0060."
     },
     {
-      "Order": 31,
+      "Order": 32,
       "Title": "Get Agent",
       "Slug": "getworkflow",
       "Description": "Generated from OpenAPI examples.",
@@ -342,7 +353,7 @@
       "Setup": "This example assumes \u0060using PromptLayer;\u0060 is in scope and a configured credential environment variable is set: \u0060PROMPTLAYER_API_KEY\u0060."
     },
     {
-      "Order": 32,
+      "Order": 33,
       "Title": "Patch Workflow",
       "Slug": "patchworkflow",
       "Description": "Generated from OpenAPI examples.",
@@ -353,7 +364,7 @@
       "Setup": null
     },
     {
-      "Order": 33,
+      "Order": 34,
       "Title": "Run Workflow",
       "Slug": "runworkflow",
       "Description": "Generated from OpenAPI examples.",
