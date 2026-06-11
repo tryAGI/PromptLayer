@@ -417,6 +417,54 @@ namespace PromptLayer
 
             typeof(global::PromptLayer.JsonConverters.TableCellStatusNullableJsonConverter),
 
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderNullableJsonConverter),
+
             typeof(global::PromptLayer.JsonConverters.AddReportColumnRequestColumnTypeJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.AddReportColumnRequestColumnTypeNullableJsonConverter),
@@ -782,6 +830,8 @@ namespace PromptLayer
             typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
 
             typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.FolderExistsError, string>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
 
             typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
 
@@ -1345,22 +1395,22 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreColumnResolvedScoringType), TypeInfoPropertyName = "TableSheetScoreColumnResolvedScoringType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreConfigurationScoreType), TypeInfoPropertyName = "TableSheetScoreConfigurationScoreType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableCellStatus), TypeInfoPropertyName = "TableCellStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreatePromptLabelRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplatesLabelsPromptLabelIdPatchRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TrackGroupRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TrackScoreRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AddReportColumnRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AddReportColumnRequestColumnType), TypeInfoPropertyName = "AddReportColumnRequestColumnType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RunReportRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecution))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecutionType), TypeInfoPropertyName = "CreateToolRegistryRequestExecutionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecutionLanguage), TypeInfoPropertyName = "CreateToolRegistryRequestExecutionLanguage2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateTableRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.CreateTableSheetRequestSourceFileSource, global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSource>), TypeInfoPropertyName = "OneOfCreateTableSheetRequestSourceFileSourceCreateTableSheetRequestSourceRequestLogsSource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceFileSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DerivedRatioInsightSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DerivedRatioInsightSpecType), TypeInfoPropertyName = "DerivedRatioInsightSpecType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DerivedRatioInsightResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DerivedRatioInsightResultType), TypeInfoPropertyName = "DerivedRatioInsightResultType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecChartType), TypeInfoPropertyName = "CustomAnalyticsSpecChartType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecMetric), TypeInfoPropertyName = "CustomAnalyticsSpecMetric2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecMetricField), TypeInfoPropertyName = "CustomAnalyticsSpecMetricField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CustomAnalyticsSeriesSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesSpec))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.DerivedRatioInsightSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecGroupByField), TypeInfoPropertyName = "CustomAnalyticsSpecGroupByField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesSpecMetric), TypeInfoPropertyName = "CustomAnalyticsSeriesSpecMetric2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesSpecMetricField), TypeInfoPropertyName = "CustomAnalyticsSeriesSpecMetricField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesMeta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesMetaUnit), TypeInfoPropertyName = "CustomAnalyticsSeriesMetaUnit2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1775,6 +1825,54 @@ namespace PromptLayer
             typeof(global::PromptLayer.JsonConverters.TableCellStatusJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.TableCellStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.AddReportColumnRequestColumnTypeJsonConverter),
 
@@ -2218,6 +2316,8 @@ namespace PromptLayer
 
             typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
 
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
             typeof(global::PromptLayer.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_a2e389e01f671d8d")]
@@ -2225,6 +2325,32 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsResultChartType), TypeInfoPropertyName = "CustomAnalyticsResultChartType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CustomAnalyticsSeriesMeta>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.DerivedRatioInsightResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestAnalyticsCustomAnalyticsQuery))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestAnalyticsCustomAnalyticsQuerySortBy), TypeInfoPropertyName = "RequestAnalyticsCustomAnalyticsQuerySortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestAnalyticsCustomAnalyticsQuerySortOrder), TypeInfoPropertyName = "RequestAnalyticsCustomAnalyticsQuerySortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CustomAnalyticsSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestAnalyticsCustomAnalyticsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CustomAnalyticsResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreatePromptLabelRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplatesLabelsPromptLabelIdPatchRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TrackGroupRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TrackScoreRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AddReportColumnRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AddReportColumnRequestColumnType), TypeInfoPropertyName = "AddReportColumnRequestColumnType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RunReportRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecution))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecutionType), TypeInfoPropertyName = "CreateToolRegistryRequestExecutionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecutionLanguage), TypeInfoPropertyName = "CreateToolRegistryRequestExecutionLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateTableRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.CreateTableSheetRequestSourceFileSource, global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSource>), TypeInfoPropertyName = "OneOfCreateTableSheetRequestSourceFileSourceCreateTableSheetRequestSourceRequestLogsSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceFileSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceFileSourceType), TypeInfoPropertyName = "CreateTableSheetRequestSourceFileSourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSourceType), TypeInfoPropertyName = "CreateTableSheetRequestSourceRequestLogsSourceType2")]
@@ -2480,6 +2606,12 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.TableSheetScoreMetric>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.TableSheetVersion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.TableCell>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CustomAnalyticsSeriesSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.DerivedRatioInsightSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CustomAnalyticsSeriesMeta>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.DerivedRatioInsightResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CustomAnalyticsSpec>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CustomAnalyticsResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateTableSheetColumnRequestDependencie>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.UpdateTableSheetColumnRequestDependencie>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, global::System.Collections.Generic.List<string>>))]
@@ -2746,6 +2878,30 @@ namespace PromptLayer
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScoreConfigurationScoreTypeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableCellStatusJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableCellStatusNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.AddReportColumnRequestColumnTypeJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.AddReportColumnRequestColumnTypeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateToolRegistryRequestExecutionTypeJsonConverter());
@@ -2929,6 +3085,7 @@ namespace PromptLayer
             options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.FolderExistsError, string>());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>());
