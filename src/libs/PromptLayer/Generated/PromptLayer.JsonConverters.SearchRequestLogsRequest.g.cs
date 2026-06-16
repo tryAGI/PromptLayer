@@ -38,6 +38,7 @@ namespace PromptLayer.JsonConverters
             if (__jsonProps.Contains("filter_group")) __score0++;
             if (__jsonProps.Contains("filter_group.filters")) __score0++;
             if (__jsonProps.Contains("filter_group.logic")) __score0++;
+            if (__jsonProps.Contains("metadata_cost_breakdown_key")) __score0++;
             if (__jsonProps.Contains("q")) __score0++;
             if (__jsonProps.Contains("sort_by")) __score0++;
             if (__jsonProps.Contains("sort_order")) __score0++;

@@ -52,6 +52,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public EnvVarsClient EnvVars { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EvaluationsClient Evaluations { get; }
 
         /// <summary>
@@ -122,7 +127,17 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
+        public SmartTablesClient SmartTables { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SpansClient Spans { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TablesClient Tables { get; }
 
         /// <summary>
         /// 

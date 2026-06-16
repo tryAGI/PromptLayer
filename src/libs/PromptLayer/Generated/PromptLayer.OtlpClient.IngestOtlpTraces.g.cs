@@ -29,12 +29,14 @@ namespace PromptLayer
             global::System.Net.Http.HttpClient httpClient,
             ref global::PromptLayer.IngestOtlpTracesContentType contentType,
             ref global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding,
+            ref bool? closeAfter,
             global::PromptLayer.OtlpExportTraceServiceRequest request);
         partial void PrepareIngestOtlpTracesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::PromptLayer.IngestOtlpTracesContentType contentType,
             global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding,
+            bool? closeAfter,
             global::PromptLayer.OtlpExportTraceServiceRequest request);
         partial void ProcessIngestOtlpTracesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,6 +52,9 @@ namespace PromptLayer
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
+        /// <param name="closeAfter">
+        /// Default Value: false
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -59,6 +64,7 @@ namespace PromptLayer
 
             global::PromptLayer.OtlpExportTraceServiceRequest request,
             global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding = default,
+            bool? closeAfter = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -67,6 +73,7 @@ namespace PromptLayer
 
                 request: request,
                 contentEncoding: contentEncoding,
+                closeAfter: closeAfter,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -78,6 +85,9 @@ namespace PromptLayer
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
+        /// <param name="closeAfter">
+        /// Default Value: false
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -87,6 +97,7 @@ namespace PromptLayer
 
             global::PromptLayer.OtlpExportTraceServiceRequest request,
             global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding = default,
+            bool? closeAfter = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -98,6 +109,7 @@ namespace PromptLayer
                 httpClient: HttpClient,
                 contentType: ref contentType,
                 contentEncoding: ref contentEncoding,
+                closeAfter: ref closeAfter,
                 request: request);
 
 
@@ -126,6 +138,9 @@ namespace PromptLayer
                             var __pathBuilder = new global::PromptLayer.PathBuilder(
                                 path: "/v1/traces",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("close_after", closeAfter?.ToString().ToLowerInvariant())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -181,6 +196,7 @@ namespace PromptLayer
                     httpRequestMessage: __httpRequest,
                     contentType: contentType!,
                     contentEncoding: contentEncoding,
+                    closeAfter: closeAfter,
                     request: request);
 
                 return __httpRequest;
@@ -508,6 +524,43 @@ namespace PromptLayer
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // One or more traces in the request are already closed.
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::PromptLayer.IngestOtlpTracesResponse2? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse2>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -609,6 +662,9 @@ namespace PromptLayer
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
+        /// <param name="closeAfter">
+        /// Default Value: false
+        /// </param>
         /// <param name="resourceSpans">
         /// An array of ResourceSpans. Each element describes spans from a single instrumented resource.
         /// </param>
@@ -618,6 +674,7 @@ namespace PromptLayer
         public async global::System.Threading.Tasks.Task<global::PromptLayer.OtlpExportTraceServiceResponse> IngestOtlpTracesAsync(
             global::PromptLayer.IngestOtlpTracesContentType contentType,
             global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding = default,
+            bool? closeAfter = default,
             global::System.Collections.Generic.IList<global::PromptLayer.OtlpExportTraceServiceRequestResourceSpan>? resourceSpans = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -630,6 +687,7 @@ namespace PromptLayer
             return await IngestOtlpTracesAsync(
                 contentType: contentType,
                 contentEncoding: contentEncoding,
+                closeAfter: closeAfter,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
