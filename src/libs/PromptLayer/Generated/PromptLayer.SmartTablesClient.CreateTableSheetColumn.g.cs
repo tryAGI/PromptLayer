@@ -606,7 +606,9 @@ namespace PromptLayer
         /// <param name="tableId"></param>
         /// <param name="sheetId"></param>
         /// <param name="title"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Smart Table column type. Use uppercase backend enum values. Input: TEXT. Reference (Tables only, not in legacy evaluation/workflow enums): COMPOSITION. Computed: all other listed values. Create requests also accept lowercase aliases (text, prompt_template, llm, code, score, comparison, composition), which are normalized to uppercase. Legacy DATASET columns are not creatable.
+        /// </param>
         /// <param name="config">
         /// Type-specific column configuration.
         /// </param>
@@ -620,7 +622,7 @@ namespace PromptLayer
             global::System.Guid tableId,
             global::System.Guid sheetId,
             string title,
-            global::PromptLayer.CreateTableSheetColumnRequestType type,
+            global::PromptLayer.TableColumnType type,
             object? config = default,
             global::System.Collections.Generic.IList<global::PromptLayer.CreateTableSheetColumnRequestDependencie>? dependencies = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,

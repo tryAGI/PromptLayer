@@ -16,12 +16,12 @@ namespace PromptLayer
         public required string Title { get; set; }
 
         /// <summary>
-        /// 
+        /// Smart Table column type. Use uppercase backend enum values. Input: TEXT. Reference (Tables only, not in legacy evaluation/workflow enums): COMPOSITION. Computed: all other listed values. Create requests also accept lowercase aliases (text, prompt_template, llm, code, score, comparison, composition), which are normalized to uppercase. Legacy DATASET columns are not creatable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.CreateTableSheetColumnRequestTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableColumnTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.CreateTableSheetColumnRequestType Type { get; set; }
+        public required global::PromptLayer.TableColumnType Type { get; set; }
 
         /// <summary>
         /// Type-specific column configuration.
@@ -45,7 +45,9 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="CreateTableSheetColumnRequest" /> class.
         /// </summary>
         /// <param name="title"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Smart Table column type. Use uppercase backend enum values. Input: TEXT. Reference (Tables only, not in legacy evaluation/workflow enums): COMPOSITION. Computed: all other listed values. Create requests also accept lowercase aliases (text, prompt_template, llm, code, score, comparison, composition), which are normalized to uppercase. Legacy DATASET columns are not creatable.
+        /// </param>
         /// <param name="config">
         /// Type-specific column configuration.
         /// </param>
@@ -57,7 +59,7 @@ namespace PromptLayer
 #endif
         public CreateTableSheetColumnRequest(
             string title,
-            global::PromptLayer.CreateTableSheetColumnRequestType type,
+            global::PromptLayer.TableColumnType type,
             object? config,
             global::System.Collections.Generic.IList<global::PromptLayer.CreateTableSheetColumnRequestDependencie>? dependencies)
         {

@@ -10,7 +10,7 @@ namespace PromptLayer
     public sealed partial class EvaluationColumnDefinition
     {
         /// <summary>
-        /// Type of evaluation column to create.
+        /// Type of evaluation column to create. Does not include COMPOSITION, which is Tables-only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.EvaluationColumnDefinitionColumnTypeJsonConverter))]
@@ -54,7 +54,7 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="EvaluationColumnDefinition" /> class.
         /// </summary>
         /// <param name="columnType">
-        /// Type of evaluation column to create.
+        /// Type of evaluation column to create. Does not include COMPOSITION, which is Tables-only.
         /// </param>
         /// <param name="name">
         /// Display name for the column. Must be unique within the pipeline.

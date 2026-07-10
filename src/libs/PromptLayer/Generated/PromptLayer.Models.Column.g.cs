@@ -33,11 +33,11 @@ namespace PromptLayer
         public string? Title { get; set; }
 
         /// <summary>
-        /// Column type. 'text' columns store free-text; 'prompt_template', 'llm', 'code', 'score', 'comparison', and 'composition' columns run automated computations.
+        /// Smart Table column type. Use uppercase backend enum values. Input: TEXT. Reference (Tables only, not in legacy evaluation/workflow enums): COMPOSITION. Computed: all other listed values. Create requests also accept lowercase aliases (text, prompt_template, llm, code, score, comparison, composition), which are normalized to uppercase. Legacy DATASET columns are not creatable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.ColumnTypeJsonConverter))]
-        public global::PromptLayer.ColumnType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableColumnTypeJsonConverter))]
+        public global::PromptLayer.TableColumnType? Type { get; set; }
 
         /// <summary>
         /// Type-specific configuration. Shape depends on the column type.
@@ -77,7 +77,7 @@ namespace PromptLayer
         /// Display title of the column.
         /// </param>
         /// <param name="type">
-        /// Column type. 'text' columns store free-text; 'prompt_template', 'llm', 'code', 'score', 'comparison', and 'composition' columns run automated computations.
+        /// Smart Table column type. Use uppercase backend enum values. Input: TEXT. Reference (Tables only, not in legacy evaluation/workflow enums): COMPOSITION. Computed: all other listed values. Create requests also accept lowercase aliases (text, prompt_template, llm, code, score, comparison, composition), which are normalized to uppercase. Legacy DATASET columns are not creatable.
         /// </param>
         /// <param name="config">
         /// Type-specific configuration. Shape depends on the column type.
@@ -96,7 +96,7 @@ namespace PromptLayer
             global::System.Guid? sheetId,
             int? workspaceId,
             string? title,
-            global::PromptLayer.ColumnType? type,
+            global::PromptLayer.TableColumnType? type,
             object? config,
             double? positionRank,
             bool? isOutputColumn)
