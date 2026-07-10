@@ -6,7 +6,7 @@ namespace PromptLayer
     {
         /// <summary>
         /// Create Sheet<br/>
-        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
+        /// Create a new sheet in a table. Omit source to create a blank sheet with a default Column A scaffold (returns 201), or import data from a file (CSV or JSON, base64-encoded) or from request log history (returns 202). Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="request"></param>
@@ -21,7 +21,7 @@ namespace PromptLayer
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Sheet<br/>
-        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
+        /// Create a new sheet in a table. Omit source to create a blank sheet with a default Column A scaffold (returns 201), or import data from a file (CSV or JSON, base64-encoded) or from request log history (returns 202). Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="request"></param>
@@ -36,30 +36,30 @@ namespace PromptLayer
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Sheet<br/>
-        /// Create a new sheet in a table by importing data from a file (CSV or JSON, base64-encoded) or from request log history. Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
+        /// Create a new sheet in a table. Omit source to create a blank sheet with a default Column A scaffold (returns 201), or import data from a file (CSV or JSON, base64-encoded) or from request log history (returns 202). Requests are scoped to the workspace associated with the API key; table, sheet, column, cell, operation, and version IDs must belong to that workspace.
         /// </summary>
         /// <param name="tableId"></param>
         /// <param name="title">
-        /// Sheet title. Defaults to the source file name or 'Request Logs'.
+        /// Sheet title. Defaults to 'Sheet N' when source is omitted, or to the source file name / 'Request Logs' for imports.
         /// </param>
         /// <param name="index">
         /// Display position within the table (0-based). Defaults to appending at the end.
         /// </param>
         /// <param name="operationId">
-        /// Optional idempotency key for the import operation.
+        /// Optional idempotency key for import operations. Not allowed when source is omitted.
         /// </param>
         /// <param name="source">
-        /// Data source for the sheet.
+        /// Optional data source for the sheet. Omit to create a blank sheet with a default Column A scaffold.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::PromptLayer.CreateTableSheetResponse> CreateTableSheetAsync(
             global::System.Guid tableId,
-            global::PromptLayer.OneOf<global::PromptLayer.CreateTableSheetRequestSourceFileSource, global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSource> source,
             string? title = default,
             int? index = default,
             string? operationId = default,
+            global::PromptLayer.OneOf<global::PromptLayer.CreateTableSheetRequestSourceFileSource, global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSource>? source = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
