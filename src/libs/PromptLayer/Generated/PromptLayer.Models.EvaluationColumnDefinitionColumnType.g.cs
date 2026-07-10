@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Type of evaluation column to create.
+    /// Type of evaluation column to create. Does not include COMPOSITION, which is Tables-only.
     /// </summary>
     public enum EvaluationColumnDefinitionColumnType
     {

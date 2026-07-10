@@ -329,9 +329,9 @@ namespace PromptLayer
 
             typeof(global::PromptLayer.JsonConverters.AddTraceToDatasetResponseModeNullableJsonConverter),
 
-            typeof(global::PromptLayer.JsonConverters.ColumnTypeJsonConverter),
+            typeof(global::PromptLayer.JsonConverters.TableColumnTypeJsonConverter),
 
-            typeof(global::PromptLayer.JsonConverters.ColumnTypeNullableJsonConverter),
+            typeof(global::PromptLayer.JsonConverters.TableColumnTypeNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.CellStatusJsonConverter),
 
@@ -484,10 +484,6 @@ namespace PromptLayer
             typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeNullableJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateTableSheetColumnRequestTypeJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateTableSheetColumnRequestTypeNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionTypeJsonConverter),
 
@@ -1332,8 +1328,8 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Table))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableDetail))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Sheet))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableColumnType), TypeInfoPropertyName = "TableColumnType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Column))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ColumnType), TypeInfoPropertyName = "ColumnType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Cell))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CellStatus), TypeInfoPropertyName = "CellStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SmartTableRequestMetrics))]
@@ -1744,9 +1740,9 @@ namespace PromptLayer
 
             typeof(global::PromptLayer.JsonConverters.AddTraceToDatasetResponseModeNullableJsonConverter),
 
-            typeof(global::PromptLayer.JsonConverters.ColumnTypeJsonConverter),
+            typeof(global::PromptLayer.JsonConverters.TableColumnTypeJsonConverter),
 
-            typeof(global::PromptLayer.JsonConverters.ColumnTypeNullableJsonConverter),
+            typeof(global::PromptLayer.JsonConverters.TableColumnTypeNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.CellStatusJsonConverter),
 
@@ -1899,10 +1895,6 @@ namespace PromptLayer
             typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeNullableJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateTableSheetColumnRequestTypeJsonConverter),
-
-            typeof(global::PromptLayer.JsonConverters.CreateTableSheetColumnRequestTypeNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionTypeJsonConverter),
 
@@ -2368,7 +2360,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSourceType), TypeInfoPropertyName = "CreateTableSheetRequestSourceRequestLogsSourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateTableSheetRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetColumnRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetColumnRequestType), TypeInfoPropertyName = "CreateTableSheetColumnRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateTableSheetColumnRequestDependencie>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetColumnRequestDependencie))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateTableSheetColumnRequest))]
@@ -2849,8 +2840,8 @@ namespace PromptLayer
             options.Converters.Add(new global::PromptLayer.JsonConverters.EvaluationRowCellTypeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.AddTraceToDatasetResponseModeJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.AddTraceToDatasetResponseModeNullableJsonConverter());
-            options.Converters.Add(new global::PromptLayer.JsonConverters.ColumnTypeJsonConverter());
-            options.Converters.Add(new global::PromptLayer.JsonConverters.ColumnTypeNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.TableColumnTypeJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.TableColumnTypeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CellStatusJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CellStatusNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableImportOperationSourceJsonConverter());
@@ -2927,8 +2918,6 @@ namespace PromptLayer
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceFileSourceTypeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeNullableJsonConverter());
-            options.Converters.Add(new global::PromptLayer.JsonConverters.CreateTableSheetColumnRequestTypeJsonConverter());
-            options.Converters.Add(new global::PromptLayer.JsonConverters.CreateTableSheetColumnRequestTypeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionTypeJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionTypeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionLanguageJsonConverter());

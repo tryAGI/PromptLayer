@@ -3,10 +3,10 @@
 namespace PromptLayer.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateTableSheetColumnRequestTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::PromptLayer.CreateTableSheetColumnRequestType>
+    public sealed class TableColumnTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::PromptLayer.TableColumnType>
     {
         /// <inheritdoc />
-        public override global::PromptLayer.CreateTableSheetColumnRequestType Read(
+        public override global::PromptLayer.TableColumnType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace PromptLayer.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::PromptLayer.CreateTableSheetColumnRequestTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::PromptLayer.TableColumnTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace PromptLayer.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::PromptLayer.CreateTableSheetColumnRequestType)numValue;
+                    return (global::PromptLayer.TableColumnType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::PromptLayer.CreateTableSheetColumnRequestType);
+                    return default(global::PromptLayer.TableColumnType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace PromptLayer.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::PromptLayer.CreateTableSheetColumnRequestType value,
+            global::PromptLayer.TableColumnType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::PromptLayer.CreateTableSheetColumnRequestTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::PromptLayer.TableColumnTypeExtensions.ToValueString(value));
         }
     }
 }
