@@ -15,24 +15,6 @@ namespace PromptLayer
         public bool? Success { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string? Message { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("operation_id")]
-        public string? OperationId { get; set; }
-
-        /// <summary>
-        /// Status of an asynchronous sheet import operation.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
-        public global::PromptLayer.TableImportOperation? Operation { get; set; }
-
-        /// <summary>
         /// A sheet within a Table.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sheet")]
@@ -48,11 +30,6 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="CreateTableSheetResponse" /> class.
         /// </summary>
         /// <param name="success"></param>
-        /// <param name="message"></param>
-        /// <param name="operationId"></param>
-        /// <param name="operation">
-        /// Status of an asynchronous sheet import operation.
-        /// </param>
         /// <param name="sheet">
         /// A sheet within a Table.
         /// </param>
@@ -61,15 +38,9 @@ namespace PromptLayer
 #endif
         public CreateTableSheetResponse(
             bool? success,
-            string? message,
-            string? operationId,
-            global::PromptLayer.TableImportOperation? operation,
             global::PromptLayer.Sheet? sheet)
         {
             this.Success = success;
-            this.Message = message;
-            this.OperationId = operationId;
-            this.Operation = operation;
             this.Sheet = sheet;
         }
 

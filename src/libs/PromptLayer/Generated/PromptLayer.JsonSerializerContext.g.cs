@@ -2487,6 +2487,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTableSheetsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.Sheet>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetOperationResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateTableSheetResponse))]
