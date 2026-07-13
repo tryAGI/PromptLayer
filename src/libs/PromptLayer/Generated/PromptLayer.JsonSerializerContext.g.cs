@@ -918,7 +918,9 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Evaluation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
@@ -939,7 +941,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.GetSnippetUsageResponseLabelUsageItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetSnippetUsageResponseLabelUsageItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RunWorkflow))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RunWorkflowResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.WorkflowNode))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
@@ -1412,7 +1413,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesSpecMetric), TypeInfoPropertyName = "CustomAnalyticsSeriesSpecMetric2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesSpecMetricField), TypeInfoPropertyName = "CustomAnalyticsSeriesSpecMetricField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesMeta))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesMetaUnit), TypeInfoPropertyName = "CustomAnalyticsSeriesMetaUnit2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2329,6 +2329,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesMetaUnit), TypeInfoPropertyName = "CustomAnalyticsSeriesMetaUnit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsResultChartType), TypeInfoPropertyName = "CustomAnalyticsResultChartType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CustomAnalyticsSeriesMeta>))]
@@ -2541,6 +2542,211 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateToolEnvVarResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DeleteToolEnvVarResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DeleteToolEnvVarResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EvaluationRunStatus?), TypeInfoPropertyName = "NullableEvaluationRunStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EdgeConditionalOperator?), TypeInfoPropertyName = "NullableEdgeConditionalOperator2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.NodeUpdate, object>?), TypeInfoPropertyName = "NullableOneOfNodeUpdateObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.SkillCollectionVersion, object>?), TypeInfoPropertyName = "NullableOneOfSkillCollectionVersionObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem?), TypeInfoPropertyName = "NullableContentItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPromptContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableCompletionPromptContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPromptTemplateFormat?), TypeInfoPropertyName = "NullableCompletionPromptTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPromptType?), TypeInfoPropertyName = "NullableCompletionPromptType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TextContentType?), TypeInfoPropertyName = "NullableTextContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.WebAnnotation, global::PromptLayer.FileAnnotation, global::PromptLayer.MapAnnotation, global::PromptLayer.ContainerFileAnnotation>?), TypeInfoPropertyName = "NullableOneOfWebAnnotationFileAnnotationMapAnnotationContainerFileAnnotation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ThinkingContentType?), TypeInfoPropertyName = "NullableThinkingContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.MediaFormat?), TypeInfoPropertyName = "NullableMediaFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ImageContentType?), TypeInfoPropertyName = "NullableImageContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.MediaContentType?), TypeInfoPropertyName = "NullableMediaContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.MediaVariableType?), TypeInfoPropertyName = "NullableMediaVariableType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OutputMediaContentType?), TypeInfoPropertyName = "NullableOutputMediaContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OutputMediaContentMediaType?), TypeInfoPropertyName = "NullableOutputMediaContentMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CodeContentType?), TypeInfoPropertyName = "NullableCodeContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ServerToolUseContentType?), TypeInfoPropertyName = "NullableServerToolUseContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.WebSearchResultType?), TypeInfoPropertyName = "NullableWebSearchResultType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.WebSearchToolResultContentType?), TypeInfoPropertyName = "NullableWebSearchToolResultContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CodeExecutionResultContentType?), TypeInfoPropertyName = "NullableCodeExecutionResultContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.McpListToolsContentType?), TypeInfoPropertyName = "NullableMcpListToolsContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, object, object>?), TypeInfoPropertyName = "NullableAnyOfStringObjectObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.McpCallContentType?), TypeInfoPropertyName = "NullableMcpCallContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.McpApprovalRequestContentType?), TypeInfoPropertyName = "NullableMcpApprovalRequestContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.McpApprovalResponseContentType?), TypeInfoPropertyName = "NullableMcpApprovalResponseContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.BashCodeExecutionToolResultContentType?), TypeInfoPropertyName = "NullableBashCodeExecutionToolResultContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TextEditorCodeExecutionToolResultContentType?), TypeInfoPropertyName = "NullableTextEditorCodeExecutionToolResultContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ShellCallContentType?), TypeInfoPropertyName = "NullableShellCallContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ShellCallOutputContentType?), TypeInfoPropertyName = "NullableShellCallOutputContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ApplyPatchCallContentType?), TypeInfoPropertyName = "NullableApplyPatchCallContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ApplyPatchCallOutputContentType?), TypeInfoPropertyName = "NullableApplyPatchCallOutputContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.BuiltInToolType?), TypeInfoPropertyName = "NullableBuiltInToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SystemMessageTemplateFormat?), TypeInfoPropertyName = "NullableSystemMessageTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem2?), TypeInfoPropertyName = "NullableContentItem22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SystemMessageContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableSystemMessageContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UserMessageTemplateFormat?), TypeInfoPropertyName = "NullableUserMessageTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem3?), TypeInfoPropertyName = "NullableContentItem32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UserMessageContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableUserMessageContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AssistantMessageTemplateFormat?), TypeInfoPropertyName = "NullableAssistantMessageTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentVariant1Item?), TypeInfoPropertyName = "NullableContentVariant1Item2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AssistantMessageContentVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableAssistantMessageContentVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.FunctionMessageTemplateFormat?), TypeInfoPropertyName = "NullableFunctionMessageTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentVariant1Item2?), TypeInfoPropertyName = "NullableContentVariant1Item22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.FunctionMessageContentVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableFunctionMessageContentVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DeveloperMessageTemplateFormat?), TypeInfoPropertyName = "NullableDeveloperMessageTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem4?), TypeInfoPropertyName = "NullableContentItem42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DeveloperMessageContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableDeveloperMessageContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.MessagesItem?), TypeInfoPropertyName = "NullableMessagesItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ChatPromptMessageDiscriminatorRole?), TypeInfoPropertyName = "NullableChatPromptMessageDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Tool?), TypeInfoPropertyName = "NullableTool2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, global::PromptLayer.MessageFunctionCall, object>?), TypeInfoPropertyName = "NullableAnyOfStringMessageFunctionCallObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, global::PromptLayer.ChatToolChoice, object>?), TypeInfoPropertyName = "NullableAnyOfStringChatToolChoiceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ChatPromptType?), TypeInfoPropertyName = "NullableChatPromptType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate?), TypeInfoPropertyName = "NullablePromptTemplate2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateResponsePromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullableGetPromptTemplateResponsePromptTemplateDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate2?), TypeInfoPropertyName = "NullablePromptTemplate22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullableGetPromptTemplateRawResponsePromptTemplateDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate3?), TypeInfoPropertyName = "NullablePromptTemplate32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptVersionPromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullablePromptVersionPromptTemplateDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>?), TypeInfoPropertyName = "NullableAnyOfObjectIListObjectObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate4?), TypeInfoPropertyName = "NullablePromptTemplate42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreatePromptTemplateResponsePromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullableCreatePromptTemplateResponsePromptTemplateDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ToolMessageTemplateFormat?), TypeInfoPropertyName = "NullableToolMessageTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem5?), TypeInfoPropertyName = "NullableContentItem52")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ToolMessageContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableToolMessageContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ToolDiscriminatorType?), TypeInfoPropertyName = "NullableToolDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PlaceholderMessageTemplateFormat?), TypeInfoPropertyName = "NullablePlaceholderMessageTemplateFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentVariant1Item3?), TypeInfoPropertyName = "NullableContentVariant1Item32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PlaceholderMessageContentVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullablePlaceholderMessageContentVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PlaceholderMessageRole?), TypeInfoPropertyName = "NullablePlaceholderMessageRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Input?), TypeInfoPropertyName = "NullableInput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestInputDiscriminatorType?), TypeInfoPropertyName = "NullableLogRequestInputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Output?), TypeInfoPropertyName = "NullableOutput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestOutputDiscriminatorType?), TypeInfoPropertyName = "NullableLogRequestOutputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestStatus?), TypeInfoPropertyName = "NullableLogRequestStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestResponseStatus?), TypeInfoPropertyName = "NullableLogRequestResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate5?), TypeInfoPropertyName = "NullablePromptTemplate52")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullablePromptBlueprintPromptTemplateDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SpanKind?), TypeInfoPropertyName = "NullableSpanKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.StatusCode?), TypeInfoPropertyName = "NullableStatusCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateSpansBulkResponseRejectionReason?), TypeInfoPropertyName = "NullableCreateSpansBulkResponseRejectionReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EntityType?), TypeInfoPropertyName = "NullableEntityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.PromptEntityMetadata, global::PromptLayer.WorkflowEntityMetadata, global::PromptLayer.DatasetEntityMetadata, object>?), TypeInfoPropertyName = "NullableOneOfPromptEntityMetadataWorkflowEntityMetadataDatasetEntityMetadataObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptEntityMetadataType?), TypeInfoPropertyName = "NullablePromptEntityMetadataType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestLogQuerySortBy?), TypeInfoPropertyName = "NullableRequestLogQuerySortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestLogQuerySortOrder?), TypeInfoPropertyName = "NullableRequestLogQuerySortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SearchRequestLogsRequest?), TypeInfoPropertyName = "NullableSearchRequestLogsRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.StructuredFilterField?), TypeInfoPropertyName = "NullableStructuredFilterField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.StructuredFilterOperator?), TypeInfoPropertyName = "NullableStructuredFilterOperator2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<string, double?, bool?, byte[], object>?), TypeInfoPropertyName = "NullableOneOfStringDoubleBooleanByteArrayObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.StructuredFilterGroupLogic?), TypeInfoPropertyName = "NullableStructuredFilterGroupLogic2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.StructuredFilter, global::PromptLayer.StructuredFilterGroup>?), TypeInfoPropertyName = "NullableOneOfStructuredFilterStructuredFilterGroup2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate6?), TypeInfoPropertyName = "NullablePromptTemplate62")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullableListPromptTemplateItemPromptTemplateDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EvaluationColumnDefinitionColumnType?), TypeInfoPropertyName = "NullableEvaluationColumnDefinitionColumnType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ScoreConfigurationCodeLanguage?), TypeInfoPropertyName = "NullableScoreConfigurationCodeLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ReportColumnSummaryColumnType?), TypeInfoPropertyName = "NullableReportColumnSummaryColumnType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateReportScoreCardRequestCodeLanguage?), TypeInfoPropertyName = "NullableUpdateReportScoreCardRequestCodeLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EditReportColumnRequestColumnType?), TypeInfoPropertyName = "NullableEditReportColumnRequestColumnType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<global::PromptLayer.DatasetGroup, object>?), TypeInfoPropertyName = "NullableAnyOfDatasetGroupObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<global::PromptLayer.Dataset, object>?), TypeInfoPropertyName = "NullableAnyOfDatasetObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortBy?), TypeInfoPropertyName = "NullableCreateDatasetVersionFromFilterParamsRequestSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateDatasetVersionFromFilterParamsRequestSortOrder?), TypeInfoPropertyName = "NullableCreateDatasetVersionFromFilterParamsRequestSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DatasetRowCellType?), TypeInfoPropertyName = "NullableDatasetRowCellType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EvaluationRowCellType?), TypeInfoPropertyName = "NullableEvaluationRowCellType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.DatasetRowCell, global::PromptLayer.EvaluationRowCell>?), TypeInfoPropertyName = "NullableOneOfDatasetRowCellEvaluationRowCell2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<int?, string>?), TypeInfoPropertyName = "NullableAnyOfInt32String2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<int?, string, object>?), TypeInfoPropertyName = "NullableAnyOfInt32StringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AddTraceToDatasetResponseMode?), TypeInfoPropertyName = "NullableAddTraceToDatasetResponseMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableColumnType?), TypeInfoPropertyName = "NullableTableColumnType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CellStatus?), TypeInfoPropertyName = "NullableCellStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableImportOperationSource?), TypeInfoPropertyName = "NullableTableImportOperationSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableImportOperationStatus?), TypeInfoPropertyName = "NullableTableImportOperationStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ExecutionMetadataMetricAggregateMetricKey?), TypeInfoPropertyName = "NullableExecutionMetadataMetricAggregateMetricKey2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetOperationRequestOperation?), TypeInfoPropertyName = "NullableCreateTableSheetOperationRequestOperation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetOperationRequestStatuse?), TypeInfoPropertyName = "NullableCreateTableSheetOperationRequestStatuse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetOperationResponse?), TypeInfoPropertyName = "NullableCreateTableSheetOperationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreResponseScoringType?), TypeInfoPropertyName = "NullableTableSheetScoreResponseScoringType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>?), TypeInfoPropertyName = "NullableOneOfDoubleStringTableSheetScoreCellObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreResponseStatus?), TypeInfoPropertyName = "NullableTableSheetScoreResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreResponseScoreType?), TypeInfoPropertyName = "NullableTableSheetScoreResponseScoreType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ConfigureTableSheetScoreRequestScoreType?), TypeInfoPropertyName = "NullableConfigureTableSheetScoreRequestScoreType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ConfigureTableSheetScoreRequestCodeLanguage?), TypeInfoPropertyName = "NullableConfigureTableSheetScoreRequestCodeLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ConfigureTableSheetScoreRequestAssertionAggregation?), TypeInfoPropertyName = "NullableConfigureTableSheetScoreRequestAssertionAggregation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RecalculateTableSheetScoreResponseStatus?), TypeInfoPropertyName = "NullableRecalculateTableSheetScoreResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreHistoryResponseScoreHistoryResolution?), TypeInfoPropertyName = "NullableTableSheetScoreHistoryResponseScoreHistoryResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestLogImportRequestSortBy?), TypeInfoPropertyName = "NullableCreateTableSheetRequestLogImportRequestSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestLogImportRequestSortOrder?), TypeInfoPropertyName = "NullableCreateTableSheetRequestLogImportRequestSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetOperationOperation?), TypeInfoPropertyName = "NullableTableSheetOperationOperation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetOperationQueuedResponseOperation?), TypeInfoPropertyName = "NullableCreateTableSheetOperationQueuedResponseOperation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreColumnResolvedScoringType?), TypeInfoPropertyName = "NullableTableSheetScoreColumnResolvedScoringType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreConfigurationScoreType?), TypeInfoPropertyName = "NullableTableSheetScoreConfigurationScoreType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableCellStatus?), TypeInfoPropertyName = "NullableTableCellStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DerivedRatioInsightSpecType?), TypeInfoPropertyName = "NullableDerivedRatioInsightSpecType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DerivedRatioInsightResultType?), TypeInfoPropertyName = "NullableDerivedRatioInsightResultType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecChartType?), TypeInfoPropertyName = "NullableCustomAnalyticsSpecChartType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecMetric?), TypeInfoPropertyName = "NullableCustomAnalyticsSpecMetric2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecMetricField?), TypeInfoPropertyName = "NullableCustomAnalyticsSpecMetricField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSpecGroupByField?), TypeInfoPropertyName = "NullableCustomAnalyticsSpecGroupByField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesSpecMetric?), TypeInfoPropertyName = "NullableCustomAnalyticsSeriesSpecMetric2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesSpecMetricField?), TypeInfoPropertyName = "NullableCustomAnalyticsSeriesSpecMetricField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsSeriesMetaUnit?), TypeInfoPropertyName = "NullableCustomAnalyticsSeriesMetaUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CustomAnalyticsResultChartType?), TypeInfoPropertyName = "NullableCustomAnalyticsResultChartType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestAnalyticsCustomAnalyticsQuerySortBy?), TypeInfoPropertyName = "NullableRequestAnalyticsCustomAnalyticsQuerySortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RequestAnalyticsCustomAnalyticsQuerySortOrder?), TypeInfoPropertyName = "NullableRequestAnalyticsCustomAnalyticsQuerySortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AddReportColumnRequestColumnType?), TypeInfoPropertyName = "NullableAddReportColumnRequestColumnType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecutionType?), TypeInfoPropertyName = "NullableCreateToolRegistryRequestExecutionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolRegistryRequestExecutionLanguage?), TypeInfoPropertyName = "NullableCreateToolRegistryRequestExecutionLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.CreateTableSheetRequestSourceFileSource, global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSource>?), TypeInfoPropertyName = "NullableOneOfCreateTableSheetRequestSourceFileSourceCreateTableSheetRequestSourceRequestLogsSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceFileSourceType?), TypeInfoPropertyName = "NullableCreateTableSheetRequestSourceFileSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSourceType?), TypeInfoPropertyName = "NullableCreateTableSheetRequestSourceRequestLogsSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolVersionRequestExecutionType?), TypeInfoPropertyName = "NullableCreateToolVersionRequestExecutionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateToolVersionRequestExecutionLanguage?), TypeInfoPropertyName = "NullableCreateToolVersionRequestExecutionLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TestExecuteToolRequestExecutionType?), TypeInfoPropertyName = "NullableTestExecuteToolRequestExecutionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TestExecuteToolRequestExecutionLanguage?), TypeInfoPropertyName = "NullableTestExecuteToolRequestExecutionLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListDatasetsStatus?), TypeInfoPropertyName = "NullableListDatasetsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListDatasetsSortBy?), TypeInfoPropertyName = "NullableListDatasetsSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListDatasetsSortOrder?), TypeInfoPropertyName = "NullableListDatasetsSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListEvaluationsStatus?), TypeInfoPropertyName = "NullableListEvaluationsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListEvaluationsSortBy?), TypeInfoPropertyName = "NullableListEvaluationsSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListEvaluationsSortOrder?), TypeInfoPropertyName = "NullableListEvaluationsSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>?), TypeInfoPropertyName = "NullableAnyOfStringIListString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetAllPromptTemplatesGetStatus?), TypeInfoPropertyName = "NullableGetAllPromptTemplatesGetStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetAllPromptTemplatesGetSortBy?), TypeInfoPropertyName = "NullableGetAllPromptTemplatesGetSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetAllPromptTemplatesGetSortOrder?), TypeInfoPropertyName = "NullableGetAllPromptTemplatesGetSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListWorkflowsSortBy?), TypeInfoPropertyName = "NullableListWorkflowsSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListWorkflowsSortOrder?), TypeInfoPropertyName = "NullableListWorkflowsSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?), TypeInfoPropertyName = "NullableListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem?), TypeInfoPropertyName = "NullableListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy?), TypeInfoPropertyName = "NullableListFolderEntitiesApiPublicV2FoldersEntitiesGetSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder?), TypeInfoPropertyName = "NullableListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<string, global::System.Collections.Generic.IList<string>>?), TypeInfoPropertyName = "NullableOneOfStringIListString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.IngestOtlpTracesContentType?), TypeInfoPropertyName = "NullableIngestOtlpTracesContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.IngestOtlpTracesContentEncoding?), TypeInfoPropertyName = "NullableIngestOtlpTracesContentEncoding2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListSkillCollectionsPublicSortBy?), TypeInfoPropertyName = "NullableListSkillCollectionsPublicSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListSkillCollectionsPublicSortOrder?), TypeInfoPropertyName = "NullableListSkillCollectionsPublicSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetSkillCollectionPublicFormat?), TypeInfoPropertyName = "NullableGetSkillCollectionPublicFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetRequestSearchSuggestionsField?), TypeInfoPropertyName = "NullableGetRequestSearchSuggestionsField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListToolRegistriesSortBy?), TypeInfoPropertyName = "NullableListToolRegistriesSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListToolRegistriesSortOrder?), TypeInfoPropertyName = "NullableListToolRegistriesSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTablesOrder?), TypeInfoPropertyName = "NullableListTablesOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTableSheetsOrder?), TypeInfoPropertyName = "NullableListTableSheetsOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTableSheetRowsOrder?), TypeInfoPropertyName = "NullableListTableSheetRowsOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTableSheetVersionsSort?), TypeInfoPropertyName = "NullableListTableSheetVersionsSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTableSheetVersionsOrder?), TypeInfoPropertyName = "NullableListTableSheetVersionsOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetVersionScoreHistoryRange?), TypeInfoPropertyName = "NullableGetTableSheetVersionScoreHistoryRange2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetVersionScoreHistoryResolution?), TypeInfoPropertyName = "NullableGetTableSheetVersionScoreHistoryResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>?), TypeInfoPropertyName = "NullableOneOfHTTPValidationErrorErrorResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetReportResponseStatus?), TypeInfoPropertyName = "NullableGetReportResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetReportScoreResponseScoreScoreType?), TypeInfoPropertyName = "NullableGetReportScoreResponseScoreScoreType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<global::PromptLayer.BadRequestError, global::PromptLayer.ValidationError>?), TypeInfoPropertyName = "NullableAnyOfBadRequestErrorValidationError2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12>, object>?), TypeInfoPropertyName = "NullableOneOfDictionaryStringGetWorkflowVersionExecutionResultsResponseVariant12Object2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>, object>?), TypeInfoPropertyName = "NullableOneOfDictionaryStringGetWorkflowVersionExecutionResultsResponseVariant14Object2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<global::PromptLayer.FolderExistsError, string>?), TypeInfoPropertyName = "NullableAnyOfFolderExistsErrorString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TestExecuteToolResponseResultStatus?), TypeInfoPropertyName = "NullableTestExecuteToolResponseResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CloseTraceResponseClosureStatus?), TypeInfoPropertyName = "NullableCloseTraceResponseClosureStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.EvaluationRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ExternalId>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.GetSnippetUsageResponseSnippetUsageItem>))]
@@ -2618,6 +2824,922 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CustomAnalyticsSeriesMeta>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.DerivedRatioInsightResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CustomAnalyticsSpec>))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::PromptLayer.JsonConverters.EvaluationRunStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EvaluationRunStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EdgeConditionalOperatorJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EdgeConditionalOperatorNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetPromptTemplateProvider2JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetPromptTemplateProvider2NullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CompletionPromptContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CompletionPromptContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CompletionPromptTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CompletionPromptTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CompletionPromptTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CompletionPromptTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TextContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TextContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ThinkingContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ThinkingContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.MediaFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.MediaFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ImageContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ImageContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.MediaContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.MediaContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.MediaVariableTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.MediaVariableTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.OutputMediaContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.OutputMediaContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.OutputMediaContentMediaTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.OutputMediaContentMediaTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CodeContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CodeContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ServerToolUseContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ServerToolUseContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.WebSearchResultTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.WebSearchResultTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.WebSearchToolResultContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.WebSearchToolResultContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CodeExecutionResultContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CodeExecutionResultContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpListToolsContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpListToolsContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpCallContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpCallContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpApprovalRequestContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpApprovalRequestContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpApprovalResponseContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.McpApprovalResponseContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.BashCodeExecutionToolResultContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.BashCodeExecutionToolResultContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TextEditorCodeExecutionToolResultContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TextEditorCodeExecutionToolResultContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ShellCallContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ShellCallContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ShellCallOutputContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ShellCallOutputContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ApplyPatchCallContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ApplyPatchCallContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ApplyPatchCallOutputContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ApplyPatchCallOutputContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.BuiltInToolTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.BuiltInToolTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.SystemMessageTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.SystemMessageTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.SystemMessageContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.SystemMessageContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.UserMessageTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.UserMessageTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.UserMessageContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.UserMessageContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AssistantMessageTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AssistantMessageTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AssistantMessageContentVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AssistantMessageContentVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.FunctionMessageTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.FunctionMessageTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.FunctionMessageContentVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.FunctionMessageContentVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DeveloperMessageTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DeveloperMessageTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DeveloperMessageContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DeveloperMessageContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ChatPromptMessageDiscriminatorRoleJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ChatPromptMessageDiscriminatorRoleNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ChatPromptTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ChatPromptTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetPromptTemplateResponsePromptTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetPromptTemplateResponsePromptTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetPromptTemplateRawResponsePromptTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetPromptTemplateRawResponsePromptTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptVersionPromptTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptVersionPromptTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreatePromptTemplateResponsePromptTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreatePromptTemplateResponsePromptTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ToolMessageTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ToolMessageTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ToolMessageContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ToolMessageContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PlaceholderMessageTemplateFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PlaceholderMessageTemplateFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PlaceholderMessageContentVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PlaceholderMessageContentVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PlaceholderMessageRoleJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PlaceholderMessageRoleNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestInputDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestInputDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestOutputDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestOutputDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestErrorType2JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestErrorType2NullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestResponseStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.LogRequestResponseStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptBlueprintPromptTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptBlueprintPromptTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.SpanKindJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.SpanKindNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StatusCodeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StatusCodeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateSpansBulkResponseRejectionReasonJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateSpansBulkResponseRejectionReasonNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EntityTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EntityTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptEntityMetadataTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptEntityMetadataTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestLogQuerySortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestLogQuerySortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestLogQuerySortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestLogQuerySortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StructuredFilterFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StructuredFilterFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StructuredFilterOperatorJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StructuredFilterOperatorNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StructuredFilterGroupLogicJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.StructuredFilterGroupLogicNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListPromptTemplateItemPromptTemplateDiscriminatorTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListPromptTemplateItemPromptTemplateDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EvaluationColumnDefinitionColumnTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EvaluationColumnDefinitionColumnTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ScoreConfigurationCodeLanguageJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ScoreConfigurationCodeLanguageNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ReportColumnSummaryColumnTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ReportColumnSummaryColumnTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.UpdateReportScoreCardRequestCodeLanguageJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.UpdateReportScoreCardRequestCodeLanguageNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EditReportColumnRequestColumnTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EditReportColumnRequestColumnTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateDatasetVersionFromFilterParamsRequestSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DatasetRowCellTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DatasetRowCellTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EvaluationRowCellTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.EvaluationRowCellTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AddTraceToDatasetResponseModeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AddTraceToDatasetResponseModeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableColumnTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableColumnTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CellStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CellStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableImportOperationSourceJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableImportOperationSourceNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableImportOperationStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableImportOperationStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ExecutionMetadataMetricAggregateMetricKeyJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ExecutionMetadataMetricAggregateMetricKeyNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetOperationRequestOperationJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetOperationRequestOperationNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetOperationRequestStatuseJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetOperationRequestStatuseNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseScoringTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseScoringTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseScoreTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseScoreTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ConfigureTableSheetScoreRequestScoreTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ConfigureTableSheetScoreRequestScoreTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ConfigureTableSheetScoreRequestCodeLanguageJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ConfigureTableSheetScoreRequestCodeLanguageNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ConfigureTableSheetScoreRequestAssertionAggregationJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ConfigureTableSheetScoreRequestAssertionAggregationNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RecalculateTableSheetScoreResponseStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RecalculateTableSheetScoreResponseStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreHistoryResponseScoreHistoryResolutionJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreHistoryResponseScoreHistoryResolutionNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestLogImportRequestSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestLogImportRequestSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestLogImportRequestSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestLogImportRequestSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetOperationOperationJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetOperationOperationNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetOperationQueuedResponseOperationJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetOperationQueuedResponseOperationNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreColumnResolvedScoringTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreColumnResolvedScoringTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreConfigurationScoreTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScoreConfigurationScoreTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableCellStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableCellStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightSpecTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecChartTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecMetricFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSpecGroupByFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesSpecMetricFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsSeriesMetaUnitNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AddReportColumnRequestColumnTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.AddReportColumnRequestColumnTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolRegistryRequestExecutionTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolRegistryRequestExecutionTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolRegistryRequestExecutionLanguageJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolRegistryRequestExecutionLanguageNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceFileSourceTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceFileSourceTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetRequestSourceRequestLogsSourceTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionLanguageJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateToolVersionRequestExecutionLanguageNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TestExecuteToolRequestExecutionTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TestExecuteToolRequestExecutionTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TestExecuteToolRequestExecutionLanguageJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TestExecuteToolRequestExecutionLanguageNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListDatasetsStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListDatasetsStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListDatasetsSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListDatasetsSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListDatasetsSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListDatasetsSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListEvaluationsStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListEvaluationsStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListEvaluationsSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListEvaluationsSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListEvaluationsSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListEvaluationsSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetAllPromptTemplatesGetStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetAllPromptTemplatesGetStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetAllPromptTemplatesGetSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetAllPromptTemplatesGetSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetAllPromptTemplatesGetSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetAllPromptTemplatesGetSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListWorkflowsSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListWorkflowsSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListWorkflowsSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListWorkflowsSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2NullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItemJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItemNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.IngestOtlpTracesContentTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.IngestOtlpTracesContentTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.IngestOtlpTracesContentEncodingJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.IngestOtlpTracesContentEncodingNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListSkillCollectionsPublicSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListSkillCollectionsPublicSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListSkillCollectionsPublicSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListSkillCollectionsPublicSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetSkillCollectionPublicFormatJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetSkillCollectionPublicFormatNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetRequestSearchSuggestionsFieldJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetRequestSearchSuggestionsFieldNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListToolRegistriesSortByJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListToolRegistriesSortByNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListToolRegistriesSortOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListToolRegistriesSortOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTablesOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTablesOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetsOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetsOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetRowsOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetRowsOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetVersionsSortJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetVersionsSortNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetVersionsOrderJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ListTableSheetVersionsOrderNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetTableSheetVersionScoreHistoryRangeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetTableSheetVersionScoreHistoryRangeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetTableSheetVersionScoreHistoryResolutionJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetTableSheetVersionScoreHistoryResolutionNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetReportResponseStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetReportResponseStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetReportScoreResponseScoreScoreTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.GetReportScoreResponseScoreScoreTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TestExecuteToolResponseResultStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TestExecuteToolResponseResultStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CloseTraceResponseClosureStatusJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CloseTraceResponseClosureStatusNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentItemJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentItem2JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentItem3JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentVariant1ItemJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentVariant1Item2JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentItem4JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.MessagesItemJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptTemplateJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptTemplate2JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptTemplate3JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptTemplate4JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentItem5JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ToolJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.ContentVariant1Item3JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.InputJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.OutputJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptTemplate5JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.SearchRequestLogsRequestJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.PromptTemplate6JsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.CreateTableSheetOperationResponseJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.NodeUpdate, object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.SkillCollectionVersion, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, int?>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.WebAnnotation, global::PromptLayer.FileAnnotation, global::PromptLayer.MapAnnotation, global::PromptLayer.ContainerFileAnnotation>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, global::PromptLayer.MessageFunctionCall, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, global::PromptLayer.ChatToolChoice, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.PromptEntityMetadata, global::PromptLayer.WorkflowEntityMetadata, global::PromptLayer.DatasetEntityMetadata, object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<string, double?, bool?, byte[], object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.StructuredFilter, global::PromptLayer.StructuredFilterGroup>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.DatasetGroup, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.Dataset, object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.DatasetRowCell, global::PromptLayer.EvaluationRowCell>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string, object>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<double?, string, global::PromptLayer.TableSheetScoreCellObject>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.CreateTableSheetRequestSourceFileSource, global::PromptLayer.CreateTableSheetRequestSourceRequestLogsSource>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.BadRequestError, global::PromptLayer.ValidationError>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant12>, object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>, object>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<global::PromptLayer.FolderExistsError, string>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.HTTPValidationError, global::PromptLayer.ErrorResponse>),
+
+            typeof(global::PromptLayer.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_a2e389e01f671d8d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_e167c334488aa373")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CustomAnalyticsResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateTableSheetColumnRequestDependencie>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.UpdateTableSheetColumnRequestDependencie>))]
@@ -2641,7 +3763,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.AddTableSheetRowsResponseRow>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ListWorkspaceEnvVarsResponseWorkspaceEnvVar>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ListToolEnvVarsResponseToolEnvVar>))]
-    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
     /// <summary>
@@ -2652,7 +3774,9 @@ namespace PromptLayer
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
             SourceGenerationContextChunk0.Default,
 
-            SourceGenerationContextChunk1.Default
+            SourceGenerationContextChunk1.Default,
+
+            SourceGenerationContextChunk2.Default
             );
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
