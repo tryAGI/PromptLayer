@@ -587,7 +587,7 @@ namespace PromptLayer
             string name,
             object aggregation,
             global::System.Collections.Generic.IList<string>? evaluatedColumnIds = default,
-            global::System.Collections.Generic.IList<object>? steps = default,
+            global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScorecardStep>? steps = default,
             object? displayConfig = default,
             object? baselineConfig = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,

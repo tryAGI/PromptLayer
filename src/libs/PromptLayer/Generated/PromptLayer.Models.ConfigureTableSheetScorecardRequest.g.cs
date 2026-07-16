@@ -25,7 +25,7 @@ namespace PromptLayer
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
-        public global::System.Collections.Generic.IList<object>? Steps { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScorecardStep>? Steps { get; set; }
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace PromptLayer
             string name,
             object aggregation,
             global::System.Collections.Generic.IList<string>? evaluatedColumnIds,
-            global::System.Collections.Generic.IList<object>? steps,
+            global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScorecardStep>? steps,
             object? displayConfig,
             object? baselineConfig)
         {

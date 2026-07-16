@@ -2,7 +2,7 @@
 
 namespace PromptLayer
 {
-    public sealed partial class ConfigureTableSheetScorecardRequestStep
+    public sealed partial class ListTableSheetScorecardRowsResponseVerdictCounts
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace PromptLayer
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::PromptLayer.ConfigureTableSheetScorecardRequestStep? FromJson(
+        public static global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::PromptLayer.ConfigureTableSheetScorecardRequestStep),
-                jsonSerializerContext) as global::PromptLayer.ConfigureTableSheetScorecardRequestStep;
+                typeof(global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts),
+                jsonSerializerContext) as global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::PromptLayer.ConfigureTableSheetScorecardRequestStep? FromJson(
+        public static global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::PromptLayer.ConfigureTableSheetScorecardRequestStep? FromJson(
+        public static global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace PromptLayer
                     global::PromptLayer.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.ConfigureTableSheetScorecardRequestStep>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace PromptLayer
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::PromptLayer.ConfigureTableSheetScorecardRequestStep?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::PromptLayer.ConfigureTableSheetScorecardRequestStep),
-                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.ConfigureTableSheetScorecardRequestStep;
+                typeof(global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts),
+                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.ConfigureTableSheetScorecardRequestStep?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.ConfigureTableSheetScorecardRequestStep?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace PromptLayer
                     global::PromptLayer.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::PromptLayer.ConfigureTableSheetScorecardRequestStep?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::PromptLayer.ListTableSheetScorecardRowsResponseVerdictCounts?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

@@ -81,8 +81,7 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stale_state")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.TableSheetScorecardStaleState StaleState { get; set; }
+        public global::PromptLayer.TableSheetScorecardStaleState? StaleState { get; set; }
 
         /// <summary>
         /// 
@@ -134,12 +133,12 @@ namespace PromptLayer
         /// <param name="evaluatedColumnIds"></param>
         /// <param name="aggregation"></param>
         /// <param name="status"></param>
-        /// <param name="staleState"></param>
         /// <param name="steps"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="displayConfig"></param>
         /// <param name="baselineConfig"></param>
+        /// <param name="staleState"></param>
         /// <param name="latestCalculationId"></param>
         /// <param name="configHash"></param>
 #if NET7_0_OR_GREATER
@@ -154,12 +153,12 @@ namespace PromptLayer
             global::System.Collections.Generic.IList<string> evaluatedColumnIds,
             global::PromptLayer.TableSheetScorecardAggregation aggregation,
             global::PromptLayer.TableSheetScorecardStatus status,
-            global::PromptLayer.TableSheetScorecardStaleState staleState,
             global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScorecardStep> steps,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             object? displayConfig,
             object? baselineConfig,
+            global::PromptLayer.TableSheetScorecardStaleState? staleState,
             global::System.Guid? latestCalculationId,
             string? configHash)
         {
@@ -173,7 +172,7 @@ namespace PromptLayer
             this.DisplayConfig = displayConfig;
             this.BaselineConfig = baselineConfig;
             this.Status = status;
-            this.StaleState = staleState ?? throw new global::System.ArgumentNullException(nameof(staleState));
+            this.StaleState = staleState;
             this.LatestCalculationId = latestCalculationId;
             this.ConfigHash = configHash;
             this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));

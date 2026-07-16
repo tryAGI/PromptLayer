@@ -2,7 +2,7 @@
 
 namespace PromptLayer
 {
-    public sealed partial class TableSheetScorecardRowSummaryErrorSummary
+    public sealed partial class TableSheetScorecardGetResponseProgress
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace PromptLayer
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary? FromJson(
+        public static global::PromptLayer.TableSheetScorecardGetResponseProgress? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary),
-                jsonSerializerContext) as global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary;
+                typeof(global::PromptLayer.TableSheetScorecardGetResponseProgress),
+                jsonSerializerContext) as global::PromptLayer.TableSheetScorecardGetResponseProgress;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary? FromJson(
+        public static global::PromptLayer.TableSheetScorecardGetResponseProgress? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary? FromJson(
+        public static global::PromptLayer.TableSheetScorecardGetResponseProgress? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace PromptLayer
                     global::PromptLayer.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::PromptLayer.TableSheetScorecardGetResponseProgress>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace PromptLayer
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::PromptLayer.TableSheetScorecardGetResponseProgress?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary),
-                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary;
+                typeof(global::PromptLayer.TableSheetScorecardGetResponseProgress),
+                jsonSerializerContext).ConfigureAwait(false)) as global::PromptLayer.TableSheetScorecardGetResponseProgress;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.TableSheetScorecardGetResponseProgress?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::PromptLayer.TableSheetScorecardGetResponseProgress?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace PromptLayer
                     global::PromptLayer.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::PromptLayer.TableSheetScorecardRowSummaryErrorSummary?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::PromptLayer.TableSheetScorecardGetResponseProgress?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

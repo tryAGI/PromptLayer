@@ -19,8 +19,7 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scorecard")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.TableSheetScorecard Scorecard { get; set; }
+        public global::PromptLayer.TableSheetScorecard? Scorecard { get; set; }
 
         /// <summary>
         /// 
@@ -60,24 +59,24 @@ namespace PromptLayer
         /// Initializes a new instance of the <see cref="MigrateLegacyTableSheetScoreResponse" /> class.
         /// </summary>
         /// <param name="success"></param>
-        /// <param name="scorecard"></param>
         /// <param name="convertedCount"></param>
         /// <param name="skipped"></param>
         /// <param name="legacyScoreDeleted"></param>
         /// <param name="version"></param>
+        /// <param name="scorecard"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MigrateLegacyTableSheetScoreResponse(
             bool success,
-            global::PromptLayer.TableSheetScorecard scorecard,
             int convertedCount,
             global::System.Collections.Generic.IList<global::PromptLayer.MigrateLegacyTableSheetScoreResponseSkippedItem> skipped,
             bool legacyScoreDeleted,
-            int version)
+            int version,
+            global::PromptLayer.TableSheetScorecard? scorecard)
         {
             this.Success = success;
-            this.Scorecard = scorecard ?? throw new global::System.ArgumentNullException(nameof(scorecard));
+            this.Scorecard = scorecard;
             this.ConvertedCount = convertedCount;
             this.Skipped = skipped ?? throw new global::System.ArgumentNullException(nameof(skipped));
             this.LegacyScoreDeleted = legacyScoreDeleted;

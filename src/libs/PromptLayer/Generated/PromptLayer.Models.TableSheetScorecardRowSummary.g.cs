@@ -44,7 +44,7 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_summary")]
-        public object? ErrorSummary { get; set; }
+        public string? ErrorSummary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,7 +70,7 @@ namespace PromptLayer
             global::PromptLayer.TableSheetScorecardRowSummaryAggregateVerdict? aggregateVerdict,
             object? driftSummary,
             object? staleState,
-            object? errorSummary)
+            string? errorSummary)
         {
             this.RowIndex = rowIndex;
             this.AggregateScore = aggregateScore;
