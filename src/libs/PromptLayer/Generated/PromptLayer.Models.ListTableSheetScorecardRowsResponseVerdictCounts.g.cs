@@ -6,7 +6,7 @@ namespace PromptLayer
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ConfigureTableSheetScorecardRequestStep
+    public sealed partial class ListTableSheetScorecardRowsResponseVerdictCounts
     {
 
         /// <summary>

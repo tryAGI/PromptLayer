@@ -99,7 +99,7 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_summary")]
-        public object? ErrorSummary { get; set; }
+        public string? ErrorSummary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -141,7 +141,7 @@ namespace PromptLayer
             string? configHash,
             global::System.DateTime? startedAt,
             global::System.DateTime? completedAt,
-            object? errorSummary)
+            string? errorSummary)
         {
             this.Id = id;
             this.ScorecardId = scorecardId;

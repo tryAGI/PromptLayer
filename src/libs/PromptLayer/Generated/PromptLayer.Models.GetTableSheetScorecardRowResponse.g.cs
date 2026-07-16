@@ -86,7 +86,7 @@ namespace PromptLayer
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_summary")]
-        public object? ErrorSummary { get; set; }
+        public string? ErrorSummary { get; set; }
 
         /// <summary>
         /// 
@@ -145,7 +145,7 @@ namespace PromptLayer
             global::PromptLayer.GetTableSheetScorecardRowResponseAggregateVerdict? aggregateVerdict,
             object? driftSummary,
             object? staleState,
-            object? errorSummary,
+            string? errorSummary,
             string? configHash,
             string? inputHash,
             global::System.DateTime? computedAt)

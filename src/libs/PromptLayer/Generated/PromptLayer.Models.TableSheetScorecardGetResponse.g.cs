@@ -46,6 +46,12 @@ namespace PromptLayer
         public object? DriftSummary { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("progress")]
+        public global::PromptLayer.TableSheetScorecardGetResponseProgress? Progress { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,6 +66,7 @@ namespace PromptLayer
         /// <param name="displayCalculation"></param>
         /// <param name="criterionSummaries"></param>
         /// <param name="driftSummary"></param>
+        /// <param name="progress"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -69,7 +76,8 @@ namespace PromptLayer
             global::PromptLayer.TableSheetScorecardCalculation? latestCalculation,
             global::PromptLayer.TableSheetScorecardCalculation? displayCalculation,
             object? criterionSummaries,
-            object? driftSummary)
+            object? driftSummary,
+            global::PromptLayer.TableSheetScorecardGetResponseProgress? progress)
         {
             this.Success = success;
             this.Scorecard = scorecard;
@@ -77,6 +85,7 @@ namespace PromptLayer
             this.DisplayCalculation = displayCalculation;
             this.CriterionSummaries = criterionSummaries;
             this.DriftSummary = driftSummary;
+            this.Progress = progress;
         }
 
         /// <summary>

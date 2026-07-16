@@ -6,7 +6,7 @@ namespace PromptLayer
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class TableSheetScorecardRowSummaryErrorSummary
+    public sealed partial class TableSheetScorecardStepScoreAdapter
     {
 
         /// <summary>

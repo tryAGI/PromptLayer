@@ -11,11 +11,11 @@ namespace PromptLayer
         /// <summary>
         /// 
         /// </summary>
-        Fail,
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        Ignore,
+        Fail,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace PromptLayer
         {
             return value switch
             {
+                TableSheetScorecardAggregationRequiredStepFailureBehavior.Error => "error",
                 TableSheetScorecardAggregationRequiredStepFailureBehavior.Fail => "fail",
-                TableSheetScorecardAggregationRequiredStepFailureBehavior.Ignore => "ignore",
                 TableSheetScorecardAggregationRequiredStepFailureBehavior.Warn => "warn",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace PromptLayer
         {
             return value switch
             {
+                "error" => TableSheetScorecardAggregationRequiredStepFailureBehavior.Error,
                 "fail" => TableSheetScorecardAggregationRequiredStepFailureBehavior.Fail,
-                "ignore" => TableSheetScorecardAggregationRequiredStepFailureBehavior.Ignore,
                 "warn" => TableSheetScorecardAggregationRequiredStepFailureBehavior.Warn,
                 _ => null,
             };

@@ -389,6 +389,14 @@ namespace PromptLayer
 
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorNullableJsonConverter),
 
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeNullableJsonConverter),
+
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStatusJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStatusNullableJsonConverter),
@@ -1460,6 +1468,8 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardAggregation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardAggregationRequiredStepFailureBehavior), TypeInfoPropertyName = "TableSheetScorecardAggregationRequiredStepFailureBehavior2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardStep))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardStepPrimitiveType), TypeInfoPropertyName = "TableSheetScorecardStepPrimitiveType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardStepEvidenceMode), TypeInfoPropertyName = "TableSheetScorecardStepEvidenceMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecard))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardStatus), TypeInfoPropertyName = "TableSheetScorecardStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScorecardStep>))]
@@ -1467,6 +1477,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardCalculationStatus), TypeInfoPropertyName = "TableSheetScorecardCalculationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardCalculationAggregateVerdict), TypeInfoPropertyName = "TableSheetScorecardCalculationAggregateVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardGetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardGetResponseProgress))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ConfigureTableSheetScorecardRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ConfigureTableSheetScorecardResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.DeleteTableSheetScorecardResponse))]
@@ -1488,9 +1499,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetScorecardRowResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetScorecardRowResponseAggregateVerdict), TypeInfoPropertyName = "GetTableSheetScorecardRowResponseAggregateVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTableSheetVersionsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.TableSheetVersion>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetVersion))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PublicListPagination))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1877,6 +1885,14 @@ namespace PromptLayer
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStatusJsonConverter),
 
@@ -2485,6 +2501,9 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.TableSheetVersion>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetVersion))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PublicListPagination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EmptyPublicFilters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateTableSheetVersionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetVersionResponse))]
@@ -2885,6 +2904,8 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ConfigureTableSheetScoreRequestAssertionAggregation?), TypeInfoPropertyName = "NullableConfigureTableSheetScoreRequestAssertionAggregation2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.RecalculateTableSheetScoreResponseStatus?), TypeInfoPropertyName = "NullableRecalculateTableSheetScoreResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardAggregationRequiredStepFailureBehavior?), TypeInfoPropertyName = "NullableTableSheetScorecardAggregationRequiredStepFailureBehavior2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardStepPrimitiveType?), TypeInfoPropertyName = "NullableTableSheetScorecardStepPrimitiveType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardStepEvidenceMode?), TypeInfoPropertyName = "NullableTableSheetScorecardStepEvidenceMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardStatus?), TypeInfoPropertyName = "NullableTableSheetScorecardStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardCalculationStatus?), TypeInfoPropertyName = "NullableTableSheetScorecardCalculationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScorecardCalculationAggregateVerdict?), TypeInfoPropertyName = "NullableTableSheetScorecardCalculationAggregateVerdict2")]
@@ -2975,11 +2996,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>, object>?), TypeInfoPropertyName = "NullableOneOfDictionaryStringGetWorkflowVersionExecutionResultsResponseVariant14Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<global::PromptLayer.FolderExistsError, string>?), TypeInfoPropertyName = "NullableAnyOfFolderExistsErrorString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TestExecuteToolResponseResultStatus?), TypeInfoPropertyName = "NullableTestExecuteToolResponseResultStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CloseTraceResponseClosureStatus?), TypeInfoPropertyName = "NullableCloseTraceResponseClosureStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.EvaluationRun>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ExternalId>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.GetSnippetUsageResponseSnippetUsageItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3366,6 +3382,14 @@ namespace PromptLayer
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeNullableJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeJsonConverter),
+
+            typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeNullableJsonConverter),
 
             typeof(global::PromptLayer.JsonConverters.TableSheetScorecardStatusJsonConverter),
 
@@ -3974,6 +3998,11 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CloseTraceResponseClosureStatus?), TypeInfoPropertyName = "NullableCloseTraceResponseClosureStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.EvaluationRun>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ExternalId>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.GetSnippetUsageResponseSnippetUsageItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.GetSnippetUsageResponseLabelUsageItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.EdgeConditional>))]
@@ -4309,6 +4338,10 @@ namespace PromptLayer
             options.Converters.Add(new global::PromptLayer.JsonConverters.RecalculateTableSheetScoreResponseStatusNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardStepPrimitiveTypeNullableJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeJsonConverter());
+            options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardStepEvidenceModeNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardStatusJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardStatusNullableJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.TableSheetScorecardCalculationStatusJsonConverter());

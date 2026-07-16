@@ -24545,8 +24545,23 @@
             "items": {
               "type": "string"
             }
+          },
+          "stale_step_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "stale_row_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
           }
-        }
+        },
+        "additionalProperties": true
       },
       "TableSheetScorecardAggregation": {
         "type": "object",
@@ -24565,7 +24580,7 @@
             "enum": [
               "fail",
               "warn",
-              "ignore"
+              "error"
             ]
           },
           "pass_threshold": {
@@ -24593,7 +24608,20 @@
             "type": "string"
           },
           "primitive_type": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "COLUMN_AGGREGATE",
+              "CONTAINS",
+              "REGEX",
+              "ASSERT_VALID",
+              "COMPARE",
+              "LLM_ASSERTION",
+              "TOOL_EVALUATOR",
+              "CODE_EXECUTION",
+              "STRUCTURE",
+              "MAX_TOOL_CALLS",
+              "NO_INVALID_TOOL_CALLS"
+            ]
           },
           "source_column_ids": {
             "type": "array",
@@ -24616,6 +24644,52 @@
           "primitive_config": {
             "type": "object",
             "additionalProperties": true
+          },
+          "score_adapter": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "target_column_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "evidence_mode": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "summary",
+              "raw",
+              "hidden",
+              null
+            ]
+          },
+          "order_index": {
+            "type": "integer"
+          },
+          "backing_column_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "config_hash": {
+            "type": "string",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": true
@@ -24687,7 +24761,12 @@
             ]
           },
           "stale_state": {
-            "$ref": "#/components/schemas/TableSheetScorecardStaleState"
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TableSheetScorecardStaleState"
+              }
+            ]
           },
           "latest_calculation_id": {
             "type": "string",
@@ -24795,9 +24874,8 @@
             "nullable": true
           },
           "error_summary": {
-            "type": "object",
-            "nullable": true,
-            "additionalProperties": true
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": true
@@ -24807,10 +24885,7 @@
         "required": [
           "success",
           "scorecard",
-          "latest_calculation",
-          "display_calculation",
-          "criterion_summaries",
-          "drift_summary"
+          "latest_calculation"
         ],
         "properties": {
           "success": {
@@ -24849,6 +24924,23 @@
             "type": "object",
             "nullable": true,
             "additionalProperties": true
+          },
+          "progress": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "scored_rows": {
+                "type": "integer"
+              },
+              "total_rows": {
+                "type": "integer"
+              },
+              "partial_score": {
+                "type": "number",
+                "nullable": true
+              }
+            },
+            "additionalProperties": true
           }
         },
         "additionalProperties": true
@@ -24873,8 +24965,7 @@
           "steps": {
             "type": "array",
             "items": {
-              "type": "object",
-              "additionalProperties": true
+              "$ref": "#/components/schemas/TableSheetScorecardStep"
             },
             "default": []
           },
@@ -24952,7 +25043,12 @@
             "type": "boolean"
           },
           "scorecard": {
-            "$ref": "#/components/schemas/TableSheetScorecard"
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TableSheetScorecard"
+              }
+            ]
           },
           "converted_count": {
             "type": "integer"
@@ -25171,9 +25267,8 @@
             "additionalProperties": true
           },
           "error_summary": {
-            "type": "object",
-            "nullable": true,
-            "additionalProperties": true
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": true
@@ -25184,7 +25279,8 @@
           "success",
           "calculation_id",
           "rows",
-          "next_cursor"
+          "next_cursor",
+          "verdict_counts"
         ],
         "properties": {
           "success": {
@@ -25192,7 +25288,8 @@
           },
           "calculation_id": {
             "type": "string",
-            "format": "uuid"
+            "format": "uuid",
+            "nullable": true
           },
           "rows": {
             "type": "array",
@@ -25203,6 +25300,12 @@
           "next_cursor": {
             "type": "integer",
             "nullable": true
+          },
+          "verdict_counts": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
           }
         },
         "additionalProperties": false
@@ -25281,9 +25384,8 @@
             "additionalProperties": true
           },
           "error_summary": {
-            "type": "object",
-            "nullable": true,
-            "additionalProperties": true
+            "type": "string",
+            "nullable": true
           },
           "config_hash": {
             "type": "string",
