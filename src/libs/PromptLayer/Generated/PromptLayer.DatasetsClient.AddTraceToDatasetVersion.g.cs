@@ -626,7 +626,7 @@ namespace PromptLayer
         /// ID of the trace to add as a dataset row.
         /// </param>
         /// <param name="spanId">
-        /// Optional span ID. When omitted the row anchors on the trace's earliest root span (Trace export). When provided the row anchors on that span and its direct children become the columns (Span export).
+        /// Optional span ID. When provided, the row is built from this span and its direct children become the dataset columns. When omitted, the full trace is added as the row.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

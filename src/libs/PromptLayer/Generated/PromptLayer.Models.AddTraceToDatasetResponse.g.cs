@@ -21,7 +21,7 @@ namespace PromptLayer
         public int? DraftDatasetId { get; set; }
 
         /// <summary>
-        /// Indicates whether the row was created from a full trace root (`trace`) or a specific span subtree (`span`).
+        /// `"trace"` when the row was added from the full trace, or `"span"` when added from a specific span.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AddTraceToDatasetResponseModeJsonConverter))]
@@ -41,7 +41,7 @@ namespace PromptLayer
         /// ID of the draft dataset the trace row was added to.
         /// </param>
         /// <param name="mode">
-        /// Indicates whether the row was created from a full trace root (`trace`) or a specific span subtree (`span`).
+        /// `"trace"` when the row was added from the full trace, or `"span"` when added from a specific span.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

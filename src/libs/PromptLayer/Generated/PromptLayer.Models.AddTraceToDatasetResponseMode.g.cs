@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Indicates whether the row was created from a full trace root (`trace`) or a specific span subtree (`span`).
+    /// `"trace"` when the row was added from the full trace, or `"span"` when added from a specific span.
     /// </summary>
     public enum AddTraceToDatasetResponseMode
     {

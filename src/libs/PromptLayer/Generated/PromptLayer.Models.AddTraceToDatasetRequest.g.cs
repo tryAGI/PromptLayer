@@ -23,7 +23,7 @@ namespace PromptLayer
         public required string TraceId { get; set; }
 
         /// <summary>
-        /// Optional span ID. When omitted the row anchors on the trace's earliest root span (Trace export). When provided the row anchors on that span and its direct children become the columns (Span export).
+        /// Optional span ID. When provided, the row is built from this span and its direct children become the dataset columns. When omitted, the full trace is added as the row.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span_id")]
         public string? SpanId { get; set; }
@@ -44,7 +44,7 @@ namespace PromptLayer
         /// ID of the trace to add as a dataset row.
         /// </param>
         /// <param name="spanId">
-        /// Optional span ID. When omitted the row anchors on the trace's earliest root span (Trace export). When provided the row anchors on that span and its direct children become the columns (Span export).
+        /// Optional span ID. When provided, the row is built from this span and its direct children become the dataset columns. When omitted, the full trace is added as the row.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
