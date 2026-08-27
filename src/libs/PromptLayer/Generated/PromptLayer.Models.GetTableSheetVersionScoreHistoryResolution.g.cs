@@ -9,15 +9,15 @@ namespace PromptLayer
     public enum GetTableSheetVersionScoreHistoryResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MinMaxBucket,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Raw,
     }

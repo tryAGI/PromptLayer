@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum CreateTableSheetRequestLogImportRequestSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

@@ -4,18 +4,18 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RecalculateTableSheetScorecardRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("row_indices")]
         public global::System.Collections.Generic.IList<int>? RowIndices { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? StepIds { get; set; }

@@ -4,18 +4,18 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateTableResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         public bool? Success { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("table")]
         public global::PromptLayer.TableDetail? Table { get; set; }

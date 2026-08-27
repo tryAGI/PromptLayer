@@ -4,26 +4,26 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Span
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::PromptLayer.SpanContext Context { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.SpanKindJsonConverter))]
@@ -31,34 +31,34 @@ namespace PromptLayer
         public required global::PromptLayer.SpanKind Kind { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_id")]
         public string? ParentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EndTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::PromptLayer.SpanStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -77,7 +77,7 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<object>? Links { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource")]
         [global::System.Text.Json.Serialization.JsonRequired]

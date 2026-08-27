@@ -4,111 +4,111 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TableSheetScoreResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Success { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sheet_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid SheetId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scoring_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseScoringTypeJsonConverter))]
         public global::PromptLayer.TableSheetScoreResponseScoringType? ScoringType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("columns")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScoreColumn> Columns { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aggregate_score")]
         public double? AggregateScore { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_rows")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalRows { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scored_rows")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ScoredRows { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excluded_rows")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ExcludedRows { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("calculated_at")]
         public global::System.DateTime? CalculatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_matrix")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>>>? ScoreMatrix { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_matrix_metrics")]
         public global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScoreMetric>? ScoreMatrixMetrics { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseStatusJsonConverter))]
         public global::PromptLayer.TableSheetScoreResponseStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_calculation_error")]
         public string? ScoreCalculationError { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_custom_scoring")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasCustomScoring { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_configuration")]
         public global::PromptLayer.TableSheetScoreConfiguration? ScoreConfiguration { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableSheetScoreResponseScoreTypeJsonConverter))]
@@ -116,27 +116,27 @@ namespace PromptLayer
         public required global::PromptLayer.TableSheetScoreResponseScoreType ScoreType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overall_score")]
         public double? OverallScore { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Details { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aggregate")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Aggregate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("per_column")]
         [global::System.Text.Json.Serialization.JsonRequired]

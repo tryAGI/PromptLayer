@@ -21,31 +21,31 @@ namespace PromptLayer
         public string? DateLabel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         public int? Requests { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
         public int? Tokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputTokens")]
         public int? InputTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputTokens")]
         public int? OutputTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         public double? Cost { get; set; }
@@ -57,13 +57,13 @@ namespace PromptLayer
         public double? Latency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cachedTokens")]
         public int? CachedTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinkingTokens")]
         public int? ThinkingTokens { get; set; }
@@ -75,31 +75,31 @@ namespace PromptLayer
         public double? TraceShare { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("statusCounts")]
         public global::System.Collections.Generic.Dictionary<string, int>? StatusCounts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputShapeCounts")]
         public global::PromptLayer.RequestAnalyticsStatOutputShapeCounts? OutputShapeCounts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avgTurnCount")]
         public double? AvgTurnCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avgToolCallCount")]
         public double? AvgToolCallCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolCallCountP95")]
         public double? ToolCallCountP95 { get; set; }

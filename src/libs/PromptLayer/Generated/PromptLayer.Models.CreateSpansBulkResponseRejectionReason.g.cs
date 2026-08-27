@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum CreateSpansBulkResponseRejectionReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceClosed,
     }

@@ -4,46 +4,46 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TableSheetScoreColumn
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid ColumnId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         public double? Score { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("included_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int IncludedCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excluded_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ExcludedCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolved_scoring_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableSheetScoreColumnResolvedScoringTypeJsonConverter))]

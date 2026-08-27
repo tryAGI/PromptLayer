@@ -4,20 +4,20 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CustomAnalyticsResultChartType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Area,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Line,
     }

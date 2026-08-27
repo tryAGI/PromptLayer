@@ -9,25 +9,25 @@ namespace PromptLayer
     public sealed partial class RequestAnalyticsLatencyByDay
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("average_latency")]
         public global::System.Collections.Generic.Dictionary<string, double>? AverageLatency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p50_latency")]
         public global::System.Collections.Generic.Dictionary<string, double>? P50Latency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p90_latency")]
         public global::System.Collections.Generic.Dictionary<string, double>? P90Latency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p95_latency")]
         public global::System.Collections.Generic.Dictionary<string, double>? P95Latency { get; set; }

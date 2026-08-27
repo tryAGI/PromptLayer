@@ -5,12 +5,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Tool : global::System.IEquatable<Tool>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ToolDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
@@ -32,7 +32,7 @@ namespace PromptLayer
         public bool IsFunction => Function != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunction(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.FunctionTool PickFunction() => IsFunction
             ? Function!
@@ -61,7 +61,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
@@ -69,7 +69,7 @@ namespace PromptLayer
         public bool IsWebSearch => WebSearch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearch(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.BuiltInTool PickWebSearch() => IsWebSearch
             ? WebSearch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Tool(global::PromptLayer.FunctionTool value) => new Tool((global::PromptLayer.FunctionTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.FunctionTool?(Tool @this) => @this.Function;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Tool(global::PromptLayer.FunctionTool? value)
         {
@@ -106,22 +106,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Tool FromFunction(global::PromptLayer.FunctionTool? value) => new Tool(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Tool(global::PromptLayer.BuiltInTool value) => new Tool((global::PromptLayer.BuiltInTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.BuiltInTool?(Tool @this) => @this.WebSearch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Tool(global::PromptLayer.BuiltInTool? value)
         {
@@ -129,12 +129,12 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Tool FromWebSearch(global::PromptLayer.BuiltInTool? value) => new Tool(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Tool(
             global::PromptLayer.ToolDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WebSearch as object ??
-            Function as object 
+            Function as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Function?.ToString() ??
-            WebSearch?.ToString() 
+            WebSearch?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::PromptLayer.FunctionTool, TResult>? function = null,
@@ -198,7 +198,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::PromptLayer.FunctionTool>? function = null,
@@ -222,7 +222,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::PromptLayer.FunctionTool>? function = null,
@@ -245,7 +245,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Tool other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.FunctionTool?>.Default.Equals(Function, other.Function) &&
-                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.BuiltInTool?>.Default.Equals(WebSearch, other.WebSearch) 
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.BuiltInTool?>.Default.Equals(WebSearch, other.WebSearch)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Tool obj1, Tool obj2)
         {
@@ -285,7 +285,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Tool obj1, Tool obj2)
         {
@@ -293,7 +293,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

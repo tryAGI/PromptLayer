@@ -4,16 +4,16 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateToolRegistryRequestExecutionLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Javascript,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Python,
     }

@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConfigureTableSheetScorecardRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,20 +28,20 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScorecardStep>? Steps { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aggregation")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Aggregation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_config")]
         public object? DisplayConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("baseline_config")]
         public object? BaselineConfig { get; set; }

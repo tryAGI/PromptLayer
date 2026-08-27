@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ThinkingContent
     {
@@ -22,7 +22,7 @@ namespace PromptLayer
         public global::PromptLayer.ThinkingContentType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         [global::System.Text.Json.Serialization.JsonRequired]

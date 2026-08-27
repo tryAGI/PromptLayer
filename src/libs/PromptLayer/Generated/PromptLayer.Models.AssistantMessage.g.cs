@@ -6,7 +6,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AssistantMessage
     {
@@ -24,7 +24,7 @@ namespace PromptLayer
         public global::PromptLayer.AssistantMessageTemplateFormat? TemplateFormat { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item>? Content { get; set; }
@@ -43,13 +43,13 @@ namespace PromptLayer
         public global::PromptLayer.FunctionCall? FunctionCall { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         public global::System.Collections.Generic.IList<global::PromptLayer.ToolCall>? ToolCalls { get; set; }

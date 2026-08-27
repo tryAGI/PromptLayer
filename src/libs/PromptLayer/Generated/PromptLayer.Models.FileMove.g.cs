@@ -4,19 +4,19 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FileMove
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OldPath { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_path")]
         [global::System.Text.Json.Serialization.JsonRequired]

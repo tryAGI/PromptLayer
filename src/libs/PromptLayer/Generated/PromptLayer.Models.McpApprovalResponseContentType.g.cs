@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum McpApprovalResponseContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalResponse,
     }

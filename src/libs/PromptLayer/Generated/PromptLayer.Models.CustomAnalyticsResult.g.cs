@@ -21,7 +21,7 @@ namespace PromptLayer
         public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chartType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.CustomAnalyticsResultChartTypeJsonConverter))]

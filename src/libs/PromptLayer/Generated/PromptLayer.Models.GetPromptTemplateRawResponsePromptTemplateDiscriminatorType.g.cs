@@ -4,16 +4,16 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetPromptTemplateRawResponsePromptTemplateDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completion,
     }

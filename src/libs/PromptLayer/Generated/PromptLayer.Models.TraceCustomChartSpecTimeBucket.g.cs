@@ -4,24 +4,24 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TraceCustomChartSpecTimeBucket
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Month,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Week,
     }

@@ -9,23 +9,23 @@ namespace PromptLayer
     public enum CustomAnalyticsSeriesSpecMetric
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Max,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Min,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Percentile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sum,
     }

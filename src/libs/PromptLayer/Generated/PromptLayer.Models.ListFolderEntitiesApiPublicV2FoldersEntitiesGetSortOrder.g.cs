@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ListFolderEntitiesApiPublicV2FoldersEntitiesGetSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

@@ -20,7 +20,7 @@ namespace PromptLayer.JsonConverters
                     {
                         return global::PromptLayer.WebSearchToolResultContentTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

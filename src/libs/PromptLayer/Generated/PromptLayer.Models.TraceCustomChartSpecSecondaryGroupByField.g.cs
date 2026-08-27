@@ -9,47 +9,47 @@ namespace PromptLayer
     public enum TraceCustomChartSpecSecondaryGroupByField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanKind,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanName,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanStatus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanToolName,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceModelsUsed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceName,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TracePromptIds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceStatus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceToolNames,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceWorkflowIds,
     }

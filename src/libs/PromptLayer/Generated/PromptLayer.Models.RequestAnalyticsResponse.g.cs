@@ -9,7 +9,7 @@ namespace PromptLayer
     public sealed partial class RequestAnalyticsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,31 +28,31 @@ namespace PromptLayer
         public double? AverageLatency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalCost")]
         public double? TotalCost { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalTokens")]
         public int? TotalTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalRequests")]
         public int? TotalRequests { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalCachedTokens")]
         public int? TotalCachedTokens { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalThinkingTokens")]
         public int? TotalThinkingTokens { get; set; }
@@ -82,19 +82,19 @@ namespace PromptLayer
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>>? ModelRequestsByDay { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mostUsedPromptTemplates")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseMostUsedPromptTemplate>? MostUsedPromptTemplates { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("promptTemplateRequestsByDay")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>>? PromptTemplateRequestsByDay { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerRequestsByDay")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>>? ProviderRequestsByDay { get; set; }
@@ -106,67 +106,67 @@ namespace PromptLayer
         public global::PromptLayer.RequestAnalyticsLatencyByDay? Latency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latencyByModelByDay")]
         public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.RequestAnalyticsDimensionLatency>? LatencyByModelByDay { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latencyByPromptTemplateByDay")]
         public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.RequestAnalyticsDimensionLatency>? LatencyByPromptTemplateByDay { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latencyByProviderByDay")]
         public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.RequestAnalyticsDimensionLatency>? LatencyByProviderByDay { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errorTypes")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseErrorType>? ErrorTypes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerBreakdown")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsBreakdownEntry>? ProviderBreakdown { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("promptBreakdown")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsBreakdownEntry>? PromptBreakdown { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tagsBreakdown")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsBreakdownEntry>? TagsBreakdown { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadataKeysTop")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseMetadataKeysTopItem>? MetadataKeysTop { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputKeysTop")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseOutputKeysTopItem>? OutputKeysTop { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolsLatency")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsToolLatency>? ToolsLatency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolsUsageBars")]
         public global::System.Collections.Generic.IList<global::PromptLayer.RequestAnalyticsResponseToolsUsageBar>? ToolsUsageBars { get; set; }

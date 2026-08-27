@@ -9,14 +9,14 @@ namespace PromptLayer
     public sealed partial class CreateToolRegistryRequestExecution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.CreateToolRegistryRequestExecutionTypeJsonConverter))]
         public global::PromptLayer.CreateToolRegistryRequestExecutionType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.CreateToolRegistryRequestExecutionLanguageJsonConverter))]

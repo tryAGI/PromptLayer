@@ -9,15 +9,15 @@ namespace PromptLayer
     public enum ConfigureTableSheetScoreRequestAssertionAggregation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Any,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mean,
     }

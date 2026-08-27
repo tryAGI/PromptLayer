@@ -16,13 +16,13 @@ namespace PromptLayer
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chartType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TraceCustomChartSpecChartTypeJsonConverter))]
@@ -30,14 +30,14 @@ namespace PromptLayer
         public required global::PromptLayer.TraceCustomChartSpecChartType ChartType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metric")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TraceCustomChartSpecMetricJsonConverter))]
         public global::PromptLayer.TraceCustomChartSpecMetric? Metric { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metricField")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TraceCustomChartSpecMetricFieldJsonConverter))]
@@ -50,7 +50,7 @@ namespace PromptLayer
         public double? Percentile { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groupByField")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TraceCustomChartSpecGroupByFieldJsonConverter))]
@@ -71,7 +71,7 @@ namespace PromptLayer
         public global::PromptLayer.TraceCustomChartSpecHistogramField? HistogramField { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("histogramInterval")]
         public double? HistogramInterval { get; set; }
@@ -89,7 +89,7 @@ namespace PromptLayer
         public bool? TimeSeries { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeBucket")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TraceCustomChartSpecTimeBucketJsonConverter))]

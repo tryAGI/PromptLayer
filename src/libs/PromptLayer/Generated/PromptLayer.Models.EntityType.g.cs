@@ -9,35 +9,35 @@ namespace PromptLayer
     public enum EntityType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbTest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Folder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVariableSet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Report,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snippet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

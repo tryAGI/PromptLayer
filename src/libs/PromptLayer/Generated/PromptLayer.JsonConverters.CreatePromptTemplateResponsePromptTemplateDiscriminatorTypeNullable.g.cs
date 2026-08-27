@@ -20,7 +20,7 @@ namespace PromptLayer.JsonConverters
                     {
                         return global::PromptLayer.CreatePromptTemplateResponsePromptTemplateDiscriminatorTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

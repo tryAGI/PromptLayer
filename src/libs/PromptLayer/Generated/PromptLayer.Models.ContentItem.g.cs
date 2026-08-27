@@ -5,17 +5,17 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ContentItem : global::System.IEquatable<ContentItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.CompletionPromptContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.TextContent? Text { get; init; }
@@ -24,7 +24,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace PromptLayer
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.TextContent PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ThinkingContent? Thinking { get; init; }
@@ -61,7 +61,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
@@ -69,7 +69,7 @@ namespace PromptLayer
         public bool IsThinking => Thinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinking(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ThinkingContent PickThinking() => IsThinking
             ? Thinking!
@@ -98,7 +98,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
@@ -106,7 +106,7 @@ namespace PromptLayer
         public bool IsCode => Code != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCode(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.CodeContent PickCode() => IsCode
             ? Code!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ImageContent? ImageUrl { get; init; }
@@ -135,7 +135,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
@@ -143,7 +143,7 @@ namespace PromptLayer
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageUrl(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ImageContent PickImageUrl() => IsImageUrl
             ? ImageUrl!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.MediaContent? Media { get; init; }
@@ -172,7 +172,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Media))]
@@ -180,7 +180,7 @@ namespace PromptLayer
         public bool IsMedia => Media != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMedia(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.MediaContent PickMedia() => IsMedia
             ? Media!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.MediaVariable? MediaVariable { get; init; }
@@ -209,7 +209,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MediaVariable))]
@@ -217,7 +217,7 @@ namespace PromptLayer
         public bool IsMediaVariable => MediaVariable != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMediaVariable(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.MediaVariable PickMediaVariable() => IsMediaVariable
             ? MediaVariable!
@@ -246,7 +246,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMedia))]
@@ -254,7 +254,7 @@ namespace PromptLayer
         public bool IsOutputMedia => OutputMedia != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputMedia(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.OutputMediaContent PickOutputMedia() => IsOutputMedia
             ? OutputMedia!
@@ -283,7 +283,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
@@ -291,7 +291,7 @@ namespace PromptLayer
         public bool IsServerToolUse => ServerToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickServerToolUse(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ServerToolUseContent PickServerToolUse() => IsServerToolUse
             ? ServerToolUse!
@@ -320,7 +320,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
@@ -328,7 +328,7 @@ namespace PromptLayer
         public bool IsWebSearchToolResult => WebSearchToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearchToolResult(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.WebSearchToolResultContent PickWebSearchToolResult() => IsWebSearchToolResult
             ? WebSearchToolResult!
@@ -357,7 +357,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionResult))]
@@ -365,7 +365,7 @@ namespace PromptLayer
         public bool IsCodeExecutionResult => CodeExecutionResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeExecutionResult(
 #if NET6_0_OR_GREATER
@@ -378,7 +378,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.CodeExecutionResultContent PickCodeExecutionResult() => IsCodeExecutionResult
             ? CodeExecutionResult!
@@ -394,7 +394,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
@@ -402,7 +402,7 @@ namespace PromptLayer
         public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListTools(
 #if NET6_0_OR_GREATER
@@ -415,7 +415,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.McpListToolsContent PickMcpListTools() => IsMcpListTools
             ? McpListTools!
@@ -431,7 +431,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
@@ -439,7 +439,7 @@ namespace PromptLayer
         public bool IsMcpCall => McpCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpCall(
 #if NET6_0_OR_GREATER
@@ -452,7 +452,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.McpCallContent PickMcpCall() => IsMcpCall
             ? McpCall!
@@ -468,7 +468,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
@@ -476,7 +476,7 @@ namespace PromptLayer
         public bool IsMcpApprovalRequest => McpApprovalRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalRequest(
 #if NET6_0_OR_GREATER
@@ -489,7 +489,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.McpApprovalRequestContent PickMcpApprovalRequest() => IsMcpApprovalRequest
             ? McpApprovalRequest!
@@ -505,7 +505,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
@@ -513,7 +513,7 @@ namespace PromptLayer
         public bool IsMcpApprovalResponse => McpApprovalResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalResponse(
 #if NET6_0_OR_GREATER
@@ -526,7 +526,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.McpApprovalResponseContent PickMcpApprovalResponse() => IsMcpApprovalResponse
             ? McpApprovalResponse!
@@ -542,7 +542,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResult))]
@@ -550,7 +550,7 @@ namespace PromptLayer
         public bool IsBashCodeExecutionToolResult => BashCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBashCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -563,7 +563,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.BashCodeExecutionToolResultContent PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
             ? BashCodeExecutionToolResult!
@@ -579,7 +579,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
@@ -587,7 +587,7 @@ namespace PromptLayer
         public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextEditorCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -600,7 +600,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.TextEditorCodeExecutionToolResultContent PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
             ? TextEditorCodeExecutionToolResult!
@@ -616,7 +616,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCall))]
@@ -624,7 +624,7 @@ namespace PromptLayer
         public bool IsShellCall => ShellCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCall(
 #if NET6_0_OR_GREATER
@@ -637,7 +637,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ShellCallContent PickShellCall() => IsShellCall
             ? ShellCall!
@@ -653,7 +653,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCallOutput))]
@@ -661,7 +661,7 @@ namespace PromptLayer
         public bool IsShellCallOutput => ShellCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCallOutput(
 #if NET6_0_OR_GREATER
@@ -674,7 +674,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ShellCallOutputContent PickShellCallOutput() => IsShellCallOutput
             ? ShellCallOutput!
@@ -690,7 +690,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCall))]
@@ -698,7 +698,7 @@ namespace PromptLayer
         public bool IsApplyPatchCall => ApplyPatchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCall(
 #if NET6_0_OR_GREATER
@@ -711,7 +711,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ApplyPatchCallContent PickApplyPatchCall() => IsApplyPatchCall
             ? ApplyPatchCall!
@@ -727,7 +727,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutput))]
@@ -735,7 +735,7 @@ namespace PromptLayer
         public bool IsApplyPatchCallOutput => ApplyPatchCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCallOutput(
 #if NET6_0_OR_GREATER
@@ -748,23 +748,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ApplyPatchCallOutputContent PickApplyPatchCallOutput() => IsApplyPatchCallOutput
             ? ApplyPatchCallOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutput' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.TextContent value) => new ContentItem((global::PromptLayer.TextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.TextContent?(ContentItem @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.TextContent? value)
         {
@@ -772,22 +772,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromText(global::PromptLayer.TextContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ThinkingContent value) => new ContentItem((global::PromptLayer.ThinkingContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ThinkingContent?(ContentItem @this) => @this.Thinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.ThinkingContent? value)
         {
@@ -795,22 +795,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromThinking(global::PromptLayer.ThinkingContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.CodeContent value) => new ContentItem((global::PromptLayer.CodeContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.CodeContent?(ContentItem @this) => @this.Code;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.CodeContent? value)
         {
@@ -818,22 +818,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromCode(global::PromptLayer.CodeContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ImageContent value) => new ContentItem((global::PromptLayer.ImageContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ImageContent?(ContentItem @this) => @this.ImageUrl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.ImageContent? value)
         {
@@ -841,22 +841,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromImageUrl(global::PromptLayer.ImageContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.MediaContent value) => new ContentItem((global::PromptLayer.MediaContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.MediaContent?(ContentItem @this) => @this.Media;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.MediaContent? value)
         {
@@ -864,22 +864,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromMedia(global::PromptLayer.MediaContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.MediaVariable value) => new ContentItem((global::PromptLayer.MediaVariable?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.MediaVariable?(ContentItem @this) => @this.MediaVariable;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.MediaVariable? value)
         {
@@ -887,22 +887,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromMediaVariable(global::PromptLayer.MediaVariable? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.OutputMediaContent value) => new ContentItem((global::PromptLayer.OutputMediaContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.OutputMediaContent?(ContentItem @this) => @this.OutputMedia;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.OutputMediaContent? value)
         {
@@ -910,22 +910,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromOutputMedia(global::PromptLayer.OutputMediaContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ServerToolUseContent value) => new ContentItem((global::PromptLayer.ServerToolUseContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ServerToolUseContent?(ContentItem @this) => @this.ServerToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.ServerToolUseContent? value)
         {
@@ -933,22 +933,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromServerToolUse(global::PromptLayer.ServerToolUseContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.WebSearchToolResultContent value) => new ContentItem((global::PromptLayer.WebSearchToolResultContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.WebSearchToolResultContent?(ContentItem @this) => @this.WebSearchToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.WebSearchToolResultContent? value)
         {
@@ -956,22 +956,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromWebSearchToolResult(global::PromptLayer.WebSearchToolResultContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.CodeExecutionResultContent value) => new ContentItem((global::PromptLayer.CodeExecutionResultContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.CodeExecutionResultContent?(ContentItem @this) => @this.CodeExecutionResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.CodeExecutionResultContent? value)
         {
@@ -979,22 +979,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromCodeExecutionResult(global::PromptLayer.CodeExecutionResultContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.McpListToolsContent value) => new ContentItem((global::PromptLayer.McpListToolsContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.McpListToolsContent?(ContentItem @this) => @this.McpListTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.McpListToolsContent? value)
         {
@@ -1002,22 +1002,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromMcpListTools(global::PromptLayer.McpListToolsContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.McpCallContent value) => new ContentItem((global::PromptLayer.McpCallContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.McpCallContent?(ContentItem @this) => @this.McpCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.McpCallContent? value)
         {
@@ -1025,22 +1025,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromMcpCall(global::PromptLayer.McpCallContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.McpApprovalRequestContent value) => new ContentItem((global::PromptLayer.McpApprovalRequestContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.McpApprovalRequestContent?(ContentItem @this) => @this.McpApprovalRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.McpApprovalRequestContent? value)
         {
@@ -1048,22 +1048,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromMcpApprovalRequest(global::PromptLayer.McpApprovalRequestContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.McpApprovalResponseContent value) => new ContentItem((global::PromptLayer.McpApprovalResponseContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.McpApprovalResponseContent?(ContentItem @this) => @this.McpApprovalResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.McpApprovalResponseContent? value)
         {
@@ -1071,22 +1071,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromMcpApprovalResponse(global::PromptLayer.McpApprovalResponseContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.BashCodeExecutionToolResultContent value) => new ContentItem((global::PromptLayer.BashCodeExecutionToolResultContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.BashCodeExecutionToolResultContent?(ContentItem @this) => @this.BashCodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.BashCodeExecutionToolResultContent? value)
         {
@@ -1094,22 +1094,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromBashCodeExecutionToolResult(global::PromptLayer.BashCodeExecutionToolResultContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.TextEditorCodeExecutionToolResultContent value) => new ContentItem((global::PromptLayer.TextEditorCodeExecutionToolResultContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.TextEditorCodeExecutionToolResultContent?(ContentItem @this) => @this.TextEditorCodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.TextEditorCodeExecutionToolResultContent? value)
         {
@@ -1117,22 +1117,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromTextEditorCodeExecutionToolResult(global::PromptLayer.TextEditorCodeExecutionToolResultContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ShellCallContent value) => new ContentItem((global::PromptLayer.ShellCallContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ShellCallContent?(ContentItem @this) => @this.ShellCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.ShellCallContent? value)
         {
@@ -1140,22 +1140,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromShellCall(global::PromptLayer.ShellCallContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ShellCallOutputContent value) => new ContentItem((global::PromptLayer.ShellCallOutputContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ShellCallOutputContent?(ContentItem @this) => @this.ShellCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.ShellCallOutputContent? value)
         {
@@ -1163,22 +1163,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromShellCallOutput(global::PromptLayer.ShellCallOutputContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ApplyPatchCallContent value) => new ContentItem((global::PromptLayer.ApplyPatchCallContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ApplyPatchCallContent?(ContentItem @this) => @this.ApplyPatchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.ApplyPatchCallContent? value)
         {
@@ -1186,22 +1186,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromApplyPatchCall(global::PromptLayer.ApplyPatchCallContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem(global::PromptLayer.ApplyPatchCallOutputContent value) => new ContentItem((global::PromptLayer.ApplyPatchCallOutputContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ApplyPatchCallOutputContent?(ContentItem @this) => @this.ApplyPatchCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(global::PromptLayer.ApplyPatchCallOutputContent? value)
         {
@@ -1209,12 +1209,12 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem FromApplyPatchCallOutput(global::PromptLayer.ApplyPatchCallOutputContent? value) => new ContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem(
             global::PromptLayer.CompletionPromptContentItemDiscriminatorType? type,
@@ -1265,7 +1265,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ApplyPatchCallOutput as object ??
@@ -1287,11 +1287,11 @@ namespace PromptLayer
             ImageUrl as object ??
             Code as object ??
             Thinking as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
@@ -1313,11 +1313,11 @@ namespace PromptLayer
             ShellCall?.ToString() ??
             ShellCallOutput?.ToString() ??
             ApplyPatchCall?.ToString() ??
-            ApplyPatchCallOutput?.ToString() 
+            ApplyPatchCallOutput?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -1325,7 +1325,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::PromptLayer.TextContent, TResult>? text = null,
@@ -1440,7 +1440,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::PromptLayer.TextContent>? text = null,
@@ -1572,7 +1572,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::PromptLayer.TextContent>? text = null,
@@ -1685,7 +1685,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1742,7 +1742,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentItem other)
         {
@@ -1766,12 +1766,12 @@ namespace PromptLayer
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ShellCallContent?>.Default.Equals(ShellCall, other.ShellCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ShellCallOutputContent?>.Default.Equals(ShellCallOutput, other.ShellCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ApplyPatchCallContent?>.Default.Equals(ApplyPatchCall, other.ApplyPatchCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ApplyPatchCallOutputContent?>.Default.Equals(ApplyPatchCallOutput, other.ApplyPatchCallOutput) 
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ApplyPatchCallOutputContent?>.Default.Equals(ApplyPatchCallOutput, other.ApplyPatchCallOutput)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentItem obj1, ContentItem obj2)
         {
@@ -1779,7 +1779,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentItem obj1, ContentItem obj2)
         {
@@ -1787,7 +1787,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

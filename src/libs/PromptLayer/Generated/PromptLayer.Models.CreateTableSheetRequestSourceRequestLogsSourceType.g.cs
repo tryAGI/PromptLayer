@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateTableSheetRequestSourceRequestLogsSourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequestLogs,
     }

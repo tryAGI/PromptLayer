@@ -29,7 +29,7 @@ namespace PromptLayer
         public global::PromptLayer.RequestAnalyticsCustomAnalyticsQuerySortBy? SortBy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort_order")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.RequestAnalyticsCustomAnalyticsQuerySortOrderJsonConverter))]

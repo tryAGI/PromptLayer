@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ListDatasetsSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

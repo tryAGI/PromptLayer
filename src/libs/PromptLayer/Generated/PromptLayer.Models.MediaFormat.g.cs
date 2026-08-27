@@ -10,15 +10,15 @@ namespace PromptLayer
     public enum MediaFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neither,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Url,
     }

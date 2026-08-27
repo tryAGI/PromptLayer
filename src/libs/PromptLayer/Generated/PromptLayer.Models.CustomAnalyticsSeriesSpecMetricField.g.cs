@@ -9,39 +9,39 @@ namespace PromptLayer
     public enum CustomAnalyticsSeriesSpecMetricField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CachedTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyMs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptVersionNumber,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThinkingTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCallCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TurnCount,
     }

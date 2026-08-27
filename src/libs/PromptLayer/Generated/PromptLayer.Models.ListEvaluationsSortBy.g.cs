@@ -4,24 +4,24 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ListEvaluationsSortBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatedAt,
     }

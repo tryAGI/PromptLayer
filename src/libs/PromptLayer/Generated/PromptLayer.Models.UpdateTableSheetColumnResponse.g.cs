@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateTableSheetColumnResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         public bool? Success { get; set; }
@@ -21,13 +21,13 @@ namespace PromptLayer
         public global::PromptLayer.Column? Column { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requires_recalculation")]
         public bool? RequiresRecalculation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("affected_column_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? AffectedColumnIds { get; set; }

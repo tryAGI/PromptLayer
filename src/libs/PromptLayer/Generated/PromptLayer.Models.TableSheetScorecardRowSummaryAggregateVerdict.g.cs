@@ -4,28 +4,28 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TableSheetScorecardRowSummaryAggregateVerdict
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warn,
     }

@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum McpCallContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpCall,
     }

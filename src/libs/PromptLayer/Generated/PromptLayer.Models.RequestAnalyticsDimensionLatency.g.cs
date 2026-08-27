@@ -9,25 +9,25 @@ namespace PromptLayer
     public sealed partial class RequestAnalyticsDimensionLatency
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("average_latency")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>? AverageLatency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p50_latency")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>? P50Latency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p90_latency")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>? P90Latency { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p95_latency")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>>? P95Latency { get; set; }

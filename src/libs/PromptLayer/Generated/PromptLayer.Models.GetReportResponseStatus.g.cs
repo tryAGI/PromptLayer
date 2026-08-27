@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum GetReportResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Running,
     }

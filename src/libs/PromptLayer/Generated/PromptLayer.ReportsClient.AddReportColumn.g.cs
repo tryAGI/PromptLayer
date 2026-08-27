@@ -137,7 +137,7 @@ namespace PromptLayer
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -372,7 +372,7 @@ namespace PromptLayer
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;

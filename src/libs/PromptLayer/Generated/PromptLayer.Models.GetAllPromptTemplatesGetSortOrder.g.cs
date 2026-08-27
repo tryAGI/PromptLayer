@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum GetAllPromptTemplatesGetSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

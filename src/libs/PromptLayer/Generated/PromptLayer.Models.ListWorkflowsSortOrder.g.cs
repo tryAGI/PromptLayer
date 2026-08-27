@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ListWorkflowsSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

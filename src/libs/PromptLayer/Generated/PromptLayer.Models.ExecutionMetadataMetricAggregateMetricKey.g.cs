@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ExecutionMetadataMetricAggregateMetricKey
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyMs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Price,
     }

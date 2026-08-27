@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum PromptEntityMetadataType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completion,
     }

@@ -9,15 +9,15 @@ namespace PromptLayer
     public enum CustomAnalyticsSpecChartType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Area,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Line,
     }

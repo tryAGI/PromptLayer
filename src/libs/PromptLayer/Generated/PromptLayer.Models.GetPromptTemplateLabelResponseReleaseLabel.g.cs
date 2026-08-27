@@ -4,33 +4,33 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetPromptTemplateLabelResponseReleaseLabel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_version_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PromptVersionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_version_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PromptVersionNumber { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release_label")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReleaseLabel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release_label_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,19 +9,19 @@ namespace PromptLayer
     public enum GetReportScoreResponseScoreScoreType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiColumn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SingleColumn,
     }

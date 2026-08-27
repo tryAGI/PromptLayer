@@ -4,56 +4,56 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TraceCustomChartSpecSerieMetricField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanCostUsd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanDurationMs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanInputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanOutputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceDepth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceDurationMs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceInputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceOutputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceSpanCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceTotalCostUsd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TraceTotalTokens,
     }

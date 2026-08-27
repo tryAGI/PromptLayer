@@ -16,7 +16,7 @@ namespace PromptLayer
         public global::PromptLayer.CodeExecutionResultContentType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]

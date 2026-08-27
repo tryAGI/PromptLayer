@@ -4,33 +4,33 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TableSheetScoreHistoryResponseScoreHistory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<object> Points { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_points")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalPoints { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("returned_points")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ReturnedPoints { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableSheetScoreHistoryResponseScoreHistoryResolutionJsonConverter))]
@@ -38,21 +38,21 @@ namespace PromptLayer
         public required global::PromptLayer.TableSheetScoreHistoryResponseScoreHistoryResolution Resolution { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("range")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Range { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_points")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MaxPoints { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_sampled")]
         [global::System.Text.Json.Serialization.JsonRequired]

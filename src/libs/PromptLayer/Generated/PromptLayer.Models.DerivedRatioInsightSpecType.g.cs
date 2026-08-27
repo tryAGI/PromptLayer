@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum DerivedRatioInsightSpecType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ratio,
     }

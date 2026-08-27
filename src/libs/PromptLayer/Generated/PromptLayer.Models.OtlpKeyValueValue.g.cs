@@ -9,31 +9,31 @@ namespace PromptLayer
     public sealed partial class OtlpKeyValueValue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stringValue")]
         public string? StringValue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intValue")]
         public string? IntValue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("doubleValue")]
         public double? DoubleValue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("boolValue")]
         public bool? BoolValue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arrayValue")]
         public global::PromptLayer.OtlpKeyValueValueArrayValue? ArrayValue { get; set; }

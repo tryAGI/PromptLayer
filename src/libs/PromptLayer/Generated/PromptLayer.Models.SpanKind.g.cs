@@ -4,28 +4,28 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SpanKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Client,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Consumer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Internal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Producer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Server,
     }

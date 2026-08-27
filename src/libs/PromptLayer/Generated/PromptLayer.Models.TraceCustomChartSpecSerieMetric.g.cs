@@ -4,28 +4,28 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TraceCustomChartSpecSerieMetric
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Max,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Min,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Percentile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sum,
     }

@@ -40,118 +40,118 @@ namespace PromptLayer
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatasetsClient Datasets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EnvVarsClient EnvVars { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvaluationsClient Evaluations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExternalIdsClient ExternalIds { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FoldersClient Folders { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupClient Group { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MetadataClient Metadata { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OtlpClient Otlp { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptClient Prompt { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptTemplatesClient PromptTemplates { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptsClient Prompts { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReportsClient Reports { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RequestClient Request { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RestClient Rest { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ScoreClient Score { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SkillCollectionsClient SkillCollections { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SmartTablesClient SmartTables { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpansClient Spans { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TablesClient Tables { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolRegistryClient ToolRegistry { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TrackingClient Tracking { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowClient Workflow { get; }
 

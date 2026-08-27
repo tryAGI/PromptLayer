@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ToolMessageTemplateFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FString,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jinja2,
     }

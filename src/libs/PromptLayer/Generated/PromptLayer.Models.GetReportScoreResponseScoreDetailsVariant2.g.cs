@@ -9,7 +9,7 @@ namespace PromptLayer
     public sealed partial class GetReportScoreResponseScoreDetailsVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("columns")]
         public global::System.Collections.Generic.IList<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2Column>? Columns { get; set; }

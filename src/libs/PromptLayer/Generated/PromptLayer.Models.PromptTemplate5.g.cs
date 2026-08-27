@@ -10,12 +10,12 @@ namespace PromptLayer
     public readonly partial struct PromptTemplate5 : global::System.IEquatable<PromptTemplate5>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.CompletionPrompt? Completion { get; init; }
@@ -24,7 +24,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completion))]
@@ -32,7 +32,7 @@ namespace PromptLayer
         public bool IsCompletion => Completion != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompletion(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.CompletionPrompt PickCompletion() => IsCompletion
             ? Completion!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ChatPrompt? Chat { get; init; }
@@ -61,7 +61,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chat))]
@@ -69,7 +69,7 @@ namespace PromptLayer
         public bool IsChat => Chat != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChat(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ChatPrompt PickChat() => IsChat
             ? Chat!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PromptTemplate5(global::PromptLayer.CompletionPrompt value) => new PromptTemplate5((global::PromptLayer.CompletionPrompt?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.CompletionPrompt?(PromptTemplate5 @this) => @this.Completion;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptTemplate5(global::PromptLayer.CompletionPrompt? value)
         {
@@ -106,22 +106,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PromptTemplate5 FromCompletion(global::PromptLayer.CompletionPrompt? value) => new PromptTemplate5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PromptTemplate5(global::PromptLayer.ChatPrompt value) => new PromptTemplate5((global::PromptLayer.ChatPrompt?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ChatPrompt?(PromptTemplate5 @this) => @this.Chat;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptTemplate5(global::PromptLayer.ChatPrompt? value)
         {
@@ -129,12 +129,12 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PromptTemplate5 FromChat(global::PromptLayer.ChatPrompt? value) => new PromptTemplate5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptTemplate5(
             global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Chat as object ??
-            Completion as object 
+            Completion as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Completion?.ToString() ??
-            Chat?.ToString() 
+            Chat?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::PromptLayer.CompletionPrompt, TResult>? completion = null,
@@ -198,7 +198,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::PromptLayer.CompletionPrompt>? completion = null,
@@ -222,7 +222,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::PromptLayer.CompletionPrompt>? completion = null,
@@ -245,7 +245,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PromptTemplate5 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.CompletionPrompt?>.Default.Equals(Completion, other.Completion) &&
-                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ChatPrompt?>.Default.Equals(Chat, other.Chat) 
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ChatPrompt?>.Default.Equals(Chat, other.Chat)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PromptTemplate5 obj1, PromptTemplate5 obj2)
         {
@@ -285,7 +285,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PromptTemplate5 obj1, PromptTemplate5 obj2)
         {
@@ -293,7 +293,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateFolderSuccessResponse
     {
@@ -15,7 +15,7 @@ namespace PromptLayer
         public bool? Success { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("folder")]
         public global::PromptLayer.Folder? Folder { get; set; }

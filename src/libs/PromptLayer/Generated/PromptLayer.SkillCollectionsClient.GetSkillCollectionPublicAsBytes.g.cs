@@ -165,7 +165,7 @@ namespace PromptLayer
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::PromptLayer.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -685,7 +685,7 @@ namespace PromptLayer
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::PromptLayer.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

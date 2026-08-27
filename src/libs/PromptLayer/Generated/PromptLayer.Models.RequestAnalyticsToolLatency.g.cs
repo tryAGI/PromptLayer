@@ -9,31 +9,31 @@ namespace PromptLayer
     public sealed partial class RequestAnalyticsToolLatency
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolName")]
         public string? ToolName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requests")]
         public int? Requests { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avgLatencySeconds")]
         public double? AvgLatencySeconds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minLatencySeconds")]
         public double? MinLatencySeconds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maxLatencySeconds")]
         public double? MaxLatencySeconds { get; set; }

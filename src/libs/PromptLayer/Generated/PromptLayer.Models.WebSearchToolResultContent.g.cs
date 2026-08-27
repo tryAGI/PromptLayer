@@ -16,7 +16,7 @@ namespace PromptLayer
         public global::PromptLayer.WebSearchToolResultContentType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

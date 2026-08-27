@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum CreateTableSheetOperationRequestOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recalculate,
     }

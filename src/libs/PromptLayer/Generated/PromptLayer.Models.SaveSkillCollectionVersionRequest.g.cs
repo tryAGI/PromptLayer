@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SaveSkillCollectionVersionRequest
     {
@@ -27,13 +27,13 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<string>? Deletes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_message")]
         public string? CommitMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release_label")]
         public string? ReleaseLabel { get; set; }

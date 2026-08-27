@@ -4,19 +4,19 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SpanResource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

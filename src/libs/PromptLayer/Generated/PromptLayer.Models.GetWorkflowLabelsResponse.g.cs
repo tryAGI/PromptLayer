@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetWorkflowLabelsResponse
     {
@@ -17,7 +17,7 @@ namespace PromptLayer
         public required bool Success { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release_labels")]
         [global::System.Text.Json.Serialization.JsonRequired]

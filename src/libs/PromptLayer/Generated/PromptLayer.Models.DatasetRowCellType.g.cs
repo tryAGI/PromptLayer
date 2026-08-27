@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DatasetRowCellType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dataset,
     }

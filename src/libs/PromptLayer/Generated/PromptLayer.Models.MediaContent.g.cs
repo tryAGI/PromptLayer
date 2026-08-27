@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MediaContent
     {
@@ -16,7 +16,7 @@ namespace PromptLayer
         public global::PromptLayer.MediaContentType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media")]
         [global::System.Text.Json.Serialization.JsonRequired]

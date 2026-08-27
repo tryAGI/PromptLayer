@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum MediaVariableType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MediaVariable,
     }

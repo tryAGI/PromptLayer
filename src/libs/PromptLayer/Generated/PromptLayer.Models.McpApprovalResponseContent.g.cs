@@ -16,14 +16,14 @@ namespace PromptLayer
         public global::PromptLayer.McpApprovalResponseContentType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ApprovalRequestId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approve")]
         [global::System.Text.Json.Serialization.JsonRequired]

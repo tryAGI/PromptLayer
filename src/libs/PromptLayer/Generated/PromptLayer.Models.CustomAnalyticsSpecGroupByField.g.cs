@@ -9,47 +9,47 @@ namespace PromptLayer
     public enum CustomAnalyticsSpecGroupByField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Engine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVariableKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MetadataKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptVersionNumber,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Status,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tags,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolNames,
     }

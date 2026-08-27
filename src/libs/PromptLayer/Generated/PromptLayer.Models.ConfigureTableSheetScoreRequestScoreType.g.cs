@@ -9,19 +9,19 @@ namespace PromptLayer
     public enum ConfigureTableSheetScoreRequestScoreType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Boolean,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Numeric,
     }

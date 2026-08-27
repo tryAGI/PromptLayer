@@ -9,23 +9,23 @@ namespace PromptLayer
     public enum GetTableSheetVersionScoreHistoryRange
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Last100,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Last25,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Last250,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Last50,
     }

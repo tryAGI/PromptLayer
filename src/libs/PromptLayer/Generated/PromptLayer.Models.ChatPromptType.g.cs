@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum ChatPromptType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
     }

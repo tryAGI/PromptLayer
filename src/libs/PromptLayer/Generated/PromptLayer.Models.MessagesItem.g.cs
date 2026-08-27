@@ -5,17 +5,17 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessagesItem : global::System.IEquatable<MessagesItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ChatPromptMessageDiscriminatorRole? Role { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.SystemMessage? System { get; init; }
@@ -24,7 +24,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
@@ -32,7 +32,7 @@ namespace PromptLayer
         public bool IsSystem => System != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSystem(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.SystemMessage PickSystem() => IsSystem
             ? System!
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.UserMessage? User { get; init; }
@@ -61,7 +61,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
@@ -69,7 +69,7 @@ namespace PromptLayer
         public bool IsUser => User != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUser(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.UserMessage PickUser() => IsUser
             ? User!
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.AssistantMessage? Assistant { get; init; }
@@ -98,7 +98,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
@@ -106,7 +106,7 @@ namespace PromptLayer
         public bool IsAssistant => Assistant != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAssistant(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.AssistantMessage PickAssistant() => IsAssistant
             ? Assistant!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.FunctionMessage? Function { get; init; }
@@ -135,7 +135,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
@@ -143,7 +143,7 @@ namespace PromptLayer
         public bool IsFunction => Function != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunction(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.FunctionMessage PickFunction() => IsFunction
             ? Function!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.ToolMessage? Tool { get; init; }
@@ -172,7 +172,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
@@ -180,7 +180,7 @@ namespace PromptLayer
         public bool IsTool => Tool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTool(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.ToolMessage PickTool() => IsTool
             ? Tool!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.PlaceholderMessage? Placeholder { get; init; }
@@ -209,7 +209,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Placeholder))]
@@ -217,7 +217,7 @@ namespace PromptLayer
         public bool IsPlaceholder => Placeholder != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPlaceholder(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.PlaceholderMessage PickPlaceholder() => IsPlaceholder
             ? Placeholder!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Placeholder' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.DeveloperMessage? Developer { get; init; }
@@ -246,7 +246,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
@@ -254,7 +254,7 @@ namespace PromptLayer
         public bool IsDeveloper => Developer != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDeveloper(
 #if NET6_0_OR_GREATER
@@ -267,23 +267,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.DeveloperMessage PickDeveloper() => IsDeveloper
             ? Developer!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesItem(global::PromptLayer.SystemMessage value) => new MessagesItem((global::PromptLayer.SystemMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.SystemMessage?(MessagesItem @this) => @this.System;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(global::PromptLayer.SystemMessage? value)
         {
@@ -291,22 +291,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesItem FromSystem(global::PromptLayer.SystemMessage? value) => new MessagesItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesItem(global::PromptLayer.UserMessage value) => new MessagesItem((global::PromptLayer.UserMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.UserMessage?(MessagesItem @this) => @this.User;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(global::PromptLayer.UserMessage? value)
         {
@@ -314,22 +314,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesItem FromUser(global::PromptLayer.UserMessage? value) => new MessagesItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesItem(global::PromptLayer.AssistantMessage value) => new MessagesItem((global::PromptLayer.AssistantMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.AssistantMessage?(MessagesItem @this) => @this.Assistant;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(global::PromptLayer.AssistantMessage? value)
         {
@@ -337,22 +337,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesItem FromAssistant(global::PromptLayer.AssistantMessage? value) => new MessagesItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesItem(global::PromptLayer.FunctionMessage value) => new MessagesItem((global::PromptLayer.FunctionMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.FunctionMessage?(MessagesItem @this) => @this.Function;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(global::PromptLayer.FunctionMessage? value)
         {
@@ -360,22 +360,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesItem FromFunction(global::PromptLayer.FunctionMessage? value) => new MessagesItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesItem(global::PromptLayer.ToolMessage value) => new MessagesItem((global::PromptLayer.ToolMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.ToolMessage?(MessagesItem @this) => @this.Tool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(global::PromptLayer.ToolMessage? value)
         {
@@ -383,22 +383,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesItem FromTool(global::PromptLayer.ToolMessage? value) => new MessagesItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesItem(global::PromptLayer.PlaceholderMessage value) => new MessagesItem((global::PromptLayer.PlaceholderMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.PlaceholderMessage?(MessagesItem @this) => @this.Placeholder;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(global::PromptLayer.PlaceholderMessage? value)
         {
@@ -406,22 +406,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesItem FromPlaceholder(global::PromptLayer.PlaceholderMessage? value) => new MessagesItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessagesItem(global::PromptLayer.DeveloperMessage value) => new MessagesItem((global::PromptLayer.DeveloperMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.DeveloperMessage?(MessagesItem @this) => @this.Developer;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(global::PromptLayer.DeveloperMessage? value)
         {
@@ -429,12 +429,12 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessagesItem FromDeveloper(global::PromptLayer.DeveloperMessage? value) => new MessagesItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessagesItem(
             global::PromptLayer.ChatPromptMessageDiscriminatorRole? role,
@@ -459,7 +459,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Developer as object ??
@@ -468,11 +468,11 @@ namespace PromptLayer
             Function as object ??
             Assistant as object ??
             User as object ??
-            System as object 
+            System as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             System?.ToString() ??
@@ -481,11 +481,11 @@ namespace PromptLayer
             Function?.ToString() ??
             Tool?.ToString() ??
             Placeholder?.ToString() ??
-            Developer?.ToString() 
+            Developer?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -493,7 +493,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::PromptLayer.SystemMessage, TResult>? system = null,
@@ -543,7 +543,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::PromptLayer.SystemMessage>? system = null,
@@ -597,7 +597,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::PromptLayer.SystemMessage>? system = null,
@@ -645,7 +645,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -676,7 +676,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessagesItem other)
         {
@@ -687,12 +687,12 @@ namespace PromptLayer
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.FunctionMessage?>.Default.Equals(Function, other.Function) &&
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.ToolMessage?>.Default.Equals(Tool, other.Tool) &&
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.PlaceholderMessage?>.Default.Equals(Placeholder, other.Placeholder) &&
-                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.DeveloperMessage?>.Default.Equals(Developer, other.Developer) 
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.DeveloperMessage?>.Default.Equals(Developer, other.Developer)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessagesItem obj1, MessagesItem obj2)
         {
@@ -700,7 +700,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessagesItem obj1, MessagesItem obj2)
         {
@@ -708,7 +708,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {
