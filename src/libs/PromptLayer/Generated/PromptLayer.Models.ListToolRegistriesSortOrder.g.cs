@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ListToolRegistriesSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

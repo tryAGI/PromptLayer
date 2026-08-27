@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TraceAnalyticsCustomAnalyticsQuery
     {
@@ -15,7 +15,7 @@ namespace PromptLayer
         public global::PromptLayer.TraceStructuredFilterGroup? FilterGroup { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("customCharts")]
         [global::System.Text.Json.Serialization.JsonRequired]

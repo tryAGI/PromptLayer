@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum ShellCallContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCall,
     }

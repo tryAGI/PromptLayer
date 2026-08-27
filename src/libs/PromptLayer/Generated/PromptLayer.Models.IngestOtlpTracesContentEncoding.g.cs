@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IngestOtlpTracesContentEncoding
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gzip,
     }

@@ -4,40 +4,40 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbTest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dataset,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Folder,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVariableSet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Report,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snippet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

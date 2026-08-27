@@ -4,61 +4,61 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListPromptTemplates
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_next")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasNext { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_prev")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasPrev { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::PromptLayer.ListPromptTemplateItem> Items { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_num")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NextNum { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prev_num")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PrevNum { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Page { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Pages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]

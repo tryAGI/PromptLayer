@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ListEvaluationsSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

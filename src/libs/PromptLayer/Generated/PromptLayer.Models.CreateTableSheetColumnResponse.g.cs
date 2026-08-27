@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateTableSheetColumnResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         public bool? Success { get; set; }
@@ -21,7 +21,7 @@ namespace PromptLayer
         public global::PromptLayer.Column? Column { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cells")]
         public global::System.Collections.Generic.IList<global::PromptLayer.Cell>? Cells { get; set; }

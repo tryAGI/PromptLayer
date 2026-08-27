@@ -9,103 +9,103 @@ namespace PromptLayer
     public enum EvaluationColumnDefinitionColumnType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AbsoluteNumericDistance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiDataExtraction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AssertValid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Coalesce,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecution,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CombineColumns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compare,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationSimulator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CosineSimilarity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Count,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Endpoint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Human,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonPath,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LlmAssertion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MathOperator,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mcp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MinMax,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ParseValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTemplate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RegexExtraction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Variable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XmlPath,
     }

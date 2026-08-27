@@ -9,13 +9,13 @@ namespace PromptLayer
     public sealed partial class OtlpExportTraceServiceRequestResourceSpanScopeSpanScope
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public string? Version { get; set; }

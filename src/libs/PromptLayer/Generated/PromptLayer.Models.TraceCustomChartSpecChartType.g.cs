@@ -4,44 +4,44 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TraceCustomChartSpecChartType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Area,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Donut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Heatmap,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Histogram,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Line,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pie,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sunburst,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Treemap,
     }

@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ListTablesOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

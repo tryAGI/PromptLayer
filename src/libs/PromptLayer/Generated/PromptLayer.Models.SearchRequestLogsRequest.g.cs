@@ -21,7 +21,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RequestLogQuery))]
@@ -29,7 +29,7 @@ namespace PromptLayer
         public bool IsRequestLogQuery => RequestLogQuery != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRequestLogQuery(
 #if NET6_0_OR_GREATER
@@ -42,14 +42,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.RequestLogQuery PickRequestLogQuery() => IsRequestLogQuery
             ? RequestLogQuery!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequestLogQuery' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.SearchRequestLogsRequestVariant2? SearchRequestLogsRequestVariant2 { get; init; }
@@ -58,7 +58,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchRequestLogsRequestVariant2))]
@@ -66,7 +66,7 @@ namespace PromptLayer
         public bool IsSearchRequestLogsRequestVariant2 => SearchRequestLogsRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearchRequestLogsRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -79,23 +79,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.SearchRequestLogsRequestVariant2 PickSearchRequestLogsRequestVariant2() => IsSearchRequestLogsRequestVariant2
             ? SearchRequestLogsRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchRequestLogsRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchRequestLogsRequest(global::PromptLayer.RequestLogQuery value) => new SearchRequestLogsRequest((global::PromptLayer.RequestLogQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.RequestLogQuery?(SearchRequestLogsRequest @this) => @this.RequestLogQuery;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchRequestLogsRequest(global::PromptLayer.RequestLogQuery? value)
         {
@@ -103,22 +103,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchRequestLogsRequest FromRequestLogQuery(global::PromptLayer.RequestLogQuery? value) => new SearchRequestLogsRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SearchRequestLogsRequest(global::PromptLayer.SearchRequestLogsRequestVariant2 value) => new SearchRequestLogsRequest((global::PromptLayer.SearchRequestLogsRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.SearchRequestLogsRequestVariant2?(SearchRequestLogsRequest @this) => @this.SearchRequestLogsRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchRequestLogsRequest(global::PromptLayer.SearchRequestLogsRequestVariant2? value)
         {
@@ -126,12 +126,12 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SearchRequestLogsRequest FromSearchRequestLogsRequestVariant2(global::PromptLayer.SearchRequestLogsRequestVariant2? value) => new SearchRequestLogsRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchRequestLogsRequest(
             global::PromptLayer.RequestLogQuery? requestLogQuery,
@@ -143,23 +143,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SearchRequestLogsRequestVariant2 as object ??
-            RequestLogQuery as object 
+            RequestLogQuery as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             RequestLogQuery?.ToString() ??
-            SearchRequestLogsRequestVariant2?.ToString() 
+            SearchRequestLogsRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -167,7 +167,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::PromptLayer.RequestLogQuery, TResult>? requestLogQuery = null,
@@ -192,7 +192,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::PromptLayer.RequestLogQuery>? requestLogQuery = null,
@@ -216,7 +216,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::PromptLayer.RequestLogQuery>? requestLogQuery = null,
@@ -239,7 +239,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -260,18 +260,18 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SearchRequestLogsRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.RequestLogQuery?>.Default.Equals(RequestLogQuery, other.RequestLogQuery) &&
-                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.SearchRequestLogsRequestVariant2?>.Default.Equals(SearchRequestLogsRequestVariant2, other.SearchRequestLogsRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.SearchRequestLogsRequestVariant2?>.Default.Equals(SearchRequestLogsRequestVariant2, other.SearchRequestLogsRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SearchRequestLogsRequest obj1, SearchRequestLogsRequest obj2)
         {
@@ -279,7 +279,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SearchRequestLogsRequest obj1, SearchRequestLogsRequest obj2)
         {
@@ -287,7 +287,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

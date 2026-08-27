@@ -10,11 +10,11 @@ namespace PromptLayer
     public enum ScoreConfigurationCodeLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Javascript,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Python,
     }

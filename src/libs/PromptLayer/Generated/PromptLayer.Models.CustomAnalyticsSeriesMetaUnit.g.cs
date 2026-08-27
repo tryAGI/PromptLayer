@@ -9,23 +9,23 @@ namespace PromptLayer
     public enum CustomAnalyticsSeriesMetaUnit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Count,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Currency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DurationSeconds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Number,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tokens,
     }

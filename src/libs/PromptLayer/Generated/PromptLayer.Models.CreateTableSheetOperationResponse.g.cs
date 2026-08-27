@@ -5,12 +5,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CreateTableSheetOperationResponse : global::System.IEquatable<CreateTableSheetOperationResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.CreateTableSheetOperationQueuedResponse? CreateTableSheetOperationQueuedResponse { get; init; }
@@ -19,7 +19,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateTableSheetOperationQueuedResponse))]
@@ -27,7 +27,7 @@ namespace PromptLayer
         public bool IsCreateTableSheetOperationQueuedResponse => CreateTableSheetOperationQueuedResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateTableSheetOperationQueuedResponse(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.CreateTableSheetOperationQueuedResponse PickCreateTableSheetOperationQueuedResponse() => IsCreateTableSheetOperationQueuedResponse
             ? CreateTableSheetOperationQueuedResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateTableSheetOperationQueuedResponse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.CreateTableSheetOperationNoopResponse? CreateTableSheetOperationNoopResponse { get; init; }
@@ -56,7 +56,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateTableSheetOperationNoopResponse))]
@@ -64,7 +64,7 @@ namespace PromptLayer
         public bool IsCreateTableSheetOperationNoopResponse => CreateTableSheetOperationNoopResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateTableSheetOperationNoopResponse(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.CreateTableSheetOperationNoopResponse PickCreateTableSheetOperationNoopResponse() => IsCreateTableSheetOperationNoopResponse
             ? CreateTableSheetOperationNoopResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateTableSheetOperationNoopResponse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PromptLayer.CreateTableSheetOperationConfirmationResponse? CreateTableSheetOperationConfirmationResponse { get; init; }
@@ -93,7 +93,7 @@ namespace PromptLayer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateTableSheetOperationConfirmationResponse))]
@@ -101,7 +101,7 @@ namespace PromptLayer
         public bool IsCreateTableSheetOperationConfirmationResponse => CreateTableSheetOperationConfirmationResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateTableSheetOperationConfirmationResponse(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PromptLayer.CreateTableSheetOperationConfirmationResponse PickCreateTableSheetOperationConfirmationResponse() => IsCreateTableSheetOperationConfirmationResponse
             ? CreateTableSheetOperationConfirmationResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateTableSheetOperationConfirmationResponse' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTableSheetOperationResponse(global::PromptLayer.CreateTableSheetOperationQueuedResponse value) => new CreateTableSheetOperationResponse((global::PromptLayer.CreateTableSheetOperationQueuedResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.CreateTableSheetOperationQueuedResponse?(CreateTableSheetOperationResponse @this) => @this.CreateTableSheetOperationQueuedResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTableSheetOperationResponse(global::PromptLayer.CreateTableSheetOperationQueuedResponse? value)
         {
@@ -138,22 +138,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTableSheetOperationResponse FromCreateTableSheetOperationQueuedResponse(global::PromptLayer.CreateTableSheetOperationQueuedResponse? value) => new CreateTableSheetOperationResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTableSheetOperationResponse(global::PromptLayer.CreateTableSheetOperationNoopResponse value) => new CreateTableSheetOperationResponse((global::PromptLayer.CreateTableSheetOperationNoopResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.CreateTableSheetOperationNoopResponse?(CreateTableSheetOperationResponse @this) => @this.CreateTableSheetOperationNoopResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTableSheetOperationResponse(global::PromptLayer.CreateTableSheetOperationNoopResponse? value)
         {
@@ -161,22 +161,22 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTableSheetOperationResponse FromCreateTableSheetOperationNoopResponse(global::PromptLayer.CreateTableSheetOperationNoopResponse? value) => new CreateTableSheetOperationResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTableSheetOperationResponse(global::PromptLayer.CreateTableSheetOperationConfirmationResponse value) => new CreateTableSheetOperationResponse((global::PromptLayer.CreateTableSheetOperationConfirmationResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PromptLayer.CreateTableSheetOperationConfirmationResponse?(CreateTableSheetOperationResponse @this) => @this.CreateTableSheetOperationConfirmationResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTableSheetOperationResponse(global::PromptLayer.CreateTableSheetOperationConfirmationResponse? value)
         {
@@ -184,12 +184,12 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTableSheetOperationResponse FromCreateTableSheetOperationConfirmationResponse(global::PromptLayer.CreateTableSheetOperationConfirmationResponse? value) => new CreateTableSheetOperationResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTableSheetOperationResponse(
             global::PromptLayer.CreateTableSheetOperationQueuedResponse? createTableSheetOperationQueuedResponse,
@@ -203,25 +203,25 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CreateTableSheetOperationConfirmationResponse as object ??
             CreateTableSheetOperationNoopResponse as object ??
-            CreateTableSheetOperationQueuedResponse as object 
+            CreateTableSheetOperationQueuedResponse as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             CreateTableSheetOperationQueuedResponse?.ToString() ??
             CreateTableSheetOperationNoopResponse?.ToString() ??
-            CreateTableSheetOperationConfirmationResponse?.ToString() 
+            CreateTableSheetOperationConfirmationResponse?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::PromptLayer.CreateTableSheetOperationQueuedResponse, TResult>? createTableSheetOperationQueuedResponse = null,
@@ -259,7 +259,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::PromptLayer.CreateTableSheetOperationQueuedResponse>? createTableSheetOperationQueuedResponse = null,
@@ -289,7 +289,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::PromptLayer.CreateTableSheetOperationQueuedResponse>? createTableSheetOperationQueuedResponse = null,
@@ -317,7 +317,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateTableSheetOperationResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.CreateTableSheetOperationQueuedResponse?>.Default.Equals(CreateTableSheetOperationQueuedResponse, other.CreateTableSheetOperationQueuedResponse) &&
                 global::System.Collections.Generic.EqualityComparer<global::PromptLayer.CreateTableSheetOperationNoopResponse?>.Default.Equals(CreateTableSheetOperationNoopResponse, other.CreateTableSheetOperationNoopResponse) &&
-                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.CreateTableSheetOperationConfirmationResponse?>.Default.Equals(CreateTableSheetOperationConfirmationResponse, other.CreateTableSheetOperationConfirmationResponse) 
+                global::System.Collections.Generic.EqualityComparer<global::PromptLayer.CreateTableSheetOperationConfirmationResponse?>.Default.Equals(CreateTableSheetOperationConfirmationResponse, other.CreateTableSheetOperationConfirmationResponse)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateTableSheetOperationResponse obj1, CreateTableSheetOperationResponse obj2)
         {
@@ -360,7 +360,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateTableSheetOperationResponse obj1, CreateTableSheetOperationResponse obj2)
         {
@@ -368,7 +368,7 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

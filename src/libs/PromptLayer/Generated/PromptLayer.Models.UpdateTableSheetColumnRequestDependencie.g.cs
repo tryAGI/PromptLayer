@@ -4,12 +4,12 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateTableSheetColumnRequestDependencie
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,13 +22,13 @@ namespace PromptLayer
         public string? ReferenceType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config_key")]
         public string? ConfigKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config_meta")]
         public object? ConfigMeta { get; set; }

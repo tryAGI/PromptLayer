@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlaceholderMessage
     {
@@ -28,7 +28,7 @@ namespace PromptLayer
         public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item3>? Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("raw_request_display_role")]
         public string? RawRequestDisplayRole { get; set; }
@@ -41,7 +41,7 @@ namespace PromptLayer
         public global::PromptLayer.PlaceholderMessageRole? Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

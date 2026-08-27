@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum ThinkingContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
     }

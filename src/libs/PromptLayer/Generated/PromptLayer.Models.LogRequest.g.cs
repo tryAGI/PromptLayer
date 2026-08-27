@@ -9,21 +9,21 @@ namespace PromptLayer
     public sealed partial class LogRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Provider { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.InputJsonConverter))]
@@ -31,7 +31,7 @@ namespace PromptLayer
         public required global::PromptLayer.Input Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.OutputJsonConverter))]
@@ -39,14 +39,14 @@ namespace PromptLayer
         public required global::PromptLayer.Output Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_start_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime RequestStartTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -116,7 +116,7 @@ namespace PromptLayer
         public double? Price { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_name")]
         public string? FunctionName { get; set; }

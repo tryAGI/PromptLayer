@@ -9,7 +9,7 @@ namespace PromptLayer
     public sealed partial class CreateSpansBulk
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spans")]
         [global::System.Text.Json.Serialization.JsonRequired]

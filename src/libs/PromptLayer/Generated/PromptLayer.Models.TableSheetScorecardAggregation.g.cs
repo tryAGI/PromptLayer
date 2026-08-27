@@ -4,19 +4,19 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TableSheetScorecardAggregation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Method { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_step_failure_behavior")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.TableSheetScorecardAggregationRequiredStepFailureBehaviorJsonConverter))]
@@ -24,14 +24,14 @@ namespace PromptLayer
         public required global::PromptLayer.TableSheetScorecardAggregationRequiredStepFailureBehavior RequiredStepFailureBehavior { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pass_threshold")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double PassThreshold { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warn_threshold")]
         [global::System.Text.Json.Serialization.JsonRequired]

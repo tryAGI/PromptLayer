@@ -9,27 +9,27 @@ namespace PromptLayer
     public enum RequestLogQuerySortBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyMs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequestStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Status,
     }

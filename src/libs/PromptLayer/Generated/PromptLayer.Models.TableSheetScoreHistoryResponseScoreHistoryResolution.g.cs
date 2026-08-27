@@ -4,20 +4,20 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TableSheetScoreHistoryResponseScoreHistoryResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MinMaxBucket,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Raw,
     }

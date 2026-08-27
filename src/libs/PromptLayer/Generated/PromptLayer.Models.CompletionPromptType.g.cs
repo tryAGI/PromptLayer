@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum CompletionPromptType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completion,
     }

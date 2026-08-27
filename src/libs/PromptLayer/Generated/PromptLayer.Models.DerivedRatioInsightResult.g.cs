@@ -9,26 +9,26 @@ namespace PromptLayer
     public sealed partial class DerivedRatioInsightResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.DerivedRatioInsightResultTypeJsonConverter))]
         public global::PromptLayer.DerivedRatioInsightResultType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         public string? Label { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("numeratorSeriesKey")]
         public string? NumeratorSeriesKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("denominatorSeriesKey")]
         public string? DenominatorSeriesKey { get; set; }

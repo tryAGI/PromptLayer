@@ -22,7 +22,7 @@ namespace PromptLayer
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
         public string? ServerLabel { get; set; }

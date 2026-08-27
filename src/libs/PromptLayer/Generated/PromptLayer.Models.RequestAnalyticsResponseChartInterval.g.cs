@@ -9,19 +9,19 @@ namespace PromptLayer
     public sealed partial class RequestAnalyticsResponseChartInterval
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         public string? Interval { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bucketSizeMs")]
         public int? BucketSizeMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bucketMinutes")]
         public int? BucketMinutes { get; set; }

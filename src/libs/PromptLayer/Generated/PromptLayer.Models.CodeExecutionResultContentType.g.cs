@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum CodeExecutionResultContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionResult,
     }

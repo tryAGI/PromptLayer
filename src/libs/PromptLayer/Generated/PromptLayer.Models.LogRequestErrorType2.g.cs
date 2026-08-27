@@ -4,44 +4,44 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LogRequestErrorType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderAuthError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderPartialResponse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderQuotaLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderRateLimit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderTimeout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TemplateRenderError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnknownError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VariableMissingOrEmpty,
     }

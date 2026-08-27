@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum AddTraceToDatasetResponseMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Span,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trace,
     }

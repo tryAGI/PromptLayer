@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum ImageContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
     }

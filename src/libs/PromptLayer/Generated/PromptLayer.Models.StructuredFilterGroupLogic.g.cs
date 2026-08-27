@@ -10,11 +10,11 @@ namespace PromptLayer
     public enum StructuredFilterGroupLogic
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         And,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Or,
     }

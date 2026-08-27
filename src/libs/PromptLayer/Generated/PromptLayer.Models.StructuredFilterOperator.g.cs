@@ -9,107 +9,107 @@ namespace PromptLayer
     public enum StructuredFilterOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         After,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Before,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Between,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndsWith,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         In,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Is,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsEmpty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsFalse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsNot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsNotEmpty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsNotNull,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsNull,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsTrue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeyContains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeyEquals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KeyNotEquals,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lte,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotContains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartsWith,
     }

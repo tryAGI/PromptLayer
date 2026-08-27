@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum PlaceholderMessageRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Placeholder,
     }

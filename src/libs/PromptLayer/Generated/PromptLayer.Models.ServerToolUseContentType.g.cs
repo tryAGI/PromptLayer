@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum ServerToolUseContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerToolUse,
     }

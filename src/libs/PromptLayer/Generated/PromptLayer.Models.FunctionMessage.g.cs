@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FunctionMessage
     {
@@ -22,7 +22,7 @@ namespace PromptLayer
         public global::PromptLayer.FunctionMessageTemplateFormat? TemplateFormat { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item2>? Content { get; set; }
@@ -34,7 +34,7 @@ namespace PromptLayer
         public string? Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum MediaContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Media,
     }

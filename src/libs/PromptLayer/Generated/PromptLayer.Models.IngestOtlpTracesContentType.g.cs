@@ -4,16 +4,16 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IngestOtlpTracesContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationXProtobuf,
     }

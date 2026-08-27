@@ -4,88 +4,88 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PlaceholderMessageContentVariant1ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatchCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatchCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BashCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Code,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalResponse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpListTools,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Media,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MediaVariable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputMedia,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchToolResult,
     }

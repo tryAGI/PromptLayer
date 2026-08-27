@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ListSkillCollectionsPublicSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

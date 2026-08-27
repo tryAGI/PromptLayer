@@ -9,19 +9,19 @@ namespace PromptLayer
     public enum TraceStructuredFilterGroupLogic
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         And,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Or,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanAnd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpanOr,
     }

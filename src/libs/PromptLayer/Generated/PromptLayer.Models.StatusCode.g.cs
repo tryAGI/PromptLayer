@@ -4,20 +4,20 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StatusCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ok,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unset,
     }

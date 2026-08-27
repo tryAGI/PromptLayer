@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum RequestLogQuerySortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

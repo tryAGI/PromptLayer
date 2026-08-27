@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum ApplyPatchCallContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatchCall,
     }

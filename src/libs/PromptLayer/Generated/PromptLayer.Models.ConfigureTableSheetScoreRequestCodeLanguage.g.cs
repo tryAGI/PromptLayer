@@ -9,11 +9,11 @@ namespace PromptLayer
     public enum ConfigureTableSheetScoreRequestCodeLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Javascript,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Python,
     }

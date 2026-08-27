@@ -4,56 +4,56 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeInterpreter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GoogleMaps,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mcp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shell,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlContext,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
     }

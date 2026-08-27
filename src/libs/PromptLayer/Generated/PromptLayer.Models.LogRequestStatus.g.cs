@@ -15,15 +15,15 @@ namespace PromptLayer
     public enum LogRequestStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warning,
     }

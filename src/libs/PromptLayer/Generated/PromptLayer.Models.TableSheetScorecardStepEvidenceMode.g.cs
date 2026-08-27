@@ -4,20 +4,20 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TableSheetScorecardStepEvidenceMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hidden,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Raw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Summary,
     }

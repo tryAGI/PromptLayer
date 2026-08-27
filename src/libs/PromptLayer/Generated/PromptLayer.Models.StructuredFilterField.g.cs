@@ -13,103 +13,103 @@ namespace PromptLayer
         /// </summary>
         AgentIntent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Engine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVariableKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVariables,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsPlainText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsToolCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LatencyMs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metadata,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MetadataKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Output,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptVersionNumber,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequestEndTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequestStartTime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Status,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tags,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolNames,
         /// <summary>

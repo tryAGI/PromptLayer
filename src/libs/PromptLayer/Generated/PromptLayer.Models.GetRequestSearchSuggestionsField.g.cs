@@ -4,60 +4,60 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetRequestSearchSuggestionsField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Engine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVariableKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputVariableValues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MetadataKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MetadataValues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputKeys,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputValues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Status,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tags,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolNames,
     }

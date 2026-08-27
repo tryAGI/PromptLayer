@@ -10,11 +10,11 @@ namespace PromptLayer
     public enum UpdateReportScoreCardRequestCodeLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Javascript,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Python,
     }

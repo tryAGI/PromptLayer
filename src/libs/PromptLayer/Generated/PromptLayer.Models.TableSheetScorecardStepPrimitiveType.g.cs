@@ -4,52 +4,52 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TableSheetScorecardStepPrimitiveType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AssertValid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecution,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ColumnAggregate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compare,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contains,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LlmAssertion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxToolCalls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoInvalidToolCalls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Structure,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolEvaluator,
     }

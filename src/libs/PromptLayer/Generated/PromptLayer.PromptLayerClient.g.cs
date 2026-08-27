@@ -11,7 +11,7 @@ namespace PromptLayer
     public sealed partial class PromptLayerClient : global::PromptLayer.IPromptLayerClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.promptlayer.com/";
 
@@ -38,7 +38,7 @@ namespace PromptLayer
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::PromptLayer.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -48,7 +48,7 @@ namespace PromptLayer
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -57,7 +57,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EnvVarsClient EnvVars => new EnvVarsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -66,7 +66,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvaluationsClient Evaluations => new EvaluationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -75,7 +75,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExternalIdsClient ExternalIds => new ExternalIdsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -84,7 +84,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FoldersClient Folders => new FoldersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -93,7 +93,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupClient Group => new GroupClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -102,7 +102,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MetadataClient Metadata => new MetadataClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -111,7 +111,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OtlpClient Otlp => new OtlpClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -120,7 +120,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptClient Prompt => new PromptClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -129,7 +129,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptTemplatesClient PromptTemplates => new PromptTemplatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -138,7 +138,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptsClient Prompts => new PromptsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -147,7 +147,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReportsClient Reports => new ReportsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -156,7 +156,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RequestClient Request => new RequestClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -165,7 +165,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RestClient Rest => new RestClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -174,7 +174,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ScoreClient Score => new ScoreClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -183,7 +183,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SkillCollectionsClient SkillCollections => new SkillCollectionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -192,7 +192,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SmartTablesClient SmartTables => new SmartTablesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -201,7 +201,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpansClient Spans => new SpansClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -210,7 +210,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TablesClient Tables => new TablesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -219,7 +219,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolRegistryClient ToolRegistry => new ToolRegistryClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -228,7 +228,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TrackingClient Tracking => new TrackingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -237,7 +237,7 @@ namespace PromptLayer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowClient Workflow => new WorkflowClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

@@ -9,7 +9,7 @@ namespace PromptLayer
     public enum CodeContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Code,
     }
