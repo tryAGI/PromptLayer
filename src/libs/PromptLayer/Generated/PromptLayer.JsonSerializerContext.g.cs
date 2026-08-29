@@ -21,6 +21,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Evaluation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
@@ -54,7 +55,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.Edge>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.NodeUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PatchWorkflow))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.NodeUpdate, object>), TypeInfoPropertyName = "OneOfNodeUpdateObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateWorkflowResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.CreateWorkflowResponseNode>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateWorkflowResponseNode))]
@@ -77,7 +77,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListSkillCollectionsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.SkillCollection>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetSkillCollectionResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.SkillCollectionVersion, object>), TypeInfoPropertyName = "OneOfSkillCollectionVersionObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CreateSkillCollectionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.UpdateSkillCollectionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.SaveSkillCollectionVersionResponse))]
@@ -92,7 +91,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Model))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Metadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplate))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateProvider2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateProvider2), TypeInfoPropertyName = "GetPromptTemplateProvider22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPrompt))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.ContentItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem), TypeInfoPropertyName = "ContentItem2_3")]
@@ -255,7 +254,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestOutputDiscriminatorType), TypeInfoPropertyName = "LogRequestOutputDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestStatus), TypeInfoPropertyName = "LogRequestStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestErrorType2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestErrorType2), TypeInfoPropertyName = "LogRequestErrorType22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestResponseStatus), TypeInfoPropertyName = "LogRequestResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.BadRequestError))]
@@ -463,8 +462,8 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreResponseScoringType), TypeInfoPropertyName = "TableSheetScoreResponseScoringType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScoreColumn>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreColumn))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>?>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>), TypeInfoPropertyName = "OneOfDoubleStringTableSheetScoreCellObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetScoreCellObject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScoreMetric>))]
@@ -514,6 +513,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetScorecardRowResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetTableSheetScorecardRowResponseAggregateVerdict), TypeInfoPropertyName = "GetTableSheetScorecardRowResponseAggregateVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ListTableSheetVersionsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.TableSheetVersion>))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -531,7 +531,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.TableSheetVersion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TableSheetVersion))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PublicListPagination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EmptyPublicFilters))]
@@ -805,10 +804,9 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EvaluationRunStatus?), TypeInfoPropertyName = "NullableEvaluationRunStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EdgeConditionalOperator?), TypeInfoPropertyName = "NullableEdgeConditionalOperator2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.NodeUpdate, object>?), TypeInfoPropertyName = "NullableOneOfNodeUpdateObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.SkillCollectionVersion, object>?), TypeInfoPropertyName = "NullableOneOfSkillCollectionVersionObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateProvider2?), TypeInfoPropertyName = "NullableGetPromptTemplateProvider22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem?), TypeInfoPropertyName = "NullableContentItem2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPromptContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableCompletionPromptContentItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPromptTemplateFormat?), TypeInfoPropertyName = "NullableCompletionPromptTemplateFormat2")]
@@ -883,6 +881,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestOutputDiscriminatorType?), TypeInfoPropertyName = "NullableLogRequestOutputDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestStatus?), TypeInfoPropertyName = "NullableLogRequestStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestErrorType2?), TypeInfoPropertyName = "NullableLogRequestErrorType22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestResponseStatus?), TypeInfoPropertyName = "NullableLogRequestResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate5?), TypeInfoPropertyName = "NullablePromptTemplate52")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullablePromptBlueprintPromptTemplateDiscriminatorType2")]
@@ -1026,6 +1025,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>, object>?), TypeInfoPropertyName = "NullableOneOfDictionaryStringGetWorkflowVersionExecutionResultsResponseVariant14Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<global::PromptLayer.FolderExistsError, string>?), TypeInfoPropertyName = "NullableAnyOfFolderExistsErrorString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.TestExecuteToolResponseResultStatus?), TypeInfoPropertyName = "NullableTestExecuteToolResponseResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CloseTraceResponseClosureStatus?), TypeInfoPropertyName = "NullableCloseTraceResponseClosureStatus2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1043,7 +1043,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.IList<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>?), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_47a8c666c2b64908")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.GetReportScoreResponseScoreDetailsVariant1, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant2, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant3, global::PromptLayer.GetReportScoreResponseScoreDetailsVariant4>?), TypeInfoPropertyName = "GetReportScoreResponseScoreDetailsVariant4_819979ee8daaec57")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.OneOf<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterType2?, global::System.Collections.Generic.List<global::PromptLayer.ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem>>), TypeInfoPropertyName = "ListFolderEntitiesApiPublicV2FoldersEntitiesGetFilterTypeItem_13c51ceff6c2844e")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CloseTraceResponseClosureStatus?), TypeInfoPropertyName = "NullableCloseTraceResponseClosureStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.EvaluationRun>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ExternalId>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.GetSnippetUsageResponseSnippetUsageItem>))]
@@ -1063,7 +1062,6 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ContentItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.OneOf<global::PromptLayer.WebAnnotation, global::PromptLayer.FileAnnotation, global::PromptLayer.MapAnnotation, global::PromptLayer.ContainerFileAnnotation>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.WebSearchResult>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ContentItem2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ContentItem3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.ContentVariant1Item>))]
@@ -1111,8 +1109,8 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Guid>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.CreateTableSheetOperationRequestStatuse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.TableSheetScoreColumn>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>?>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.TableSheetScoreMetric>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.TableSheetScorecardStep>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::PromptLayer.MigrateLegacyTableSheetScoreResponseSkippedItem>))]
@@ -1209,8 +1207,6 @@ namespace PromptLayer
             options.Converters.Add(new global::PromptLayer.JsonConverters.SearchRequestLogsRequestJsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.PromptTemplate6JsonConverter());
             options.Converters.Add(new global::PromptLayer.JsonConverters.CreateTableSheetOperationResponseJsonConverter());
-            options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.NodeUpdate, object>());
-            options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.SkillCollectionVersion, object>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, int?>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.WebAnnotation, global::PromptLayer.FileAnnotation, global::PromptLayer.MapAnnotation, global::PromptLayer.ContainerFileAnnotation>());
             options.Converters.Add(new global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>());

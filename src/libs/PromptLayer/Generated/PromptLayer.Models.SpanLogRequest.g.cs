@@ -4,9 +4,9 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    /// Optional request log to create alongside the span. If request times are omitted, they are inherited from the span start/end times.
     /// </summary>
-    public sealed partial class PromptBlueprintReportId
+    public sealed partial class SpanLogRequest
     {
 
         /// <summary>

@@ -33,9 +33,7 @@ namespace PromptLayer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<global::PromptLayer.SkillCollectionVersion, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.OneOf<global::PromptLayer.SkillCollectionVersion, object> Version { get; set; }
+        public global::PromptLayer.SkillCollectionVersion? Version { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,7 +57,7 @@ namespace PromptLayer
             bool success,
             global::PromptLayer.SkillCollection skillCollection,
             global::System.Collections.Generic.Dictionary<string, string> files,
-            global::PromptLayer.OneOf<global::PromptLayer.SkillCollectionVersion, object> version)
+            global::PromptLayer.SkillCollectionVersion? version)
         {
             this.Success = success;
             this.SkillCollection = skillCollection ?? throw new global::System.ArgumentNullException(nameof(skillCollection));
