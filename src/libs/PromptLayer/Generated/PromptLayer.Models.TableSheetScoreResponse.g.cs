@@ -73,7 +73,7 @@ namespace PromptLayer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_matrix")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>>>? ScoreMatrix { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>?>>? ScoreMatrix { get; set; }
 
         /// <summary>
         ///
@@ -189,7 +189,7 @@ namespace PromptLayer
             global::PromptLayer.TableSheetScoreResponseScoringType? scoringType,
             double? aggregateScore,
             global::System.DateTime? calculatedAt,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>>>? scoreMatrix,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::PromptLayer.OneOf<double?, string, global::PromptLayer.TableSheetScoreCellObject>?>>? scoreMatrix,
             global::System.Collections.Generic.IList<global::PromptLayer.TableSheetScoreMetric>? scoreMatrixMetrics,
             global::PromptLayer.TableSheetScoreResponseStatus? status,
             string? scoreCalculationError,
