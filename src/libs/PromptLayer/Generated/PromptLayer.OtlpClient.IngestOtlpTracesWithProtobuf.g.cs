@@ -3,11 +3,11 @@
 
 namespace PromptLayer
 {
-    public partial class PromptTemplatesClient
+    public partial class OtlpClient
     {
 
 
-        private static readonly global::PromptLayer.EndPointSecurityRequirement s_GetAllPromptTemplatesGetSecurityRequirement0 =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement s_IngestOtlpTracesWithProtobufSecurityRequirement0 =
             new global::PromptLayer.EndPointSecurityRequirement
             {
                 Authorizations = new global::PromptLayer.EndPointAuthorizationRequirement[]
@@ -21,119 +21,59 @@ namespace PromptLayer
                     },
                 },
             };
-        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_GetAllPromptTemplatesGetSecurityRequirements =
+        private static readonly global::PromptLayer.EndPointSecurityRequirement[] s_IngestOtlpTracesWithProtobufSecurityRequirements =
             new global::PromptLayer.EndPointSecurityRequirement[]
-            {                s_GetAllPromptTemplatesGetSecurityRequirement0,
+            {                s_IngestOtlpTracesWithProtobufSecurityRequirement0,
             };
-        partial void PrepareGetAllPromptTemplatesGetArguments(
+        partial void PrepareIngestOtlpTracesWithProtobufArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int? page,
-            ref int? perPage,
-            ref string? label,
-            ref string? name,
-            ref global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags,
-            ref global::PromptLayer.GetAllPromptTemplatesGetStatus? status,
-            ref string? externalSource,
-            ref string? externalId,
-            ref string? createdByEmail,
-            ref global::System.DateTime? createdAfter,
-            ref global::System.DateTime? createdBefore,
-            ref global::System.DateTime? updatedAfter,
-            ref global::System.DateTime? updatedBefore,
-            ref global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy,
-            ref global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder,
-            ref bool? isSnippet);
-        partial void PrepareGetAllPromptTemplatesGetRequest(
+            ref global::PromptLayer.IngestOtlpTracesContentType contentType,
+            ref global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding,
+            ref bool? closeAfter,
+            byte[] request);
+        partial void PrepareIngestOtlpTracesWithProtobufRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int? page,
-            int? perPage,
-            string? label,
-            string? name,
-            global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags,
-            global::PromptLayer.GetAllPromptTemplatesGetStatus? status,
-            string? externalSource,
-            string? externalId,
-            string? createdByEmail,
-            global::System.DateTime? createdAfter,
-            global::System.DateTime? createdBefore,
-            global::System.DateTime? updatedAfter,
-            global::System.DateTime? updatedBefore,
-            global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy,
-            global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder,
-            bool? isSnippet);
-        partial void ProcessGetAllPromptTemplatesGetResponse(
+            global::PromptLayer.IngestOtlpTracesContentType contentType,
+            global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding,
+            bool? closeAfter,
+            byte[] request);
+        partial void ProcessIngestOtlpTracesWithProtobufResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetAllPromptTemplatesGetResponseContent(
+        partial void ProcessIngestOtlpTracesWithProtobufResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get All
+        /// Ingest Traces (OTLP)
         /// </summary>
-        /// <param name="page"></param>
-        /// <param name="perPage"></param>
-        /// <param name="label"></param>
-        /// <param name="name"></param>
-        /// <param name="tags"></param>
-        /// <param name="status">
-        /// Default Value: active
+        /// <param name="contentType"></param>
+        /// <param name="contentEncoding"></param>
+        /// <param name="closeAfter">
+        /// Default Value: false
         /// </param>
-        /// <param name="externalSource"></param>
-        /// <param name="externalId"></param>
-        /// <param name="createdByEmail"></param>
-        /// <param name="createdAfter"></param>
-        /// <param name="createdBefore"></param>
-        /// <param name="updatedAfter"></param>
-        /// <param name="updatedBefore"></param>
-        /// <param name="sortBy"></param>
-        /// <param name="sortOrder">
-        /// Default Value: desc
-        /// </param>
-        /// <param name="isSnippet"></param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.ListPromptTemplates> GetAllPromptTemplatesGetAsync(
-            int? page = default,
-            int? perPage = default,
-            string? label = default,
-            string? name = default,
-            global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
-            global::PromptLayer.GetAllPromptTemplatesGetStatus? status = default,
-            string? externalSource = default,
-            string? externalId = default,
-            string? createdByEmail = default,
-            global::System.DateTime? createdAfter = default,
-            global::System.DateTime? createdBefore = default,
-            global::System.DateTime? updatedAfter = default,
-            global::System.DateTime? updatedBefore = default,
-            global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy = default,
-            global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder = default,
-            bool? isSnippet = default,
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.OtlpExportTraceServiceResponse> IngestOtlpTracesWithProtobufAsync(
+            global::PromptLayer.IngestOtlpTracesContentType contentType,
+
+            byte[] request,
+            global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding = default,
+            bool? closeAfter = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetAllPromptTemplatesGetAsResponseAsync(
-                page: page,
-                perPage: perPage,
-                label: label,
-                name: name,
-                tags: tags,
-                status: status,
-                externalSource: externalSource,
-                externalId: externalId,
-                createdByEmail: createdByEmail,
-                createdAfter: createdAfter,
-                createdBefore: createdBefore,
-                updatedAfter: updatedAfter,
-                updatedBefore: updatedBefore,
-                sortBy: sortBy,
-                sortOrder: sortOrder,
-                isSnippet: isSnippet,
+            var __response = await IngestOtlpTracesWithProtobufAsResponseAsync(
+                contentType: contentType,
+
+                request: request,
+                contentEncoding: contentEncoding,
+                closeAfter: closeAfter,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -141,77 +81,42 @@ namespace PromptLayer
             return __response.Body;
         }
         /// <summary>
-        /// Get All
+        /// Ingest Traces (OTLP)
         /// </summary>
-        /// <param name="page"></param>
-        /// <param name="perPage"></param>
-        /// <param name="label"></param>
-        /// <param name="name"></param>
-        /// <param name="tags"></param>
-        /// <param name="status">
-        /// Default Value: active
+        /// <param name="contentType"></param>
+        /// <param name="contentEncoding"></param>
+        /// <param name="closeAfter">
+        /// Default Value: false
         /// </param>
-        /// <param name="externalSource"></param>
-        /// <param name="externalId"></param>
-        /// <param name="createdByEmail"></param>
-        /// <param name="createdAfter"></param>
-        /// <param name="createdBefore"></param>
-        /// <param name="updatedAfter"></param>
-        /// <param name="updatedBefore"></param>
-        /// <param name="sortBy"></param>
-        /// <param name="sortOrder">
-        /// Default Value: desc
-        /// </param>
-        /// <param name="isSnippet"></param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::PromptLayer.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.ListPromptTemplates>> GetAllPromptTemplatesGetAsResponseAsync(
-            int? page = default,
-            int? perPage = default,
-            string? label = default,
-            string? name = default,
-            global::PromptLayer.AnyOf<string, global::System.Collections.Generic.IList<string>>? tags = default,
-            global::PromptLayer.GetAllPromptTemplatesGetStatus? status = default,
-            string? externalSource = default,
-            string? externalId = default,
-            string? createdByEmail = default,
-            global::System.DateTime? createdAfter = default,
-            global::System.DateTime? createdBefore = default,
-            global::System.DateTime? updatedAfter = default,
-            global::System.DateTime? updatedBefore = default,
-            global::PromptLayer.GetAllPromptTemplatesGetSortBy? sortBy = default,
-            global::PromptLayer.GetAllPromptTemplatesGetSortOrder? sortOrder = default,
-            bool? isSnippet = default,
+        public async global::System.Threading.Tasks.Task<global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.OtlpExportTraceServiceResponse>> IngestOtlpTracesWithProtobufAsResponseAsync(
+            global::PromptLayer.IngestOtlpTracesContentType contentType,
+
+            byte[] request,
+            global::PromptLayer.IngestOtlpTracesContentEncoding? contentEncoding = default,
+            bool? closeAfter = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetAllPromptTemplatesGetArguments(
+            PrepareIngestOtlpTracesWithProtobufArguments(
                 httpClient: HttpClient,
-                page: ref page,
-                perPage: ref perPage,
-                label: ref label,
-                name: ref name,
-                tags: ref tags,
-                status: ref status,
-                externalSource: ref externalSource,
-                externalId: ref externalId,
-                createdByEmail: ref createdByEmail,
-                createdAfter: ref createdAfter,
-                createdBefore: ref createdBefore,
-                updatedAfter: ref updatedAfter,
-                updatedBefore: ref updatedBefore,
-                sortBy: ref sortBy,
-                sortOrder: ref sortOrder,
-                isSnippet: ref isSnippet);
+                contentType: ref contentType,
+                contentEncoding: ref contentEncoding,
+                closeAfter: ref closeAfter,
+                request: request);
 
 
             var __authorizations = global::PromptLayer.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetAllPromptTemplatesGetSecurityRequirements,
-                operationName: "GetAllPromptTemplatesGetAsync");
+                securityRequirements: s_IngestOtlpTracesWithProtobufSecurityRequirements,
+                operationName: "IngestOtlpTracesWithProtobufAsync");
 
             using var __timeoutCancellationTokenSource = global::PromptLayer.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -231,28 +136,10 @@ namespace PromptLayer
             {
 
                             var __pathBuilder = new global::PromptLayer.PathBuilder(
-                                path: "/prompt-templates",
+                                path: "/v1/traces",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("page", page?.ToString())
-                                .AddOptionalParameter("per_page", perPage?.ToString())
-                                .AddOptionalParameter("label", label)
-                                .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("tags", tags?.Match(
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
-                validate: false), delimiter: ",", explode: true)
-                                .AddOptionalParameter("status", status?.ToValueString())
-                                .AddOptionalParameter("external_source", externalSource)
-                                .AddOptionalParameter("external_id", externalId)
-                                .AddOptionalParameter("created_by_email", createdByEmail)
-                                .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("created_before", createdBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("updated_after", updatedAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("updated_before", updatedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
-                                .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
-                                .AddOptionalParameter("is_snippet", isSnippet?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("close_after", closeAfter?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::PromptLayer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -260,12 +147,16 @@ namespace PromptLayer
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
 
             foreach (var __authorization in __authorizations)
             {
@@ -283,6 +174,17 @@ namespace PromptLayer
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+                __httpRequest.Headers.TryAddWithoutValidation("Content-Type", contentType.ToValueString());
+            if (contentEncoding != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Content-Encoding", contentEncoding?.ToValueString() ?? string.Empty);
+            }
+
+
+                            var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
+                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/x-protobuf");
+                            __httpRequest.Content = __httpRequestContent;
                 global::PromptLayer.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -291,25 +193,13 @@ namespace PromptLayer
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetAllPromptTemplatesGetRequest(
+                PrepareIngestOtlpTracesWithProtobufRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    page: page,
-                    perPage: perPage,
-                    label: label,
-                    name: name,
-                    tags: tags,
-                    status: status,
-                    externalSource: externalSource,
-                    externalId: externalId,
-                    createdByEmail: createdByEmail,
-                    createdAfter: createdAfter,
-                    createdBefore: createdBefore,
-                    updatedAfter: updatedAfter,
-                    updatedBefore: updatedBefore,
-                    sortBy: sortBy,
-                    sortOrder: sortOrder,
-                    isSnippet: isSnippet);
+                    contentType: contentType!,
+                    contentEncoding: contentEncoding,
+                    closeAfter: closeAfter,
+                    request: request);
 
                 return __httpRequest;
             }
@@ -326,10 +216,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAllPromptTemplatesGet",
-                                methodName: "GetAllPromptTemplatesGetAsync",
-                                pathTemplate: "\"/prompt-templates\"",
-                                httpMethod: "GET",
+                                operationId: "IngestOtlpTracesWithProtobuf",
+                                methodName: "IngestOtlpTracesWithProtobufAsync",
+                                pathTemplate: "\"/v1/traces\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -360,10 +250,10 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAllPromptTemplatesGet",
-                                methodName: "GetAllPromptTemplatesGetAsync",
-                                pathTemplate: "\"/prompt-templates\"",
-                                httpMethod: "GET",
+                                operationId: "IngestOtlpTracesWithProtobuf",
+                                methodName: "IngestOtlpTracesWithProtobufAsync",
+                                pathTemplate: "\"/v1/traces\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -401,10 +291,10 @@ namespace PromptLayer
                         await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAllPromptTemplatesGet",
-                                methodName: "GetAllPromptTemplatesGetAsync",
-                                pathTemplate: "\"/prompt-templates\"",
-                                httpMethod: "GET",
+                                operationId: "IngestOtlpTracesWithProtobuf",
+                                methodName: "IngestOtlpTracesWithProtobufAsync",
+                                pathTemplate: "\"/v1/traces\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -441,7 +331,7 @@ namespace PromptLayer
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetAllPromptTemplatesGetResponse(
+                ProcessIngestOtlpTracesWithProtobufResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -449,10 +339,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAllPromptTemplatesGet",
-                                methodName: "GetAllPromptTemplatesGetAsync",
-                                pathTemplate: "\"/prompt-templates\"",
-                                httpMethod: "GET",
+                                operationId: "IngestOtlpTracesWithProtobuf",
+                                methodName: "IngestOtlpTracesWithProtobufAsync",
+                                pathTemplate: "\"/v1/traces\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -471,10 +361,10 @@ namespace PromptLayer
                     await global::PromptLayer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::PromptLayer.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetAllPromptTemplatesGet",
-                                methodName: "GetAllPromptTemplatesGetAsync",
-                                pathTemplate: "\"/prompt-templates\"",
-                                httpMethod: "GET",
+                                operationId: "IngestOtlpTracesWithProtobuf",
+                                methodName: "IngestOtlpTracesWithProtobufAsync",
+                                pathTemplate: "\"/v1/traces\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -525,6 +415,43 @@ namespace PromptLayer
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Unsupported Content-Type
+                            if ((int)__response.StatusCode == 415)
+                            {
+                                string? __content_415 = null;
+                                global::System.Exception? __exception_415 = null;
+                                global::PromptLayer.ErrorResponse? __value_415 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_415 = global::PromptLayer.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_415 = global::PromptLayer.ErrorResponse.FromJson(__content_415, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_415 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_415,
+                                    responseBody: __content_415,
+                                    responseObject: __value_415,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Validation error - request parameters or body are invalid.
                             if ((int)__response.StatusCode == 422)
                             {
@@ -562,6 +489,80 @@ namespace PromptLayer
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Internal server error during ingestion
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::PromptLayer.ErrorResponse? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::PromptLayer.ErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::PromptLayer.ErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // One or more traces in the request are already closed.
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::PromptLayer.IngestOtlpTracesResponse2? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse2>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -575,7 +576,7 @@ namespace PromptLayer
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetAllPromptTemplatesGetResponseContent(
+                                ProcessIngestOtlpTracesWithProtobufResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -584,9 +585,9 @@ namespace PromptLayer
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::PromptLayer.ListPromptTemplates.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::PromptLayer.OtlpExportTraceServiceResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.ListPromptTemplates>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.OtlpExportTraceServiceResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -616,9 +617,9 @@ namespace PromptLayer
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::PromptLayer.ListPromptTemplates.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::PromptLayer.OtlpExportTraceServiceResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.ListPromptTemplates>(
+                                    return new global::PromptLayer.AutoSDKHttpResponse<global::PromptLayer.OtlpExportTraceServiceResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::PromptLayer.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
