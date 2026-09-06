@@ -30,7 +30,7 @@ namespace PromptLayer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        public global::PromptLayer.GetPromptTemplateProvider2? Provider { get; set; }
+        public global::PromptLayer.GetPromptTemplateProvider? Provider { get; set; }
 
         /// <summary>
         ///
@@ -88,7 +88,7 @@ namespace PromptLayer
             int? version,
             int? workspaceId,
             string? label,
-            global::PromptLayer.GetPromptTemplateProvider2? provider,
+            global::PromptLayer.GetPromptTemplateProvider? provider,
             global::System.Collections.Generic.Dictionary<string, string>? inputVariables,
             global::System.Collections.Generic.Dictionary<string, string>? metadataFilters,
             string? model,

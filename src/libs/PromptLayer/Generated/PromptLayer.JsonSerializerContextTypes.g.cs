@@ -309,7 +309,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.GetPromptTemplateProvider2? Type69 { get; set; }
+        public global::PromptLayer.GetPromptTemplateProvider? Type69 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -961,7 +961,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.LogRequestErrorType2? Type232 { get; set; }
+        public global::PromptLayer.LogRequestErrorType? Type232 { get; set; }
         /// <summary>
         ///
         /// </summary>

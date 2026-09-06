@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Parameters to shallow-merge into existing model parameters. Existing keys not provided are preserved.
+    ///
     /// </summary>
     public sealed partial class PatchPromptTemplateVersionModelParameters
     {

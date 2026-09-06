@@ -680,7 +680,7 @@ namespace PromptLayer
             int? score = default,
             string? apiType = default,
             global::PromptLayer.LogRequestStatus? status = default,
-            global::PromptLayer.LogRequestErrorType2? errorType = default,
+            global::PromptLayer.LogRequestErrorType? errorType = default,
             string? errorMessage = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

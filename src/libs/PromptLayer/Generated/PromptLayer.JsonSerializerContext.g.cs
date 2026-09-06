@@ -91,7 +91,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Model))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.Metadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplate))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateProvider2), TypeInfoPropertyName = "GetPromptTemplateProvider22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateProvider), TypeInfoPropertyName = "GetPromptTemplateProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPrompt))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::PromptLayer.ContentItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem), TypeInfoPropertyName = "ContentItem2_3")]
@@ -254,7 +254,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestOutputDiscriminatorType), TypeInfoPropertyName = "LogRequestOutputDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestStatus), TypeInfoPropertyName = "LogRequestStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestErrorType2), TypeInfoPropertyName = "LogRequestErrorType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestErrorType), TypeInfoPropertyName = "LogRequestErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestResponseStatus), TypeInfoPropertyName = "LogRequestResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.BadRequestError))]
@@ -806,7 +806,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.EdgeConditionalOperator?), TypeInfoPropertyName = "NullableEdgeConditionalOperator2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.AnyOf<string, int?>?), TypeInfoPropertyName = "NullableAnyOfStringInt322")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateProvider2?), TypeInfoPropertyName = "NullableGetPromptTemplateProvider22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.GetPromptTemplateProvider?), TypeInfoPropertyName = "NullableGetPromptTemplateProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.ContentItem?), TypeInfoPropertyName = "NullableContentItem2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPromptContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableCompletionPromptContentItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.CompletionPromptTemplateFormat?), TypeInfoPropertyName = "NullableCompletionPromptTemplateFormat2")]
@@ -881,7 +881,7 @@ namespace PromptLayer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestOutputDiscriminatorType?), TypeInfoPropertyName = "NullableLogRequestOutputDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestStatus?), TypeInfoPropertyName = "NullableLogRequestStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestErrorType2?), TypeInfoPropertyName = "NullableLogRequestErrorType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestErrorType?), TypeInfoPropertyName = "NullableLogRequestErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.LogRequestResponseStatus?), TypeInfoPropertyName = "NullableLogRequestResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptTemplate5?), TypeInfoPropertyName = "NullablePromptTemplate52")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType?), TypeInfoPropertyName = "NullablePromptBlueprintPromptTemplateDiscriminatorType2")]
@@ -1349,9 +1349,9 @@ namespace PromptLayer
 
                     || typeToConvert == typeof(global::PromptLayer.EdgeConditionalOperator?)
 
-                    || typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider2)
+                    || typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider)
 
-                    || typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider2?)
+                    || typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider?)
 
                     || typeToConvert == typeof(global::PromptLayer.CompletionPromptContentItemDiscriminatorType)
 
@@ -1561,9 +1561,9 @@ namespace PromptLayer
 
                     || typeToConvert == typeof(global::PromptLayer.LogRequestStatus?)
 
-                    || typeToConvert == typeof(global::PromptLayer.LogRequestErrorType2)
+                    || typeToConvert == typeof(global::PromptLayer.LogRequestErrorType)
 
-                    || typeToConvert == typeof(global::PromptLayer.LogRequestErrorType2?)
+                    || typeToConvert == typeof(global::PromptLayer.LogRequestErrorType?)
 
                     || typeToConvert == typeof(global::PromptLayer.LogRequestResponseStatus)
 
@@ -2074,14 +2074,14 @@ namespace PromptLayer
                     return new global::PromptLayer.JsonConverters.EdgeConditionalOperatorNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider2))
+                if (typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider))
                 {
-                    return new global::PromptLayer.JsonConverters.GetPromptTemplateProvider2JsonConverter();
+                    return new global::PromptLayer.JsonConverters.GetPromptTemplateProviderJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider2?))
+                if (typeToConvert == typeof(global::PromptLayer.GetPromptTemplateProvider?))
                 {
-                    return new global::PromptLayer.JsonConverters.GetPromptTemplateProvider2NullableJsonConverter();
+                    return new global::PromptLayer.JsonConverters.GetPromptTemplateProviderNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::PromptLayer.CompletionPromptContentItemDiscriminatorType))
@@ -2604,14 +2604,14 @@ namespace PromptLayer
                     return new global::PromptLayer.JsonConverters.LogRequestStatusNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::PromptLayer.LogRequestErrorType2))
+                if (typeToConvert == typeof(global::PromptLayer.LogRequestErrorType))
                 {
-                    return new global::PromptLayer.JsonConverters.LogRequestErrorType2JsonConverter();
+                    return new global::PromptLayer.JsonConverters.LogRequestErrorTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::PromptLayer.LogRequestErrorType2?))
+                if (typeToConvert == typeof(global::PromptLayer.LogRequestErrorType?))
                 {
-                    return new global::PromptLayer.JsonConverters.LogRequestErrorType2NullableJsonConverter();
+                    return new global::PromptLayer.JsonConverters.LogRequestErrorTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::PromptLayer.LogRequestResponseStatus))

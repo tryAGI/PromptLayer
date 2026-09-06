@@ -3,10 +3,10 @@
 namespace PromptLayer.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GetPromptTemplateProvider2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::PromptLayer.GetPromptTemplateProvider2?>
+    public sealed class LogRequestErrorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::PromptLayer.LogRequestErrorType>
     {
         /// <inheritdoc />
-        public override global::PromptLayer.GetPromptTemplateProvider2? Read(
+        public override global::PromptLayer.LogRequestErrorType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace PromptLayer.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::PromptLayer.GetPromptTemplateProvider2Extensions.ToEnum(stringValue);
+                        return global::PromptLayer.LogRequestErrorTypeExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace PromptLayer.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::PromptLayer.GetPromptTemplateProvider2)numValue;
+                    return (global::PromptLayer.LogRequestErrorType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::PromptLayer.GetPromptTemplateProvider2?);
+                    return default(global::PromptLayer.LogRequestErrorType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace PromptLayer.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::PromptLayer.GetPromptTemplateProvider2? value,
+            global::PromptLayer.LogRequestErrorType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::PromptLayer.GetPromptTemplateProvider2Extensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::PromptLayer.LogRequestErrorTypeExtensions.ToValueString(value));
         }
     }
 }
