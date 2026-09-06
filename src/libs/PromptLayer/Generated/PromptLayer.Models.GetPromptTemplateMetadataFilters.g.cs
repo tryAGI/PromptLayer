@@ -4,7 +4,7 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// Optional dictionary of key values used for A/B release labels.
+    ///
     /// </summary>
     public sealed partial class GetPromptTemplateMetadataFilters
     {

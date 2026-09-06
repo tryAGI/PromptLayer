@@ -162,7 +162,7 @@ namespace PromptLayer
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_type")]
-        public global::PromptLayer.LogRequestErrorType2? ErrorType { get; set; }
+        public global::PromptLayer.LogRequestErrorType? ErrorType { get; set; }
 
         /// <summary>
         /// Detailed error message describing what went wrong. Maximum 1024 characters.<br/>
@@ -278,7 +278,7 @@ namespace PromptLayer
             int? score,
             string? apiType,
             global::PromptLayer.LogRequestStatus? status,
-            global::PromptLayer.LogRequestErrorType2? errorType,
+            global::PromptLayer.LogRequestErrorType? errorType,
             string? errorMessage)
         {
             this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
