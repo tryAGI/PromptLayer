@@ -42,8 +42,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.CreateTableSheetOperationQueuedResponse PickCreateTableSheetOperationQueuedResponse() => IsCreateTableSheetOperationQueuedResponse
-            ? CreateTableSheetOperationQueuedResponse!
+        public global::PromptLayer.CreateTableSheetOperationQueuedResponse PickCreateTableSheetOperationQueuedResponse() => CreateTableSheetOperationQueuedResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateTableSheetOperationQueuedResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.CreateTableSheetOperationNoopResponse PickCreateTableSheetOperationNoopResponse() => IsCreateTableSheetOperationNoopResponse
-            ? CreateTableSheetOperationNoopResponse!
+        public global::PromptLayer.CreateTableSheetOperationNoopResponse PickCreateTableSheetOperationNoopResponse() => CreateTableSheetOperationNoopResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateTableSheetOperationNoopResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.CreateTableSheetOperationConfirmationResponse PickCreateTableSheetOperationConfirmationResponse() => IsCreateTableSheetOperationConfirmationResponse
-            ? CreateTableSheetOperationConfirmationResponse!
+        public global::PromptLayer.CreateTableSheetOperationConfirmationResponse PickCreateTableSheetOperationConfirmationResponse() => CreateTableSheetOperationConfirmationResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateTableSheetOperationConfirmationResponse' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsCreateTableSheetOperationQueuedResponse && createTableSheetOperationQueuedResponse != null)
+            if (CreateTableSheetOperationQueuedResponse is { } __value0 && createTableSheetOperationQueuedResponse != null)
             {
-                return createTableSheetOperationQueuedResponse(CreateTableSheetOperationQueuedResponse!);
+                return createTableSheetOperationQueuedResponse(__value0);
             }
-            else if (IsCreateTableSheetOperationNoopResponse && createTableSheetOperationNoopResponse != null)
+            else if (CreateTableSheetOperationNoopResponse is { } __value1 && createTableSheetOperationNoopResponse != null)
             {
-                return createTableSheetOperationNoopResponse(CreateTableSheetOperationNoopResponse!);
+                return createTableSheetOperationNoopResponse(__value1);
             }
-            else if (IsCreateTableSheetOperationConfirmationResponse && createTableSheetOperationConfirmationResponse != null)
+            else if (CreateTableSheetOperationConfirmationResponse is { } __value2 && createTableSheetOperationConfirmationResponse != null)
             {
-                return createTableSheetOperationConfirmationResponse(CreateTableSheetOperationConfirmationResponse!);
+                return createTableSheetOperationConfirmationResponse(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsCreateTableSheetOperationQueuedResponse)
+            if (CreateTableSheetOperationQueuedResponse is { } __value0)
             {
-                createTableSheetOperationQueuedResponse?.Invoke(CreateTableSheetOperationQueuedResponse!);
+                createTableSheetOperationQueuedResponse?.Invoke(__value0);
             }
-            else if (IsCreateTableSheetOperationNoopResponse)
+            else if (CreateTableSheetOperationNoopResponse is { } __value1)
             {
-                createTableSheetOperationNoopResponse?.Invoke(CreateTableSheetOperationNoopResponse!);
+                createTableSheetOperationNoopResponse?.Invoke(__value1);
             }
-            else if (IsCreateTableSheetOperationConfirmationResponse)
+            else if (CreateTableSheetOperationConfirmationResponse is { } __value2)
             {
-                createTableSheetOperationConfirmationResponse?.Invoke(CreateTableSheetOperationConfirmationResponse!);
+                createTableSheetOperationConfirmationResponse?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsCreateTableSheetOperationQueuedResponse)
+            if (CreateTableSheetOperationQueuedResponse is { } __value0)
             {
-                createTableSheetOperationQueuedResponse?.Invoke(CreateTableSheetOperationQueuedResponse!);
+                createTableSheetOperationQueuedResponse?.Invoke(__value0);
             }
-            else if (IsCreateTableSheetOperationNoopResponse)
+            else if (CreateTableSheetOperationNoopResponse is { } __value1)
             {
-                createTableSheetOperationNoopResponse?.Invoke(CreateTableSheetOperationNoopResponse!);
+                createTableSheetOperationNoopResponse?.Invoke(__value1);
             }
-            else if (IsCreateTableSheetOperationConfirmationResponse)
+            else if (CreateTableSheetOperationConfirmationResponse is { } __value2)
             {
-                createTableSheetOperationConfirmationResponse?.Invoke(CreateTableSheetOperationConfirmationResponse!);
+                createTableSheetOperationConfirmationResponse?.Invoke(__value2);
             }
         }
 

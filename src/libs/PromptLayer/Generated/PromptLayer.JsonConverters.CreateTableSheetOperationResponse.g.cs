@@ -182,19 +182,19 @@ namespace PromptLayer.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.CreateTableSheetOperationQueuedResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.CreateTableSheetOperationQueuedResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.CreateTableSheetOperationQueuedResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateTableSheetOperationQueuedResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateTableSheetOperationQueuedResponse(), typeInfo);
             }
             else if (value.IsCreateTableSheetOperationNoopResponse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.CreateTableSheetOperationNoopResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.CreateTableSheetOperationNoopResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.CreateTableSheetOperationNoopResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateTableSheetOperationNoopResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateTableSheetOperationNoopResponse(), typeInfo);
             }
             else if (value.IsCreateTableSheetOperationConfirmationResponse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.CreateTableSheetOperationConfirmationResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.CreateTableSheetOperationConfirmationResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PromptLayer.CreateTableSheetOperationConfirmationResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateTableSheetOperationConfirmationResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateTableSheetOperationConfirmationResponse(), typeInfo);
             }
         }
     }

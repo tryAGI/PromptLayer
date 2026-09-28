@@ -163,9 +163,9 @@ namespace PromptLayer
                 PrepareDeleteTableSheetColumnRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tableId: tableId!,
-                    sheetId: sheetId!,
-                    columnId: columnId!);
+                    tableId: tableId,
+                    sheetId: sheetId,
+                    columnId: columnId);
 
                 return __httpRequest;
             }
@@ -187,7 +187,7 @@ namespace PromptLayer
                                 pathTemplate: "$\"/api/public/v2/tables/{tableId}/sheets/{sheetId}/columns/{columnId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace PromptLayer
                                 pathTemplate: "$\"/api/public/v2/tables/{tableId}/sheets/{sheetId}/columns/{columnId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace PromptLayer
                                 pathTemplate: "$\"/api/public/v2/tables/{tableId}/sheets/{sheetId}/columns/{columnId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace PromptLayer
                                 pathTemplate: "$\"/api/public/v2/tables/{tableId}/sheets/{sheetId}/columns/{columnId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace PromptLayer
                                 pathTemplate: "$\"/api/public/v2/tables/{tableId}/sheets/{sheetId}/columns/{columnId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
