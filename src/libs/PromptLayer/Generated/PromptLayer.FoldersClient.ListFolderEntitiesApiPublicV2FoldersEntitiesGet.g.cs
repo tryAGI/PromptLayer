@@ -290,7 +290,7 @@ namespace PromptLayer
                                 path: "/api/public/v2/folders/entities",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("workspace_id", workspaceId.ToString()!)
+                                .AddRequiredParameter("workspace_id", workspaceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("folder_id", folderId?.ToString())
                                 .AddOptionalParameter("filter_type", filterType?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
@@ -356,7 +356,7 @@ namespace PromptLayer
                 PrepareListFolderEntitiesApiPublicV2FoldersEntitiesGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceId: workspaceId!,
+                    workspaceId: workspaceId,
                     folderId: folderId,
                     filterType: filterType,
                     searchQuery: searchQuery,
@@ -396,7 +396,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -430,7 +430,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -471,7 +471,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -519,7 +519,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -541,7 +541,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

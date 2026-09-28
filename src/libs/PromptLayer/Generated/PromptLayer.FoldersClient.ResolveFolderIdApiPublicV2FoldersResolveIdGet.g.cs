@@ -122,7 +122,7 @@ namespace PromptLayer
                                 path: "/api/public/v2/folders/resolve-id",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("workspace_id", workspaceId.ToString()!)
+                                .AddRequiredParameter("workspace_id", workspaceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddRequiredParameter("path", path)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -165,8 +165,8 @@ namespace PromptLayer
                 PrepareResolveFolderIdApiPublicV2FoldersResolveIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceId: workspaceId!,
-                    path: path!);
+                    workspaceId: workspaceId,
+                    path: path);
 
                 return __httpRequest;
             }
@@ -188,7 +188,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/resolve-id\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/resolve-id\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -263,7 +263,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/resolve-id\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/resolve-id\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/api/public/v2/folders/resolve-id\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

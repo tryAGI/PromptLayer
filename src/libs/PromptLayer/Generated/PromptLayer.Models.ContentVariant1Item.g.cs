@@ -47,8 +47,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.TextContent PickText() => IsText
-            ? Text!
+        public global::PromptLayer.TextContent PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ThinkingContent PickThinking() => IsThinking
-            ? Thinking!
+        public global::PromptLayer.ThinkingContent PickThinking() => Thinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.CodeContent PickCode() => IsCode
-            ? Code!
+        public global::PromptLayer.CodeContent PickCode() => Code is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ImageContent PickImageUrl() => IsImageUrl
-            ? ImageUrl!
+        public global::PromptLayer.ImageContent PickImageUrl() => ImageUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.MediaContent PickMedia() => IsMedia
-            ? Media!
+        public global::PromptLayer.MediaContent PickMedia() => Media is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.MediaVariable PickMediaVariable() => IsMediaVariable
-            ? MediaVariable!
+        public global::PromptLayer.MediaVariable PickMediaVariable() => MediaVariable is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MediaVariable' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.OutputMediaContent PickOutputMedia() => IsOutputMedia
-            ? OutputMedia!
+        public global::PromptLayer.OutputMediaContent PickOutputMedia() => OutputMedia is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMedia' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ServerToolUseContent PickServerToolUse() => IsServerToolUse
-            ? ServerToolUse!
+        public global::PromptLayer.ServerToolUseContent PickServerToolUse() => ServerToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.WebSearchToolResultContent PickWebSearchToolResult() => IsWebSearchToolResult
-            ? WebSearchToolResult!
+        public global::PromptLayer.WebSearchToolResultContent PickWebSearchToolResult() => WebSearchToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.CodeExecutionResultContent PickCodeExecutionResult() => IsCodeExecutionResult
-            ? CodeExecutionResult!
+        public global::PromptLayer.CodeExecutionResultContent PickCodeExecutionResult() => CodeExecutionResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.McpListToolsContent PickMcpListTools() => IsMcpListTools
-            ? McpListTools!
+        public global::PromptLayer.McpListToolsContent PickMcpListTools() => McpListTools is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.McpCallContent PickMcpCall() => IsMcpCall
-            ? McpCall!
+        public global::PromptLayer.McpCallContent PickMcpCall() => McpCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.McpApprovalRequestContent PickMcpApprovalRequest() => IsMcpApprovalRequest
-            ? McpApprovalRequest!
+        public global::PromptLayer.McpApprovalRequestContent PickMcpApprovalRequest() => McpApprovalRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.McpApprovalResponseContent PickMcpApprovalResponse() => IsMcpApprovalResponse
-            ? McpApprovalResponse!
+        public global::PromptLayer.McpApprovalResponseContent PickMcpApprovalResponse() => McpApprovalResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -565,8 +565,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.BashCodeExecutionToolResultContent PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
-            ? BashCodeExecutionToolResult!
+        public global::PromptLayer.BashCodeExecutionToolResultContent PickBashCodeExecutionToolResult() => BashCodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -602,8 +602,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.TextEditorCodeExecutionToolResultContent PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
-            ? TextEditorCodeExecutionToolResult!
+        public global::PromptLayer.TextEditorCodeExecutionToolResultContent PickTextEditorCodeExecutionToolResult() => TextEditorCodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -639,8 +639,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ShellCallContent PickShellCall() => IsShellCall
-            ? ShellCall!
+        public global::PromptLayer.ShellCallContent PickShellCall() => ShellCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -676,8 +676,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ShellCallOutputContent PickShellCallOutput() => IsShellCallOutput
-            ? ShellCallOutput!
+        public global::PromptLayer.ShellCallOutputContent PickShellCallOutput() => ShellCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -713,8 +713,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ApplyPatchCallContent PickApplyPatchCall() => IsApplyPatchCall
-            ? ApplyPatchCall!
+        public global::PromptLayer.ApplyPatchCallContent PickApplyPatchCall() => ApplyPatchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -750,8 +750,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ApplyPatchCallOutputContent PickApplyPatchCallOutput() => IsApplyPatchCallOutput
-            ? ApplyPatchCallOutput!
+        public global::PromptLayer.ApplyPatchCallOutputContent PickApplyPatchCallOutput() => ApplyPatchCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutput' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -1355,85 +1355,85 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsThinking && thinking != null)
+            else if (Thinking is { } __value1 && thinking != null)
             {
-                return thinking(Thinking!);
+                return thinking(__value1);
             }
-            else if (IsCode && code != null)
+            else if (Code is { } __value2 && code != null)
             {
-                return code(Code!);
+                return code(__value2);
             }
-            else if (IsImageUrl && imageUrl != null)
+            else if (ImageUrl is { } __value3 && imageUrl != null)
             {
-                return imageUrl(ImageUrl!);
+                return imageUrl(__value3);
             }
-            else if (IsMedia && media != null)
+            else if (Media is { } __value4 && media != null)
             {
-                return media(Media!);
+                return media(__value4);
             }
-            else if (IsMediaVariable && mediaVariable != null)
+            else if (MediaVariable is { } __value5 && mediaVariable != null)
             {
-                return mediaVariable(MediaVariable!);
+                return mediaVariable(__value5);
             }
-            else if (IsOutputMedia && outputMedia != null)
+            else if (OutputMedia is { } __value6 && outputMedia != null)
             {
-                return outputMedia(OutputMedia!);
+                return outputMedia(__value6);
             }
-            else if (IsServerToolUse && serverToolUse != null)
+            else if (ServerToolUse is { } __value7 && serverToolUse != null)
             {
-                return serverToolUse(ServerToolUse!);
+                return serverToolUse(__value7);
             }
-            else if (IsWebSearchToolResult && webSearchToolResult != null)
+            else if (WebSearchToolResult is { } __value8 && webSearchToolResult != null)
             {
-                return webSearchToolResult(WebSearchToolResult!);
+                return webSearchToolResult(__value8);
             }
-            else if (IsCodeExecutionResult && codeExecutionResult != null)
+            else if (CodeExecutionResult is { } __value9 && codeExecutionResult != null)
             {
-                return codeExecutionResult(CodeExecutionResult!);
+                return codeExecutionResult(__value9);
             }
-            else if (IsMcpListTools && mcpListTools != null)
+            else if (McpListTools is { } __value10 && mcpListTools != null)
             {
-                return mcpListTools(McpListTools!);
+                return mcpListTools(__value10);
             }
-            else if (IsMcpCall && mcpCall != null)
+            else if (McpCall is { } __value11 && mcpCall != null)
             {
-                return mcpCall(McpCall!);
+                return mcpCall(__value11);
             }
-            else if (IsMcpApprovalRequest && mcpApprovalRequest != null)
+            else if (McpApprovalRequest is { } __value12 && mcpApprovalRequest != null)
             {
-                return mcpApprovalRequest(McpApprovalRequest!);
+                return mcpApprovalRequest(__value12);
             }
-            else if (IsMcpApprovalResponse && mcpApprovalResponse != null)
+            else if (McpApprovalResponse is { } __value13 && mcpApprovalResponse != null)
             {
-                return mcpApprovalResponse(McpApprovalResponse!);
+                return mcpApprovalResponse(__value13);
             }
-            else if (IsBashCodeExecutionToolResult && bashCodeExecutionToolResult != null)
+            else if (BashCodeExecutionToolResult is { } __value14 && bashCodeExecutionToolResult != null)
             {
-                return bashCodeExecutionToolResult(BashCodeExecutionToolResult!);
+                return bashCodeExecutionToolResult(__value14);
             }
-            else if (IsTextEditorCodeExecutionToolResult && textEditorCodeExecutionToolResult != null)
+            else if (TextEditorCodeExecutionToolResult is { } __value15 && textEditorCodeExecutionToolResult != null)
             {
-                return textEditorCodeExecutionToolResult(TextEditorCodeExecutionToolResult!);
+                return textEditorCodeExecutionToolResult(__value15);
             }
-            else if (IsShellCall && shellCall != null)
+            else if (ShellCall is { } __value16 && shellCall != null)
             {
-                return shellCall(ShellCall!);
+                return shellCall(__value16);
             }
-            else if (IsShellCallOutput && shellCallOutput != null)
+            else if (ShellCallOutput is { } __value17 && shellCallOutput != null)
             {
-                return shellCallOutput(ShellCallOutput!);
+                return shellCallOutput(__value17);
             }
-            else if (IsApplyPatchCall && applyPatchCall != null)
+            else if (ApplyPatchCall is { } __value18 && applyPatchCall != null)
             {
-                return applyPatchCall(ApplyPatchCall!);
+                return applyPatchCall(__value18);
             }
-            else if (IsApplyPatchCallOutput && applyPatchCallOutput != null)
+            else if (ApplyPatchCallOutput is { } __value19 && applyPatchCallOutput != null)
             {
-                return applyPatchCallOutput(ApplyPatchCallOutput!);
+                return applyPatchCallOutput(__value19);
             }
 
             return default(TResult);
@@ -1489,85 +1489,85 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value1)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value1);
             }
-            else if (IsCode)
+            else if (Code is { } __value2)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value2);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value3)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value3);
             }
-            else if (IsMedia)
+            else if (Media is { } __value4)
             {
-                media?.Invoke(Media!);
+                media?.Invoke(__value4);
             }
-            else if (IsMediaVariable)
+            else if (MediaVariable is { } __value5)
             {
-                mediaVariable?.Invoke(MediaVariable!);
+                mediaVariable?.Invoke(__value5);
             }
-            else if (IsOutputMedia)
+            else if (OutputMedia is { } __value6)
             {
-                outputMedia?.Invoke(OutputMedia!);
+                outputMedia?.Invoke(__value6);
             }
-            else if (IsServerToolUse)
+            else if (ServerToolUse is { } __value7)
             {
-                serverToolUse?.Invoke(ServerToolUse!);
+                serverToolUse?.Invoke(__value7);
             }
-            else if (IsWebSearchToolResult)
+            else if (WebSearchToolResult is { } __value8)
             {
-                webSearchToolResult?.Invoke(WebSearchToolResult!);
+                webSearchToolResult?.Invoke(__value8);
             }
-            else if (IsCodeExecutionResult)
+            else if (CodeExecutionResult is { } __value9)
             {
-                codeExecutionResult?.Invoke(CodeExecutionResult!);
+                codeExecutionResult?.Invoke(__value9);
             }
-            else if (IsMcpListTools)
+            else if (McpListTools is { } __value10)
             {
-                mcpListTools?.Invoke(McpListTools!);
+                mcpListTools?.Invoke(__value10);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value11)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value11);
             }
-            else if (IsMcpApprovalRequest)
+            else if (McpApprovalRequest is { } __value12)
             {
-                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+                mcpApprovalRequest?.Invoke(__value12);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value13)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value13);
             }
-            else if (IsBashCodeExecutionToolResult)
+            else if (BashCodeExecutionToolResult is { } __value14)
             {
-                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+                bashCodeExecutionToolResult?.Invoke(__value14);
             }
-            else if (IsTextEditorCodeExecutionToolResult)
+            else if (TextEditorCodeExecutionToolResult is { } __value15)
             {
-                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+                textEditorCodeExecutionToolResult?.Invoke(__value15);
             }
-            else if (IsShellCall)
+            else if (ShellCall is { } __value16)
             {
-                shellCall?.Invoke(ShellCall!);
+                shellCall?.Invoke(__value16);
             }
-            else if (IsShellCallOutput)
+            else if (ShellCallOutput is { } __value17)
             {
-                shellCallOutput?.Invoke(ShellCallOutput!);
+                shellCallOutput?.Invoke(__value17);
             }
-            else if (IsApplyPatchCall)
+            else if (ApplyPatchCall is { } __value18)
             {
-                applyPatchCall?.Invoke(ApplyPatchCall!);
+                applyPatchCall?.Invoke(__value18);
             }
-            else if (IsApplyPatchCallOutput)
+            else if (ApplyPatchCallOutput is { } __value19)
             {
-                applyPatchCallOutput?.Invoke(ApplyPatchCallOutput!);
+                applyPatchCallOutput?.Invoke(__value19);
             }
         }
 
@@ -1602,85 +1602,85 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value1)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value1);
             }
-            else if (IsCode)
+            else if (Code is { } __value2)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value2);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value3)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value3);
             }
-            else if (IsMedia)
+            else if (Media is { } __value4)
             {
-                media?.Invoke(Media!);
+                media?.Invoke(__value4);
             }
-            else if (IsMediaVariable)
+            else if (MediaVariable is { } __value5)
             {
-                mediaVariable?.Invoke(MediaVariable!);
+                mediaVariable?.Invoke(__value5);
             }
-            else if (IsOutputMedia)
+            else if (OutputMedia is { } __value6)
             {
-                outputMedia?.Invoke(OutputMedia!);
+                outputMedia?.Invoke(__value6);
             }
-            else if (IsServerToolUse)
+            else if (ServerToolUse is { } __value7)
             {
-                serverToolUse?.Invoke(ServerToolUse!);
+                serverToolUse?.Invoke(__value7);
             }
-            else if (IsWebSearchToolResult)
+            else if (WebSearchToolResult is { } __value8)
             {
-                webSearchToolResult?.Invoke(WebSearchToolResult!);
+                webSearchToolResult?.Invoke(__value8);
             }
-            else if (IsCodeExecutionResult)
+            else if (CodeExecutionResult is { } __value9)
             {
-                codeExecutionResult?.Invoke(CodeExecutionResult!);
+                codeExecutionResult?.Invoke(__value9);
             }
-            else if (IsMcpListTools)
+            else if (McpListTools is { } __value10)
             {
-                mcpListTools?.Invoke(McpListTools!);
+                mcpListTools?.Invoke(__value10);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value11)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value11);
             }
-            else if (IsMcpApprovalRequest)
+            else if (McpApprovalRequest is { } __value12)
             {
-                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+                mcpApprovalRequest?.Invoke(__value12);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value13)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value13);
             }
-            else if (IsBashCodeExecutionToolResult)
+            else if (BashCodeExecutionToolResult is { } __value14)
             {
-                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+                bashCodeExecutionToolResult?.Invoke(__value14);
             }
-            else if (IsTextEditorCodeExecutionToolResult)
+            else if (TextEditorCodeExecutionToolResult is { } __value15)
             {
-                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+                textEditorCodeExecutionToolResult?.Invoke(__value15);
             }
-            else if (IsShellCall)
+            else if (ShellCall is { } __value16)
             {
-                shellCall?.Invoke(ShellCall!);
+                shellCall?.Invoke(__value16);
             }
-            else if (IsShellCallOutput)
+            else if (ShellCallOutput is { } __value17)
             {
-                shellCallOutput?.Invoke(ShellCallOutput!);
+                shellCallOutput?.Invoke(__value17);
             }
-            else if (IsApplyPatchCall)
+            else if (ApplyPatchCall is { } __value18)
             {
-                applyPatchCall?.Invoke(ApplyPatchCall!);
+                applyPatchCall?.Invoke(__value18);
             }
-            else if (IsApplyPatchCallOutput)
+            else if (ApplyPatchCallOutput is { } __value19)
             {
-                applyPatchCallOutput?.Invoke(ApplyPatchCallOutput!);
+                applyPatchCallOutput?.Invoke(__value19);
             }
         }
 

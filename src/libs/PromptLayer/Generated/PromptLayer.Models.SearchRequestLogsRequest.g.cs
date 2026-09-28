@@ -44,8 +44,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.RequestLogQuery PickRequestLogQuery() => IsRequestLogQuery
-            ? RequestLogQuery!
+        public global::PromptLayer.RequestLogQuery PickRequestLogQuery() => RequestLogQuery is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequestLogQuery' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.SearchRequestLogsRequestVariant2 PickSearchRequestLogsRequestVariant2() => IsSearchRequestLogsRequestVariant2
-            ? SearchRequestLogsRequestVariant2!
+        public global::PromptLayer.SearchRequestLogsRequestVariant2 PickSearchRequestLogsRequestVariant2() => SearchRequestLogsRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchRequestLogsRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -179,13 +179,13 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsRequestLogQuery && requestLogQuery != null)
+            if (RequestLogQuery is { } __value0 && requestLogQuery != null)
             {
-                return requestLogQuery(RequestLogQuery!);
+                return requestLogQuery(__value0);
             }
-            else if (IsSearchRequestLogsRequestVariant2 && searchRequestLogsRequestVariant2 != null)
+            else if (SearchRequestLogsRequestVariant2 is { } __value1 && searchRequestLogsRequestVariant2 != null)
             {
-                return searchRequestLogsRequestVariant2(SearchRequestLogsRequestVariant2!);
+                return searchRequestLogsRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsRequestLogQuery)
+            if (RequestLogQuery is { } __value0)
             {
-                requestLogQuery?.Invoke(RequestLogQuery!);
+                requestLogQuery?.Invoke(__value0);
             }
-            else if (IsSearchRequestLogsRequestVariant2)
+            else if (SearchRequestLogsRequestVariant2 is { } __value1)
             {
-                searchRequestLogsRequestVariant2?.Invoke(SearchRequestLogsRequestVariant2!);
+                searchRequestLogsRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace PromptLayer
                 Validate();
             }
 
-            if (IsRequestLogQuery)
+            if (RequestLogQuery is { } __value0)
             {
-                requestLogQuery?.Invoke(RequestLogQuery!);
+                requestLogQuery?.Invoke(__value0);
             }
-            else if (IsSearchRequestLogsRequestVariant2)
+            else if (SearchRequestLogsRequestVariant2 is { } __value1)
             {
-                searchRequestLogsRequestVariant2?.Invoke(SearchRequestLogsRequestVariant2!);
+                searchRequestLogsRequestVariant2?.Invoke(__value1);
             }
         }
 

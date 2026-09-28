@@ -118,7 +118,7 @@ namespace PromptLayer
                                 path: "/workflow-version-execution-results",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("workflow_version_execution_id", workflowVersionExecutionId.ToString()!)
+                                .AddRequiredParameter("workflow_version_execution_id", workflowVersionExecutionId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("return_all_outputs", returnAllOutputs?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -161,7 +161,7 @@ namespace PromptLayer
                 PrepareGetWorkflowVersionExecutionResultsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowVersionExecutionId: workflowVersionExecutionId!,
+                    workflowVersionExecutionId: workflowVersionExecutionId,
                     returnAllOutputs: returnAllOutputs);
 
                 return __httpRequest;
@@ -184,7 +184,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/workflow-version-execution-results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -218,7 +218,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/workflow-version-execution-results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -259,7 +259,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/workflow-version-execution-results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -307,7 +307,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/workflow-version-execution-results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -329,7 +329,7 @@ namespace PromptLayer
                                 pathTemplate: "\"/workflow-version-execution-results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
