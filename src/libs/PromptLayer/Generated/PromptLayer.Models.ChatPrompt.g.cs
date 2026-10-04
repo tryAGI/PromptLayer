@@ -31,15 +31,15 @@ namespace PromptLayer
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, global::PromptLayer.MessageFunctionCall, object>))]
-        public global::PromptLayer.AnyOf<string, global::PromptLayer.MessageFunctionCall, object>? FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, global::PromptLayer.MessageFunctionCall>))]
+        public global::PromptLayer.AnyOf<string, global::PromptLayer.MessageFunctionCall>? FunctionCall { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, global::PromptLayer.ChatToolChoice, object>))]
-        public global::PromptLayer.AnyOf<string, global::PromptLayer.ChatToolChoice, object>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, global::PromptLayer.ChatToolChoice>))]
+        public global::PromptLayer.AnyOf<string, global::PromptLayer.ChatToolChoice>? ToolChoice { get; set; }
 
         /// <summary>
         /// Default Value: chat
@@ -89,8 +89,8 @@ namespace PromptLayer
             global::System.Collections.Generic.IList<global::PromptLayer.MessagesItem> messages,
             global::System.Collections.Generic.IList<global::PromptLayer.Function>? functions,
             global::System.Collections.Generic.IList<global::PromptLayer.Tool>? tools,
-            global::PromptLayer.AnyOf<string, global::PromptLayer.MessageFunctionCall, object>? functionCall,
-            global::PromptLayer.AnyOf<string, global::PromptLayer.ChatToolChoice, object>? toolChoice,
+            global::PromptLayer.AnyOf<string, global::PromptLayer.MessageFunctionCall>? functionCall,
+            global::PromptLayer.AnyOf<string, global::PromptLayer.ChatToolChoice>? toolChoice,
             global::PromptLayer.ChatPromptType? type,
             global::System.Collections.Generic.IList<string>? inputVariables)
         {

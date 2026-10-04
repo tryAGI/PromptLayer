@@ -33,8 +33,8 @@ namespace PromptLayer
         /// Prompt template version to associate.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::PromptLayer.AnyOf<int?, string, object>? Version { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::PromptLayer.AnyOf<int?, string>? Version { get; set; }
 
         /// <summary>
         /// Release label to resolve to a prompt template version.
@@ -73,7 +73,7 @@ namespace PromptLayer
             string promptName,
             global::PromptLayer.AnyOf<int?, string> requestId,
             object? promptInputVariables,
-            global::PromptLayer.AnyOf<int?, string, object>? version,
+            global::PromptLayer.AnyOf<int?, string>? version,
             string? label)
         {
             this.PromptName = promptName ?? throw new global::System.ArgumentNullException(nameof(promptName));

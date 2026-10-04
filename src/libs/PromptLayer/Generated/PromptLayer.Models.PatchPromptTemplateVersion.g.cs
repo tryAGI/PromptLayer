@@ -24,43 +24,43 @@ namespace PromptLayer
         /// Patch for chat template messages. Object keys are message indexes for index-based patching; arrays replace all messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Messages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? Messages { get; set; }
 
         /// <summary>
         /// Patch for tools. Object for index-based patching, array for full replacement, null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Tools { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? Tools { get; set; }
 
         /// <summary>
         /// Patch for functions. Object for index-based patching, array for full replacement, null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("functions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Functions { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? Functions { get; set; }
 
         /// <summary>
         /// Replace the function_call setting. Set to null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>))]
-        public global::PromptLayer.AnyOf<string, object, object>? FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object>))]
+        public global::PromptLayer.AnyOf<string, object>? FunctionCall { get; set; }
 
         /// <summary>
         /// Replace the tool_choice setting. Set to null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>))]
-        public global::PromptLayer.AnyOf<string, object, object>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object>))]
+        public global::PromptLayer.AnyOf<string, object>? ToolChoice { get; set; }
 
         /// <summary>
         /// Patch for completion template content. Object for index-based patching, array for full replacement. Completion templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? Content { get; set; }
 
         /// <summary>
         /// Parameters to shallow-merge into existing model parameters. Existing keys not provided are preserved.
@@ -137,12 +137,12 @@ namespace PromptLayer
         public PatchPromptTemplateVersion(
             int? version,
             string? label,
-            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? messages,
-            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? tools,
-            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? functions,
-            global::PromptLayer.AnyOf<string, object, object>? functionCall,
-            global::PromptLayer.AnyOf<string, object, object>? toolChoice,
-            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? content,
+            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? messages,
+            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? tools,
+            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? functions,
+            global::PromptLayer.AnyOf<string, object>? functionCall,
+            global::PromptLayer.AnyOf<string, object>? toolChoice,
+            global::PromptLayer.AnyOf<object, global::System.Collections.Generic.IList<object>>? content,
             object? modelParameters,
             object? responseFormat,
             string? commitMessage,
