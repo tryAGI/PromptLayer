@@ -49,8 +49,8 @@ namespace PromptLayer
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object, object>))]
-        public global::PromptLayer.AnyOf<string, object, object>? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.AnyOfJsonConverter<string, object>))]
+        public global::PromptLayer.AnyOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -95,7 +95,7 @@ namespace PromptLayer
             string? serverLabel,
             string? arguments,
             string? output,
-            global::PromptLayer.AnyOf<string, object, object>? error,
+            global::PromptLayer.AnyOf<string, object>? error,
             string? approvalRequestId)
         {
             this.Type = type;

@@ -562,7 +562,7 @@ namespace PromptLayer
             string promptName,
             global::PromptLayer.AnyOf<int?, string> requestId,
             object? promptInputVariables = default,
-            global::PromptLayer.AnyOf<int?, string, object>? version = default,
+            global::PromptLayer.AnyOf<int?, string>? version = default,
             string? label = default,
             global::PromptLayer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

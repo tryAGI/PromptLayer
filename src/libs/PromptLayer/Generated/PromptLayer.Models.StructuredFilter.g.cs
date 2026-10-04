@@ -28,8 +28,8 @@ namespace PromptLayer
         /// The value to compare against. Type depends on the field and operator.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<string, double?, bool?, byte[], object>))]
-        public global::PromptLayer.OneOf<string, double?, bool?, byte[], object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.OneOfJsonConverter<string, double?, bool?, byte[]>))]
+        public global::PromptLayer.OneOf<string, double?, bool?, byte[]>? Value { get; set; }
 
         /// <summary>
         /// Required for nested fields (metadata, output, input_variables). Specifies which key within the nested object to filter on.
@@ -64,7 +64,7 @@ namespace PromptLayer
         public StructuredFilter(
             global::PromptLayer.StructuredFilterField field,
             global::PromptLayer.StructuredFilterOperator @operator,
-            global::PromptLayer.OneOf<string, double?, bool?, byte[], object>? value,
+            global::PromptLayer.OneOf<string, double?, bool?, byte[]>? value,
             string? nestedKey)
         {
             this.Field = field;
