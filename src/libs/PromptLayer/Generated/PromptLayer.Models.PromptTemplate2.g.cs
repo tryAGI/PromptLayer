@@ -5,14 +5,14 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// The prompt template content. When resolve_snippets is true (default), snippets are expanded. When false, raw @@@snippet@@@ references are preserved.
+    /// The prompt template. Either a CompletionPrompt (type: 'completion') or ChatPrompt (type: 'chat').
     /// </summary>
     public readonly partial struct PromptTemplate2 : global::System.IEquatable<PromptTemplate2>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType? Type { get; }
+        public global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace PromptLayer
         ///
         /// </summary>
         public PromptTemplate2(
-            global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType? type,
+            global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType? type,
             global::PromptLayer.CompletionPrompt? completion,
             global::PromptLayer.ChatPrompt? chat
             )
@@ -169,7 +169,7 @@ namespace PromptLayer
         /// </summary>
         public bool Validate()
         {
-            return IsCompletion && !IsChat || !IsCompletion && IsChat;
+            return IsCompletion || IsChat;
         }
 
         /// <summary>

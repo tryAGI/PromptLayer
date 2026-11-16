@@ -12,7 +12,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.CreatePromptTemplateResponsePromptTemplateDiscriminatorType? Type { get; }
+        public global::PromptLayer.GetPromptTemplateResponsePromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace PromptLayer
         ///
         /// </summary>
         public PromptTemplate4(
-            global::PromptLayer.CreatePromptTemplateResponsePromptTemplateDiscriminatorType? type,
+            global::PromptLayer.GetPromptTemplateResponsePromptTemplateDiscriminatorType? type,
             global::PromptLayer.CompletionPrompt? completion,
             global::PromptLayer.ChatPrompt? chat
             )

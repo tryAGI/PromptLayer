@@ -5,14 +5,14 @@
 namespace PromptLayer
 {
     /// <summary>
-    ///
+    /// The prompt template content. When resolve_snippets is true (default), snippets are expanded. When false, raw @@@snippet@@@ references are preserved.
     /// </summary>
     public readonly partial struct PromptTemplate6 : global::System.IEquatable<PromptTemplate6>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType? Type { get; }
+        public global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace PromptLayer
         ///
         /// </summary>
         public PromptTemplate6(
-            global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType? type,
+            global::PromptLayer.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType? type,
             global::PromptLayer.CompletionPrompt? completion,
             global::PromptLayer.ChatPrompt? chat
             )

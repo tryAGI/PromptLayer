@@ -13,7 +13,7 @@ namespace PromptLayer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::PromptLayer.ContentItem> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::PromptLayer.ContentItem4> Content { get; set; }
 
         /// <summary>
         /// Default Value: []
@@ -58,7 +58,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompletionPrompt(
-            global::System.Collections.Generic.IList<global::PromptLayer.ContentItem> content,
+            global::System.Collections.Generic.IList<global::PromptLayer.ContentItem4> content,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::PromptLayer.CompletionPromptTemplateFormat? templateFormat,
             global::PromptLayer.CompletionPromptType? type)

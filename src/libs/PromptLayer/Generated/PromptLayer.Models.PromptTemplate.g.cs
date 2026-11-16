@@ -5,14 +5,14 @@
 namespace PromptLayer
 {
     /// <summary>
-    ///
+    /// The prompt content, either chat or completion.
     /// </summary>
     public readonly partial struct PromptTemplate : global::System.IEquatable<PromptTemplate>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.GetPromptTemplateResponsePromptTemplateDiscriminatorType? Type { get; }
+        public global::PromptLayer.PromptVersionPromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace PromptLayer
         ///
         /// </summary>
         public PromptTemplate(
-            global::PromptLayer.GetPromptTemplateResponsePromptTemplateDiscriminatorType? type,
+            global::PromptLayer.PromptVersionPromptTemplateDiscriminatorType? type,
             global::PromptLayer.CompletionPrompt? completion,
             global::PromptLayer.ChatPrompt? chat
             )

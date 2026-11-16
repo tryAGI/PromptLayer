@@ -53,9 +53,9 @@ namespace PromptLayer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate5JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.PromptTemplate4 PromptTemplate { get; set; }
+        public required global::PromptLayer.PromptTemplate5 PromptTemplate { get; set; }
 
         /// <summary>
         ///
@@ -114,7 +114,7 @@ namespace PromptLayer
             int promptVersionId,
             int versionNumber,
             global::System.Collections.Generic.IList<string> tags,
-            global::PromptLayer.PromptTemplate4 promptTemplate,
+            global::PromptLayer.PromptTemplate5 promptTemplate,
             global::System.Collections.Generic.IList<global::PromptLayer.ExternalId> externalIds,
             global::System.Collections.Generic.IList<string>? releaseLabels,
             global::PromptLayer.Metadata? metadata,

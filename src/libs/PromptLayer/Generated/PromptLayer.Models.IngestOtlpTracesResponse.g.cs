@@ -6,7 +6,7 @@ namespace PromptLayer
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class IngestOtlpTracesResponse2
+    public sealed partial class IngestOtlpTracesResponse
     {
         /// <summary>
         /// Example: Trace already closed: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
@@ -28,7 +28,7 @@ namespace PromptLayer
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IngestOtlpTracesResponse2" /> class.
+        /// Initializes a new instance of the <see cref="IngestOtlpTracesResponse" /> class.
         /// </summary>
         /// <param name="error">
         /// Example: Trace already closed: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
@@ -39,7 +39,7 @@ namespace PromptLayer
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public IngestOtlpTracesResponse2(
+        public IngestOtlpTracesResponse(
             string? error,
             global::System.Collections.Generic.IList<string>? traceIds)
         {
@@ -48,9 +48,9 @@ namespace PromptLayer
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IngestOtlpTracesResponse2" /> class.
+        /// Initializes a new instance of the <see cref="IngestOtlpTracesResponse" /> class.
         /// </summary>
-        public IngestOtlpTracesResponse2()
+        public IngestOtlpTracesResponse()
         {
         }
 

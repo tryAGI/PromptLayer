@@ -26,9 +26,9 @@ namespace PromptLayer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.PromptTemplate PromptTemplate { get; set; }
+        public required global::PromptLayer.PromptTemplate4 PromptTemplate { get; set; }
 
         /// <summary>
         ///
@@ -78,7 +78,7 @@ namespace PromptLayer
         public GetPromptTemplateResponse(
             int id,
             string promptName,
-            global::PromptLayer.PromptTemplate promptTemplate,
+            global::PromptLayer.PromptTemplate4 promptTemplate,
             global::PromptLayer.Metadata? metadata,
             string? commitMessage,
             object? llmKwargs,

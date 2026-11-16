@@ -26,7 +26,7 @@ namespace PromptLayer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::PromptLayer.ContentItem5> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::PromptLayer.ContentItem> Content { get; set; }
 
         /// <summary>
         /// Default Value: tool
@@ -72,7 +72,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolMessage(
-            global::System.Collections.Generic.IList<global::PromptLayer.ContentItem5> content,
+            global::System.Collections.Generic.IList<global::PromptLayer.ContentItem> content,
             string toolCallId,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::PromptLayer.ToolMessageTemplateFormat? templateFormat,

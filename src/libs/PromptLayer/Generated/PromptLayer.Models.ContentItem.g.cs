@@ -12,7 +12,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.CompletionPromptContentItemDiscriminatorType? Type { get; }
+        public global::PromptLayer.ToolMessageContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -1217,7 +1217,7 @@ namespace PromptLayer
         ///
         /// </summary>
         public ContentItem(
-            global::PromptLayer.CompletionPromptContentItemDiscriminatorType? type,
+            global::PromptLayer.ToolMessageContentItemDiscriminatorType? type,
             global::PromptLayer.TextContent? text,
             global::PromptLayer.ThinkingContent? thinking,
             global::PromptLayer.CodeContent? code,
