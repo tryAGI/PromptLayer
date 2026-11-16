@@ -322,11 +322,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem>? Type71 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem4>? Type71 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ContentItem? Type72 { get; set; }
+        public global::PromptLayer.ContentItem4? Type72 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -582,11 +582,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem2>? Type136 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem3>? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ContentItem2? Type137 { get; set; }
+        public global::PromptLayer.ContentItem3? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -606,11 +606,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem3>? Type142 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem2>? Type142 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ContentItem3? Type143 { get; set; }
+        public global::PromptLayer.ContentItem2? Type143 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -630,11 +630,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item>? Type148 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item2>? Type148 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ContentVariant1Item? Type149 { get; set; }
+        public global::PromptLayer.ContentVariant1Item2? Type149 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -662,11 +662,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item2>? Type156 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item>? Type156 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ContentVariant1Item2? Type157 { get; set; }
+        public global::PromptLayer.ContentVariant1Item? Type157 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -686,11 +686,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem4>? Type162 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem5>? Type162 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ContentItem4? Type163 { get; set; }
+        public global::PromptLayer.ContentItem5? Type163 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -766,7 +766,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.PromptTemplate? Type182 { get; set; }
+        public global::PromptLayer.PromptTemplate4? Type182 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -786,7 +786,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.PromptTemplate2? Type187 { get; set; }
+        public global::PromptLayer.PromptTemplate6? Type187 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -822,7 +822,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.PromptTemplate3? Type196 { get; set; }
+        public global::PromptLayer.PromptTemplate? Type196 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -850,7 +850,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.PromptTemplate4? Type203 { get; set; }
+        public global::PromptLayer.PromptTemplate5? Type203 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -866,11 +866,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem5>? Type207 { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentItem>? Type207 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.ContentItem5? Type208 { get; set; }
+        public global::PromptLayer.ContentItem? Type208 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -986,7 +986,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.PromptTemplate5? Type237 { get; set; }
+        public global::PromptLayer.PromptTemplate2? Type237 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1414,7 +1414,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.PromptTemplate6? Type344 { get; set; }
+        public global::PromptLayer.PromptTemplate3? Type344 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2730,15 +2730,15 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>, object>? Type673 { get; set; }
+        public global::PromptLayer.OneOf<global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant13>, object>? Type673 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14>? Type674 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant13>? Type674 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant14? Type675 { get; set; }
+        public global::PromptLayer.GetWorkflowVersionExecutionResultsResponseVariant13? Type675 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2798,7 +2798,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.IngestOtlpTracesResponse2? Type690 { get; set; }
+        public global::PromptLayer.IngestOtlpTracesResponse? Type690 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3139,7 +3139,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem4>? ListType16 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3155,15 +3155,15 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem2>? ListType20 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem3>? ListType20 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem3>? ListType21 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem2>? ListType21 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ContentVariant1Item>? ListType22 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ContentVariant1Item2>? ListType22 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3171,11 +3171,11 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ContentVariant1Item2>? ListType24 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ContentVariant1Item>? ListType24 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem4>? ListType25 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem5>? ListType25 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3203,7 +3203,7 @@ namespace PromptLayer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem5>? ListType32 { get; set; }
+        public global::System.Collections.Generic.List<global::PromptLayer.ContentItem>? ListType32 { get; set; }
         /// <summary>
         ///
         /// </summary>

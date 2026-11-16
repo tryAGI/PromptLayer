@@ -17,19 +17,19 @@ namespace PromptLayer.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.PromptVersionPromptTemplateDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.PromptVersionPromptTemplateDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.PromptVersionPromptTemplateDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::PromptLayer.CompletionPrompt? completion = default;
-            if (discriminator?.Type == global::PromptLayer.PromptVersionPromptTemplateDiscriminatorType.Completion)
+            if (discriminator?.Type == global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType.Completion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.CompletionPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.CompletionPrompt> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.CompletionPrompt)}");
                 completion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::PromptLayer.ChatPrompt? chat = default;
-            if (discriminator?.Type == global::PromptLayer.PromptVersionPromptTemplateDiscriminatorType.Chat)
+            if (discriminator?.Type == global::PromptLayer.ListPromptTemplateItemPromptTemplateDiscriminatorType.Chat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PromptLayer.ChatPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PromptLayer.ChatPrompt> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::PromptLayer.ChatPrompt)}");

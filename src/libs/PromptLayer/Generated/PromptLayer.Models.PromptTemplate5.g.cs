@@ -5,14 +5,14 @@
 namespace PromptLayer
 {
     /// <summary>
-    /// The prompt template. Either a CompletionPrompt (type: 'completion') or ChatPrompt (type: 'chat').
+    ///
     /// </summary>
     public readonly partial struct PromptTemplate5 : global::System.IEquatable<PromptTemplate5>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType? Type { get; }
+        public global::PromptLayer.CreatePromptTemplateResponsePromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace PromptLayer
         ///
         /// </summary>
         public PromptTemplate5(
-            global::PromptLayer.PromptBlueprintPromptTemplateDiscriminatorType? type,
+            global::PromptLayer.CreatePromptTemplateResponsePromptTemplateDiscriminatorType? type,
             global::PromptLayer.CompletionPrompt? completion,
             global::PromptLayer.ChatPrompt? chat
             )
@@ -169,7 +169,7 @@ namespace PromptLayer
         /// </summary>
         public bool Validate()
         {
-            return IsCompletion || IsChat;
+            return IsCompletion && !IsChat || !IsCompletion && IsChat;
         }
 
         /// <summary>

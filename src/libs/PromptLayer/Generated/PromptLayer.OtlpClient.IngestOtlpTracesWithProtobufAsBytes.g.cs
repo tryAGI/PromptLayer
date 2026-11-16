@@ -531,19 +531,19 @@ namespace PromptLayer
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::PromptLayer.IngestOtlpTracesResponse2? __value_409 = null;
+                                global::PromptLayer.IngestOtlpTracesResponse? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -552,7 +552,7 @@ namespace PromptLayer
                                 }
 
 
-                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse2>.Create(
+                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
@@ -1070,19 +1070,19 @@ namespace PromptLayer
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::PromptLayer.IngestOtlpTracesResponse2? __value_409 = null;
+                                global::PromptLayer.IngestOtlpTracesResponse? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1091,7 +1091,7 @@ namespace PromptLayer
                                 }
 
 
-                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse2>.Create(
+                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
@@ -1612,19 +1612,19 @@ namespace PromptLayer
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::PromptLayer.IngestOtlpTracesResponse2? __value_409 = null;
+                                global::PromptLayer.IngestOtlpTracesResponse? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse2.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::PromptLayer.IngestOtlpTracesResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1633,7 +1633,7 @@ namespace PromptLayer
                                 }
 
 
-                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse2>.Create(
+                                throw global::PromptLayer.ApiException<global::PromptLayer.IngestOtlpTracesResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,

@@ -12,9 +12,9 @@ namespace PromptLayer
         /// The prompt content, either chat or completion.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.PromptTemplate3 PromptTemplate { get; set; }
+        public required global::PromptLayer.PromptTemplate PromptTemplate { get; set; }
 
         /// <summary>
         /// Message describing the changes in this version. Maximum 72 characters.
@@ -50,7 +50,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptVersion(
-            global::PromptLayer.PromptTemplate3 promptTemplate,
+            global::PromptLayer.PromptTemplate promptTemplate,
             string? commitMessage,
             global::PromptLayer.Metadata? metadata)
         {

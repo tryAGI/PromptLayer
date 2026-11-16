@@ -47,9 +47,9 @@ namespace PromptLayer
         /// The prompt template content. When resolve_snippets is true (default), snippets are expanded. When false, raw @@@snippet@@@ references are preserved.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate6JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.PromptTemplate2 PromptTemplate { get; set; }
+        public required global::PromptLayer.PromptTemplate6 PromptTemplate { get; set; }
 
         /// <summary>
         /// Model configuration including provider, model name, and parameters.
@@ -140,7 +140,7 @@ namespace PromptLayer
             string promptName,
             int version,
             int workspaceId,
-            global::PromptLayer.PromptTemplate2 promptTemplate,
+            global::PromptLayer.PromptTemplate6 promptTemplate,
             global::System.Collections.Generic.IList<global::PromptLayer.SnippetReference> snippets,
             global::PromptLayer.Metadata? metadata,
             string? commitMessage,

@@ -27,7 +27,7 @@ namespace PromptLayer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item2>? Content { get; set; }
 
         /// <summary>
         /// Default Value: assistant
@@ -81,7 +81,7 @@ namespace PromptLayer
         public AssistantMessage(
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::PromptLayer.AssistantMessageTemplateFormat? templateFormat,
-            global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item>? content,
+            global::System.Collections.Generic.IList<global::PromptLayer.ContentVariant1Item2>? content,
             string? role,
             string? name,
             global::System.Collections.Generic.IList<global::PromptLayer.ToolCall>? toolCalls)

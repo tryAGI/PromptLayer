@@ -12,9 +12,9 @@ namespace PromptLayer
         /// The prompt template. Either a CompletionPrompt (type: 'completion') or ChatPrompt (type: 'chat').
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate5JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::PromptLayer.JsonConverters.PromptTemplate2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::PromptLayer.PromptTemplate5 PromptTemplate { get; set; }
+        public required global::PromptLayer.PromptTemplate2 PromptTemplate { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -92,7 +92,7 @@ namespace PromptLayer
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptBlueprint(
-            global::PromptLayer.PromptTemplate5 promptTemplate,
+            global::PromptLayer.PromptTemplate2 promptTemplate,
             string? commitMessage,
             global::PromptLayer.Metadata? metadata,
             string? providerBaseUrlName,
